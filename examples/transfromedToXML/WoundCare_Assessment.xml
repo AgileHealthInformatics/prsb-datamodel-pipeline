@@ -1,0 +1,2316 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Wound assessment and treatment" version="1.0" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="The wound assessment and treatment domain is the major development of the standard, the design of this domain supports the use of assessment frameworks such as SINBAD, TIME etc. There are some notable differences between the three wound types, these are identified here by wound type specific data concepts" />
+  <Model name="Risks">
+    <TaggedValue name="description" value="Details of any risks related to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Risks record entry">
+      <TaggedValue name="description" value="This is a risks record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Start_date_of_risk" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The start date of the risk." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_date_of_risk" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the risk ended." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Risk">
+        <TaggedValue name="description" value="The risk to the person or others, this includes any risk the person might cause to themselves or to others. e.g. suicide, self harm." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for risk." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - &lt;281694009 |Finding of at risk (finding)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Element name="Comment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Additional details about the risk." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Wound assessment and treatment">
+    <TaggedValue name="description" value="Top level concept that contains the wound specific concepts covering baseline information, treatment, assessment observation" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Baseline information">
+      <TaggedValue name="description" value="Initial description, mapping and number of wounds that exist at the start of the wound care episode" />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Wound Classification">
+        <TaggedValue name="description" value="Wounds should be classified by the dominant cause of wounding and/ or non-healing e.g. diabetic foot ulcer, venous leg ulcer, pressure ulcer etc, Surgical wounds should be classified by the amount of contamination which could lead to delayed wound healing and infection: Clean, Clean-Contaminated, Contaminated, Dirty &lt;225552003 |Wound finding (finding)|" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the wound classification" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - &lt;225552003 |Wound finding (finding)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Problem list">
+        <TaggedValue name="description" value="A summary of the problems that require investigation or treatment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Problem list record entry">
+          <TaggedValue name="description" value="This is a problem list record entry. There may be 0 to many record entries under problem list. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Problem">
+            <TaggedValue name="description" value="A condition which needs addressing and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the problem list." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Onset_date" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A date or estimated date that the problem began" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="End_Date" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date or estimated date the problem was resolved." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time." />
+          </Element>
+          <Model name="Body site">
+            <TaggedValue name="description" value="The body site relevant to the problem." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for body site." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Laterality">
+            <TaggedValue name="description" value="The laterality of the problem (left or right or bilateral)." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for laterality." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Problem status">
+            <TaggedValue name="description" value="The status of the problem. This can be either active or inactive." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for problem status." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Problem priority">
+            <TaggedValue name="description" value="The problem priority level. This can be either significant or minor." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for problem priority." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Anatomical site">
+        <TaggedValue name="description" value="The body site of the procedure" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value of the anatomical site." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT :- &lt;123037004 |Body structure (body structure)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Body_map" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Diagram or image showing the location of one or more wounds" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="complex" />
+        <TaggedValue name="valueSets" value="Body schematic" />
+      </Element>
+      <Element name="Wound_description" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Description of the wound" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Date_wound_occurred" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="To be used to calculate wound duration" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date" />
+      </Element>
+      <Model name="Surgical wound specific">
+        <TaggedValue name="description" value="This group includes data concepts that are specific to surgical wounds management" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Type of surgery">
+          <TaggedValue name="description" value="Certain surgeries by definition are contaminated/ dirty and therefore more at risk of surgical wound complications" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of the type of surgery" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;387713003 |Surgical procedure (procedure)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Emergency / Elective Surgery">
+          <TaggedValue name="description" value="What type of Surgery was it, Emergency surgery means that the patient has not had a preoperative risk assessment and is not optimised. Often emergency surgery is contaminated/dirty" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for emergency / elective surgery" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;&lt; 387713003 |Surgical procedure (procedure)| : &lt;&lt; 260870009 |Priority (attribute)| = 25876001 |Emergency (qualifier value)| OR &lt;&lt; 260870009 |Priority (attribute)| = &lt;&lt; 103390000 |Elective (qualifier value)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Number_of_Surgical_Wounds" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="How many wounds were created during the surgery, for example there could be a wound for graft site as well as where the donor graft was taken from" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="count" />
+          <TaggedValue name="valueSets" value="Numeric" />
+        </Element>
+        <Element name="Date_of_Surgery" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date that the surgery took place" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="date" />
+          <TaggedValue name="valueSets" value="Date" />
+        </Element>
+        <Element name="Duration_of_surgery" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Surgery of &gt;2 hours increase the risk of surgical wound complications" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="duration" />
+          <TaggedValue name="valueSets" value="Duration in hours and mins hh:mm" />
+        </Element>
+        <Model name="Wound Closure Method">
+          <TaggedValue name="description" value="The method that was used to close the wound(s)" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for wound closure method" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;746011009 |Closure of skin wound (procedure)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Date_of_closure_removal" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date that closures are scheduled to be removed" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="date" />
+          <TaggedValue name="valueSets" value="Date dd/mm/yyyy" />
+        </Element>
+        <Model name="Drain in situ">
+          <TaggedValue name="description" value="If there is a drain in place - what type of drain" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the drain" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT 835421000000100 |Drainage tube in situ (finding)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Prosthesis / implant present">
+          <TaggedValue name="description" value="Has a prosthesis or implant been fitted, if so what" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for prosthesis or implant" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;835421000000100 |Drainage tube in situ (finding)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Antibiotic_prophylaxis_given" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Boolean to indicate whether antibiotic has been given post surgery" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="boolean" />
+          <TaggedValue name="valueSets" value="Given Not Given" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Contacts with professionals">
+      <TaggedValue name="description" value="The details of the person’s contact with a professional." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Contacts with professionals record entry">
+        <TaggedValue name="description" value="This is a contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Seen by">
+          <TaggedValue name="description" value="The professional that saw the person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Name" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The name of the professional that saw the person" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Role" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The role of the person providing the service." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Location_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of location where the contact took place e.g. person's home" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity location type code" />
+        </Element>
+        <Element name="Reason_for_service" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The reason why the person has been offered the service" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Contact_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Type of contact e.g. GP consultation, outpatient attendance" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Person_accompanying_patient" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Identify, where clinically relevant, others accompanying the patient, e.g. parent, relative, friend. Includes: Name, Relationship, role (e.g. informal carer)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Person full name" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Wound assessment">
+      <TaggedValue name="description" value="Periodic assessments, both structured and unstructured, as recommended by best clinical practice (NWCSP)" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Initial_Primary_Wound_Assessment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Boolean indicating whether (or not) this assessment is a initial (or primary) assessment" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Initial assessment or not initial assessment" />
+      </Element>
+      <Model name="Structured assessment">
+        <TaggedValue name="description" value="Details of the structured assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Structured assessment name">
+          <TaggedValue name="description" value="Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for structured assessment name." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 273249006 |Assessment scales (assessment scale)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Assessment result">
+          <TaggedValue name="description" value="The structured assessment result. This is the overall result for the assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Assessment score">
+            <TaggedValue name="description" value="The overall structured assessment score." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for assessment score." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The numerical value for the assessment result." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for assessment item is used." />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for the assessment result." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+          <Model name="Ordinal">
+            <TaggedValue name="description" value="The ordinal result of the assessment e.g. mild, moderate, severe." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the ordinal result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Subscale result">
+          <TaggedValue name="description" value="The subscale result for the structured assessment. This includes the result for individual questions or subsections." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Subscale score">
+            <TaggedValue name="description" value="The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for subscale item." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The numerical value for the subscale assessment result." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for subscale score is used." />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for the assessment subscale result." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+          <Model name="Ordinal">
+            <TaggedValue name="description" value="The ordinal result of the subscale assessment e.g. mild, moderate, severe." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the ordinal result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Wound length, width and depth ">
+        <TaggedValue name="description" value="The shape and size of the wound" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Wound dimension">
+          <TaggedValue name="description" value="Group to hold t length, width and depth of a wound and of any undermining or tunnelling" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Dimension type">
+            <TaggedValue name="description" value="To specify which dimension this is a measurement of, one of Length of wound Width of wound Depth of wound Depth of wound undermining Length of wound undermining Length of wound tunneling" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the wound dimension" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT &lt;364554009 |Wound observable (observable entity)" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to use if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Dimension value">
+            <TaggedValue name="description" value="Group containing the measurement, numerical value, of the wound dimension" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Measurement_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numerical value for the measurement" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="decimal" />
+              <TaggedValue name="valueSets" value="decimal number" />
+            </Element>
+            <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The units of measure for the wound dimension" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT 258667005 |Unit of length (qualifier value)|" />
+            </Element>
+          </Model>
+        </Model>
+        <Element name="Point_of_reference" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Point of reference for measurements" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Wound and surrounding skin description">
+        <TaggedValue name="description" value="Group containing health care professional observations on the wound" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Wound margin and edge description">
+          <TaggedValue name="description" value="Description of the edge and margins of the wound" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of the wound margin / edge description" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;449747006 |Wound edge finding (finding)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to use if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Limb_shape" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A free text description of the shape of the limb" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Foot_shape" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A free text description of the shape of the foot" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Wound bed tissue type">
+          <TaggedValue name="description" value="Description of the bed of the wound" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value describing the wound bed tissue type" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;225552003 |Wound finding (finding)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Surrounding_skin_condition" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Description of the surround skin condition" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+        <Model name="Skin colour">
+          <TaggedValue name="description" value="The colour of the surrounding skin" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value of the colour of the surrounding skin" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;225552003 |Wound finding (finding)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Image of wound">
+        <TaggedValue name="description" value="This is the documents record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Documentation_location" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The location of the document" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text or URL" />
+        </Element>
+        <Element name="Confidentiality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The code specifying the level of confidentiality of the document." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set : - Confidentiality" />
+        </Element>
+        <Element name="Class" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The document type e.g. report, summary, images, treatment plan, patient preferences, workflow" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Document_title" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The title of the document." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Document_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the document. This should align to the PRSB document naming standard. Where the document is a KOS document this field (designated typeCode) is used to carry the DICOM Imaging procedure: This attribute shall be populated by the XDS-I Imaging Document Source from a code in the Procedure Code Sequence (0008,1032) of the performed procedure with which the document is associated. Values may be found in a suitable DICOM browser" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - As per the https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf" />
+        </Element>
+        <Element name="Document_MIME_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="MIME type of the document e.g. application, pdf, audio, jpeg" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Comments" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Comments associated with the document." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Wound complications">
+        <TaggedValue name="description" value="Clinical complications which affect the healing of the wound" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Problem list">
+          <TaggedValue name="description" value="A summary of the problems that require investigation or treatment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Problem list record entry">
+            <TaggedValue name="description" value="This is a problem list record entry. There may be 0 to many record entries under problem list. Each record entry is made up of a number of elements or data items." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Problem">
+              <TaggedValue name="description" value="A condition which needs addressing and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the problem list." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Onset_date" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="A date or estimated date that the problem began" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="datetime" />
+              <TaggedValue name="valueSets" value="Date and time" />
+            </Element>
+            <Element name="End_Date" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The date or estimated date the problem was resolved." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="datetime" />
+              <TaggedValue name="valueSets" value="Date and time." />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Vascular Assessment">
+        <TaggedValue name="description" value="Assessment to determine the presence and degree of peripheral vascular disease" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Arterial supply assessment">
+          <TaggedValue name="description" value="Assessment of arterial supply to an anatomical location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Structured assessment">
+            <TaggedValue name="description" value="Details of the structured assessment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Structured assessment name">
+              <TaggedValue name="description" value="Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for structured assessment name." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 273249006 |Assessment scales (assessment scale)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Assessment result">
+              <TaggedValue name="description" value="The structured assessment result. This is the overall result for the assessment." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Model name="Assessment score">
+                <TaggedValue name="description" value="The overall structured assessment score." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <Element name="Coded_value" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="The coded value for assessment score." />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+                </Element>
+                <Element name="Free_text" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="dataType" value="Text" />
+                  <TaggedValue name="valueSets" value="Free text" />
+                </Element>
+              </Model>
+              <Element name="Value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The numerical value for the assessment result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="quantity" />
+                <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for assessment item is used." />
+              </Element>
+              <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The units of measure for the assessment result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="UCUM code" />
+              </Element>
+              <Model name="Ordinal">
+                <TaggedValue name="description" value="The ordinal result of the assessment e.g. mild, moderate, severe." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <Element name="Coded_value" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="The coded value for the ordinal result." />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="valueSets" value="SNOMED CT." />
+                </Element>
+                <Element name="Free_text" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="dataType" value="Text" />
+                  <TaggedValue name="valueSets" value="Free text" />
+                </Element>
+              </Model>
+            </Model>
+            <Model name="Subscale result">
+              <TaggedValue name="description" value="The subscale result for the structured assessment. This includes the result for individual questions or subsections." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Model name="Subscale score">
+                <TaggedValue name="description" value="The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <Element name="Coded_value" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="The coded value for subscale item." />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+                </Element>
+                <Element name="Free_text" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="dataType" value="Text" />
+                  <TaggedValue name="valueSets" value="Free text" />
+                </Element>
+              </Model>
+              <Element name="Value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The numerical value for the subscale assessment result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="quantity" />
+                <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for subscale score is used." />
+              </Element>
+              <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The units of measure for the assessment subscale result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="UCUM code" />
+              </Element>
+              <Model name="Ordinal">
+                <TaggedValue name="description" value="The ordinal result of the subscale assessment e.g. mild, moderate, severe." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <Element name="Coded_value" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="The coded value for the ordinal result." />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="valueSets" value="SNOMED CT." />
+                </Element>
+                <Element name="Free_text" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="dataType" value="Text" />
+                  <TaggedValue name="valueSets" value="Free text" />
+                </Element>
+              </Model>
+            </Model>
+          </Model>
+        </Model>
+        <Model name="Structured assessment">
+          <TaggedValue name="description" value="Details of the structured assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Structured assessment name">
+            <TaggedValue name="description" value="Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for structured assessment name." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 273249006 |Assessment scales (assessment scale)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Assessment result">
+            <TaggedValue name="description" value="The structured assessment result. This is the overall result for the assessment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Assessment score">
+              <TaggedValue name="description" value="The overall structured assessment score." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for assessment score." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numerical value for the assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="quantity" />
+              <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for assessment item is used." />
+            </Element>
+            <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The units of measure for the assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="UCUM code" />
+            </Element>
+            <Model name="Ordinal">
+              <TaggedValue name="description" value="The ordinal result of the assessment e.g. mild, moderate, severe." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the ordinal result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+          <Model name="Subscale result">
+            <TaggedValue name="description" value="The subscale result for the structured assessment. This includes the result for individual questions or subsections." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Model name="Subscale score">
+              <TaggedValue name="description" value="The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for subscale item." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numerical value for the subscale assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="quantity" />
+              <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for subscale score is used." />
+            </Element>
+            <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The units of measure for the assessment subscale result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="UCUM code" />
+            </Element>
+            <Model name="Ordinal">
+              <TaggedValue name="description" value="The ordinal result of the subscale assessment e.g. mild, moderate, severe." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the ordinal result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+        </Model>
+        <Element name="Anklebrachial_pressure_index" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The ankle-brachial pressure index ( ABPI ) or ankle-brachial index ( ABI ) is the ratio of the blood pressure at the ankle to the blood pressure in the upper arm (brachium). Compared to the arm, lower blood pressure in the leg suggests blocked arteries due to peripheral artery disease (PAD). The ABPI is calculated by dividing the systolic blood pressure at the ankle by the systolic blood pressure in the arm. [1] Less than 0.5 suggests severe arterial disease. Compression treatment is contraindicated. Refer the person urgently for specialist vascular assessment. Greater than 0.5 to less than 0.8 suggests the presence of arterial disease or mixed arterial/venous disease. Compression should generally be avoided. However, reduced compression can be used under specialist advice and with strict supervision. Refer the person for specialist vascular assessment. Between 0.8 and 1.3 suggests no evidence of significant arterial disease. Compression may be safely applied in most people. For peo..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="decimal" />
+          <TaggedValue name="valueSets" value="Ratio of blood pressure at ankle : blood pressure in upper arm" />
+        </Element>
+        <Element name="Toe_pressure_index" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Commonly used in patients with diabetes and peripheral arterial disease, a toe brachial pressure index (TBPI) is a noninvasive way of determining arterial perfusion in feet and toes . A Doppler device and a sphygmomanometer are used to measure systolic pressure in the arm and the great toe." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="decimal" />
+          <TaggedValue name="valueSets" value="ratio between the systolic blood pressure in the right or left toe and the higher of the systolic pressure in the right or left arms ." />
+        </Element>
+      </Model>
+      <Model name="Pressure ulcer category">
+        <TaggedValue name="description" value="Formal grading of pressure ulcers" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Structured assessment">
+          <TaggedValue name="description" value="Details of the structured assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Structured assessment name">
+            <TaggedValue name="description" value="Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for structured assessment name." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 273249006 |Assessment scales (assessment scale)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Assessment result">
+            <TaggedValue name="description" value="The structured assessment result. This is the overall result for the assessment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Assessment score">
+              <TaggedValue name="description" value="The overall structured assessment score." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for assessment score." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numerical value for the assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="quantity" />
+              <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for assessment item is used." />
+            </Element>
+            <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The units of measure for the assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="UCUM code" />
+            </Element>
+            <Model name="Ordinal">
+              <TaggedValue name="description" value="The ordinal result of the assessment e.g. mild, moderate, severe." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the ordinal result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+          <Model name="Subscale result">
+            <TaggedValue name="description" value="The subscale result for the structured assessment. This includes the result for individual questions or subsections." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Model name="Subscale score">
+              <TaggedValue name="description" value="The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for subscale item." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt; 363787002 |Observable entity (observable entity)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numerical value for the subscale assessment result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="quantity" />
+              <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for subscale score is used." />
+            </Element>
+            <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The units of measure for the assessment subscale result." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="UCUM code" />
+            </Element>
+            <Model name="Ordinal">
+              <TaggedValue name="description" value="The ordinal result of the subscale assessment e.g. mild, moderate, severe." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the ordinal result." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+          <Element name="Subscale_score" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The subscale score of the structured assessment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Subscale_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The subscale value of the structured assessment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Surgical specific">
+        <TaggedValue name="description" value="This section holds assessment details that are specific to surgical wounds" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Approximation of wound edges">
+          <TaggedValue name="description" value="fully approximated, fully approximated but with tension on incision line, edges not approximated with tension on the incision line" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for wound edge approximation" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;449741007 |Wound edges approximated (finding)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+    </Model>
+    <Model name="Wound observations">
+      <TaggedValue name="description" value="Observations relating to the wound care episode" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Clinical observations">
+        <TaggedValue name="description" value="Observations that health care professionals make" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Pain score">
+          <TaggedValue name="description" value="The pain score for the person" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Pain assessment scale">
+            <TaggedValue name="description" value="A group specifying which pain assessment scale is being used to reflect the persons perception of pain" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value for the pain assessment scale used" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Pain value">
+            <TaggedValue name="description" value="A group for the pain value result from the assessment of the perception of pain." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Pain_Score" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The numeric value for the pain score." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="decimal" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Wound pain frequency">
+          <TaggedValue name="description" value="The frequency of the wound pain, is it painful all the time, or at specific times or with specific movements or activities" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of the wound pain frequency" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;298011007 |Finding of sensation of wound (finding)| OR &lt;&lt;81765008 |No pain (situation)| OR &lt;33653009 |Absence of sensation (finding)| 700469003 |Frequency of pain symptom (observable entity)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Signs and symptoms of infections">
+          <TaggedValue name="description" value="Is infection present - SSI" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for signs and symptoms of infection" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Swab for investigation">
+          <TaggedValue name="description" value="Group for recording that a swab has been taken and sent for investigation" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT 225997002 |Taking wound swab (procedure)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="For use if coded value is not available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Investigations requested">
+            <TaggedValue name="description" value="Details of any investigations requested" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Investigations requested record entry">
+              <TaggedValue name="description" value="This is an investigation requested record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Model name="Investigation requested">
+                <TaggedValue name="description" value="The investigation that is requested. The investigation may refer to an individual test or a group of related tests or broader investigation required (so the investigator can determine the appropriate tests)" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <Element name="Coded_value" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="The coded value for Investigation requested" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="valueSets" value="SNOMED CT: - &lt;71388002 |Procedure (procedure)|" />
+                </Element>
+                <Element name="Free_text" type="Class" stereotype="DataElement">
+                  <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                  <TaggedValue name="minCardinality" value="0" />
+                  <TaggedValue name="maxCardinality" value="1" />
+                  <TaggedValue name="dataType" value="Text" />
+                  <TaggedValue name="valueSets" value="Free text" />
+                </Element>
+              </Model>
+              <Element name="Status_of_request" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The status of the investigation request." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="Code : - draft | active | suspended | completed | entered-in-error | cancelled" />
+              </Element>
+              <Element name="Reason_for_request" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="An explanation or justification for why this investigation is being requested." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+              <Element name="Request_priority" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The urgency of the investigation requested." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="Code : - routine | urgent | asap | stat" />
+              </Element>
+            </Model>
+          </Model>
+        </Model>
+        <Model name="Exudate">
+          <TaggedValue name="description" value="Record of discharge from the wound" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Exudate amount">
+            <TaggedValue name="description" value="The observed quantity of exudate" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for exudate amount" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT 441281002 |Amount of exudate (observable entity)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Exudate consistency">
+            <TaggedValue name="description" value="The consistency of the discharge" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the exudate consistency" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT &lt;&lt;239164002 |Wound discharge (finding)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Exudate type">
+            <TaggedValue name="description" value="The type of discharge that is coming from the wound" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the type of exudate" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT &lt;&lt;239164002 |Wound discharge (finding)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Exudate colour">
+            <TaggedValue name="description" value="The colour of the discharge" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the exudate colour" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT &lt;&lt;239164002 |Wound discharge (finding)" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Wound care product performance">
+          <TaggedValue name="description" value="Care professionals assessment on how the wound care product (for example dressing) is performing" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Dressing_performance" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="is the dressing in use effective" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Odour intensity">
+          <TaggedValue name="description" value="Presence and degree of odour" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of the odour intensity" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT &lt;&lt;445916002 |Wound odor (finding)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Examination type">
+          <TaggedValue name="description" value="The type of examination performed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for examination type." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Examination findings">
+          <TaggedValue name="description" value="The record of findings from the examinations performed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for examination findings." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : - ^1127601000000107 |Healthcare matters simple reference set (foundation metadata concept)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Pulse sounds">
+          <TaggedValue name="description" value="The sound of a pulse" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for the sound of the pulse" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Joint mobility">
+          <TaggedValue name="description" value="Is the joint mobile" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Anatomical site">
+            <TaggedValue name="description" value="The body site of the procedure" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the anatomical site." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT :- &lt;123037004 |Body structure (body structure)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Mobility_assessment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Degree of mobility in the joint" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Posture_and_positioning" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Position that the limb is in" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Lower_limb_oedema" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Swelling in the ankles, feet and legs is often caused by a build-up of fluid in these areas, called oedema . Oedema is usually caused by: standing or sitting in the same position for too long. eating too much salty food." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT 102572006 |Edema of lower extremity (finding)|" />
+        </Element>
+        <Element name="Sensitivity_and_sensation" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The sensitivity and reported sensation" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Temperature">
+          <TaggedValue name="description" value="The measurement of the person's temperature in Celsius (OC)" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for temperature" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : -&lt;&lt;386725007 |Body temperature (observable entity)|" />
+          </Element>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The value of the person temperature" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for the persons temperature" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+        </Model>
+        <Model name="Observations record entry">
+          <TaggedValue name="description" value="This is an observations record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for observations" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - &lt;363787002 | Observable entity (observable entity) |" />
+          </Element>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The measured value of the observations" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Enumerated value e.g. numeric, natural numbers, mild, moderate" />
+          </Element>
+        </Model>
+        <Element name="Observed_nutritional_status" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The nutritional status of the person" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Observed_hydration_status" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Allows the recording of the amount of water per KG of body weight with reference to NICE guielines 2006" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Surgical Wound Specific symptoms and observations">
+          <TaggedValue name="description" value="Clinical observations and symptoms that relate to surgical wounds" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Dehiscence">
+            <TaggedValue name="description" value="Group of items relating to wound dehiscence" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Wound_dehiscence" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="How many areas of dehiscence are there" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="quantity" />
+              <TaggedValue name="valueSets" value="Numeric" />
+            </Element>
+            <Model name="Dehiscence Details">
+              <TaggedValue name="description" value="A group containing details about individual areas of dehiscence" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Dehiscence_Length" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The length of an area of wound dehiscence" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="decimal" />
+                <TaggedValue name="valueSets" value="Decimal number" />
+              </Element>
+              <Element name="Dehiscence_Depth" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The depth of an area of dehiscence" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="decimal" />
+                <TaggedValue name="valueSets" value="Decimal Number" />
+              </Element>
+              <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The units of measure for the wound dimension" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT 258667005 |Unit of length (qualifier value)|" />
+              </Element>
+              <Element name="Dehiscence_Description" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="A description of the area of dehiscence, detailing any exposure of organs/bone/implant" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+          <Element name="Crepitus_Present" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Is crepitus present crepitus describes a popping, clicking or crackling sound in a joint . Joint popping sounds – what some may call bone cracking – may mean that air is moving in the joint, which is usually harmless." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="boolean" />
+            <TaggedValue name="valueSets" value="Yes / No indicating whether or not Crepitus is present" />
+          </Element>
+          <Element name="Healing_ridge_present" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Is there a healing ridge A healing ridge of thickened tissue indicating newly formed collagen can be felt about 1cm either side of the incision along its length, and persists into the remodelling phase" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="boolean" />
+            <TaggedValue name="valueSets" value="Yes / No indicating the presence of a healing ridge" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Person observations">
+        <TaggedValue name="description" value="Observations noted and reported by the person" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Observations" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The record of person reported observations e.g pulse, blood pressure, oxygen saturation/capnography, temperature, pain score, respiration rate, level of consciousness or new confusion." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text recording of patient reported observations" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Wound and skin care treatment">
+      <TaggedValue name="description" value="Treatments that are peculiar to wound care" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Wound care products">
+        <TaggedValue name="description" value="Dressing applied to wound" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Medication item entry">
+          <TaggedValue name="description" value="All medications and devices that can be prescribed to be entered via this Medication item entry. Handles details of continuation / addition / amendment of admission medications." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Medication item cluster">
+            <TaggedValue name="description" value="Medication item cluster" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Medication_prescribed_by" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The type of organisation responsible for authorising and issuing the medication e.g. GP" />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="FHIR value set : - Medication prescribing agency" />
+            </Element>
+            <Model name="Medication name">
+              <TaggedValue name="description" value="May be generic name or brand name." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for medication name" />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="dm+d:- any code from the VTM, VMP, AMP, VMPP and AMPP concept classes" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Medication trade family">
+              <TaggedValue name="description" value="The trade family or brand of the medication prescribed." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for medication trade family or brand." />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - ^999000631000001100 |National Health Service dictionary of medicines and devices trade family simple reference set (foundation metadata concept)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Form">
+              <TaggedValue name="description" value="The form of the medication e.g. capsule, drops, tablet, lotion etc." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for form." />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - ^999000781000001107 | National Health Service dictionary of medicines and devices dose form simple reference set (foundation metadata concept) |" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Quantity supplied">
+              <TaggedValue name="description" value="The quantity of the medication (e.g. tablets, inhalers, etc.) provided to the person. This may be dispensed by the pharmacy or on the ward. Record in a structured format i.e. value and a unit" />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The value of the quantity supplied" />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="quantity" />
+                <TaggedValue name="valueSets" value="Enumerated value" />
+              </Element>
+              <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Units of measure of quantity supplied" />
+                <TaggedValue name="minCardinality" value="1" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="UCUM code" />
+              </Element>
+            </Model>
+            <Element name="Date_supplied" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The date/time the medication was supplied." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="datetime" />
+              <TaggedValue name="valueSets" value="Date and time" />
+            </Element>
+            <Model name="Site">
+              <TaggedValue name="description" value="The anatomical site at which the medication is to be administered." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for site" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - &lt;442083009 | Anatomical or acquired body structure (body structure) |" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used when code is not available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="String" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Method">
+              <TaggedValue name="description" value="The technique or method by which the medication is to be administered." />
+              <TaggedValue name="minCardinality" value="1" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for method" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT : - ^999000041000001103 | ePrescribing method simple reference set (foundation metadata concept) |" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Supply_type" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="A description of the type of supply (e.g. emergency supply, over the counter medication, patient group direction etc)" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Model name="Batch number">
+              <TaggedValue name="description" value="The batch number of the product." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the batch number" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="FMD code : - Derived from Falsified medicines directive" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Additional_instructions" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Allows for: requirements for adherence support, e.g. compliance aids, prompts and packaging requirements, additional information about specific medicines e.g. where specific brand required, person requirements, e.g. unable to swallow tablets." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="FHIR value set : - Additional instruction" />
+            </Element>
+            <Element name="Request_for_advice" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Request for advice and recommendation about medication" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+            <Element name="Matters_identified_during_discussion" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Matters identified during the service about the patient's experience of using the medication." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="*" />
+              <TaggedValue name="valueSets" value="Coded text using the following descriptors: a. patient reports using the medicine as prescribed b. patient reports not using the medicine as prescribed c. patient has not started using the medicine d. prescriber has stopped new medicine e. patient is not using the medicine in line with the directions of the prescriber f. patient reports missing a dose in the past 7 days g. patient reports need for more information about the medicine h. patient reports side effects i. patient reports negative feelings about the medicine j. patient reports uncertainty on whether the medicine is working k. patient reports concern about remembering to take the medicine l. patient reports difficulty using the medicine due to its pharmaceutical form/formulation i. other - free text option" />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Medical devices entry">
+          <TaggedValue name="description" value="Medical devices" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Medical device">
+            <TaggedValue name="description" value="Details of a medical device used by the person." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Device type">
+              <TaggedValue name="description" value="The device type." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for device type." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text." />
+              </Element>
+            </Model>
+            <Model name="Device manufacturer">
+              <TaggedValue name="description" value="Name of the device manufacturer." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for device manufacturer." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Model">
+              <TaggedValue name="description" value="The model of the device." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for model." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT." />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Free text field to be used if no code is available" />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+          </Model>
+          <Element name="Comments" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Any information regarding the medical device." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Procedures and therapies">
+        <TaggedValue name="description" value="The details of any procedures performed. Includes both psychological and medical therapies and procedures (e.g. cognitive behaviour therapy, hip replacement)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Procedure record entry">
+          <TaggedValue name="description" value="This is a procedure record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Procedure">
+            <TaggedValue name="description" value="The therapeutic or diagnostic procedure performed. Includes both psychological and medical therapies and procedures (e.g. cognitive behaviour therapy, or follow-up interventions as a result of physical health checks). Complementary or alternative procedures and therapies should be recorded here." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The procedure code." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT : - &lt;71388002 |Procedure| OR &lt;129125009 |Procedure with explicit context|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Anatomical site">
+            <TaggedValue name="description" value="The body site of the procedure" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value of the anatomical site." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT :- &lt;123037004 |Body structure (body structure)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Laterality">
+            <TaggedValue name="description" value="Laterality of the procedure" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for laterality." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT:- &lt;182353008 |Side (qualifier value)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Complications related to procedure">
+            <TaggedValue name="description" value="Details of any intra-operative complications encountered during the procedure, arising during the person’s stay in the recovery unit or directly attributable to the procedure." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for complications relating to procedure." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT : - &lt;404684003 |Clinical finding (finding)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Information and advice given">
+        <TaggedValue name="description" value="Information and advice given." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Information and advice given">
+          <TaggedValue name="description" value="The oral, written, or multi-media information or advice given to the person, carer, other authorised representative, care professional or other third party. May include advice about actions related to medicines or other ongoing care activities on an ‘information prescription'. State here if there are concerns about the extent to which the person and/or carer understand the information provided about diagnosis, prognosis and treatment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for information and advice given." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Plan and requested actions">
+        <TaggedValue name="description" value="The details of planned investigations, procedures and treatment, and whether this plan has been agreed with the person or their legitimate representative." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Plan and requested actions record entry">
+          <TaggedValue name="description" value="This is a plan and requested actions record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Actions_for_professionals" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Including planned investigations, procedures and treatment for a person's identified conditions and priorities. For each action the following should be identified:outcome expectations, including the person’s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Actions_for_person_or_their_carer" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="For each action the following should be identified:outcome expectations, including person’s expectations. A record of the planned and requested actions. May be structured (table), with actions, names, dates, status, location, strategies." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Agreed_with_the_person_or_their_legitimate_representative" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Indicates whether the person or their legitimate representative has agreed the entire plan or individual aspects of treatment, expected outcomes, risks and alternative treatments. A record of the agreement of the decisions made." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Future appointments">
+        <TaggedValue name="description" value="Details of future appointments." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Future appointments record entry">
+          <TaggedValue name="description" value="This is the future appointments record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Date_of_appointment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Date and time of future appointment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Appointment_status" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The status of the appointment e.g. proposed, booked, confirmed, rejected." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Reason_for_appointment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Reason this appointment is scheduled e.g. diagnosis, investigation, treatment or assessment" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Clinical_urgency_of_appointment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Urgency of appointment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary : - Priority" />
+          </Element>
+          <Model name="Location of future appointment">
+            <TaggedValue name="description" value="The location of the appointment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for location" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation data service" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Specialty" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The specialty e.g. physiotherapy, oncology, mental health etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+          </Element>
+          <Model name="Service">
+            <TaggedValue name="description" value="The service that was provided" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_Value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The code for service provided" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="SNOMED CT :- ^1127531000000102 |Services simple reference set (foundation metadata concept)|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text to be used if no code is available" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Professional to see the person">
+            <TaggedValue name="description" value="The name and role of the professional e.g. consultant, care worker, nurse consultant." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Name" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The name of the professional seeing the person." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+            <Element name="Role" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The role of the professional seeing the person." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Consent">
+        <TaggedValue name="description" value="Legal information captured relating to patient care, such as consent." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Consent_relating_to_child" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Consideration of age and competency, applying Gillick competency or Fraser guidelines. Record of person with parental responsibility or appointed guardian where child lacks competency. Record if there is disagreement between patient and parent." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Consent_for_treatment_record" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Whether consent has been obtained for the treatment. May include where record of consent is located or record of consent." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Deviation_from_plan" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Rationale for variation from the plan" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Wound care episode outcome">
+      <TaggedValue name="description" value="Recorded outcome of the wound care episode, based on the existing clinical summary data concept" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Wound Healed">
+        <TaggedValue name="description" value="Defined as either wound remains open upon removal of closure method or full epithelialisation across 100% of wound bed" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value of the wound healed" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT &lt;298005009 |Finding of wound healing (finding)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Wound_Healed_Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date that the wound was assessed as being healed" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date" />
+      </Element>
+      <Element name="Episode_summary" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Summary of the episode or period of care. Where possible, very brief. This may include interpretation of findings and results; differential diagnoses, opinion and specific action(s). Planned actions should be recorded under plan and requested actions or in the personalised care and support plan." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+</Standard>

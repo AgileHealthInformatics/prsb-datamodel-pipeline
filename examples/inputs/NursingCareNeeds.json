@@ -1,0 +1,2278 @@
+{
+  "dataset": [
+    {
+      "version": "0.62",
+      "name": "Nursing Care Needs Standard (0.6)",
+      "description": "<p>v0.61 Initial draft published October 2023<br/><br/>v0.62 January 2024<br/>The Nursing care needs standard has undergone a clinical terminology review; group level data items have an observable entity code, when available, tagged and the coded value field only contains a Finding code, with a free text option. This structures the data items in the model as an inferred question and answer in the system, with free text as an option. Within the Elimination group, the Elimination item has been removed and replaced with four new data concepts to align with the existing SNOMED CT codes, including Toileting capability, baseline toileting capability, continence capability and baseline continence capability.<br/><br/>v1.0 Final version February 2024 <br/>Implementation guidance and coded value fields updated</p>",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Eating and drinking",
+          "implamentationGuidance": "\n                                            <p>This section would be used to record details of the observations and findings of eating and drinking that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element.</p>            \n                            ",
+          "description": "\n                     <p>Eating and Drinking </p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "M",
+              "name": "Eating and drinking record entry",
+              "implamentationGuidance": "\n                                            <p>The information about the details of the initial state of eating and drinking. The nurse must record if the person is capable of eating and drinking independently. The system should be able to receive and prepopulate fields and display information about a person's eating and drinking capability where other systems are conformant with the standard.</p>            \n                            ",
+              "description": "\n                         <p>This is an eating and drinking record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Eating and drinking capability",
+                  "implamentationGuidance": "<p>The system should be able to implement an option to allow clinicians to select a section from the Activities of Daily Living (ADL) as \"Independent\".</p>",
+                  "description": "\n                             <p>Information regarding whether the person is capable of, and typically attends to their own, eating and drinking needs.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.)</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Baseline eating and drinking capability",
+                  "implamentationGuidance": "\n                                            <p>The information recorded by the nurse here should represent the person's typical ability to eat and drink prior to being seen by the nurse (e.g. what is typical for them). This may not match the information in the activity's capability at initial assessment if the person has improved or worsened.</p>            \n                            ",
+                  "description": "\n                             <p>A record of what a person's typical eating and drinking capability is, prior to meeting the nurse.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.)</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Physiological measurements",
+                  "implamentationGuidance": "\n                                            <p>The system should be able to receive and prepopulate fields and display information about a person's physiological measurements from the electronic patient record, if available. </p>            \n                            ",
+                  "description": "\n                             <p>The record of essential physiological measurements, e.g., height, weight, and BMI.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Weight",
+                      "implamentationGuidance": "\n                                            <p>This is the body weight of the person.<br/>If any individual factors impact the overall body weight, it must be recorded. E.g. limb loss, accumulated oedema, nutrition disorders etc. However, it is expected this information should derive from the wider patient record.</p>            \n                            ",
+                      "description": "The person's weight in kgs",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "description": "The coded value of weight",
+                          "valueSets": "SNOMED CT : - 27113001 |Body weight (observable entity)|"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "description": "The value of the person's weight",
+                          "valueSets": "Numeric",
+                          "valueDomain": [ { "type": "quantity" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "description": "The units of measure for weight",
+                          "valueSets": "UCUM code",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "10" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Weight measurement position",
+                          "implamentationGuidance": "\n                                            <p>This indicates the position of the person when they are being weighed. For example, if they are unable to stand then the body weight measurement may be taken on a sitting scale or wheelchair scale. This element should record the position the person is in when they are being weighed.</p>            \n                            ",
+                          "description": "\n                                     <p>The position of the person when measuring their weight (e.g. standing, sitting, wheelchair).</p> \n                                ",
+                          "valueSets": "\n                                     <p> SNOMED CT. </p> \n                                "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Height/length",
+                      "description": "The person's height and length measurement",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                            <p>1153637007 |Body height (observable entity)|</p>            \n                            ",
+                          "description": "The coded value for height/length",
+                          "valueSets": "SNOMED CT: - 50373000 |Body height measure (observable entity)| OR 248334005 |Length of body (observable entity)|"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "description": "The value of the observation.",
+                          "valueSets": "Numeric",
+                          "valueDomain": [
+                            {
+                              "type": "quantity",
+                              "property": [ { "maxInclude": "3" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "description": "The units of measure for height/length",
+                          "valueSets": "UCUM code",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "10" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "BMI",
+                      "description": "The person's BMI calculation",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                            <p> 60621009 |Body mass index (observable entity)|</p>            \n                            ",
+                          "description": "The coded value of BMI",
+                          "valueSets": "SNOMED CT: - 60621009 |Body mass index (observable entity)|"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "description": "The value of the person's BMI",
+                          "valueSets": "Numeric",
+                          "valueDomain": [
+                            {
+                              "type": "quantity",
+                              "property": [ { "maxInclude": "2" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "description": "The units of measure for BMI",
+                          "valueSets": "UCUM code",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "10" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Unexplained weight change",
+                      "description": "\n                                 <p>A report on unexplained significant weight loss or gain in the past six months. This may include the type of weight change (loss or gain), a quantifier of weight change (such as the amount/percentage changed, and when the change began.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Infant and young child feeding status",
+                  "implamentationGuidance": "\n                                            <p>169740003 |Infant feeding method (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>The feeding status of the person if they are an infant or young child. This will include whether they are breast or bottle fed.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:</p>             <p>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;1260078007 | Maternal breastfeeding (finding) |<br/>169741004 |Breast fed (finding)| <br/>268472006 |Infant bottle fed (finding)| <br/>733896006 |Breast fed and bottle fed (finding)|<br/>1067291000000104 |Started on solid food (finding)| </p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for infant and young child feeding status. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Hydration",
+                  "implamentationGuidance": "\n                                            <p>405006006 |Hydration status (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>The details of an individual's hydration state. </p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>251858002 | Negative fluid balance (finding) | <br/>278022001 | Neutral fluid balance (finding) | <br/>251857007 | Positive fluid balance (finding) |</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the hydration state. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available. </p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Problem(s) with drinking fluids",
+                  "implamentationGuidance": "\n                                            <p>288851008 |Drinking abilities (observable entity)|</p>            \n                                            <p>The system should have the capability to receive and prepopulate fields, displaying information about a person's problems with drinking fluids from the Problem list, if available. All issues related to fluid intake should be clearly visible in the electronic patient record.<br/>\n                                    <br/>Drinking Fluids Problems or Issues: These encompass any conditions or concerns associated with a patient's ability to consume fluids, focusing on problems such as insufficient fluid intake, excessive fluid intake, or issues related to eating disorders. These can include symptoms, signs, noteworthy test results, risk factors, psychological factors, social factors,\n                                    health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record when they are deemed significant. These problems and issues may be either active (currently affecting care or under active management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare management, less\n                                    prominently displayed in the record).<br/>\n                                    <br/>Suspected Fluid-Related Diagnoses: It is essential to document suspected and differential diagnoses related to fluid intake in clinical notes. However, these should not be confused with confirmed diagnoses. Suspected diagnoses should be clearly recorded as such, using a pre-coordinated SNOMED CT term (coded value for the problem) for suspected conditions. In cases\n                                    where there is no structured option, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This approach helps capture undiagnosed clinical conditions related to drinking fluids and prompts further appropriate actions for patient care.</p>            \n                            ",
+                  "description": "\n                             <p>A problem in relation to drinking fluids which needs addressing, and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt; 225578007 |Drinking finding (finding)| <br/>&lt;116336009 | Eating / feeding / drinking finding (finding) |</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the problem with drinking fluids. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT </p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Problem(s) with eating",
+                  "implamentationGuidance": "\n                                            <p>288843005 |Eating abilities (observable entity)|</p>            \n                                            <p>The system should have the capability to receive and prepopulate fields, displaying information about a person's problems with eating from the Problem list, if available. All eating-related problems should be clearly visible in the electronic patient record.<br/>\n                                    <br/>Eating Problems or Issues: These encompass any conditions or concerns associated with a patient's eating habits, focusing on problems such as eating disorders, difficulties with food consumption, nutritional concerns, or any other issues related to eating. These can include symptoms, signs, noteworthy test results, risk factors, psychological factors, social factors,\n                                    health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record when they are considered significant. These problems and issues may be either active (currently affecting care or under active management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare management, less\n                                    prominently displayed in the record).<br/>\n                                    <br/>Suspected Eating-Related Diagnoses: It is essential to document suspected and differential diagnoses related to eating problems in clinical notes. However, these should not be confused with confirmed diagnoses. Suspected diagnoses should be clearly recorded as such, using a pre-coordinated SNOMED CT term (coded value for the problem) for suspected conditions. In cases\n                                    where there is no structured option, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This approach helps capture undiagnosed clinical conditions related to eating and prompts further appropriate actions for patient care.</p>            \n                            ",
+                  "description": "\n                             <p>A problem in relation to eating which needs addressing, and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;116336009 | Eating / feeding / drinking finding (finding) |<br/>= 289149001 | Eating normal (finding) | <br/>&lt;&lt;110292000 | Difficulty eating (finding) |</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the problem with eating food.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Experience of nausea and vomiting",
+                  "implamentationGuidance": "\n                                            <p>405166007 |Nausea and vomiting status (observable entity)|</p>            \n                                            <p>The system should be able to receive and prepopulate fields and display information from the Problem list, if available.</p>            \n                            ",
+                  "description": "\n                             <p>A record of the patient experiencing nausea and vomiting at admission. </p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>= 162057007 | Nausea present (situation) | <br/>=70790008 | Absence of nausea and vomiting (situation) | <br/>&lt;300359004 | Finding of vomiting (finding) | <br/>&lt;&lt;422587007 |Nausea (finding)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for nausea/ vomiting. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available. </p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Feeding equipment and support",
+                  "implamentationGuidance": "\n                                            <p>289066002 |Ability to use feeding aid (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>A record of any equipment or assistance required to eat independently or not independently. This includes any aids used to support an individual to eat and drink independently. E.g. a plate guard, adapted cutlery, spill-proof cups etc. </p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                      "description": "\n                                 <p>Coded value for the feeding equipment and support. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available. </p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Tube feeding",
+                  "implamentationGuidance": "\n                                            <p>1172968000 |Method of administration for tube feeding of patient (observable entity)|</p>            \n                                            <p>This should include the information about the type of tube used.</p>            \n                            ",
+                  "description": "\n                             <p>The details of tube feeding. E.g. Gastrostomy, jejunostomy, naso gastric tube, enteral and parenteral eating and drinking.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>700078003 |Gastrostomy tube in situ (finding)| <br/>302110001 |Jejunostomy present (finding)| <br/>449842009 |Nasogastric tube in situ (finding)| <br/>83813007 |Tube feeding diet (finding)| <br/>835921000000107 |On enteral feeding diet (finding)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the type of tube feeding. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available. </p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Dental device",
+                  "implamentationGuidance": "\n                                            <p>This section is used to record individual use of dental devices.</p>            \n                            ",
+                  "description": "\n                             <p>Information about a dental device used by the person, e.g. dentures.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Dental device record entry",
+                      "description": "\n                                 <p>This is a dental device record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Dental device",
+                          "description": "\n                                     <p>The dental device used by the patient.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>278615005 |Denture present (finding)| <br/>&lt;&lt;737286006 | Dental prosthetic device in situ (finding)</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                              "description": "\n                                         <p>The coded value for the dental device used by the patient.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Dental device present",
+                          "implamentationGuidance": "\n                                            <p>This item will only appear when previous item is completed to indicate they use a dental device.</p>            \n                            ",
+                          "description": "\n                                     <p>An indication for whether the individual has their dental device with them.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Yes/No.</p> \n                                ",
+                          "valueDomain": [ { "type": "boolean" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Mouth and dental health complications effect on eating and drinking",
+                  "description": "\n                             <p>This is the information of the condition of the person's mouth health effect on their ability to eat and drink. E.g. condition of the teeth, oral infection, ulcers etc.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Dietary requirements",
+                  "implamentationGuidance": "\n                                            <p>This section allows for the sharing of any individual dietary requirements of the person. The requirements to support the eating and drinking (e.g., gluten-free diet, age-related dietary requirements) would be included in this section.\u00a0\u00a0The accessible information requirements\u00a0would be the most recent requirement rather than a history of requirements. This may relate to\n                                    special needs; however, specific disabilities would be included in the \u2019Problem list\u2019 section. </p>            \n                            ",
+                  "description": "\n                             <p>The details of an individual's dietary requirements; this includes religious requirements.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;162536008 |Restricted diet pattern (finding)| <br/>&lt;409002 |Food allergy diet (finding)| <br/>&lt;182922004 |Dietary regime (regime/therapy)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for dietary requirements. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Eating and drinking preferences",
+                  "implamentationGuidance": "\n                                            <p>The expectation is that this information would be written or recorded by an individual (or someone supporting them) and shared with an electronic record for that individual. How the information is recorded and added to the electronic record is out of scope.<br/>\u00a0<br/>Ideally, the About Me standard is a separate standard in its own right and it should be should be implemented\n                                    and the relevant information should automatically prepopulate the relevant data fields. </p>            \n                            ",
+                  "description": "\n                             <p>The eating and drinking information that the person think it is important to share with professionals, this could include information about their likes and dislikes, preferred eating times, and sensory preferences. </p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Appetite",
+                  "implamentationGuidance": "\n                                            <p>33911006 |Food appetite, function (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>A record of the person's desire or inclination to eat. This includes information about factors that can influence appetite, such as hunger, satiety, food preferences, and eating behaviours. This can be used to identify any changes or abnormalities that affect their nutritional intake and health. </p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;289162002 |Finding of quantity of appetite (finding)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                      "description": "\n                                 <p>Coded value for appetite. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available. </p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "\n                                            <p>If additional detail is required and there is no structured way of recording it, it should be added in a text comment. For instance, the term 'Chocolate Cake' can be accompanied by a text comment like 'enjoyed on birthday.' However, text comments associated with a food item should never modify the original meaning of the item. For example, the term 'Chocolate Cake' should\n                                    not be accompanied by text comments like 'allergic to' (because allergies should only apply to the person with dietary restrictions), 'suspected,' or 'prohibited.</p>            \n                            ",
+                  "description": "\n                             <p> Any further comments relating to eating and drinking.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Mobility",
+          "implamentationGuidance": "\n                                            <p>This section would be used to record details of the observations and findings of mobility that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element. </p>            \n                            ",
+          "description": "\n                     <p>Mobility</p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "M",
+              "name": "Mobility record entry",
+              "implamentationGuidance": "\n                                            <p>The information about the details of the initial state of mobilising. The nurse must record if the person is capable of mobilising and moving independently. The system should be able to receive and prepopulate fields and display information about a person's mobility capability where other systems are conformant with the standard.</p>            \n                            ",
+              "description": "\n                         <p>This is a mobility record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Mobility capability",
+                  "implamentationGuidance": "<p>The system should be able to implement an option to allow clinicians to select a section from the Activities of Daily Living (ADL) as \"Independent\".</p>",
+                  "description": "\n                             <p>Information regarding whether the person is capable of, and typically independently attends to their own mobility and movement.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.)</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Baseline mobility",
+                  "implamentationGuidance": "\n                                            <p>The information recorded by the nurse here should represent the person's typical ability to move prior to being seen by the nurse (e.g. what is typical for them). This may not match the information in the activity's capability at initial assessment if the person has improved or worsened.</p>            \n                            ",
+                  "description": "\n                             <p>The record of what a person's typical mobility capability is, prior to meeting the nurse.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities).</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Changes in mobility",
+                  "description": "\n                             <p>A record completed by the person or guardian/ carer(s)/ professional contact of any self-reported changes to the person's mobility.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;364833005 |Finding related to ability to move (finding)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. <br/></p>",
+                      "description": "\n                                 <p>Coded value for changes observed in mobility.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Transfer and movement",
+                  "description": "\n                             <p>The mobility status of the person that allows movement between two spaces and achieves participation with a degree of independence. </p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Sit to stand",
+                      "implamentationGuidance": "\n                                            <p>282881008 |Ability to stand from sitting (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>The level of assistance that the person require to transfer from the sitting to standing position.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;364916004 |Finding related to ability to stand from sitting (finding)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>The coded value for the level of assistance that the person require to transfer from the sitting to standing position.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Ability to move between two spaces",
+                      "implamentationGuidance": "\n                                            <p>The information recorded here should include the space the person is moving from, the space they're moving to, and their ability level to move between these spaces.</p>            \n                            ",
+                      "description": "\n                                 <p>An indication for whether the individual is sufficiently mobile to move between spaces. E.g. bed, bedroom, toilet, chair and kitchen. This includes lateral transfers.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Type of transfer support needed",
+                      "description": "\n                                 <p>The type of transfer support the person requires, if they need transfer support.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "1",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;714882001 |Finding related to ability to transfer location (finding)|<br/>431188001 |Transfers using hoist (finding)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the type of transfer support needed.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Mobility aids",
+                  "description": "\n                             <p>Mobility aids used by the person.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Mobility aid",
+                      "implamentationGuidance": "\n                                            <p>165251008 |Walking aid use (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>The mobility aid used by the person.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;365112008 |Finding of walking aid use (finding)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the mobility aid used by the person.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available. </p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Mobility aid dependency",
+                      "description": "\n                                 <p>An indication of the total usage and dependence on the mobility aid of the person.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p> Coded value for the mobility aid dependency of the person. </p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available. </p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Mobility aid with person",
+                      "description": "\n                                 <p> An indication of whether the person has brought their mobility aid that belongs to them.\u00a0</p> \n                            ",
+                      "valueSets": "\n                                 <p>Yes / No.</p> \n                            ",
+                      "valueDomain": [ { "type": "boolean" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Number of persons required to assist with mobilisation",
+                      "description": "\n                                 <p>A record of the number of persons required to assist with mobilising the patient.</p> \n                            ",
+                      "valueDomain": [ { "type": "count" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Falls and balance",
+                  "implamentationGuidance": "\n                                            <p>The system should be able to receive and prepopulate fields and display information from the electronic patient record, if available. </p>            \n                            ",
+                  "description": "\n                             <p>A record of relevant falls and balance information.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Unexplained falls",
+                      "implamentationGuidance": "\n                                            <p>&lt;363801007 |Observable feature of falls (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>Identification of unexplained falls of the person.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;298343000 | Finding related to falls (finding) | <br/>404912005 |Unexplained falls (finding)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for unexplained falls. </p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available. </p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Recent changes in balance",
+                      "description": "\n                                 <p>A report on recent changes in the person's ability to safely balance that may increase the risk of falls.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;&lt;299980005 | Controlling position (observable entity) |<br/>&lt;&lt;363838007 | Balance observable (observable entity) |</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for ability to balance.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available. </p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Falls in the past 12 months leading to significant injury",
+                      "description": "\n                                 <p>Any falls that the person has had in the past 12 months that has lead to significant injury.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Cause of the fall",
+                          "description": "\n                                     <p>The cause of the person's fall.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Injury caused",
+                          "description": "\n                                     <p>The type of significant injury caused by the fall.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Problems affecting mobility",
+                  "implamentationGuidance": "\n                                            <p>The system should possess the capability to receive and prepopulate fields, displaying information regarding a person's mobility problems, especially those related to falls, from the Problem list, if available. All mobility-related problems should be readily visible in the electronic patient record.<br/>\n                                    <br/>Mobility Problems or Issues: These encompass any conditions or concerns associated with a patient's mobility, particularly focusing on issues related to falls. These include symptoms, signs, notable test results, risk factors, psychological factors, social factors, health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record\n                                    when they are deemed significant. These problems and issues may be either active (currently affecting care or under active management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare management, less prominently displayed in the record).<br/>\n                                    <br/>Suspected Mobility Diagnoses: It is crucial to document suspected and differential diagnoses related to mobility problems, especially those related to falls, in clinical notes, but they must not be confused with confirmed diagnoses. These should be clearly recorded as suspected diagnoses, using a pre-coordinated SNOMED CT term (coded value for the problem) for\n                                    suspected conditions. If no structured option exists, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This approach helps capture undiagnosed clinical conditions related to mobility and falls, ensuring comprehensive care and management.</p>            \n                            ",
+                  "description": "\n                             <p>A record of any problems experienced that impacts the person's ability to fully mobilise. This can include physical and psychological conditions that impair full independent mobilisation.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                      "description": "\n                                 <p>Coded value for the problem that affects mobility. </p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text field to be used if no code is available. </p> \n                            ",
+                      "valueSets": "\n                                 <div>Free text</div> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Use of bed rails",
+                  "description": "\n                             <p>A record for the use of bed rails fitted to a bed to stop the patient from falling out of bed.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "\n                                 <p>Coded value for the use of bed rails.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Footwear and hosiery",
+                  "implamentationGuidance": "\n                                            <p>&lt;364582002 | Footwear feature (observable entity) |</p>            \n                                            <p>This is a record of the patient's footwear and care that may impact their mobilisation and moving. This can include hosiery.</p>            \n                            ",
+                  "description": "\n                             <p>A record if the person has the appropriate footwear or hosiery for mobilisation and moving.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should only contain on SNOMED CT code from the following value set:</p>             <p>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;250138009 | Footwear finding (finding) | <br/>817001000 | Wearing inappropriate footwear (finding)</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the type of footwear and hosiery.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "\n                                            <p>If additional detail is required and there is no structured way of recording it, it should be added in a text comment. For instance, the term 'Mobility Impairment' can be accompanied by text like 'uses a wheelchair.' However, text comments associated with a term should never modify the meaning of the original term. For example, the term 'Mobility Impairment' should not be\n                                    accompanied by text such as 'family history of' (because family history should only apply to medical conditions), 'suspected,' or 'temporary' (as it should represent a permanent condition).</p>            \n                            ",
+                  "description": "\n                             <p>Any further comments relating to mobility.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Elimination",
+          "implamentationGuidance": "\n                                            <p>This section would be used to record details of the observations and findings of Elimination (toileting and continence) that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element.</p>            \n                            ",
+          "description": "\n                     <p>Elimination (toileting and continence).</p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "M",
+              "name": "Elimination record entry",
+              "implamentationGuidance": "\n                                            <p>The information about the details of the initial state of toileting and continence. The nurse must record if the person is capable of toileting independently. The system should be able to receive and prepopulate fields and display information about a person's toileting and continence capability where other systems are conformant with the standard.</p>            \n                            ",
+              "description": "\n                         <p>This is an elimination record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Toileting capability",
+                  "implamentationGuidance": "<p>The system should be able to implement an option to allow clinicians to select a section from the Activities of Daily Living (ADL) as \"Independent\".</p>",
+                  "description": "\n                             <p>Information regarding whether the person is capable of, and typically independently attends to their own toileting needs.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance).\n                                Severe disability (Requires constant nursing care and attention).</p> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Baseline toileting capability",
+                  "implamentationGuidance": "\n                                            <p>The information recorded by the nurse here should represent the person's typical ability to toilet prior to being seen by the nurse (e.g. what is typical for them). This may not match the information in the activity's capability at initial assessment if the person has improved or worsened.</p>            \n                            ",
+                  "description": "\n                             <p>A record of what a person's typical toileting capability is, prior to meeting the nurse.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance).\n                                Severe disability (Requires constant nursing care and attention).</p> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Continence capability",
+                  "implamentationGuidance": "<p>The system should be able to implement an option to allow clinicians to select a section from the Activities of Daily Living (ADL) as \"Independent\".</p>",
+                  "description": "\n                             <p>Information regarding whether the person is capable of, and typically independently controls their bladder and/or their bowel on their own accord.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance).\n                                Severe disability (Requires constant nursing care and attention).</p> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Baseline continence capability",
+                  "implamentationGuidance": "\n                                            <p>The information recorded by the nurse here should represent the person's typical ability to toilet prior to being seen by the nurse (e.g. what is typical for them). This may not match the information in the activity's capability at initial assessment if the person has improved or worsened.</p>            \n                            ",
+                  "description": "\n                             <p>A record of what a person's typical continence capability is, prior to meeting the nurse.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance).\n                                Severe disability (Requires constant nursing care and attention).</p> \n                        "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Bowels",
+                  "description": "\n                             <p>Information relating to the person's bowels.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Problems or concerns with bowels",
+                      "implamentationGuidance": "\n                                            <p>16490003 |Anorectal continence, function (observable entity)|</p>            \n                                            <p>The system should have the capability to receive and prepopulate fields, displaying information about a person's problems with bowel movements and elimination from the Problem list, if available. All elimination-related problems should be clearly visible in the electronic patient record.<br/>\n                                    <br/>Bowel and Elimination Problems or Issues: These encompass any conditions or concerns associated with a patient's bowel movements and elimination processes, focusing on problems such as constipation, diarrhea, irritable bowel syndrome, or other issues related to elimination. These can include symptoms, signs, noteworthy test results, risk factors, psychological factors,\n                                    social factors, health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record when they are considered significant. These problems and issues may be either active (currently affecting care or under active management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare\n                                    management, less prominently displayed in the record).<br/>\n                                    <br/>Suspected Elimination-Related Diagnoses: It is essential to document suspected and differential diagnoses related to bowel and elimination problems in clinical notes. However, these should not be confused with confirmed diagnoses. Suspected diagnoses should be clearly recorded as such, using a pre-coordinated SNOMED CT term (coded value for the problem) for suspected\n                                    conditions. In cases where there is no structured option, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This approach helps capture undiagnosed clinical conditions related to bowel and elimination issues and prompts further appropriate actions for patient care.</p>            \n                            ",
+                      "description": "\n                                 <p>Any problems or concerns that the patient has in regard to their bowels. This includes if the problem is ongoing or new.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;106019003 | Finding of elimination pattern (finding) <br/>24029004 | Bowels: fully continent (finding)</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for problems with bowels.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Usual stool consistency",
+                      "implamentationGuidance": "\n                                            <p>443172007 |Bristol stool form score (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>The usual consistency of the person's stool. Bristol's stool chart should be used to complete this item.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should only contain one SNOMED CT code from the following value set:</p>                     <p>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>428208009 |Bristol stool form scale (assessment scale)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the stool consistency.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Bristol stool chart.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Frequency of bowel opening",
+                      "implamentationGuidance": "\n                                            <p>249521002 |Frequency of bowel action (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>The frequency of how often the person opens their bowls. This can be across different periods of time.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "implamentationGuidance": "\n                                            <p>The value of the frequency of bowel opening.</p>            \n                            ",
+                          "description": "\n                                     <p>The value of the frequency of bowel opening.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Numeric.</p> \n                                ",
+                          "valueDomain": [ { "type": "quantity" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "implamentationGuidance": "\n                                            <p>Units of measure of the frequency of bowel opening. E.g. Per day, per 2 days, per week.</p>            \n                            ",
+                          "description": "\n                                     <p>Units of measure of the frequency of bowel opening. E.g. Per day, per 2 days, per week.</p> \n                                ",
+                          "valueSets": "\n                                     <p>1. Per day 2. Per 2 days 3. Per week</p> \n                                "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Last bowel opening",
+                      "description": "\n                                 <p>The last time the person opened their bowels.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Date and time.</p> \n                            ",
+                      "valueDomain": [ { "type": "datetime" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Urination",
+                  "description": "\n                             <p>Information relating to the person's urine and urination.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Problems or concerns with urination",
+                      "implamentationGuidance": "\n                                            <p>The system should have the capability to receive and prepopulate fields, displaying information regarding a person's urination-related problems, particularly focusing on issues of incontinence, from the Problem list, if available. All urination-related problems should be readily visible in the electronic patient record.<br/>\n                                    <br/>Urination Problems or Issues: These encompass any conditions or concerns associated with a patient's urination, including symptoms, signs, notable test results, risk factors, psychological factors, social factors, health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record when they are considered important. These problems and\n                                    issues may be either active (currently affecting care or under active management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare management, less prominently displayed in the record).<br/>\n                                    <br/>Suspected Urinary Diagnoses: It is crucial to document suspected and differential diagnoses related to urination issues in clinical notes, but they must not be confused with confirmed diagnoses. They should be clearly recorded as suspected diagnoses, utilizing a pre-coordinated SNOMED CT term (coded value for the problem) for suspected conditions. If no structured\n                                    option exists, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This should encompass both physical and psychosocial issues related to urination, including incontinence, which may then trigger appropriate follow-up actions. This approach helps capture undiagnosed\n                                    clinical conditions associated with urination and elimination.</p>            \n                            ",
+                      "description": "\n                                 <p>Any problems or concerns that the patient has in regard to urination or their urine. This includes if the problem is ongoing or new.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>&lt;252041008 | Micturition finding (finding) |</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for problems with urination.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Incontinence",
+                  "implamentationGuidance": "\n                                            <p>406218000 |Urinary continence status (observable entity)| or<br/>16490003 |Anorectal continence, function (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>A record of whether the person experiences incontinence.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;&lt;72042002 | Incontinence of feces (finding) |<br/>&lt;&lt;165232002 | Urinary incontinence (finding) |</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for incontinence.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Support",
+                  "description": "\n                             <p>Details of any support needed for elimination.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Requirements for toileting assistance",
+                      "description": "\n                                 <p>Any requirements the person has for toileting assistance. E.g. wiping self, handwashing.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Equipment",
+                      "implamentationGuidance": "\n                                            <p>The system should be able to receive and prepopulate fields and display information from the Appliances sections from the electronic patient record, if available.</p>            \n                            ",
+                      "description": "\n                                 <p>Equipment the person uses or needs to assist with elimination.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "Continence equipment required",
+                          "description": "\n                                     <p>The continence equipment required to support the individual. E.g. Whether the person requires a commode or raised toilet seat or the use of pads, belts, or nappies. </p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;705592002 | Toilet seat (physical object) | <br/>&lt;705330007 | Personal care and protection device (physical object) | <br/>360008003 |Commode (physical object)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                              "description": "\n                                         <p>Coded value for the continent equipment required. </p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT.</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Community delivery of continence equipment",
+                          "description": "\n                                     <p>Whether the person is receiving continence equipment from community delivery.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Yes or No</p> \n                                ",
+                          "valueDomain": [ { "type": "boolean" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Requires ordering commode or raised toilet seat",
+                          "description": "\n                                     <p>Whether the person requires ordering a commode or raised toilet seat, if they require using one.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Yes or No</p> \n                                ",
+                          "valueDomain": [ { "type": "boolean" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Catheter, bowel, and stoma care",
+                  "description": "\n                             <p>Information relating to catheter, bowel, and stoma care.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Catheter, bowel, and stoma medical devices",
+                      "description": "\n                                 <p>An indication of whether the person has any medical devices to support with catheter, bowel, or stoma care. (For example, colostomy, catheter etc.).</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p><br/>&lt;105789008 | Cannula/tube/catheter, device (physical object) |<br/>&lt;35398009 | Ostomy appliance, device (physical object) |<br/>&lt;303699009 | Gastrointestinal tube (physical object) |</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the medical devices used for catheter, bowel, and stoma care.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Reason for stoma",
+                      "description": "\n                                 <p>The reason for the person's usage of a stoma.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the reason for stoma.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Catheter use and support",
+                      "implamentationGuidance": "\n                                            <p>420404007 |Urinary catheterization status (observable entity)|</p>            \n                            ",
+                      "description": "\n                                 <p>Information relating to the person's usage and need for a catheter.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Reason for catheter",
+                          "description": "\n                                     <p>The reason for the person's usage of a catheter.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                              "description": "\n                                         <p>Coded value for reason for catheter.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT.</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Self-management of catheter",
+                          "description": "\n                                     <p>Describe the person's management of a catheter, whether they self-catheterise or require support.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>706954003 |Able to perform intermittent urethral self-catheterization (finding)| <br/>1070501000000102 |Difficulty managing urinary catheter care (finding)| <br/>1069081000000100 |Does not manage urinary catheter care (finding)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                              "description": "\n                                         <p>Coded value for self-management of catheter. </p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT.</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Usage of catheter",
+                          "description": "\n                                     <p>This describes the person's usage of a catheter as intermittent, full-time or part-time.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                     <p>170883007 |Intermittent self-catheterize (regime/therapy)|</p>                     <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                              "description": "\n                                         <p>Coded value for the catheter usage. </p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT.</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "\n                                            <p>If additional detail is required and there is no code or structured way of recording it, it should be added in a text comment. For example, the term 'Incontinence' can be accompanied by text like 'related to recent surgery.' However, text comments associated with a term should never modify the meaning of the original term. For example, the term 'Incontinence' should not be\n                                    accompanied by text such as 'family history of' (because family history should only apply to medical conditions), 'suspected' or 'excluded' (as these should be applied to diagnosed medical conditions, not symptoms).</p>            \n                            ",
+                  "description": "\n                             <p>Any further comments relating to elimination.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Personal Hygiene and Dressing",
+          "implamentationGuidance": "<p>This section would be used to record details of the observations and findings of personal hygiene and dressing that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element.</p>",
+          "description": "\n                     <p>Personal Hygiene and Dressing.</p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Personal hygiene and dressing record entry",
+              "implamentationGuidance": "<p>The information about the details of the initial state of personal hygiene and dressing ability. The nurse must record if the person is capable of personal hygiene and dressing independently. The system should be able to receive and prepopulate fields and display information about a person's personal hygiene and dressing capability where other systems are conformant with the standard.</p>",
+              "description": "\n                         <p>This is a personal hygiene and dressing record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Personal hygiene and dressing capability",
+                  "implamentationGuidance": "<p>The system should be able to implement an option to allow clinicians to select a section from the Activities of Daily Living (ADL) as \"Independent\".</p>",
+                  "description": "\n                             <p>Information regarding whether the person is capable of, and typically attends to their own, personal hygiene needs. E.g. washing, showering, bathing, dressing, mouth care, foot and nail care, other.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.)</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Baseline personal hygiene and dressing capability",
+                  "implamentationGuidance": "<p>The information recorded by the nurse here should represent the person's typical ability to complete personal hygiene and dressing prior to being seen by the nurse (e.g. what is typical for them). This may not match the information in the activity's capability at initial assessment if the person has improved or worsened.</p>",
+                  "description": "\n                             <p>A record of what a person's typical personal hygiene and dressing capability is, prior to meeting the nurse.</p> \n                        ",
+                  "valueSets": "\n                             <p>Coded value:</p> \n                             <ol>\n                                <li>\n                                    <p>Independent (Able to carry out all usual activities).</p>\n                                </li>\n                                <li>\n                                    <p>Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities).</p>\n                                </li>\n                                <li>\n                                    <p>Moderate disability (Requires some help, but is able to do physically carry out activities unassisted).</p>\n                                </li>\n                                <li>\n                                    <p>Moderately severe disability (Unable to attend to needs without assistance).</p>\n                                </li>\n                                <li>\n                                    <p>Severe disability (Requires constant nursing care and attention).</p>\n                                </li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Problems affecting personal hygiene and dressing",
+                  "implamentationGuidance": "<p>The system should be able to receive and prepopulate fields and display information about a person's problems specifically related to personal hygiene and dressing from the Problem list, if available. All issues pertaining to personal hygiene and dressing should be prominently featured in the electronic patient record.<br/><br/>Personal Hygiene and Dressing Issues: These encompass any conditions or concerns directly impacting a patient's ability to maintain personal hygiene or manage dressing, such as mobility issues affecting dressing or hygiene practices, skin conditions, or cognitive challenges related to self-care. These can include symptoms, signs, noteworthy test results, risk factors, psychological factors, social factors, health-related issues, or official diagnoses. Clinicians should enter these into the healthcare record when they are considered significant. These problems and issues may be either active (currently relevant to care or under active healthcare management, prominently featured in the record) or inactive (past conditions or those not currently requiring active healthcare management, less prominently displayed in the record).<br/><br/>Suspected Hygiene and Dressing-Related Diagnoses: It is essential to document suspected and differential diagnoses related to personal hygiene and dressing issues in clinical notes. However, these should not be confused with confirmed diagnoses. Suspected diagnoses should be clearly recorded as such, using a pre-coordinated SNOMED CT term (coded value for the problem) for suspected conditions. In cases where there is no structured option, they can be entered as free text in clinical notes alongside the associated symptoms, signs, or abnormal test results that led to the suspected diagnosis. This approach helps capture undiagnosed clinical conditions related to personal hygiene and dressing and prompts further appropriate actions for patient care.</p>",
+                  "description": "\n                             <p>Any problems that may affect a person's ability to wash or dress, e.g., stroke, weakness, arthritis.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set: <br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>&lt;&lt;365031000 |Finding related to ability to perform activities of everyday life (finding)|<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for the problem affecting personal hygiene and dressing.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT. </p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Personal hygiene and dressing support needs",
+                  "implamentationGuidance": "<p>285592006 |Personal care activity (observable entity)|</p>",
+                  "description": "\n                             <p>Details of any support needed for personal hygiene.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set: <br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>&lt;365223002 |Finding related to ability to dress (finding)|<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "\n                                 <p>Coded value for any support needed with personal hygiene.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Equipment to aid personal hygiene and dressing",
+                  "description": "\n                             <p>Information about any equipment the person uses to support personal care.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Equipment",
+                      "description": "\n                                 <p>Equipment the person uses to support person hygiene and dressing.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for the equipment used to aid personal hygiene and dressing.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Equipment with person",
+                      "description": "\n                                 <p>An indication of whether the person has brought their equipment that they require for personal hygiene and / or dressing. </p> \n                            ",
+                      "valueSets": "\n                                 <p>Yes / No.</p> \n                            ",
+                      "valueDomain": [ { "type": "boolean" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Mouth and oral care",
+                  "description": "\n                             <p>Information regarding the person's mouth and oral care.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Condition of mouth",
+                      "implamentationGuidance": "<p>364126007 |Oral hygiene status (observable entity)|</p>",
+                      "description": "\n                                 <p>Information on whether the person's mouth is feeling moist, clean, and comfortable. E.g. no pain, not dry, no soreness.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set: <br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>&lt;110298001 |Oral hygiene finding (finding)| <br/>&lt;423066003 |Finding of mouth region (finding)|<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for the condition of mouth. </p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Capability to maintain mouth hygiene",
+                      "description": "\n                                 <p>An indication on whether the person is able to clean their teeth, dentures, and mouth without assistance.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Yes or no</p> \n                            ",
+                      "valueDomain": [ { "type": "boolean" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Nails",
+                  "description": "<p>Indication of the condition of the person's nails, including fingers and toes.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set: <br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>365200000 |Finding related to ability to perform nail care activities (finding)|<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "<p>Coded value for the condition of the person's nails, including fingers and toes.</p>",
+                      "valueSets": "<p>SNOMED CT</p>"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "<p>Free text if coded value isn't available.</p>",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Shaving",
+                  "description": "<p>Any requirements a person has in relation to shaving. This could be for facial or body hair. This may include whether they prefer to shave or not, and where they wish to be shaved.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set: <br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>365204009 |Finding related to ability to shave (finding)|<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                      "description": "<p>Coded value for any requirements related to shaving.</p>",
+                      "valueSets": "<p>SNOMED CT</p>"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "<p>Free text if coded value isn't available. </p>",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Personal hygiene and dressing preferences",
+                  "description": "\n                             <p>Any preferences the person has regarding personal hygiene and dressing. This may include product preferences, preference of bath/shower, carer gender preferences, clothing preferences etc. Also, any religious or cultural requirements that need to be considered when delivering care.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Impact of medication on personal hygiene and dressing",
+                  "description": "\n                             <p>Any impacts of a person's medication on their personal hygiene and dressing. E.g., sweating.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Medication name",
+                      "implamentationGuidance": "<p>This should be a drop down list, with the valueset populated by the person's medication list.</p>",
+                      "description": "\n                                 <p>The name of the medication affecting personal hygiene and dressing.</p> \n                            ",
+                      "valueSets": "\n                                 <p>DM+D.</p> \n                            "
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Impact of medication",
+                      "description": "\n                                 <p>The impact that the medication has on the person's personal hygiene and dressing.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should only contain one SNOMED CT code from the following value set:<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)<br/><br/>62507009 | Pins and needles (finding) |<br/>68962001 | Muscle pain (finding) |<br/>65124004 | Swelling (finding) |<br/>&lt;415690000 | Sweating (finding) |<br/><br/>This is an example of clinical findings of the impact of medication and it is a not a complete list of value sets for impact of medication.<br/><br/>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for impact of medication on personal hygiene and dressing.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "<p>If there's a need for further description regarding personal hygiene and dressing issues, without a designated code or structured input, it should be included as a text comment. For instance, the term 'Unable to Brush Teeth' can be accompanied by text like 'requires assistance with brushing due to physical limitations.' However, the text comments should solely offer additional context related to the specific personal hygiene and dressing issue and should not alter the original meaning of the term.</p>",
+                  "description": "\n                             <p>Any further comments relating to personal hygiene and dressing.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Skin",
+          "implamentationGuidance": "\n                                            <p>This section will be used to record details of the observations and findings of skin that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element. </p>            \n                            ",
+          "description": "\n                     <p>Skin.</p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Skin record entry",
+              "description": "\n                         <p>This is a skin record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Integrity of skin",
+                  "description": "\n                             <p>Record of the person's skin integrity, and the risks that may compromise skin integrity.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Skin integrity",
+                      "implamentationGuidance": "\n                                            <p>364535009 |Integrity of skin (observable entity)|</p>            \n                                            <p>The observed information that contains the details of the initial integrity of the person's skin. The nurse must record if the person has any skin abnormalities or complications and if they require assistance.<br/>The system should be able to receive and prepopulate fields and display information about a person's skin where other systems are conformant with the standard.\n                                    <br/>The system should be able to implement an option to allow clinicians to select an option for \"No problems with skin integrity\", which allows the clinician to skip the following data elements to reduce the burden of nursing documentation.</p>            \n                            ",
+                      "description": "\n                                 <p>Initial assessment of the person's skin integrity. This may include factors such as cuts, bruises, burns etc.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN)</p>             <p>&lt;106076001 | Skin finding (finding) | <br/>&lt;225547008 | Finding of integrity of skin (finding)|</p>             <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.</p>",
+                          "description": "\n                                     <p>Coded value for the integrity of the skin.</p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Risk to skin integrity",
+                      "description": "\n                                 <p>Information regarding any risks that may affect skin integrity. This may include the effect of devices, wheelchairs, moisture, footwear etc.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "Specific risk to skin integrity",
+                          "implamentationGuidance": "\n                                            <p>The valueset for this element should include the person's appliance list, medication list, medical devices list, and moisture.</p>            \n                            ",
+                          "description": "\n                                     <p>The specific risk to the person's skin integrity. This may include the effect of devices, wheelchairs, moisture, footwear etc.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                   <p>70693003 |At increased risk for impaired skin integrity (finding)|</p>                   <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                              "description": "\n                                         <p>The coded value for the specific risk to skin integrity.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>SNOMED CT.</p> \n                                    "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "\n                                         <p>Free text if coded value isn't available.</p> \n                                    ",
+                              "valueSets": "\n                                         <p>Free text.</p> \n                                    ",
+                              "valueDomain": [ { "type": "string" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Skin history",
+                  "implamentationGuidance": "\n                                            <p>161560005 |History of skin disorder (situation)|</p>            \n                                            <p>The system should be able to receive and prepopulate fields and display information from the electronic patient record, if available. However, if the person recalls any skin-related conditions, it should be recorded.</p>            \n                            ",
+                  "description": "\n                             <p>The history of the person's skin, including other existing skin conditions, previous pressure ulcers, major wounds or skin problems/conditions.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "\n                                            <p>The system should be able to receive and prepopulate fields and display information from the electronic patient record, if available. However, if the person recalls any skin-related conditions, it should be recorded. If the person reports past skin related problems then descendants of 161560005 |History of skin disorder (situation)| may be appropriate to record. </p>            \n                            ",
+                      "description": "\n                                 <p>The coded value for skin history.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Skin care treatment summary",
+                  "description": "\n                             <p>A summary of whether the person uses skin care treatments, such as ointments/creams, analgesia products, or wound care products.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Signifiers of poor circulation",
+                  "description": "\n                             <p>Any information that may signify poor circulation in the person, such as: pale/blue skin, pins and needles sensations, cold fingers or toes etc.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                   <p>44077006 | Numbness (finding) |<br/>304229000 | Blue skin (finding) |<br/>62507009 | Pins and needles (finding) |<br/>29857009 | Chest pain (finding) |<br/>68962001 | Muscle pain (finding) |<br/>65124004 | Swelling (finding) |</p>                   <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                      "description": "\n                                 <p>Coded value for signifiers of poor circulation.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Ability to alter own position",
+                  "implamentationGuidance": "\n                                            <p>282869009 |Ability to change position (observable entity)|</p>            \n                            ",
+                  "description": "\n                             <p>The ability of the person to alter their own positioning.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                   <p>&lt;364913007 |Finding related to ability to change position (finding)|</p>                   <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                      "description": "\n                                 <p>Coded value for the ability to alter own position.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "\n                                            <p>If additional detail is required and there is no code or structured way of recording it for a skin-related context, it should be added in a text comment. For example, the term 'Eczema' can be accompanied by text 'aggravated by exposure to certain detergents.' However, text comments associated with a skin-related term should never modify the meaning of the original term. For\n                                    example, the term 'Eczema' should not be accompanied by text such as 'mother has' (because problems should only apply to the person with the skin condition), 'suspected,' or 'excluded.</p>            \n                            ",
+                  "description": "\n                             <p>Any further comments relating to skin.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Medication Self-Management",
+          "implamentationGuidance": "\n                                            <p>This section will be used to record details of the observations and findings of medication self-management that a nurse completes at initial assessment. The person completing the record should use their own clinical judgement in choosing how to assess each element. </p>            \n                            ",
+          "description": "\n                     <p>Medication Self-Management.</p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Medication self-management record entry",
+              "description": "\n                         <p>This is a medication self-management record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p> \n                    ",
+              "informationType": "\n                         &lt;p&gt;Record.Entry&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Medications present with person",
+                  "description": "\n                             <p>Information about whether the person has got their medication with them.</p> \n                        ",
+                  "valueSets": "\n                             <p>Yes or No</p> \n                        ",
+                  "valueDomain": [ { "type": "boolean" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Medication administration",
+                  "description": "\n                             <p>Information about medication administration.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Usual administrator of medication",
+                      "implamentationGuidance": "\n                                            <p>If the nurse identifies that the person cannot self-administer medication, this should trigger further action and planning. </p>            \n                            ",
+                      "description": "\n                                 <p>The individual that usually administers the person's medication. This may be themselves, a carer, medical professional, or another person.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Usual administrator of medication at nursery/school/college",
+                      "description": "\n                                 <p>The individual that usually administers the young person's medication at nursery/school/college. This may be themselves, a carer, medical professional, or another person.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Problems affecting medication management",
+                      "implamentationGuidance": "<p>The system should document any issues that could affect an individual's ability to self-administer medication, such as dexterity or visual limitations, within their clinical records.</p>",
+                      "description": "\n                                 <p>A record of any problems that may impact the person's ability to take medication, such as the person's dexterity or visual limitations in relation to personal administration of medications.</p> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) <br/><br/>&lt;&lt; 306741005 |Poor manual dexterity (finding)| <br/>&lt;&lt;260246004 |Visual acuity finding (finding)|</p>                 <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>",
+                          "description": "\n                                     <p>Coded value for the problems affecting medication management. </p> \n                                ",
+                          "valueSets": "\n                                     <p>SNOMED CT.</p> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                     <p>Free text if coded value isn't available.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Free text.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Medication organisation equipment",
+                  "description": "\n                             <p>Information about any medication organisation equipment that the person has. E.g. a pill / medication organiser / Dosette box / multi-compartment compliance aid.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "<p>The coded value field should contain only one SNOMED CT code from the following value set:\u00a0<br/><br/>Suggested SNOMED CT ID | Fully specified name (FSN) </p>                 <p>&lt;&lt;395021002 |Uses monitored dosage system (finding)| </p>                 <p>Where required codes are unavailable the free text field should be used and consideration given to submission of a new code request to the UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information. </p>                 <p/>",
+                      "description": "\n                                 <p>Coded value for the medication organisation equipment.</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                                 <p>Free text if coded value isn't available.</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text.</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Time of last medication administered",
+                  "description": "\n                             <p>A record of when the person last took their medication independently or administered by staff/carer.</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Medication name",
+                      "implamentationGuidance": "\n                                            <p>The system should be able to receive and prepopulate fields and display information from the Medication section from the EPR, if available. <br/>This should be a drop down list, with the valueset populated by the person's medication list. </p>            \n                            ",
+                      "description": "\n                                 <p>The name of the medication.</p> \n                            ",
+                      "valueSets": "\n                                 <p>DM+D.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Time of administration",
+                      "description": "\n                                 <p>The time that the person last administered this medication.</p> \n                            ",
+                      "valueDomain": [ { "type": "datetime" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "implamentationGuidance": "\n                                            <p>If additional detail is required for medication management, and there is no structured way to record it, it should be added in a text comment. For example, the medication 'Lisinopril' can be accompanied by text 'taken with food to reduce side effects.' However, text comments associated with a medication should never modify the meaning of the original medication. For example,\n                                    the medication 'Lisinopril' should not be accompanied by text such as 'father takes' (because medication records should only apply to the person in question), 'suspected,' or 'excluded.</p>            \n                            ",
+                  "description": "\n                             <p>Any further comments relating to medication self-management.</p> \n                        ",
+                  "valueSets": "\n                             <p>Free text.</p> \n                        ",
+                  "valueDomain": [ { "type": "string" } ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Supported Self Care (Supported Self Management)" version="        1.0           " lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="The supported self care section supports wound care self management, it allows for the recording of educational elements, including structured and unstructured training and the provision to record documents and images that the person (or their carer) have provided" />
+  <Model name="Documents (including correspondence, audio and images)">
+    <TaggedValue name="description" value="Details about documents related to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Documents">
+      <TaggedValue name="description" value="This is the documents record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Documentation_location" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the document" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+      <Element name="Confidentiality" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The code specifying the level of confidentiality of the document." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - Confidentiality" />
+      </Element>
+      <Element name="Class" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The document type e.g. report, summary, images, treatment plan, patient preferences, workflow" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Element name="Document_title" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The title of the document." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Document_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the document. This should align to the PRSB document naming standard. Where the document is a KOS document this field (designated typeCode) is used to carry the DICOM Imaging procedure: This attribute shall be populated by the XDS-I Imaging Document Source from a code in the Procedure Code Sequence (0008,1032) of the performed procedure with which the document is associated. Values may be found in a suitable DICOM browser" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT: - As per the https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf" />
+      </Element>
+      <Element name="Document_MIME_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="MIME type of the document e.g. application, pdf, audio, jpeg" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Service">
+        <TaggedValue name="description" value="The high level imaging speciality code e.g. (R-3027B, SRT, “Radiology”)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for service" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT :- ^1127531000000102 |Services simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Comments associated with the document." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Additional information required for images.">
+        <TaggedValue name="description" value="Additional information required for images." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Image_procedure" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The procedure used to capture the image" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text Using DICOM code set https://dicom.innolitics.com/ciods" />
+        </Element>
+        <Element name="Image_procedure_date" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the image procedure was performed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time" />
+        </Element>
+        <Model name="Images">
+          <TaggedValue name="description" value="Images details." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Image_capture_date" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date and time when the image was captured." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Image_ID" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A unique image identifier generated by the system." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="identifier" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Image_location" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The URL for the image" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Format_code" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The format code of the document which provides information on how to display the document." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Event_code_list" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of image (acquisition modality) and the anatomical site imaged." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="DICOM code" />
+        </Element>
+        <Element name="Comments" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Comments associated with the imaging" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Structured education">
+    <TaggedValue name="description" value="Details of the person's participation in structured education programmes." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="*" />
+    <Model name="Structured education record entry">
+      <TaggedValue name="description" value="This is a structured education record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Attendance">
+        <TaggedValue name="description" value="Details of the person's attendance on a structured education programme." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Attendance ">
+          <TaggedValue name="description" value="Details of the person's attendance at structured education programme (could be partial or full)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for attendance." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used when code is not available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Structured education outcome">
+        <TaggedValue name="description" value="Details of the structured education outcome." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Structured education outcome">
+          <TaggedValue name="description" value="The outcome of the structured education programme." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for structured education outcome." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used when code is not available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+    </Model>
+    <Model name="Unstructured Education">
+      <TaggedValue name="description" value="Not formal education" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Information_and_advice_given" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of pertinent aspects, including the information and advice given to the person as part of the team talk. This should include any decision support tools used and where a copy of these can be securely obtained." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+</Standard>

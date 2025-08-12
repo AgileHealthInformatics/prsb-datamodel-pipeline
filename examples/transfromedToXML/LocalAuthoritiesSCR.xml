@@ -1,0 +1,1799 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Local authority information" version="1.1" lastUpdated="2025-08-11">
+  <Model name="Person demographics">
+    <TaggedValue name="description" value="The person's details and contact information." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Person name">
+      <TaggedValue name="description" value="Details of the person's name" />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Person_first_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The first name(s) of the person. This includes middle names." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Person given name" />
+      </Element>
+      <Element name="Person_family_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The family name or surname of the person" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Person family name" />
+      </Element>
+      <Element name="Person_preferred_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person full name" />
+      </Element>
+      <Element name="Title" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's title" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person title" />
+      </Element>
+      <Element name="Person_name_suffix" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person suffix" />
+      </Element>
+      <Element name="Person_full_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The full name of the person in text representation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Patient full name" />
+      </Element>
+    </Model>
+    <Element name="Date_of_birth" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The date of birth of the person." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="date" />
+      <TaggedValue name="valueSets" value="NHS data dictionary:- Person birth date" />
+    </Element>
+    <Element name="Gender" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The person's stated gender." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Person stated gender code" />
+    </Element>
+    <Element name="NHS_number" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The unique identifier for a person within the NHS in England and Wales." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary:- NHS number" />
+    </Element>
+    <Element name="Other_identifier" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary: - Local patient identifier(extended) , Health and care number (NI only) , Community health index number (Scotland only)" />
+    </Element>
+    <Model name="Person's address">
+      <TaggedValue name="description" value="Person’s usual place of residence, and where relevant temporary and correspondence addresses." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Address_line_1" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's first line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Address line 1" />
+      </Element>
+      <Element name="Address_line_2" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's second line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Address line 2" />
+      </Element>
+      <Element name="Address_line_3" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's third line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 3" />
+      </Element>
+      <Element name="Address_line_4" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's fourth line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 4" />
+      </Element>
+      <Element name="Address_line_5" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's fifth line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 5" />
+      </Element>
+      <Element name="Postcode" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person's postcode." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Postcode of usual address" />
+      </Element>
+    </Model>
+    <Element name="Date_of_death" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The date of death of the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="date" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Person death date" />
+    </Element>
+  </Model>
+  <Model name="Alerts">
+    <TaggedValue name="description" value="Details of alerts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Alerts record entry">
+      <TaggedValue name="description" value="This is an alerts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Alert" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any significant information meriting a specific and highly visible warning to any user (e.g. metallic implant, potential dangerous pet)." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Legal information">
+    <TaggedValue name="description" value="The legal information relating to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Mental capacity assessment">
+      <TaggedValue name="description" value="Details of the persons mental capacity assessment" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date when the mental capacity assessment was made." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Location">
+        <TaggedValue name="description" value="The location where the mental capacity assessment was made." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Mental_capacity_assessment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Whether an assessment of the mental capacity of the (adult) person has been undertaken, if so, what capacity the decision relates to and the outcome of the assessment. Also record best interests decision if person lacks capacity." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Location_of_document" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the mental capacity assessment information." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who made the mental capacity assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for location" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary: - Organisation data service" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for location" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation data service" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Lasting power of attorney for personal welfare or court-appointed deputy (or equivalent)">
+      <TaggedValue name="description" value="Details of the person's LPA record or equivalent" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the LPA was recorded" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Location">
+        <TaggedValue name="description" value="The location where the LPA was given" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Lasting power of attorney for personal welfare or court appointed deputy (or equivalent)">
+        <TaggedValue name="description" value="Record of one or more people who have been given power (LPA) by the person when they had capacity to make decisions about their health and welfare should they lose capacity to make those decisions. To be valid, an LPA must have been registered with the Court of Protection. If life-sustaining treatment is being considered the LPA document must state specifically that the attorney has been given power to consent to or refuse life-sustaining treatment. Details of any person (deputy) appointed by the court to make decisions about the person’s health and welfare. A deputy does not have the power to refuse life-sustaining treatment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - ^999001951000000107 |Personal welfare lasting power of attorney findings simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Location_of_document" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The location of the LPA information" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text or URL" />
+        </Element>
+        <Element name="Name_of_LPA" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The names of any appointed people or deputies" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact details of the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary:- UK telephone number" />
+        </Element>
+      </Model>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who took the details of the LPA or equivalent" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person who took the LPA." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Deprivation of Liberty Safeguards or equivalent">
+      <TaggedValue name="description" value="Details of the person's Deprivation of Liberty Safeguards (DoLS) or equivalent" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Application_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the application was made" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Application_status" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The status of the DOLs application." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text : - Requested or authorised" />
+      </Element>
+      <Element name="Deprivation_of_liberty_safeguards_or_equivalent" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Record of Deprivation of Liberty Safeguards (DoLS) or equivalent, including the reason for this." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Start_date_of_authorisation" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the DOLs was authorised." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Data and time" />
+      </Element>
+      <Element name="Planned_or_actual_end_date_of_authorisation" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The planned or actual end date of authorisation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who applied for the DOLs." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Mental health act or equivalent status">
+      <TaggedValue name="description" value="Details of the persons mental health act record" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Section_start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the person was detained." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Section_end_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the person was no longer detained." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Location">
+        <TaggedValue name="description" value="The location where the decision to detain the person was made under the mental health act." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Mental health act or equivalent status">
+        <TaggedValue name="description" value="Record where a person diagnosed with a mental disorder is formally detained under the Mental health act or equivalent, including the section number. If person subject to Community Treatment Order or Conditional Discharge (or equivalent) record here." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for mental health act" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary: - Mental health act legal status classification code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Supporting_information" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="If person subject to Community Treatment Order or Conditional Discharge (or equivalent) record here." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Community treatment order" />
+        </Element>
+      </Model>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who made the decision to detain the person under the mental health act." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Safeguarding">
+    <TaggedValue name="description" value="The safeguarding details of the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Safeguarding concerns">
+      <TaggedValue name="description" value="Details of safeguarding concerns" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Safeguarding_concerns_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the safeguarding concerns were identified." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Safeguarding_concerns_end_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date safeguarding concerns ended." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Location">
+        <TaggedValue name="description" value="The location where the safeguarding concerns were identified." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value of location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Safeguarding concerns">
+        <TaggedValue name="description" value="Identified safeguarding concerns." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for safeguarding concerns" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - 999002381000000108 | Safeguarding issues simple reference set (foundation metadata concept) |" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who identified the safeguarding concerns." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Local authority">
+    <TaggedValue name="description" value="The details of the Local Authority that is responsible for providing care and support to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Element name="Organisation_code" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The ODS (Organisation Data Service) code of the local authority that is responsible for providing care and support to the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Organisation data service" />
+    </Element>
+    <Element name="Local_authority_name" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The name of the local authority that is responsible for providing care and support to the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+    <Element name="Social_services_team" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The name of the local authority social services team or department that is responsible for undertaking the care and support assessment for the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+    <Element name="Local_authority_contact_name" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The name of the person at the local authority who is responsible for liaising with the hospital in relation to the person’s discharge." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+    <Element name="Local_authority_contact_details" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The contact details of the person at the local authority who is responsible for liaising with the hospital in relation to the person’s discharge." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+  </Model>
+  <Model name="Professional contacts">
+    <TaggedValue name="description" value="The details of the person’s professional contacts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Professional contacts record entry">
+      <TaggedValue name="description" value="This is a professional contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - SDSjobrole" />
+      </Element>
+      <Element name="Key_worker" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A flag that identifies the personal contact is the key worker assigned to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Flag : - Yes or No" />
+      </Element>
+      <Element name="Speciality" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Activity treatment function code" />
+      </Element>
+      <Element name="Team" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the team." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Organisation">
+        <TaggedValue name="description" value="The name of the organisation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation data service" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The start date of the professional relationship with the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The end date of the professional relationship with the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Personal contacts">
+    <TaggedValue name="description" value="The details of the individual's personal contacts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Personal contacts record entry">
+      <TaggedValue name="description" value="This is personal contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the personal contact." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Relationship" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - Related person" />
+      </Element>
+      <Element name="Relationship_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Additional roles the person performs on behalf of the other (e.g. Carer, Next of Kin, Emergency Contact, Dependent, etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Parental_Responsibility" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Flag to indicate whether the personal contact has parental responsibility" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Flag ; - Yes or No" />
+      </Element>
+      <Element name="Household_member" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Status identifying whether the personal contact is a member of the same household" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Flag : - Yes or No" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the personal contact (e.g. telephone number, email address etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free Text" />
+      </Element>
+      <Element name="NHS_Number" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The NHS number of the personal contact" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary:- NHS NUMBER" />
+      </Element>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Notes on the significance of the personal contact to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Referral details">
+    <TaggedValue name="description" value="The details of the referral." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Referral details record entry">
+      <TaggedValue name="description" value="This is the referral details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date of referral" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Referrer details">
+        <TaggedValue name="description" value="The details of the referrer. This could be the person, GP surgery, department, specialty, sub-specialty, educational institution, mental health team etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Role of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set : - sdsjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Team" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The team or department of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Model name="Service">
+          <TaggedValue name="description" value="The service of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for service" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - 1127531000000102 |Services simple reference set (foundation metadata concept)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for organisation code" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation data service" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact details of the referrer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Referral_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="An indication of the type of referral (e.g. 'Hospital Discharge Notification to Social Care', 'GP Referral', etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+      </Element>
+      <Model name="Reason for referral">
+        <TaggedValue name="description" value="The reason for the referral, e.g. diagnosis, treatment, transfer of care due to relocation, investigation, second opinion, management of the patient (e.g. palliative care), or carer's concerns." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+      </Model>
+      <Model name="Referral to">
+        <TaggedValue name="description" value="Details of where the referral is to be sent. If not an individual, this could be a service, e.g. GP surgery, department, specialty, subspecialty, educational institution, mental health etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Name of person the referral is to be sent to." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Role of person where the referral is to be sent to." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set : - sdsjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person where the referral is sent to." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Team" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The team or department of the person where the referral is being sent to" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty the referral is being sent to e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Model name="Service">
+          <TaggedValue name="description" value="The service of where the referral is sent to." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for service" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - 1127531000000102 |Services simple reference set (foundation metadata concept)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation of where the referral is to be sent." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for organisation" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary :- Organisation data service" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact details of where the referral is to be sent." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Services and care">
+    <TaggedValue name="description" value="The services and care provided for the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Services and care record entry">
+      <TaggedValue name="description" value="This is a services and care record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Social_care_package_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Name of specific type of package being provided (e.g. Reablement, Home Based Care XYZ, etc)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Social_care_package_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Higher level categorisation of package type, e.g. Adults Home Support" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Service_start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date service started to be provided." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Service_end_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the service is planned to be ended or the actual end date." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Local authority">
+        <TaggedValue name="description" value="The name of the local authority providing the care package." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for local authority" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary: - Organisation data service" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Care_funding_source" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A reference to the funding source and any conditions or limitations associated." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Primary support reason">
+    <TaggedValue name="description" value="The primary support reason for social care." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Primary support reason record entry">
+      <TaggedValue name="description" value="This is a primary support reason record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Primary_support_reason" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The Primary Support Reason used to classify a person for National Reporting on Short and Long Term Services (SALT) e.g. Learning disability support, mental health support, physical support" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Active" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Flag to indicate whether the primary support reason is currently active" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Flag: - Yes or No" />
+      </Element>
+      <Element name="Start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date a primary support reason was authorised as active." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The end date of authorisation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Assessments">
+    <TaggedValue name="description" value="Details of the person's assessments" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Assessments record entry">
+      <TaggedValue name="description" value="This is the assessments record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the assessment was done." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time." />
+      </Element>
+      <Model name="Location">
+        <TaggedValue name="description" value="The location where the assessment was done." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary: - Organisation data service" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Assessment_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of the assessment e.g. social care needs assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Assessment_summary" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The summary of the assessment" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Structured assessment">
+        <TaggedValue name="description" value="Details of the structured assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Structured_assessment_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Assessment_score" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The structured assessment score." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Assessment_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The structured assessment value." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="quantity" />
+          <TaggedValue name="valueSets" value="Numeric" />
+        </Element>
+        <Element name="Global_score" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The total global score from the assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Subscale_score" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The subscale score of the structured assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Subscale_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The subscale value of the structured assessment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="quantity" />
+          <TaggedValue name="valueSets" value="Numeric" />
+        </Element>
+      </Model>
+      <Model name="Performing professional">
+        <TaggedValue name="description" value="The professional who did the assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+        </Element>
+      </Model>
+      <Model name="Person completing record">
+        <TaggedValue name="description" value="Details of the person completing the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The organisational role of the person completing record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The main specialty of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The organisation the person completing the record works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+        </Element>
+        <Element name="Date_completed" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the record was completed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+      </Model>
+      <Element name="Comment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Supporting text may be given regarding the assessment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Equipment and adaptations">
+    <TaggedValue name="description" value="Details of equipment/asset (or modifications) that the Local Authority has provided to the patient." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Equipment record entry">
+      <TaggedValue name="description" value="This is a equipment record entry. There may be 1 to many record entries under a section." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Equipment name">
+        <TaggedValue name="description" value="The name of the equipment (e.g. 'Keysafe', 'Handrail' 'Lifeline Alarm', etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for equipment name" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the equipment was issued." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Comment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further details about the equipment, e.g. position of handrail(s) within the person's home" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+</Standard>

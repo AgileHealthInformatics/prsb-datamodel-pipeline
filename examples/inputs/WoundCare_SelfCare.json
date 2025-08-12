@@ -1,0 +1,403 @@
+{
+  "dataset": [
+    {
+      "version": "        1.0           ",
+      "name": "Supported Self Care (Supported Self Management)",
+      "description": "\n                         <p>The supported self care section supports wound care self management, it allows for the recording of educational elements, including structured and unstructured training and the provision to record documents and images that the person (or their carer) have provided</p> \n                    ",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Documents (including correspondence, audio and images)",
+          "implamentationGuidance": "\n                                 <p>This section includes details for documents and images. It includes the metadata that is required for the document or image and a link to the actual document or image. When displayed in a record, documents and images should be organised logically in date order. Local implementations will need to determine the best logical groupings for use here.\u00a0\u00a0</p> \n                                 <p>The system <strong>SHOULD</strong> be able to receive and display images of wound and limbs taken at home on their personal device.</p> \n                                 <p/> \n                            ",
+          "description": "Details about documents related to the person.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Documents",
+              "description": "This is the documents record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Documentation location",
+                  "description": "The location of the document",
+                  "valueSets": "Free text or URL",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Confidentiality",
+                  "description": "The code specifying the level of confidentiality of the document.",
+                  "valueSets": "\n                             <p>FHIR value set : - <a class=\"\" href=\"https://www.hl7.org/fhir/v3/ConfidentialityClassification/vs.html\" target=\"\" title=\"\">Confidentiality</a>\n                            </p> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Class",
+                  "description": "The document type e.g. report, summary, images, treatment plan, patient preferences, workflow",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Document title",
+                  "description": "The title of the document.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Document name",
+                  "description": "The name of the document. This should align to the PRSB document naming standard. Where the document is a KOS document this field (designated typeCode) is used to carry the DICOM Imaging procedure: This attribute shall be populated by the XDS-I Imaging Document Source from a code in the Procedure Code Sequence (0008,1032) of the performed procedure\n                            with which the document is associated. Values may be found in a suitable DICOM browser",
+                  "valueSets": "SNOMED CT: - As per the  <a class=\"\" href=\"https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf\">https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf</a> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Document MIME type",
+                  "description": "MIME type of the document e.g. application, pdf, audio, jpeg",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Service",
+                  "description": "The high level imaging speciality code e.g. (R-3027B, SRT, \u201cRadiology\u201d)",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value for service",
+                      "valueSets": "<div>SNOMED CT :- <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127531000000102&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">^1127531000000102 |Services simple\n                                        reference set (foundation metadata concept)|</a></div>"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Free text",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Comments",
+                  "description": "Comments associated with the document.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Additional information required for images.",
+                  "description": "Additional information required for images.",
+                  "informationType": "Event.Record",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Image procedure",
+                      "description": "The procedure used to capture the image",
+                      "valueSets": "Free text  <br clear=\"none\"/>  Using DICOM code set  <a class=\"\" href=\"https://dicom.innolitics.com/ciods\">https://dicom.innolitics.com/ciods</a> \n                            ",
+                      "valueDomain": [ { "type": "text" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Image procedure date",
+                      "description": "The date and time the image procedure was performed.",
+                      "valueSets": "Date and time",
+                      "valueDomain": [
+                        {
+                          "type": "datetime",
+                          "property": [ { "timeStampPrecision": "YMDHM" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Images",
+                      "description": "\n                                 <div>Images details.\u00a0</div> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Image capture date",
+                          "description": "The date and time when the image was captured.",
+                          "valueSets": "Date and time",
+                          "valueDomain": [
+                            {
+                              "type": "datetime",
+                              "property": [ { "timeStampPrecision": "YMDHM" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Image ID",
+                          "description": "A unique image identifier generated by the system.",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "identifier" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Image location",
+                          "description": "The URL for the image",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Format code",
+                      "description": "The format code of the document which provides information on how to display the document.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Event code list",
+                      "description": "The type of image (acquisition modality) and the anatomical site imaged.",
+                      "valueSets": "DICOM code"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Comments",
+                      "description": "Comments associated with the imaging",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "*",
+          "mro": "R",
+          "name": "Structured education",
+          "implamentationGuidance": "<p>The attendance code includes the type of education that was attended, therefore you don\u2019t need to list the education separately\u00a0</p> <p>The referral for structured education would be recorded in the referrals sectionThe system\u00a0SHOULD\u00a0be able to receive and display information about a person's attendance at structured education courses where\n                                    other systems are conformant with the standard.</p> <p>Details of attendance and outcome to be recorded in this section and details of referrals to structured education to be recorded under referral details</p> <p>The attendance code includes the type of education that was attended, therefore you don\u2019t need to list the education separately </p> <p>The referral for\n                                    structured education would be recorded in the referrals section</p>",
+          "description": "Details of the person's participation in structured education programmes.\u00a0",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Structured education record entry",
+              "description": "This is a structured education record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Attendance",
+                  "description": "Details of the person's attendance on a structured education programme.",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Attendance ",
+                      "description": "Details of the person's attendance at structured education programme (could be partial or full).",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "description": "The coded value for attendance.",
+                          "valueSets": "SNOMED CT"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "name": "Free text",
+                          "description": "Free text field to be used when code is not available.",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "name": "Structured education outcome",
+                  "description": "Details of the structured education outcome.\u00a0",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Structured education outcome",
+                      "description": "The outcome of the structured education programme.\u00a0",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "description": "The coded value for structured education outcome.",
+                          "valueSets": "SNOMED CT"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "name": "Free text",
+                          "description": "Free text field to be used when code is not available.",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Unstructured Education",
+              "description": "\n                         <p>Not formal education</p> \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Information and advice given",
+                  "description": "A description of pertinent aspects, including the information and advice given to the person as part of the team talk. This should include any decision support tools used and where a copy of these can be securely obtained.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

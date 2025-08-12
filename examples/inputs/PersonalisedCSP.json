@@ -1,0 +1,3579 @@
+{
+  "dataset": [
+    {
+      "version": "2.0",
+      "name": "Personalised care and support plan",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Person demographics",
+          "description": "The person's details and contact information.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Person name",
+              "description": "Details of the person's name",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Person first name",
+                  "description": "The first name(s) of the person. This includes middle names.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname\" target=\"\" title=\"\">Person given name</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Person family name",
+                  "description": "The family name or surname of the person",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/person_family_name.html\" target=\"\" title=\"\">Person family name</a> \n                         <br clear=\"none\"/> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person preferred name",
+                  "description": "The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by.",
+                  "valueSets": "NHS data dictionary: -  <a href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" target=\"\" title=\"\">Person full name</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Title",
+                  "description": "Person's title",
+                  "valueSets": "NHS data dictionary: -  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/data_field_notes/p/pers/person_title_de.asp?shownav=1\" target=\"\" title=\"\">Person title</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person name suffix",
+                  "description": "A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM",
+                  "valueSets": "NHS data dictionary: -  <a href=\"https://datadictionary.nhs.uk/data_elements/person_name_suffix.html\" target=\"\" title=\"\">Person suffix</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person full name",
+                  "description": "The full name of the person in text representation.",
+                  "valueSets": "NHS data dictionary :-  <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" target=\"\" title=\"\">Patient full name</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Date of birth",
+              "description": "The date of birth of the person.",
+              "valueSets": "NHS data dictionary:-  <a href=\"https://datadictionary.nhs.uk/data_elements/person_birth_date.html?hl=person%2Cbirth%2Cdate\" target=\"\" title=\"\">Person birth date</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "date",
+                  "property": [ { "timeStampPrecision": "YMD!" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Gender",
+              "description": "The person's stated gender.",
+              "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/person_stated_gender_code.html?hl=person%2Cstated%2Cgender%2Ccode\" target=\"\" title=\"\">Person stated gender code</a> \n                     <br clear=\"none\"/> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "1" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Person alias",
+              "description": "Other name(s) associated with the person.",
+              "valueSets": "Free text",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "70" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Ethnicity",
+              "description": "The ethnicity of the person as specified by the person.",
+              "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/ethnic_category.html\" target=\"\" title=\"\">Ethnic category</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "2" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Religion",
+              "description": "The religious affiliation as specified by the person.",
+              "valueSets": "\n                     <div>SNOMED_CT:- <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=999000531000000100&edition=uk-edition&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\">Religion</a>\n                        <br clear=\"none\"/>\n                    </div> \n                "
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Sex",
+              "description": "The person\u2019s phenotypic sex. Determines how the person will be treated clinically.",
+              "valueSets": "NHS data dictionary: -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html\" target=\"\" title=\"\">person phenotypic sex</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "1" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "NHS number",
+              "description": "The unique identifier for a person within the NHS in England and Wales.",
+              "valueSets": "NHS data dictionary:-  <a href=\"https://datadictionary.nhs.uk/data_elements/nhs_number.html\" target=\"\" title=\"\">NHS number</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "10" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Other identifier",
+              "description": "Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.",
+              "valueSets": "\n                     <div>NHS data dictionary: -\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/local_patient_identifier__extended_.html?hl=local%2Cpatient%2Cidentifier%2Cextended\" target=\"\" title=\"\">Local patient identifier(extended)</a>, <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/health_and_care_number.html\" target=\"\" title=\"\">Health and care number (NI only)</a>,\u00a0<a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/community_health_index_number.html\" target=\"\" title=\"\">Community health index number</a>\u00a0(Scotland only)</div> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "20" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Person's address",
+              "description": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Address line 1",
+                  "description": "Person's first line of address.",
+                  "valueSets": "\n                         <div>NHS data dictionary :-\u00a0 <a href=\"https://datadictionary.nhs.uk/data_elements/patient_usual_address.html\" target=\"\" title=\"\">Address line 1</a>\n                            <br clear=\"none\"/>\n                        </div> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 2",
+                  "description": "Person's second line of address.",
+                  "valueSets": "\n                         <div>NHS data dictionary :- <a href=\"https://datadictionary.nhs.uk/data_elements/patient_usual_address.html\" target=\"\" title=\"\">Address line 2</a>\n                            <br clear=\"none\"/>\n                        </div> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 3",
+                  "description": "Person's third line of address.",
+                  "valueSets": "\n                         <div>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/patient_usual_address.html\" target=\"\" title=\"\">Address line 3</a>\n                        </div> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 4",
+                  "description": "Person's fourth line of address.",
+                  "valueSets": "\n                         <div>NHS data dictionary : - <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/patient_usual_address.html\" target=\"\" title=\"\">Address line 4</a>\n                            <br clear=\"none\"/>\n                        </div> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 5",
+                  "description": "Person's fifth line of address.",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/patient_usual_address.html\" target=\"\" title=\"\">Address line 5</a> \n                         <br clear=\"none\"/> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Postcode",
+                  "description": "The person's postcode.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html\" target=\"\" title=\"\">Postcode of usual address</a> \n                         <br clear=\"none\"/> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "8" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address type",
+                  "description": "The type of address e.g. Main address, Temp address",
+                  "valueSets": "NHS data dictionary : -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/a/add/address_association_type_de.asp?shownav=1\" target=\"\" title=\"\">Address association type</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "1" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Person's contact details",
+              "description": "Details of the person's contact information.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Preferred contact method",
+                  "description": "Preferred contact method, e.g. email, letter, phone, text message etc.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/com/communication_contact_method_de.asp?shownav=1\" target=\"\" title=\"\">Communication contact method</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "1" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Person's telephone number details",
+                  "description": "The person's telephone number details",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's telephone number",
+                      "description": "The person's telephone number",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html\" target=\"\" title=\"\">UK telephone number</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's telephone number type",
+                      "description": "The contact type e.g. home, mobile",
+                      "valueSets": "FHIR value set: -  <a href=\"http://hl7.org/fhir/stu3/codesystem-contact-point-use.html\" target=\"\" title=\"\">Contact point use</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "6" } ],
+                          "example": [
+                            {
+                              "type": "valid",
+                              "#text": "Home"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Mobile"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Temp"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Old"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Work"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Preference of telephone number",
+                      "description": "The preferred order of use for the telephone number",
+                      "valueSets": "Preference of use 1-5, 1 being the highest."
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Person's email address details",
+                  "description": "Details of the person's email address",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's email address",
+                      "description": "Email address of the person.",
+                      "valueSets": "NHS data dictionary :-  <a>Contact email address</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "255" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's email address type",
+                      "description": "The type of email address, home, work",
+                      "valueSets": "FHIR value set: -  <a href=\"http://hl7.org/fhir/stu3/codesystem-contact-point-use.html\" target=\"\" title=\"\">Contact point use</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "6" } ],
+                          "example": [
+                            {
+                              "type": "valid",
+                              "#text": "Home"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Work"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "old"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Preference of email address",
+                      "description": "The preferred order of use of email address",
+                      "valueSets": "Preference of use 1-5, 1 being the highest."
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Other contact information",
+                  "description": "Contact details via fax, sms, url",
+                  "valueSets": "NHS data dictionary:-  <a href=\"https://datadictionary.nhs.uk/attributes/communication_contact_string.html\" target=\"\" title=\"\">Communication contact string</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "255" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Place of birth",
+              "description": "The country of birth of the person.",
+              "valueSets": "NHS data dictionary :-  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/c/cou/country_code_de.asp?shownav=1\" target=\"\" title=\"\">Country code (birth)</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "3" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Marital status",
+              "description": "An indicator to identify the legal marital status of the person.",
+              "valueSets": "NHS data dictionary :-  <a href=\"https://www.datadictionary.nhs.uk/data_elements/person_marital_status.html?hl=marital%2Cstatus\" target=\"\" title=\"\">Person marital status</a> \n                ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "1" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "GP practice",
+          "description": "Details of the person's GP practice.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "GP practice record entry",
+              "description": "This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "GP name",
+                  "description": "The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "GP practice details",
+                  "description": "Name and address of the person's registered GP practice Registered GP practice details are available from the Person Demographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "GP practice identifier",
+                  "description": "The identifier of the registered GP practice.",
+                  "valueSets": "\n                         <div>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/general_medical_practice_code__patient_registration_.html?hl=general%2Cmedical%2Cpractice%2Ccode%2Cpatient%2Cregistration\" target=\"\" title=\"\">General medical practice code (patient registration)</a>\n                            <br clear=\"none\"/>\n                        </div> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "6" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "About me",
+          "description": "About me",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "What is most important to me",
+              "description": "A description of what is most important to you. <br clear=\"none\"/> \n                ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "What is most important to me",
+                  "description": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">A description of what is most important to you\u00a0<br clear=\"none\"/>\n                        </span> \n                         <b>Emergency Information : -</b> \u00a0Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. <br clear=\"none\"/> \n                         <span style=\"font-weight: bold;\">Other Information : -</span> This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "People who are important to me",
+              "description": "Details of who is important to you and why.\u00a0",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "People who are important to me",
+                  "description": "Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say",
+                  "valueSets": "Free text\u00a0",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "How I communicate and how to communicate with me",
+              "description": "A description of how you communicate normally.\u00a0",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "How I communicate and how to communicate with me",
+                  "description": "\n                         <p>A description of how you communicate normally including any communication aids you use, for example a hearing aid.</p> \n                         <ul>\n                            <li>Include your preferred language of communication, if your first language is not English.</li>\n                            <li>Include how you would communicate when you are in pain or distress.</li>\n                            <li>Include how you communicate choices.</li>\n                            <li>Include how you give feedback or raise a concern.</li>\n                            <li>Include how you like to receive information</li>\n                        </ul> \n                         <p>Describe how you would like others to engage and communicate with you, including how you would like to be addressed.</p> \n                    ",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "My wellness",
+              "description": "A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "My wellness",
+                  "description": "\n                         <div>\n                            <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; max-width: 100%;\">\n                                <tbody>\n                                    <tr>\n                                        <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                            <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                    <p style=\"margin: 0px 0px 10px;\">A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell</p>\n                                                </div>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div> \n                         <table class=\"detail spaced\" width=\"100%\" style=\"background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                <p style=\"margin: 0px 0px 10px;\">\n                                                    <ul>\n                                                        <li>Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation.</li>\n                                                        <li>Include any signs that indicate you might be becoming unwell.</li>\n                                                        <li>On a bad day describe what is different about what you are able to do, how you engage with others and how you feel.</li>\n                                                        <li>Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions.</li>\n                                                        <li>Include past health issues or experiences that need to be considered</li>\n                                                        <li>Include your wellbeing and lifestyle goals and aspirations</li>\n                                                    </ul>\n                                                </p>\n                                            </div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                         <ul/> \n                    ",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Please do and please don't",
+              "description": "A description of things you want someone supporting you to do (or not to do).\u00a0",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Please do and please don't",
+                  "description": "A description of things you want someone supporting you to do (or not to do). <br clear=\"none\"/> Things you want someone to\u00a0 <b>do\u00a0</b> might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. <br clear=\"none\"/> A description of things you\u00a0 <b>do not</b> \u00a0want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want.",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "How and when to support me",
+              "description": "A description of how and when you want someone caring for you to support you.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "How and when to support me",
+                  "description": "\n                         <p>A description of how and when you want someone caring for you to support you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include support needs in an emergency situation (for example taking blood)</li>\n                                <li>This could include support you need to maintain important routines or to carry out particular activities, for example: - Personal care routines, Eating and drinking, Bedtime routines, Taking medications, Moving and transitioning</li>\n                                <li>This could also include support needed with:- wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion.</li>\n                                <li>Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.</li>\n                            </ul>\n                        </p> \n                         <p/> \n                    ",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Also worth knowing about me",
+              "description": "A description of what is also worth knowing about you for people caring or supporting you.\u00a0",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Also worth knowing about me",
+                  "description": "\n                         <p>A description of what is also worth knowing about you for people caring or supporting you.</p> \n                         <p>\n                            <ul>\n                                <li>This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life).</li>\n                                <li>This could include a short profile of your current life:- your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike</li>\n                                <li>This could also include any care and support preferences that have not been included elsewhere.</li>\n                            </ul>\n                        </p> \n                    ",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Date",
+              "description": "This is a record of the date that this information was last updated.",
+              "valueSets": "Date and Time",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMDHM" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Supported to write this by",
+              "description": "Where relevant, this is a record of name, relationship/role and contact details of the individual who supported the person to write this section e.g. carer, family member, advocate, professional.",
+              "valueSets": "Free text",
+              "valueDomain": [
+                {
+                  "type": "text",
+                  "property": [ { "maxLength": "150" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Location to multimedia file",
+              "description": "The link to the person's multimedia file",
+              "valueSets": "Link to URL",
+              "valueDomain": [ { "type": "text" } ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Professional contacts",
+          "description": "The details of the person\u2019s professional contacts.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Professional contacts record entry",
+              "description": "This is a professional contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional with responsibility for the care of the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc",
+                  "valueSets": "FHIR value set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Key worker",
+                  "description": "A flag that identifies the personal contact is the key worker assigned to the person.",
+                  "valueSets": "Flag : - Yes or No",
+                  "valueDomain": [ { "type": "boolean" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Speciality",
+                  "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Team",
+                  "description": "The name of the team.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The name of the organisation.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value for location",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "minLength": "3",
+                              "maxLength": "5"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional (e.g. telephone number, email address etc.).",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Start date",
+                  "description": "The start date of the professional relationship with the person.",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "End date",
+                  "description": "The end date of the professional relationship with the person.",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Personal contacts",
+          "description": "The details of the individual's personal contacts.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Personal contacts record entry",
+              "description": "This is personal contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Name",
+                  "description": "The name of the personal contact.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Relationship",
+                  "description": "The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc.",
+                  "valueSets": "FHIR value set : -  <a href=\"https://www.hl7.org/fhir/valueset-relatedperson-relationshiptype.html\" target=\"\" title=\"\">Related person</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Relationship type",
+                  "description": "Additional roles the person performs on behalf of the other (e.g. Carer, Next of Kin, Emergency Contact, Dependent, etc.)",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the personal contact (e.g. telephone number, email address etc.)",
+                  "valueSets": "Free Text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Comments",
+                  "description": "Notes on the significance of the personal contact to the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Formulation",
+          "description": "Details of the person's formulation.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Formulation record entry",
+              "description": "This is the formulation record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date",
+                  "description": "The date the formulation was made.",
+                  "valueSets": "Date and time.",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location",
+                  "description": "The location where the formulation was made.",
+                  "valueSets": "NHS data dictionary: -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                    ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value for location",
+                      "valueSets": "NHS data dictionary: -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "minLength": "3",
+                              "maxLength": "5"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Performing professional",
+                  "description": "The professional who made the formulation.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the professional.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc",
+                      "valueSets": "FHIR value set :-  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobroletype</a> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "description": "The grade of the professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Speciality",
+                      "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                      "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "description": "Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation.",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "32" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The name of the organisation the professional works for."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "description": "Contact details of the professional",
+                      "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK phone number</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Formulation",
+                  "description": "An account, shared by a therapist and person, of the personal meaning and origins of a person\u2019s difficulties. This is viewed in the context of multiple factors including relationships, social circumstances and life events and will indicate the most helpful way forward.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person completing record",
+                  "description": "Details of the person completing the record.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the person completing the record.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "The organisational role of the person completing record.",
+                      "valueSets": "FHIR value set :-  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "description": "The grade of the person completing the record.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "description": "The main specialty of the person completing the record.",
+                      "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The organisation the person completing the record works for."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "description": "Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation.",
+                      "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "32" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Date completed",
+                      "description": "The date and time the record was completed.",
+                      "valueSets": "Date and time.",
+                      "valueDomain": [
+                        {
+                          "type": "datetime",
+                          "property": [ { "timeStampPrecision": "YMDHM" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "description": "Contact details of the person completing the record. <br clear=\"none\"/> \n                        ",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK telephone number</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Care and support plan",
+          "description": "This records the decisions reached during conversation between the individual and health and care professional about future plans and also records progress.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Strengths",
+              "description": "Any strengths and assets the person has relating to their goals and hopes about their health and well-being.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value ",
+                  "description": "The coded value associated with the person's strengths.\u00a0 Could be derived from the assessment of the person e.g.\u00a0300738008 |Able to participate in leisure activities (finding)| <br clear=\"none\"/> \n                         <div>\n                            <span style=\"color: rgb(255, 255, 255); font-family: &#34;Segoe UI&#34;, system-ui, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, sans-serif; font-size: 14px;\">\n                                <br clear=\"none\"/>\n                            </span>\n                        </div> \n                    ",
+                  "valueSets": "SNOMED CT : -\u00a01127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Any supplementary or personalised information that relates to the person's strengths.",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Needs, concerns or problems",
+              "description": "Details of the person needs, concerns or problems <br clear=\"none\"/> \n                ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value associated with the person's needs, concerns or problems.",
+                  "valueSets": "SNOMED CT : -\u00a0 <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\" style=\"\">^1127581000000103 |Health issues simple reference set|</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">Any supplementary or personalised information that relates to the person's needs, concerns and problems.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
+                  "valueSets": "Free text\u00a0",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Goals and hopes",
+                  "description": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">The overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person.</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value associated with the person's goals, aim's and hopes. e.g.\u00a0999002111000000103 |Occupational therapy goals simple reference set (foundation metadata concept)|",
+                      "valueSets": "SNOMED CT : - 413350009|Finding with explicit context|: 246090004|Associated finding|=300798006 |Able to participate in sporting activities (finding)|, 408729009|Finding context|=410518001|Goal|"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text ",
+                      "description": "Any supplementary and personalised information relating to the person's goals, aims and hopes.",
+                      "valueSets": "Free text",
+                      "valueDomain": [ { "type": "text" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Goal importance score",
+                      "description": "Assessment of the person's motivations to achieve this goal, how important the goal is to the person on a scale of 1-10.",
+                      "valueSets": "Numeric scale 1 - 10",
+                      "valueDomain": [ { "type": "decimal" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Actions and activities",
+                      "description": "Actions or activities the person or others plan to take to achieve the person's goals and the resources required to do this.  <p/> \n                        ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "What",
+                          "description": "What the action is and how it is to be carried out?",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "description": "The coded value for the action. <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                                        <tbody>\n                                            <tr>\n                                                <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                                    <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1189\" style=\"display: inline; zoom: 1;\">\n                                                        <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1189\u2261\u2261c\" style=\"zoom: 1;\">\n                                                            <br clear=\"none\"/>\n                                                        </div>\n                                                    </div>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table> \n                                ",
+                              "valueSets": "SNOMED CT : - &lt;&lt; <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=71388002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\">71388002</a> \u00a0|Procedure| OR &lt;&lt; <a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\">129125009</a> \u00a0|Procedure with explicit context|"
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "Any supplementary and personalised information for the action.",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Who",
+                          "description": "Name and role (e.g. person, carer, GP, OT, etc.) of the person, or a team, carrying out the proposed action, and, if relevant where action should take place.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Name",
+                              "description": "The name of the professional or person carrying out the proposed action.",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "70" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Role",
+                              "description": "The role of the person providing the service.",
+                              "valueSets": "FHIR values set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">sdsjobrole</a> \n                                "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Team",
+                              "description": "The name of the team.",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "35" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Contact details",
+                              "description": "Contact details of the professional (e.g. telephone number, email address etc.).",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [ { "maxLength": "35" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "When",
+                          "description": "Planned date, time, or interval, as relevant",
+                          "valueSets": "Date and time",
+                          "valueDomain": [
+                            {
+                              "type": "datetime",
+                              "property": [ { "timeStampPrecision": "YM" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Suggested strategies",
+                          "description": "Suggested strategies for potential problems.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Status",
+                          "description": "The status of the action or activity e.g. in progress, done, refused",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "description": "The coded value for the person's activity status",
+                              "valueSets": "SNOMED CT : - ^999000081000000105 | Care planning action context values simple reference set (foundation metadata concept) |"
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "description": "Any supplementary or personalised information for the person's activity status",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Confidence",
+                          "description": "How confident the person feels to carry out the action associated to the goal.",
+                          "valueSets": "Numeric score 1 - 10",
+                          "valueDomain": [ { "type": "decimal" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Date last updated",
+                          "description": "Date when action/activity record was last updated",
+                          "valueSets": "Date and time",
+                          "valueDomain": [
+                            {
+                              "type": "datetime",
+                              "property": [ { "timeStampPrecision": "YMDHM" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Review date",
+                          "description": "When the action evaluation needs to be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
+                          "valueSets": "Date and time.",
+                          "valueDomain": [
+                            {
+                              "type": "datetime",
+                              "property": [ { "timeStampPrecision": "YM" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "*",
+                          "mro": "R",
+                          "name": "Stage goal",
+                          "description": "Details of the person's stage goals",
+                          "concept": [
+                            {
+                              "type": "group",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Stage goal",
+                              "description": "A specific sub-goal that is related to the overall goal as agreed by the person in collaboration with a professional.",
+                              "concept": [
+                                {
+                                  "type": "item",
+                                  "minimumMultiplicity": "0",
+                                  "maximumMultiplicity": "1",
+                                  "mro": "R",
+                                  "name": "Coded value",
+                                  "description": "The coded expression associated with the person's stage goal.",
+                                  "valueSets": "SNOMED CT : - 413350009|Finding with explicit context|: 246090004|Associated finding|=300798006 |Able to participate in sporting activities (finding)|, 408729009|Finding context|=410518001|Goal|"
+                                },
+                                {
+                                  "type": "item",
+                                  "minimumMultiplicity": "0",
+                                  "maximumMultiplicity": "1",
+                                  "mro": "R",
+                                  "name": "Free text",
+                                  "description": "Any supplementary or personalised information regarding the person's stage goal.",
+                                  "valueSets": "Free text",
+                                  "valueDomain": [ { "type": "text" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "group",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Outcome",
+                              "description": "The outcome of the stage goal",
+                              "valueSets": "\n                                     <br clear=\"none\"/> \n                                     <div>\n                                        <span style=\"color: rgb(255, 255, 255); font-family: &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif; font-size: 12px;\">\n                                            <br clear=\"none\"/>\n                                        </span>\n                                    </div> \n                                ",
+                              "concept": [
+                                {
+                                  "type": "item",
+                                  "minimumMultiplicity": "0",
+                                  "maximumMultiplicity": "1",
+                                  "mro": "R",
+                                  "name": "Coded value ",
+                                  "description": "The coded value for the person's stage goal outcome.",
+                                  "valueSets": "SNOMED CT: - ^1127601000000107 |Healthcare matters simple reference set (foundation metadata concept)|\u00a0"
+                                },
+                                {
+                                  "type": "item",
+                                  "minimumMultiplicity": "0",
+                                  "maximumMultiplicity": "1",
+                                  "mro": "R",
+                                  "name": "Free text",
+                                  "description": "Any supplementary and personalised information relating to the person's outcome.",
+                                  "valueSets": "Free text",
+                                  "valueDomain": [ { "type": "text" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Goal status",
+                              "description": "The status associated with the person's stage goal",
+                              "valueSets": "SNOMED CT: - ^999000091000000107 | Care planning goal context values simple reference set (foundation metadata concept) |"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Outcomes",
+                      "description": "Outcomes of each of the person\u2019s goals, aims and targets. Includes comments recorded by the person, date and status.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "description": "The coded value associated with the person's overall goal outcome",
+                          "valueSets": "SNOMED CT: -\u00a0 <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">^1127601000000107 |Healthcare matters simple reference set (foundation metadata concept)|\u00a0</span> \n                            "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                                 <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">Any supplementary and personalised information relating to the person's goal outcome.</span> \n                            ",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Goal status",
+                      "description": "The status associated with the person's overall goal.",
+                      "valueSets": "SNOMED CT: - ^999000091000000107 | Care planning goal context values simple reference set (foundation metadata concept) |"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Agreed with person or legitimate representative",
+              "description": "Indicates whether the plan was discussed and agreed with the person or legitimate representative.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person or legitimate representative",
+                  "description": "Indicates whether the plan was discussed and agreed with the person or legitimate representative",
+                  "valueSets": "Person or legitimate representative\u00a0",
+                  "valueDomain": [ { "type": "boolean" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person full name",
+                  "description": "The full name of the person in text representation.",
+                  "valueSets": "NHS data dictionary :-  <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" target=\"\" title=\"\">Patient full name</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person.",
+                  "valueSets": "FHIR value set : -  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">sdsjobrole</a> \n                    "
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Care funding source",
+              "description": "A reference to the funding source and any conditions or limitations associated.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The organisation code of the care funding source",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://www.datadictionary.nhs.uk/attributes/organisation_code.html?hl=organisation%2Cdata%2Cservice\" target=\"\" title=\"\">organisation data service</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text ",
+                  "description": "Any further information for the person's care funding source e.g. self funded",
+                  "valueSets": "Free text\u00a0",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Date this plan was last updated",
+              "description": "This is a record of the date that this care and support plan was last updated.",
+              "valueSets": "Date and time",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMDHM" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Other care planning documents",
+              "description": "Reference other care planning documents, including the type, location and date.  <br clear=\"none\"/> \n                     <br clear=\"none\"/> This may include condition-specific plans, advance care plans, end of life care plan, etc.",
+              "valueSets": "Free text.",
+              "valueDomain": [ { "type": "text" } ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Planned review date/interval",
+              "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
+              "valueSets": "Date and time",
+              "valueDomain": [ { "type": "datetime" } ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Responsibility for review",
+              "description": "This is a record of who has responsibility for arranging review of this information. <br clear=\"none\"/> \n                ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional with responsibility for the care of the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc",
+                  "valueSets": "FHIR value set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional (e.g. telephone number, email address etc.).",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Location",
+              "description": "The location where the care and support plan was prepared.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for location",
+                  "valueSets": "NHS data dictionary: -  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "minLength": "3",
+                          "maxLength": "5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Free text field to be used if no coded text available",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Performing professional",
+              "description": "The professional who prepared the care and support plan.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc",
+                  "valueSets": "FHIR value set :-  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobroletype</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the professional.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Speciality",
+                  "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The name of the organisation the professional works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK phone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Person completing record",
+              "description": "Details of the person completing the record.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The organisational role of the person completing record.",
+                  "valueSets": "FHIR value set :-  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Specialty",
+                  "description": "The main specialty of the person completing the record.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The organisation the person completing the record works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date completed",
+                  "description": "The date and time the record was completed.",
+                  "valueSets": "Date and time.",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the person completing the record. <br clear=\"none\"/> \n                    ",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK telephone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "*",
+          "mro": "R",
+          "name": "Contingency/safety plans",
+          "description": "\n                 <span style=\"font-size:10.0pt;line-height:107%; font-family:&#34;Arial&#34;,sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font: minor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language: AR-SA\">These are the things to do and people to contact, should an individual\u2019s\nhealth or other circumstances get worse for safety.</span> \n                 <br clear=\"none\"/> \n            ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "M",
+              "name": "Trigger factors",
+              "description": "Signs to watch out for that may indicate a significant change in health or other circumstances e.g. feeling agitated",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The trigger that leads to instigation of\u00a0a significant change in health or other circumstances. <br clear=\"none\"/> \n                    ",
+                  "valueSets": "SNOMED CT: - ^1127581000000103 | Health issues simple reference set (foundation metadata concept) |"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Any free text associated with the person's trigger factor",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Contingency plan name",
+              "description": "When the action evaluation needs to be reviewed.\u00a0",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for the type of care plan",
+                  "valueSets": "SNOMED CT: -\u00a0999001471000000108 | Care plan type simple reference set (foundation metadata concept) |"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Free text if no coded value is available.",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "What should happen",
+              "description": "Guidance on specific actions or interventions that may be required or should be avoided in specific situations. This may include circumstances where action needs to be taken if a carer is unable to care for the person. A statement of suggested actions. Usually expressed as: in the event of X do Y.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value ",
+                  "description": "The coded value for what should happen",
+                  "valueSets": "\n                         <table class=\"detail spaced\" width=\"100%\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px; max-width: 100%; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; color: rgb(51, 51, 51);\">\n                            <tbody>\n                                <tr>\n                                    <td colspan=\"3\" rowspan=\"1\" style=\"vertical-align: top;\">\n                                        <div class=\"xforms-control xforms-output xforms-mediatype-text-html xforms-mediatype-text\" id=\"xf-895\u2261xf-1239\" style=\"display: inline; zoom: 1;\">\n                                            <div class=\"xforms-output-output\" id=\"xf-895\u2261xf-1239\u2261\u2261c\" style=\"zoom: 1;\">SNOMED CT : - &lt;&lt;<a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=71388002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\" style=\"color: rgb(0, 136, 204); text-decoration-line: none;\">71388002</a>\u00a0|Procedure| OR &lt;&lt;<a class=\"\" href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=129125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"\" title=\"\" style=\"color: rgb(0, 136, 204); text-decoration-line: none;\">129125009</a>\u00a0|Procedure with explicit context|</div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Any supplementary or personalised information regarding what should happen",
+                  "valueSets": "\n                         <span style=\"color: rgb(51, 51, 51); font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">Free text</span> \n                    ",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Who should be contacted",
+              "description": "Who should be contacted in the event of significant problems or deterioration in health or wellbeing. e.g. name, role and contact details.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional with responsibility for the care of the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc",
+                  "valueSets": "FHIR value set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the personal contact (e.g. telephone number, email address etc.)",
+                  "valueSets": "Free Text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Agreed with person or legitimate representative",
+              "description": "Indicates whether the plan was discussed and agreed with the person or legitimate representative.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person or legitimate representative",
+                  "description": "Indicates whether the plan was discussed and agreed with the person or legitimate representative",
+                  "valueSets": "Person or legitimate representative\u00a0",
+                  "valueDomain": [ { "type": "boolean" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person full name",
+                  "description": "The full name of the person in text representation.",
+                  "valueSets": "NHS data dictionary :-  <a class=\"\" href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" target=\"\" title=\"\">Patient full name</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person.",
+                  "valueSets": "FHIR value set : -  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">sdsjobrole</a> \n                    "
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Date this plan was last updated",
+              "description": "The date that this contingency plan was last updated.",
+              "valueSets": "Date and time",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMDHM" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Planned review date/interval",
+              "description": "This is the date/interval when this contingency plan will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
+              "valueSets": "Date and time",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMDHM" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Responsibility for review",
+              "description": "This is who has responsibility for arranging review of this information. <br clear=\"none\"/> \n                ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional with responsibility for the care of the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc",
+                  "valueSets": "FHIR value set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional (e.g. telephone number, email address etc.).",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Coping strategies",
+              "description": "Details of coping strategies used",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coping strategy",
+                  "description": "The coping strategies are defined as thoughts and behaviours that people use to manage the internal and external demands of situations that are appraised as stressful. This should also include a record of any tools used to carry out the coping strategy.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Start date",
+                  "description": "The date when the coping strategy started",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "End date",
+                  "description": "The date when the coping strategy ended",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Relapse indicators / early warning signs",
+              "description": "Details of the relapse indicators for the person. These may also be called 'early warning signs'",
+              "valueSets": "\n                     <br clear=\"none\"/> \n                     <div id=\"home-descriptions-fh-cd1_canvas\" style=\"box-sizing: border-box; color: rgb(255, 255, 255); font-family: &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif; font-size: 12px;\"/> \n                ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for relapse indicators/early warning signs",
+                  "valueSets": "SNOMED CT : - ^1127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Any supplementary or personalised information regarding the relapse indicators/early warning signs",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Advance statement",
+              "description": "Written requests and preferences made by a person with capacity conveying their wishes, beliefs and values for their future care should they lose capacity.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date",
+                  "description": "The date when the advanced statements was made.",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location",
+                  "description": "The location where the advanced statement was made.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value for location",
+                      "valueSets": "NHS data dictionary: -  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "minLength": "3",
+                              "maxLength": "5"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Advance statement",
+                  "description": "Does the person have an advance statement.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "description": "The coded value for advance statement",
+                      "valueSets": "SNOMED CT: - 816281000000101 | Has advance statement (Mental Capacity Act 2005) (finding) |"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location of document",
+                  "description": "The location of where the advanced statement is held.",
+                  "valueSets": "Free text or URL",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Performing professional",
+                  "description": "The professional who made the advance statement.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the professional.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc",
+                      "valueSets": "FHIR value set :-  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobroletype</a> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "description": "The grade of the professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Speciality",
+                      "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                      "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "description": "Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation.",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "32" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The name of the organisation the professional works for."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "description": "Contact details of the professional",
+                      "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK phone number</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person completing record",
+                  "description": "Details of the person completing the record.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the person completing the record.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "The organisational role of the person completing record.",
+                      "valueSets": "FHIR value set :-  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "description": "The grade of the person completing the record.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "description": "The main specialty of the person completing the record.",
+                      "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The organisation the person completing the record works for."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "description": "Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation.",
+                      "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "32" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Date completed",
+                      "description": "The date and time the record was completed.",
+                      "valueSets": "Date and time.",
+                      "valueDomain": [
+                        {
+                          "type": "datetime",
+                          "property": [ { "timeStampPrecision": "YMDHM" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "description": "Contact details of the person completing the record. <br clear=\"none\"/> \n                        ",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK telephone number</a> \n                        ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Anticipatory medicines/equipment",
+              "description": "Medicines or equipment available that may be required in specific situations and their location. A statement regarding the availability or location of the anticipatory medicines/equipment. SNOMED CT Tag : -\u00a0871021000000106 | Prescription of palliative care anticipatory medication (procedure) |",
+              "valueSets": "Free text",
+              "valueDomain": [
+                {
+                  "type": "text",
+                  "property": [ { "maxLength": "150" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Location",
+              "description": "The location where the contingency plan was prepared.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for location",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "minLength": "3",
+                          "maxLength": "5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Free text field to be used if no code is available",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Performing professional",
+              "description": "The professional who prepared the contingency plans.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc",
+                  "valueSets": "FHIR value set :-  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobroletype</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the professional.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Speciality",
+                  "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The name of the organisation the professional works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK phone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Person completing record",
+              "description": "Details of the person completing the record.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The organisational role of the person completing record.",
+                  "valueSets": "FHIR value set :-  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Specialty",
+                  "description": "The main specialty of the person completing the record.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The organisation the person completing the record works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date completed",
+                  "description": "The date and time the record was completed.",
+                  "valueSets": "Date and time.",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the person completing the record. <br clear=\"none\"/> \n                    ",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK telephone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "*",
+          "mro": "R",
+          "name": "Additional support plans",
+          "description": "Additional support plans",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Additional support plan name",
+              "description": "The name of the particular additional supporting plan, e.g. dieticians plan, wound management plan, discharge management plan and behaviour support plan.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for the type of care plan",
+                  "valueSets": "SNOMED CT: -\u00a0999001471000000108 | Care plan type simple reference set (foundation metadata concept) |"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Free text if no coded value is available",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Additional support plan content",
+              "description": "This is the content of any additional care and support plan which the person and/or care professional consider should be shared with others providing care and support. May be structured in different ways, e.g. tables, diagrams, images. This is the content of any additional care and support plan which the individual and/or care professional consider should be shared with others providing care and support. It should be structured as recommended for the care and support plan and if contains additional detail, it may be referenced here.",
+              "valueSets": "Free text",
+              "valueDomain": [ { "type": "text" } ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Planned review date/interval",
+              "description": "This is the date/interval when this information will next be reviewed. SNOMED CT tag : -\u00a0425268008 | Review of care plan (procedure) |",
+              "valueSets": "Date and time",
+              "valueDomain": [ { "type": "datetime" } ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Responsibility for review",
+              "description": "This is a record of who has responsibility for arranging review of this information. Should include their name, role and contact details.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional with responsibility for the care of the person.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc",
+                  "valueSets": "FHIR value set : -  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional (e.g. telephone number, email address etc.).",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Date this plan was last updated",
+              "description": "This is a record of the date that this information was last updated.",
+              "valueSets": "Date and time",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMDHM" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Location",
+              "description": "The location where the additional support plan was prepared.",
+              "valueSets": "ODS code or free text",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "description": "The coded value for location",
+                  "valueSets": "NHS data dictionary:-  <a href=\"https://www.datadictionary.nhs.uk/data_dictionary/attributes/o/org/organisation_code_de.asp?shownav=1\" target=\"\" title=\"\">Organisation data service</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [
+                        {
+                          "minLength": "3",
+                          "maxLength": "5"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "description": "Free text field to be used if no code is available",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Performing professional",
+              "description": "The professional who prepared the additional support plan.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the professional.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc",
+                  "valueSets": "FHIR value set :-  <a class=\"\" href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobroletype</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the professional.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Speciality",
+                  "description": "The specialty of the professional e.g. physiotherapy, oncology, mental health etc",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The name of the organisation the professional works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the professional",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK phone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Person completing record",
+              "description": "Details of the person completing the record.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Name",
+                  "description": "The name of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Role",
+                  "description": "The organisational role of the person completing record.",
+                  "valueSets": "FHIR value set :-  <a href=\"https://simplifier.net/ukcore/codesystem-ukcore-sdsjobrolename\" target=\"\" title=\"\">SDSjobrole</a> \n                    "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Grade",
+                  "description": "The grade of the person completing the record.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Specialty",
+                  "description": "The main specialty of the person completing the record.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Organisation",
+                  "description": "The organisation the person completing the record works for."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional identifier",
+                  "description": "Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/professional_registration_entry_identifier.html\" target=\"\" title=\"\">Professional registration identifier</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "32" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date completed",
+                  "description": "The date and time the record was completed.",
+                  "valueSets": "Date and time.",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact details",
+                  "description": "Contact details of the person completing the record. <br clear=\"none\"/> \n                    ",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html?hl=number\" target=\"\" title=\"\">UK telephone number</a> \n                    ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

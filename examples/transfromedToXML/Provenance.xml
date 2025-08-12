@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Provenance" version="1.2" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="Version incremented from 0.8 (Provenance) to 1.1 (Provenance) in January 2023 following internal review and updates, and to match the versioning on the PRSB website." />
+  <Model name="Event record">
+    <TaggedValue name="description" value="This is a record of an event performed by someone or something. An event can happen at one time and be recorded at another time." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Author">
+      <TaggedValue name="description" value="The person, professional or device recording the information in the record." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Person">
+        <TaggedValue name="description" value="The person recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Relationship">
+          <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for relationship." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Professional">
+        <TaggedValue name="description" value="The professional recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Role">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for role." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Specialty">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health, etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for specialty." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally mandated code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Professional_identifier_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for organisation." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code list(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Device">
+        <TaggedValue name="description" value="The device recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Device type">
+          <TaggedValue name="description" value="The device type." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device type." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Device manufacturer">
+          <TaggedValue name="description" value="Name of the device manufacturer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device manufacturer." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Model">
+          <TaggedValue name="description" value="The model of the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for model." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Software_version" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The version of software running on the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Unique_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The unique identifier for the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Performer">
+      <TaggedValue name="description" value="The person, professional or device performing the activity in the record." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Person">
+        <TaggedValue name="description" value="The person performing the activity in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Relationship">
+          <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for relationship." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Professional">
+        <TaggedValue name="description" value="The professional performing the activity in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Role">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for role." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Specialty">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health, etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for specialty." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally mandated code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Professional_identifier_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for organisation." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code list(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Device">
+        <TaggedValue name="description" value="The device recording the activity in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Device type">
+          <TaggedValue name="description" value="The device type." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device type." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Device manufacturer">
+          <TaggedValue name="description" value="Name of the device manufacturer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device manufacturer." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Model">
+          <TaggedValue name="description" value="The model of the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for model." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Software_version" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The version of software running on the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Unique_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The unique identifier for the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Activity Location">
+      <TaggedValue name="description" value="The location where the activity was performed." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Activity_location_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of location where the activity took place." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+      </Element>
+      <Model name="Activity location">
+        <TaggedValue name="description" value="The location where the activity took place." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for activity location." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+    <Element name="Event_Date" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Date of the event." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+    </Element>
+    <Element name="Date_Recorded" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Date the event was recorded." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+    </Element>
+  </Model>
+  <Model name="Record">
+    <TaggedValue name="description" value="A set of data items that are recorded together that have the same date, author and context." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Author">
+      <TaggedValue name="description" value="The person, professional or device recording the information in the record." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Person">
+        <TaggedValue name="description" value="The person recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Relationship">
+          <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for relationship." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Professional">
+        <TaggedValue name="description" value="The professional recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Role">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for role." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Specialty">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health, etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for specialty." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally mandated code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Professional_identifier_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council (NMC) numbers." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Organisation">
+          <TaggedValue name="description" value="The name of the organisation the professional works for." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for organisation." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code list(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Device">
+        <TaggedValue name="description" value="The device recording the information in the record." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Device type">
+          <TaggedValue name="description" value="The device type." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device type." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Device manufacturer">
+          <TaggedValue name="description" value="Name of the device manufacturer." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for device manufacturer." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Model">
+          <TaggedValue name="description" value="The model of the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for model." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Nationally or internationally maintained code system(s) (see implementation guidance)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Software_version" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The version of software running on the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Unique_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The unique identifier for the device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+    </Model>
+    <Element name="Date_Recorded" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Date recorded." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+    </Element>
+  </Model>
+</Standard>

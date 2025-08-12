@@ -1,0 +1,3128 @@
+{
+  "dataset": [
+    {
+      "version": "1.0.0",
+      "name": "NHS Health Check Record Standard",
+      "description": "<p>NHS Health Check Record Standard</p> <p>V0.1.0 First draft</p> <p>V0.1.1 SNOMED CT Codes updated and incremented to V0.1.1</p> <p>V0.1.2 SNOMED CT codes updated following October 24 release, and incremented to V0.1.2</p> <p>V1.0.0 Plan and requested actions section updated, and new SNOMED CT codes added to this section. Incremented to V1.0.0 following end of endorsement period.</p>",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Person demographics",
+          "implementationGuidance": "<p>This section contains the person\u2019s demographic and contact details including key identifiers (e.g. name, date of birth, NHS number, address etc.). Personal Demographic Service (PDS) will be used as the source of information to ensure the elements within this section can be fulfilled (England and Wales only). The information under this\n                                    heading will be populated from the PDS. NHS Spine compliant systems are needed to obtain traced NHS Numbers. Where an organisation does not have a system linked to the PDS, other demographic fields will need to be used, with local person identity matching software. A history of Local Patient Identifiers should be kept so it is important to understand the\n                                    organisation which assigned the Local Patient Identifier.</p>",
+          "description": "The person's details and contact information.",
+          "informationType": "Record",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Person name",
+              "implementationGuidance": "Details of the person's name.",
+              "description": "<p>Details of the person's name.</p>",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Person first name",
+                  "implementationGuidance": "The first name(s) of the person. This includes middle names.",
+                  "description": "The first name(s) of the person. This includes middle names.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/person_given_name.html?hl=person%2Cgiven%2Cname\" rel=\"noopener noreferrer nofollow\">Person given name</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Person family name",
+                  "implementationGuidance": "The family name or surname of the person.",
+                  "description": "<p>The family name or surname of the person.</p>",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/person_family_name.html\" target=\"\" title=\"\">Person family name</a> \n                             <br clear=\"none\"/> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person preferred name",
+                  "implementationGuidance": "The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by.",
+                  "description": "The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" rel=\"noopener noreferrer nofollow\">Person full name</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Title",
+                  "implementationGuidance": "Person's title.",
+                  "description": "<p>Person's title.</p>",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/patient_title.html?hl=title\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Patient title</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Person name suffix",
+                  "implementationGuidance": "A textual suffix that may be added to the end of a person's name, for example, OBE, MBE, BSc, JP, GM, etc.",
+                  "description": "<p>A textual suffix that may be added to the end of a person's name, for example, OBE, MBE, BSc, JP, GM, etc.</p>",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/person_name_suffix.html\" rel=\"noopener noreferrer nofollow\">Person name suffix</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person full name",
+                  "implementationGuidance": "The full name of the person in text representation.",
+                  "description": "The full name of the person in text representation.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cname\" target=\"\" title=\"\">Person full name</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Date of birth",
+              "implementationGuidance": "The date of birth of the person.",
+              "description": "The date of birth of the person.",
+              "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/person_birth_date.html?hl=person%2Cbirth%2Cdate\" rel=\"noopener noreferrer nofollow\">Person birth date</a></p>",
+              "valueDomain": [
+                {
+                  "type": "date",
+                  "property": [ { "timeStampPrecision": "YMD!" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "NHS number",
+              "implementationGuidance": "The unique identifier for a person within the NHS in England and Wales.",
+              "description": "The unique identifier for a person within the NHS in England and Wales.",
+              "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/nhs_number.html\" rel=\"noopener noreferrer nofollow\">NHS number</a></p>",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "10" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Other NHS identifier group ",
+              "implementationGuidance": "NHS identifier other than NHS number.",
+              "description": "<p>NHS identifier other than NHS number.</p>",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Other NHS identifier",
+                  "implementationGuidance": "Details of the other NHS identifier required to be held against the person's record.",
+                  "description": "<p>Details of the other NHS identifier required to be held against the person's record.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for other NHS identifier.",
+                      "description": "<p>The coded value for other NHS identifier.</p>",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text",
+                      "description": "<p>Free text</p>",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Type of other NHS identifier",
+                  "implementationGuidance": "Details that describe the type of NHS identifier being used. Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.",
+                  "description": "<p>Details that describe the type of NHS identifier being used. Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland.</p> <p/>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for the type of other NHS identifier e.g., CHI code.",
+                      "description": "<p>The coded value for the type of other NHS identifier e.g., CHI code.</p>"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text",
+                      "description": "Free text",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Person's address",
+              "implementationGuidance": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
+              "description": "Person\u2019s usual place of residence, and where relevant temporary and correspondence addresses.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Address line 1",
+                  "implementationGuidance": "Person's first line of address.",
+                  "description": "Person's first line of address.",
+                  "valueSets": "<p>NHS data dictionary : -\u00a0 <a href=\"https://www.datadictionary.nhs.uk/attributes/address_line_1.html\" rel=\"noopener noreferrer nofollow\">Address line 1</a>\n                                <br/></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 2",
+                  "implementationGuidance": "Person's second line of address.",
+                  "description": "Person's second line of address.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/attributes/address_line_2.html\" rel=\"noopener noreferrer nofollow\">Address line 2</a>\n                                <br/></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 3",
+                  "implementationGuidance": "Person's third line of address.",
+                  "description": "Person's third line of address.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/attributes/address_line_3.html\" rel=\"noopener noreferrer nofollow\">Address line 3</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 4",
+                  "implementationGuidance": "Person's fourth line of address.",
+                  "description": "Person's fourth line of address.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/attributes/address_line_4.html\" rel=\"noopener noreferrer nofollow\">Address line 4</a>\n                                <br/></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Address line 5",
+                  "implementationGuidance": "Person's fifth line of address.",
+                  "description": "Person's fifth line of address.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/attributes/address_line_5.html\" rel=\"noopener noreferrer nofollow\">Address line 5</a>\n                                <br/></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "35" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Postcode",
+                  "implementationGuidance": "The person's postcode.",
+                  "description": "The person's postcode.",
+                  "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/postcode_of_usual_address.html\" target=\"\" title=\"\">Postcode of usual address</a> \n                             <br clear=\"none\"/> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "8" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Person's contact details",
+              "implementationGuidance": "Details of the person's contact information.",
+              "description": "Details of the person's contact information.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Preferred contact method",
+                  "implementationGuidance": "Preferred contact method, e.g. email, letter, phone, text message etc.",
+                  "description": "Preferred contact method, e.g. email, letter, phone, text message etc.",
+                  "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/attributes/communication_contact_method.html?hl=communication%2Ccontact%2Cmethod\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Communication contact method</a></p>",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "1" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Person's telephone number details",
+                  "implementationGuidance": "The person's telephone number details.",
+                  "description": "<p>The person's telephone number details.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's telephone number",
+                      "implementationGuidance": "The person's telephone number.",
+                      "description": "<p>The person's telephone number.</p>",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/uk_telephone_number.html\" target=\"\" title=\"\">UK telephone number</a> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "35" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's telephone number type",
+                      "implementationGuidance": "The contact type e.g. home, mobile.",
+                      "description": "<p>The contact type e.g. home, mobile.</p>",
+                      "valueSets": "FHIR value set: -  <a href=\"http://hl7.org/fhir/stu3/codesystem-contact-point-use.html\" target=\"\" title=\"\">Contact point use</a> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "6" } ],
+                          "example": [
+                            {
+                              "type": "valid",
+                              "#text": "Home"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Mobile"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Temp"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Old"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Work"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Preference of telephone number",
+                      "implementationGuidance": "The preferred order of use for the telephone number.",
+                      "description": "<p>The preferred order of use for the telephone number.</p>",
+                      "valueSets": "Preference of use 1-5, 1 being the highest."
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Person's email address details",
+                  "implementationGuidance": "Details of the person's email address.",
+                  "description": "<p>Details of the person's email address.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's email address",
+                      "implementationGuidance": "Email address of the person.",
+                      "description": "Email address of the person.",
+                      "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/contact_email_address__patient_or_lead_contact_.html?hl=contact%2Cemail%2Caddress\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Contact email address (patient or lead contact)</a></p>",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "255" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Person's email address type",
+                      "implementationGuidance": "The type of email address, home, work.",
+                      "description": "\n                                 <div>The type of email address, home, work.</div> \n                            ",
+                      "valueSets": "FHIR value set: -  <a href=\"http://hl7.org/fhir/stu3/codesystem-contact-point-use.html\" target=\"\" title=\"\">Contact point use</a> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "6" } ],
+                          "example": [
+                            {
+                              "type": "valid",
+                              "#text": "Home"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "Work"
+                            },
+                            {
+                              "type": "valid",
+                              "#text": "old"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Preference of email address",
+                      "implementationGuidance": "The preferred order of use of email address.",
+                      "description": "<p>The preferred order of use of email address.</p>",
+                      "valueSets": "Preference of use 1-5, 1 being the highest."
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Other contact information",
+                  "implementationGuidance": "Contact details via fax, sms, url.",
+                  "description": "\n                             <div>Contact details via fax, sms, url.</div> \n                        ",
+                  "valueSets": "NHS data dictionary:-  <a href=\"https://datadictionary.nhs.uk/attributes/communication_contact_string.html\" target=\"\" title=\"\">Communication contact string</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "255" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Gender",
+              "implementationGuidance": "<p>The definitions used for phenotypic sex and gender use the NHS data dictionary definitions to ensure interoperability with other systems. However, we recognise that the definitions used do not reflect today\u2019s more inclusive society. We have provided feedback on this to NHS data dictionary team who are actively addressing this area, and any\n                                    updates to the NHS data dictionary will update our standards. Phenotypic sex and gender data items may cause accidental disclosure of gender reassignment without consent. This is because both fields are included in the demographic model. Having both may show a difference and therefore disclose gender reassignment without consent. It is unlawful to disclose,\n                                    without consent, a person\u2019s gender reassignment with or without a gender reassignment certificate Section 22 of the Gender Reassignment Act 2004 makes it an offence to disclose the history of a transgender patient who has had formal gender reassignment under the Act, unless consent has been sought. The exemption of disclosure is for medical professionals\n                                    involved in direct medical care, but not currently for administrative and non-medical staff. For the full Act, see <a href=\"https://www.legislation.gov.uk/ukpga/2004/7/contents\" rel=\"noopener noreferrer nofollow\">https://www.legislation.gov.uk/ukpga/2004/7/contents</a>. This risk can be mitigated by appropriate implementation in a shared care record; refer to\n                                    the clinical safety case report and hazard log. One option is to leave out the \u201cPhenotypic Sex\u201d field but the implications and potential risks of that will need to be considered. The alternative is to ensure the design of the Shared Care Record, including its Information Governance model, reduces this risk to an acceptable level as described in the clinical\n                                    safety case and hazard log. A further mitigation on implementation could be to record self-expressed gender in the administrative area of systems, and record sex at birth in a separate clinical area, that can only be accessed by medical staff.</p>",
+              "description": "The person's stated gender.",
+              "valueSets": "<p>NHS data dictionary : - <a href=\"https://datadictionary.nhs.uk/data_elements/person_stated_gender_code.html?hl=person%2Cstated%2Cgender%2Ccode\" rel=\"noopener noreferrer nofollow\">Person stated gender code</a>\n                            <br/></p>",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "1" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Ethnicity",
+              "implementationGuidance": "<p>Once approved by the Data Alliance Partnership Board, the Ethnic Category 2021 reference set should be used for this element. Find a link to the placeholder webpage here:<a href=\"https://www.datadictionary.nhs.uk/attributes/ethnic_category_2021.html\" rel=\"noopener noreferrer nofollow\">\n                                        https://www.datadictionary.nhs.uk/attributes/ethnic_category_2021.html</a></p>",
+              "description": "The ethnicity of the person as specified by the person.",
+              "valueSets": "NHS data dictionary :-  <a href=\"https://datadictionary.nhs.uk/data_elements/ethnic_category.html\" target=\"\" title=\"\">Ethnic category</a> \n                    ",
+              "valueDomain": [
+                {
+                  "type": "string",
+                  "property": [ { "maxLength": "2" } ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Phenotypic sex",
+              "implementationGuidance": "<p>The definitions used for phenotypic sex and gender use the NHS data dictionary definitions to ensure interoperability with other systems. However, we recognise that the definitions used do not reflect today\u2019s more inclusive society. We have provided feedback on this to NHS data dictionary team who are actively addressing this area, and any\n                                    updates to the NHS data dictionary will update our standards. Phenotypic sex and gender data items may cause accidental disclosure of gender reassignment without consent. This is because both fields are included in the demographic model. Having both may show a difference and therefore disclose gender reassignment without consent. It is unlawful to disclose,\n                                    without consent, a person\u2019s gender reassignment with or without a gender reassignment certificate Section 22 of the Gender Reassignment Act 2004 makes it an offence to disclose the history of a transgender patient who has had formal gender reassignment under the Act, unless consent has been sought. The exemption of disclosure is for medical professionals\n                                    involved in direct medical care, but not currently for administrative and non-medical staff. For the full Act, see <a href=\"https://www.legislation.gov.uk/ukpga/2004/7/contents\" rel=\"noopener noreferrer nofollow\">https://www.legislation.gov.uk/ukpga/2004/7/contents</a>. This risk can be mitigated by appropriate implementation in a shared care record; refer to\n                                    the clinical safety case report and hazard log. One option is to leave out the \u201cPhenotypic Sex\u201d field but the implications and potential risks of that will need to be considered. The alternative is to ensure the design of the Shared Care Record, including its Information Governance model, reduces this risk to an acceptable level as described in the clinical\n                                    safety case and hazard log. A further mitigation on implementation could be to record self-expressed gender in the administrative area of systems, and record sex at birth in a separate clinical area, that can only be accessed by medical staff.</p>",
+              "description": "<p>The phenotypic sex of the individual. This is the observed sex of a person at birth.</p>",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>NHS Data Dictionary: <a href=\"https://www.datadictionary.nhs.uk/classes/person_phenotypic_sex.html\" rel=\"noopener noreferrer nofollow\">PERSON PHENOTYPIC SEX</a></p>",
+                  "description": "<p>The coded value for phenotypic sex.</p>",
+                  "valueSets": "<p>NHS Data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/data_elements/person_phenotypic_sex.html?hl=person%2Cphenotypic%2Csex\" rel=\"noopener noreferrer nofollow\">Person phenotypic sex</a></p>"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "implementationGuidance": "Free text field to be used if no code is available.",
+                  "description": "<p>Free text field to be used if no code is available.</p>",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Social context",
+          "implementationGuidance": "<p>This section includes information about the social circumstances in which the person lives, such as their smoking status and alcohol intake levels.</p>",
+          "description": "The social setting in which the person lives, such as their household, occupational history, and lifestyle factors.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Smoking status record entry",
+              "implementationGuidance": "Details of the person's smoking status.",
+              "description": "Details of the person's smoking status.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Smoking status",
+                  "implementationGuidance": "Record of any smoking use by the person.",
+                  "description": "\n                             <div>Record of any smoking use by the person.</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>266919005 Never smoked tobacco (finding)</p>   \n                                   <p>8392000 Non-smoker (finding)</p>   \n                                   <p>8517006 Ex-smoker (finding)</p>   \n                                   <p>160603005 Light cigarette smoker (1-9 cigs/day) (finding)</p>   \n                                   <p>160604004 Moderate cigarette smoker (10-19 cigs/day) (finding)</p>   \n                                   <p>56771006 Heavy smoker (over 20 per day) (finding)</p>",
+                      "description": "The smoking status of the person.",
+                      "valueSets": "<p>SNOMED CT:</p> <p>^999000891000000102 |Smoking simple reference set (foundation metadata concept)|</p>"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Alcohol intake record entry",
+              "implementationGuidance": "Details of the person's alcohol intake",
+              "description": "Details of the person's alcohol intake",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Alcohol intake",
+                  "implementationGuidance": "Latest or current alcohol consumption.",
+                  "description": "Latest or current alcohol consumption.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>1082631000000102 |Alcohol units consumed per day (observable entity)| </p>   \n                                   <p>1082641000000106 |Alcohol units consumed per week (observable entity)</p>",
+                      "description": "The coded value of the person alcohol intake",
+                      "valueSets": "<p>SNOMED CT :</p> <p>&lt;&lt;219006 |Current drinker of alcohol (finding)| OR </p> <p>&lt;&lt;105542008 |Current non-drinker of alcohol (finding)|OR </p> <p>1104551000000109 |Declined to provide information about alcohol use (situation)| OR </p> <p>371434005 |History of alcohol abuse\n                                (situation)|</p>"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Family history",
+          "implementationGuidance": "<p>This section includes information on conditions or illness in family relations relevant to the health or care of the person. For the NHS Health Check, relevant conditions are family history of angina or heart attack in a first degree relative at less than 60 years old, and family history of diabetes.</p>",
+          "description": "Family history",
+          "informationType": "\n                     &lt;p&gt;Event.Record&lt;/p&gt; \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Family history record entry",
+              "implementationGuidance": "This is a family history record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "This is a family history record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Family history",
+                  "implementationGuidance": "The record of relevant illness in family relations deemed to be significant to the care or health of the person, including mental illness and suicide, genetic information etc.",
+                  "description": "The record of relevant illness in family relations deemed to be significant to the care or health of the person, including mental illness and suicide, genetic information etc.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>Please note that further codes have been requested through SNOMED CT's request portal for this standard and data item, once approved the new code(s) will be added to the standard via a minor implementation guidance update.</p>   \n                                   <p>266895004 |Family history: Ischemic heart disease at less than 60 years (situation)|</p>   \n                                   <p>266882009 |No family history: Ischemic heart disease (situation)|</p>   \n                                   <p>266896003 |Family history: Ischemic heart disease at greater than 60 years (situation)|</p>   \n                                   <p>160274005 |No family history diabetes (situation)|</p>   \n                                   <p>160303001 |Family history of diabetes mellitus (situation)|</p>   \n                                   <p>430678008 |Family history of diabetes mellitus type 1 (situation)|</p>   \n                                   <p>430679000 |Family history of diabetes mellitus type 2 (situation)|</p>",
+                      "description": "The coded value for family history",
+                      "valueSets": "\n                                 <div>SNOMED CT:- <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=404684003&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt;404684003 |Clinical finding (finding)|</a> OR <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=243796009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt;243796009 |Situation with explicit context (situation)|</a></div> \n                            "
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "*",
+          "mro": "R",
+          "name": "Observations",
+          "implementationGuidance": "<p>This section includes a record of essential physiological measurements, e.g., height, weight, waist circumference, body mass index (BMI), blood pressure, pulse. Where a SNOMED CT observable entity code is recorded in relation to the quality/property observed, an associated paired value and UCUM unit of measurement must also be recorded and\n                                    accompany the recorded code. An observation for \u2018BMI\u2019 must be populated if a height and weight are recorded. Both the diastolic and systolic elements of the blood pressure reading must be recorded together. Both the heart rate and pulse characteristics elements of the pulse reading must be recorded together.</p>",
+          "description": "The record of essential physiological measurements, e.g., heart rate, blood pressure, temperature, pulse, height, weight, respiratory rate, oxygen saturation.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Height/length",
+              "implementationGuidance": "The person's height and length measurement",
+              "description": "The person's height and length measurement",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>1153637007 |Body height (observable entity)|</p>",
+                  "description": "The coded value for height/length",
+                  "valueSets": "SNOMED CT: - 50373000 |Body height measure (observable entity)| OR 248334005 |Length of body (observable entity)|"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Value",
+                  "implementationGuidance": "The value of the observation.",
+                  "description": "The value of the observation.",
+                  "valueSets": "Numeric",
+                  "valueDomain": [
+                    {
+                      "type": "quantity",
+                      "property": [ { "maxInclude": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Units of measure",
+                  "implementationGuidance": "<p>UCUM code (CM)</p>",
+                  "description": "The units of measure for height/length",
+                  "valueSets": "UCUM code",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "10" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Weight",
+              "implementationGuidance": "The person's weight in kgs",
+              "description": "The person's weight in kgs",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>27113001 |Body weight (observable entity)|</p>",
+                  "description": "The coded value of weight",
+                  "valueSets": "SNOMED CT : - 27113001 |Body weight (observable entity)|"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Value",
+                  "implementationGuidance": "The value of the person's weight",
+                  "description": "The value of the person's weight",
+                  "valueSets": "Numeric",
+                  "valueDomain": [ { "type": "quantity" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Units of measure",
+                  "implementationGuidance": "<p>UCUM code (KG)</p>",
+                  "description": "The units of measure for weight",
+                  "valueSets": "UCUM code",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "10" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Waist circumference",
+              "implementationGuidance": "The person's measured waist circumference.",
+              "description": "The person's measured waist circumference.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>276361009 |Waist circumference (observable entity)|</p>",
+                  "description": "The coded value of waist circumference.",
+                  "valueSets": "SNOMED CT : - 27113001 |Body weight (observable entity)|"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Value",
+                  "implementationGuidance": "The value of the person's waist circumference.",
+                  "description": "The value of the person's waist circumference.",
+                  "valueSets": "Numeric",
+                  "valueDomain": [ { "type": "quantity" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Units of measure",
+                  "implementationGuidance": "<p>UCUM code (CM)</p>",
+                  "description": "The units of measure for waist circumference.",
+                  "valueSets": "UCUM code",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "10" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "BMI",
+              "implementationGuidance": "The person's BMI calculation",
+              "description": "The person's BMI calculation",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>60621009 |Body mass index (observable entity)|</p>",
+                  "description": "The coded value of BMI",
+                  "valueSets": "SNOMED CT: - 60621009 |Body mass index (observable entity)|"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Value",
+                  "implementationGuidance": "The value of the person's BMI",
+                  "description": "The value of the person's BMI",
+                  "valueSets": "Numeric",
+                  "valueDomain": [
+                    {
+                      "type": "quantity",
+                      "property": [ { "maxInclude": "2" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Units of measure",
+                  "implementationGuidance": "<p>UCUM code (KG/M2)</p>",
+                  "description": "The units of measure for BMI",
+                  "valueSets": "UCUM code",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "10" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Blood pressure",
+              "implementationGuidance": "The person's blood pressure measurement",
+              "description": "The person's blood pressure measurement",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Systolic blood pressure",
+                  "implementationGuidance": "Details of the person's systolic blood pressure",
+                  "description": "Details of the person's systolic blood pressure",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>&lt;&lt;271649006 |Systolic blood pressure (observable entity)|</p>   \n                                   <p>407556006 |Lying systolic blood pressure</p>   \n                                   <p>163030003|O/E - Systolic BP reading</p>   \n                                   <p>1162737008 |Self reported systolic blood pressure </p>   \n                                   <p>407554009|Sitting systolic blood pressure </p>   \n                                   <p>400974009|Standing systolic blood pressure</p>   \n                                   <p/>",
+                      "description": "The coded value for systolic blood pressure",
+                      "valueSets": "SNOMED CT : - &lt;&lt;271649006 |Systolic blood pressure (observable entity)| <br clear=\"none\"/> \n                                    "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Value",
+                      "implementationGuidance": "The value of the systolic blood pressure reading",
+                      "description": "The value of the systolic blood pressure reading",
+                      "valueSets": "Numeric",
+                      "valueDomain": [
+                        {
+                          "type": "quantity",
+                          "property": [ { "maxInclude": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Units of measure",
+                      "implementationGuidance": "<p>UCUM code (mmHg)</p>",
+                      "description": "The units of measure for systolic blood pressure",
+                      "valueSets": "UCUM code",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "10" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Site",
+                      "implementationGuidance": "The anatomical site at which the blood pressure is taken",
+                      "description": "The anatomical site at which the blood pressure is taken",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "<p>&lt;442083009 | Anatomical or acquired body structure (body structure) |</p>",
+                          "description": "The coded value for site",
+                          "valueSets": "\n                                     <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=442083009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt;442083009 | Anatomical or acquired body structure (body structure)\n                                        |</a></div> \n                                "
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Diastolic blood pressure",
+                  "implementationGuidance": "Details of the person's diastolic blood pressure",
+                  "description": "\n                                     <p>Details of the person's diastolic blood pressure</p> \n                                ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>&lt;&lt;271650006 |Diastolic blood pressure (observable entity)</p>   \n                                   <p>407557002|Lying diastolic blood pressure</p>   \n                                   <p>163031004|O/E - Diastolic BP reading</p>   \n                                   <p>1162735000|Self reported diastolic blood pressure</p>   \n                                   <p>407555005|Sitting diastolic blood pressure</p>   \n                                   <p>400975005|Standing diastolic blood pressure</p>",
+                      "description": "The coded value for diastolic blood pressure.",
+                      "valueSets": "SNOMED CT :- &lt;&lt;271650006 |Diastolic blood pressure (observable entity)| <br clear=\"none\"/> \n                                    "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Value",
+                      "implementationGuidance": "The value of the diastolic blood pressure reading",
+                      "description": "The value of the diastolic blood pressure reading",
+                      "valueSets": "Numeric",
+                      "valueDomain": [
+                        {
+                          "type": "quantity",
+                          "property": [ { "maxInclude": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Units of measure",
+                      "implementationGuidance": "<p>UCUM code (mmHg)</p>",
+                      "description": "The units of measure for the diastolic blood pressure",
+                      "valueSets": "UCUM code",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "10" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Site",
+                      "implementationGuidance": "The anatomical site at where the blood pressure is taken",
+                      "description": "The anatomical site at where the blood pressure is taken",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "<p>&lt;442083009 | Anatomical or acquired body structure (body structure) |</p>",
+                          "description": "The coded value for site",
+                          "valueSets": "\n                                     <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=442083009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt;442083009 | Anatomical or acquired body structure (body structure)\n                                        |</a></div> \n                                "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Pulse",
+              "implementationGuidance": "The person's pulse measurement.",
+              "description": "<p>The person's pulse measurement.</p>",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Heart rate",
+                  "implementationGuidance": "<p>364075005 | Heart rate (observable entity)</p>",
+                  "description": "<p>Details of the person's heart rate.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for heart rate",
+                      "description": "The coded value for heart rate",
+                      "valueSets": "SNOMED CT : - 364075005 | Heart rate (observable entity) |"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Value",
+                      "implementationGuidance": "The numeric value of heart rate",
+                      "description": "The numeric value of heart rate",
+                      "valueSets": "Numeric",
+                      "valueDomain": [
+                        {
+                          "type": "quantity",
+                          "property": [ { "maxInclude": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Units of measure",
+                      "implementationGuidance": "<p>UCUM code (BPM)</p>",
+                      "description": "The units of measure for heart rate",
+                      "valueSets": "UCUM code"
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Pulse characteristics",
+                  "implementationGuidance": "Details of the person's pulse characteristics.",
+                  "description": "<p>Details of the person's pulse characteristics.</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>Value one of &lt;&lt; 301149000 |Finding of pulse rhythm (finding)|</p>",
+                      "description": "<p>The coded value for the pulse characteristics.</p>",
+                      "valueSets": "<p>&lt;&lt; 301149000 |Finding of pulse rhythm (finding)|</p>"
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Text value for the pulse characteristics.",
+                      "description": "<p>Text value for the pulse characteristics.</p>",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Assessments",
+          "implementationGuidance": "<p>This section allows for the recording of the results of any assessments completed. The results of any assessments completed must be displayed under this section. This is an example list of assessment scales that may be used in the NHS Health Check and may be recorded under this section: QRISK3, Leicester Diabetes, UK Diabetes, Q Diabetes,\n                                    FAST, AUDIT C, AUDIT, General Practice Physical Activity Questionnaire.</p>",
+          "description": "Details of the person's assessments",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Structured assessment record entry",
+              "implementationGuidance": "This is the structured assessments record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "<p>This is the structured assessments record entry. There may be 0 to many record entry/entries under a section. Each record entry is made up of a number of elements or data items.</p>",
+              "informationType": "\n                         &lt;p&gt;Event.Record&lt;/p&gt; \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Structured assessment",
+                  "implementationGuidance": "Details of the structured assessment.",
+                  "description": "Details of the structured assessment.",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Structured assessment name",
+                      "implementationGuidance": "Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc.",
+                      "description": "Structured assessment name e.g. New York Heart Failure, Glasgow Coma scale, Activities of Daily Living (ADL) etc.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "<p>1085771000000100 |QRISK3 cardiovascular disease 10 year risk calculator (assessment scale)| </p>   \n                                   <p>1025571000000101 |Leicester Diabetes Risk Score (assessment scale)| </p>   \n                                   <p>805421000000105 |Diabetes United Kingdom diabetes risk score (assessment scale)| </p>   \n                                   <p>863501000000102 |QDiabetes risk calculator (assessment scale)| </p>   \n                                   <p>303471000000106 |Fast Alcohol Screening Test (assessment scale)| </p>   \n                                   <p>335811000000106 |Alcohol use disorder identification test consumption questionnaire (assessment scale)| </p>   \n                                   <p>273265007 |Alcohol use disorders identification test (assessment scale)| </p>   \n                                   <p>770231000000109 |General practice physical activity questionnaire (assessment scale)|</p>",
+                          "description": "The coded value for structured assessment name.\u00a0",
+                          "valueSets": "\n                                     <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=273249006&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt; 273249006 |Assessment scales (assessment scale)|</a></div> \n                                "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Assessment result",
+                      "implementationGuidance": "The structured assessment result. This is the overall result for the assessment.\u00a0",
+                      "description": "The structured assessment result. This is the overall result for the assessment.\u00a0",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Assessment score",
+                          "implementationGuidance": "The overall structured assessment score, e.g. health status assessment, mental health evaluation, or functional capacity assessment.",
+                          "description": "<p>The overall structured assessment score, e.g. health status assessment, mental health evaluation, or functional capacity assessment.</p>",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>1085871000000105 |QRISK3 cardiovascular disease 10 year risk calculator score (observable entity)| </p>   \n                                   <p>1325531000000102 |QRISK3 Healthy Heart Age (observable entity)| </p>   \n                                   <p>1025601000000108 |Leicester Diabetes Risk Score (observable entity)| </p>   \n                                   <p>1084661000000103 |Diabetes UK Diabetes Risk Score (observable entity)| </p>   \n                                   <p>863521000000106 |QDiabetes risk calculator score (observable entity)| </p>   \n                                   <p>1084601000000102 |Fast Alcohol Screening Test score (observable entity)| </p>   \n                                   <p>763256006 |Alcohol Use Disorders Identification Test - Consumption score (observable entity)| </p>   \n                                   <p>443280005 |Alcohol use disorders identification test score (observable entity)| </p>   \n                                   <p>1086511000000107 |General Practice Physical Activity Questionnaire Physical Activity Index (observable entity)|</p>",
+                              "description": "The coded value for assessment score.\u00a0",
+                              "valueSets": "\n                                         <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=363787002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt; 363787002 |Observable entity (observable entity)|</a></div> \n                                    "
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "implementationGuidance": "The numerical value for the assessment result.\u00a0",
+                          "description": "The numerical value for the assessment result.\u00a0",
+                          "valueSets": "Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for assessment item is used.",
+                          "valueDomain": [ { "type": "quantity" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "implementationGuidance": "The units of measure for the assessment result.",
+                          "description": "The units of measure for the assessment result.",
+                          "valueSets": "UCUM code",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "10" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Ordinal",
+                          "implementationGuidance": "The ordinal result of the assessment e.g. mild, moderate, severe.",
+                          "description": "The ordinal result of the assessment e.g. mild, moderate, severe.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>105542008 |Current non-drinker of alcohol (finding)| </p>   \n                                   <p>198431000000105 |Harmful alcohol use (finding)| </p>   \n                                   <p>198421000000108 |Hazardous alcohol use (finding)| </p>   \n                                   <p>777671000000105 |Lower risk alcohol drinking (finding)| </p>   \n                                   <p>366121000000108 |General practice physical activity questionnaire physical activity index: inactive (finding)| </p>   \n                                   <p>366171000000107 |General practice physical activity questionnaire physical activity index: moderately inactive (finding)| </p>   \n                                   <p>366211000000105 |General practice physical activity questionnaire physical activity index: moderately active (finding)| </p>   \n                                   <p>366241000000106 |General practice physical activity questionnaire physical activity index: active (finding)|</p>",
+                              "description": "The coded value for the ordinal result.\u00a0",
+                              "valueSets": "SNOMED CT."
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Subscale result",
+                      "implementationGuidance": "The subscale result for the structured assessment. This includes the result for individual questions or subsections.",
+                      "description": "The subscale result for the structured assessment. This includes the result for individual questions or subsections.",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Subscale score",
+                          "implementationGuidance": "The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment.\u00a0",
+                          "description": "The subscale score of the structured assessment. Subscales may be individual questions or subsections of the overall assessment.\u00a0",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for subscale item.",
+                              "description": "The coded value for subscale item.",
+                              "valueSets": "\n                                         <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=363787002&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">&lt; 363787002 |Observable entity (observable entity)|</a></div> \n                                    "
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Value",
+                          "implementationGuidance": "The numerical value for the subscale assessment result.\u00a0",
+                          "description": "The numerical value for the subscale assessment result.\u00a0",
+                          "valueSets": "Enumerated value e.g. numeric, natural numbers. This field is mandatory if the observable entity for subscale score is used.",
+                          "valueDomain": [ { "type": "quantity" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Units of measure",
+                          "implementationGuidance": "The units of measure for the assessment subscale result.",
+                          "description": "The units of measure for the assessment subscale result.",
+                          "valueSets": "UCUM code",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "10" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Ordinal",
+                          "implementationGuidance": "The ordinal result of the subscale assessment e.g. mild, moderate, severe.",
+                          "description": "The ordinal result of the subscale assessment e.g. mild, moderate, severe.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for the ordinal result.\u00a0",
+                              "description": "The coded value for the ordinal result.\u00a0",
+                              "valueSets": "SNOMED CT."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "name": "Comment",
+              "implementationGuidance": "Supporting text may be given regarding the assessment.",
+              "description": "Supporting text may be given regarding the assessment.",
+              "valueSets": "Free text",
+              "valueDomain": [ { "type": "text" } ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Problem list",
+          "implementationGuidance": "<p>This section allows for the recording of all relevant diagnoses and problems and issues. The naming of this section may be displayed differently in a system if it is felt that the current wording of \u2018problem list\u2019 has negative connotations.</p>",
+          "description": "A summary of the problems that require investigation or treatment.",
+          "informationType": "&lt;p&gt;Event.Record&lt;/p&gt;",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Problem list record entry",
+              "implementationGuidance": "This is a problem list record entry. \n                         \n There may be 0 to many record entries under problem list. \n                         \n Each record entry is made up of a number of elements or data items.",
+              "description": "This is a problem list record entry.  <br clear=\"none\"/> \n                         <br clear=\"none\"/>  There may be 0 to many record entries under problem list.  <br clear=\"none\"/> \n                         <br clear=\"none\"/>  Each record entry is made up of a number of elements or data items.",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Problem",
+                  "implementationGuidance": "A condition which needs addressing and so is important for every professional to know about when seeing the person. \n                             \n Problems may include diagnoses, symptoms, and social or behavioural issues",
+                  "description": "A condition which needs addressing and so is important for every professional to know about when seeing the person.  <br clear=\"none\"/> \n                             <br clear=\"none\"/>  Problems may include diagnoses, symptoms, and social or behavioural issues",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>&lt;&lt;37796009 |Migraine (disorder)| </p>   \n                                   <p>&lt;&lt;69896004 |Rheumatoid arthritis (disorder)| </p>   \n                                   <p>&lt;&lt;55464009 |Systemic lupus erythematosus (disorder)| </p>   \n                                   <p>&lt;&lt;58214004 |Schizophrenia (disorder)| </p>   \n                                   <p>&lt;&lt;13746004 |Bipolar disorder (disorder)| </p>   \n                                   <p>310496002 |Moderate depression (disorder)| </p>   \n                                   <p>310497006 |Severe depression (disorder)| </p>   \n                                   <p>&lt;&lt;860914002 |Erectile dysfunction (disorder)| </p>   \n                                   <p>&lt;&lt;1855002 |Developmental academic disorder (disorder)| </p>   \n                                   <p>&lt;&lt;11687002 |Gestational diabetes mellitus (disorder)|</p>",
+                      "description": "The coded value for the problem list.",
+                      "valueSets": "\n                                 <div>SNOMED CT : - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999000681000001101,999001251000000103\" target=\"_blank\" rel=\"noopener\">^1127581000000103 |Health issues simple reference set|</a></div> \n                            "
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Investigation results ",
+          "implementationGuidance": "<p>This section allows for the recording of the results of any investigation results. This is an example list of investigations that may be conducted during the NHS Health Check and whose results may be recorded under this section: Lipid results, HbA1C results for diabetes testing.</p>",
+          "description": "\n                     <p>Investigation results </p> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Diagnostic report conclusion",
+              "implementationGuidance": "Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.",
+              "description": "\n                         <p>Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.</p> \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Diagnostic report group",
+                  "implementationGuidance": "A test report, containing the overall findings and clinical interpretation relating to one or more pathology tests. The report may reference individual test results, test groups or a combination of these.\n                             \nRefer to the Pathology Implementation Guide for further information ([https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/FHIRAssets/AllAssets/All-Profiles/UKCore-DiagnosticReport-Lab?version=0.1](https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/FHIRAssets/AllAssets/All-Profiles/UKCore-DiagnosticReport-Lab?version=0.1))",
+                  "description": "\n                             <p>A test report, containing the overall findings and clinical interpretation relating to one or more pathology tests. The report may reference individual test results, test groups or a combination of these.</p> \n                             <p>Refer to the Pathology Implementation Guide for further information (<a href=\"https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/FHIRAssets/AllAssets/All-Profiles/UKCore-DiagnosticReport-Lab?version=0.1\" rel=\"noopener noreferrer nofollow\">https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/FHIRAssets/AllAssets/All-Profiles/UKCore-DiagnosticReport-Lab?version=0.1</a>)</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Investigation results record entry",
+                      "implementationGuidance": "Investigation test group",
+                      "description": "Investigation test group",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Investigation type",
+                          "implementationGuidance": "Indicates the mechanism used to perform the observation.",
+                          "description": "\n                                         <p>Indicates the mechanism used to perform the observation.</p> \n                                    ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>&lt;71388002 |Procedure (procedure)| </p>   \n                                   <p>16254007 |Lipid panel (procedure)| </p>   \n                                   <p>43396009 |Hemoglobin A1c measurement (procedure)|</p>",
+                              "description": "The coded value for investigation",
+                              "valueSets": "\n                                             <p>SNOMED CT ID | Fully specified name (FSN)</p> \n                                             <ul>\n                                                <li>\n                                                    <p>&lt;! 272394005 |Technique (qualifier value| </p>\n                                                </li>\n                                                <li>\n                                                    <p>&lt;! 129264002 |Action (qualifier value|</p>\n                                                </li>\n                                                <li>\n                                                    <p>&lt;! 386053000 |Evaluation procedure(procedure) |</p>\n                                                </li>\n                                            </ul> \n                                        "
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Structured investigation result",
+                          "implementationGuidance": "A structured set of information for each investigation result.",
+                          "description": "A structured set of information for each investigation result.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>1005671000000105 |Serum cholesterol level (observable entity)| </p>   \n                                   <p>1005681000000107 |Serum high density lipoprotein cholesterol level (observable entity)| </p>   \n                                   <p>1029071000000109 |High density/low density lipoprotein ratio (observable entity)| </p>   \n                                   <p>850991000000104 |Triglyceride level (observable entity)| </p>   \n                                   <p>022191000000100 |Serum low density lipoprotein cholesterol level (observable entity)| </p>   \n                                   <p>1003671000000109 |Haemoglobin A1c level (observable entity)| \"</p>",
+                              "description": "\n                                             <div>The coded value for structured investigation result.\u00a0</div> \n                                        ",
+                              "valueSets": "\n                                             <p>SNOMED CT ID | Fully specified name (FSN)</p> \n                                             <p>&lt; 363787002 |Observable entity (observable entity)|</p> \n                                        "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Value",
+                              "implementationGuidance": "The value of the investigation result.",
+                              "description": "The value of the investigation result.",
+                              "valueSets": "Numeric",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [ { "maxLength": "10" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Units of measure",
+                              "implementationGuidance": "The units of the investigation result.",
+                              "description": "The units of the investigation result.",
+                              "valueSets": "UCUM code",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [ { "maxLength": "10" } ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Reference ranges",
+                              "implementationGuidance": "The reference range for the investigation result.",
+                              "description": "The reference range for the investigation result.",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "string" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Interpretation",
+                              "implementationGuidance": "The assessment made based on the result of the investigation e.g high, low.",
+                              "description": "\n                                 <div>The assessment made based on the result of the investigation e.g high, low.</div> \n                            ",
+                              "valueSets": "FHIR value set: -  <a href=\"http://hl7.org/fhir/stu3/valueset-observation-interpretation.html\" target=\"\" title=\"\">Interpretation</a> \n                            "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Abnormal indicator",
+                              "implementationGuidance": "Indicator if the investigation is abnormal.",
+                              "description": "Indicator if the investigation is abnormal.",
+                              "valueSets": "Abnormal or Normal",
+                              "valueDomain": [ { "type": "blob" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Comment",
+                              "implementationGuidance": "Any additional comment or clarification about the structured investigation result.\u00a0",
+                              "description": "\n                                 <div>Any additional comment or clarification about the structured investigation result.\u00a0</div> \n                            ",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Investigation method",
+                          "implementationGuidance": "Indicates the mechanism used to perform the observation.",
+                          "description": "\n                                         <p>Indicates the mechanism used to perform the observation.</p> \n                                    ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "Coded value",
+                              "description": "Coded value",
+                              "valueSets": "\n                                             <p>SNOMED CT ID | Fully specified name (FSN)</p> \n                                             <p>272394005 (Technique (qualifier value) </p> \n                                             <p>129264002 (Action (qualifier value) </p> \n                                             <p>386053000 (Evaluation procedure(procedure)</p> \n                                        "
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Information and advice given",
+          "implementationGuidance": "<p>This section should be used to record advice given to the person following findings from their NHS Health Check. Where the person is provided with literature (e.g. pamphlets) there is no need to provide details of the information contained in the literature e.g. simply state that the person was provided with a pamphlet on the topic it\n                                    discusses, such as smoking cessation. In some instances health care professionals may want to communicate the specific information and advice which was given to the person. It is important that this is concise and is only information which it is pertinent to be aware of.</p>",
+          "description": "Information and advice given.",
+          "informationType": "Event.Record",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Information and advice given",
+              "implementationGuidance": "The oral, written, or multi-media information or advice given to the person, carer, other authorised representative, care professional or other third party. May include advice about actions related to medicines or other ongoing care activities on an \u2018information prescription'. State here if there are concerns about the extent to which the person and/or carer understand                             the information provided about diagnosis, prognosis and treatment.",
+              "description": "\n                         <p>The oral, written, or multi-media information or advice given to the person, carer, other authorised representative, care professional or other third party. May include advice about actions related to medicines or other ongoing care activities on an \u2018information prescription'. State here if there are concerns about the extent to which the person and/or carer understand\n                            the information provided about diagnosis, prognosis and treatment.</p> \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>11816003 | Diet education | OR </p>   \n                                   <p>&lt;&lt; 225324006 | Smoking effects education | OR </p>   \n                                   <p>313204009 | Lifestyle education | OR </p>   \n                                   <p>&lt;&lt; 183073003 | Patient advised about exercise | OR </p>   \n                                   <p>375031000000109 | Brief intervention for physical activity completed | OR </p>   \n                                   <p>&lt;&lt; 281078001 | Education about alcohol consumption | OR </p>   \n                                   <p>225323000 | Smoking cessation education | OR </p>   \n                                   <p>304507003 | Exercise education | OR </p>   \n                                   <p>&lt;&lt; 408947007 | Alcohol abuse prevention education |) OR </p>   \n                                   <p>870991000000101 |National Health Service Health Check raising awareness about dementia and memory clinics (procedure)|</p>",
+                  "description": "The coded value for information and advice given.",
+                  "valueSets": "SNOMED CT."
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "implementationGuidance": "Free text field to be used if no code is available",
+                  "description": "Free text field to be used if no code is available",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Referral details",
+          "implementationGuidance": "<p>This section is designed to be used to indicate that a referral has been made. It is not the referral itself. The \u2018referrer details\u2019 should be copied from the referral or transfer of care where possible.</p>",
+          "description": "The details of the referral.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Referral details record entry",
+              "implementationGuidance": "This is the referral details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "This is the referral details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date",
+                  "implementationGuidance": "The date of referral",
+                  "description": "The date of referral",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Referrer details",
+                  "implementationGuidance": "The details of the referrer that is making the referral or the transfer.\n                             \nThis could be the person, GP surgery, department, specialty, sub-specialty, educational institution, mental health team, care home etc.",
+                  "description": "The details of the referrer that is making the referral or the transfer. <br clear=\"none\"/> \n                             <br clear=\"none\"/> This could be the person, GP surgery, department, specialty, sub-specialty, educational institution, mental health team, care home etc.",
+                  "valueSets": "\n                             <p/> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "The name of the referrer.",
+                      "description": "The name of the referrer.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "Role of the referrer.",
+                      "description": "Role of the referrer.",
+                      "valueSets": "\n                                 <p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. </p> \n                                 <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. </p> \n                                 <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implementationGuidance": "The grade of the referrer.",
+                      "description": "The grade of the referrer.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Team",
+                      "implementationGuidance": "The team or department of the referrer.",
+                      "description": "The team or department of the referrer.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "implementationGuidance": "The specialty of the referrer.",
+                      "description": "The specialty of the referrer.",
+                      "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Service",
+                      "implementationGuidance": "The service of the referrer.",
+                      "description": "The service of the referrer.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "The coded value for service",
+                          "description": "The coded value for service",
+                          "valueSets": "SNOMED CT: -\u00a01127531000000102 |Services simple reference set (foundation metadata concept)|"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implementationGuidance": "Free text field to be used if no code is available",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "implementationGuidance": "The organisation of the referrer.",
+                      "description": "The organisation of the referrer.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "The coded value for organisation code",
+                          "description": "The coded value for organisation code",
+                          "valueSets": "\n                                     <p>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html\" rel=\"noopener noreferrer nofollow\">Organisation data service</a></p> \n                                ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [
+                                {
+                                  "minLength": "3",
+                                  "maxLength": "5"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implementationGuidance": "Free text field to be used if no code is available",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Referral type",
+                          "implementationGuidance": "An indication of the type of referral (e.g. 'Hospital Discharge Notification to Social Care', 'GP Referral', etc.)",
+                          "description": "An indication of the type of referral (e.g. 'Hospital Discharge Notification to Social Care', 'GP Referral', etc.)",
+                          "valueSets": "\n                             <p>Free text</p> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "implementationGuidance": "The contact details of the referrer.",
+                      "description": "The contact details of the referrer.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Referral method",
+                  "implementationGuidance": "The method in which a referral is sent and received. This may be a letter, email, transcript of a telephone conversation, Choose and Book, in person (self-referral) etc.",
+                  "description": "The method in which a referral is sent and received. This may be a letter, email, transcript of a telephone conversation, Choose and Book, in person (self-referral) etc.",
+                  "valueSets": "Allow National Codes only  <ol>\n                                <li>Fax</li>\n                                <li>Phone</li>\n                                <li>Secure Messaging</li>\n                                <li>Secure Email</li>\n                                <li>Letter</li>\n                                <li>NHS E-Referral Service</li>\n                                <li>Self referral</li>\n                            </ol> \n                        "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Reason for referral",
+                  "implementationGuidance": "The reason for the referral, e.g. diagnosis, treatment, transfer of care due to relocation, investigation, second opinion, management of the patient (e.g. palliative care), or carer's concerns.",
+                  "description": "The reason for the referral, e.g. diagnosis, treatment, transfer of care due to relocation, investigation, second opinion, management of the patient (e.g. palliative care), or carer's concerns.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for reason for referral",
+                      "description": "The coded value for reason for referral",
+                      "valueSets": "\n                                 <div>SNOMED CT :- ^<a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">1127581000000103 |Health issues simple reference set|</a></div> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to be used if no code is available",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Expectation of referral",
+                  "implementationGuidance": "A clear statement of the expectations of the person or professional making the referral in regards to the management of the patient e.g. advice only, diagnosis, treatment, etc. To include any specific patient expectation.",
+                  "description": "A clear statement of the expectations of the person or professional making the referral in regards to the management of the patient e.g. advice only, diagnosis, treatment, etc. To include any specific patient expectation.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Urgency of referral",
+                  "implementationGuidance": "The details of the urgency of referral",
+                  "description": "The details of the urgency of referral",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Urgency",
+                      "implementationGuidance": "This is the priority of a request for services",
+                      "description": "This is the priority of a request for services",
+                      "valueSets": "\n                                 <div>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/attributes/priority_type.html\" target=\"_blank\" rel=\"noopener\">PRIORITY TYPE</a></div> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "1" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Reason for urgency of referral",
+                      "implementationGuidance": "The reason for urgency of referral if not routine.",
+                      "description": "The reason for urgency of referral if not routine.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Referral to",
+                  "implementationGuidance": "Details of where the referral is to be sent.\n                             \nIf not an individual, this could be a service, e.g. GP surgery, department, specialty, subspecialty, educational institution, mental health etc.",
+                  "description": "Details of where the referral is to be sent. <br clear=\"none\"/> \n                             <br clear=\"none\"/> If not an individual, this could be a service, e.g. GP surgery, department, specialty, subspecialty, educational institution, mental health etc.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "Name of person the referral is to be sent to.",
+                      "description": "Name of person the referral is to be sent to.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "Role of person where the referral is to be sent to.",
+                      "description": "Role of person where the referral is to be sent to.",
+                      "valueSets": "\n                                 <p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. </p> \n                                 <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. </p> \n                                 <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implementationGuidance": "The grade of the person where the referral is sent to.",
+                      "description": "The grade of the person where the referral is sent to.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Team",
+                      "implementationGuidance": "The team or department of the person where the referral is being sent to",
+                      "description": "The team or department of the person where the referral is being sent to",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "implementationGuidance": "The specialty the referral is being sent to e.g. physiotherapy, oncology, mental health etc",
+                      "description": "The specialty the referral is being sent to e.g. physiotherapy, oncology, mental health etc",
+                      "valueSets": "\n                                 <div>NHS data dictionary - <a href=\"https://www.datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"_blank\" rel=\"noopener\">Activity treatment function code</a></div> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "3" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Service",
+                      "implementationGuidance": "The service of where the referral is sent to.",
+                      "description": "The service of where the referral is sent to.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "<p>871661000000106 |Referral to smoking cessation service (procedure)| </p>   \n                                   <p>&lt;&lt;1326201000000101 |Referral to weight management service (procedure)| </p>   \n                                   <p>390893007 |Referral to physical activity program (procedure)| </p>   \n                                   <p>809401000000103 |Referral to alcohol misuse clinic (procedure)| </p>   \n                                   <p>390857005 |Referral to community alcohol team (procedure)| </p>   \n                                   <p>417096006 |Referral to community drug and alcohol team (procedure)| </p>   \n                                   <p>376401000000103 |Referral to alcohol brief intervention service (procedure)| </p>   \n                                   <p>1025321000000109 |Referral to National Health Service Diabetes Prevention Programme (procedure)| </p>   \n                                   <p>1106151000000107 |Referral for lifestyle education regarding risk of diabetes (procedure)| </p>   \n                                   <p>492861000000101 |Referral to health trainer (procedure)| </p>   \n                                   <p>892281000000101 |Referral to healthy lifestyle programme (procedure)| </p>   \n                                   <p>1097171000000107 |Referral for lifestyle education (procedure)| </p>   \n                                   <p>442305005 |Referral for ambulatory electrocardiogram (procedure)| </p>   \n                                   <p>266753000 |Referral for laboratory tests (procedure)| </p>   \n                                   <p>417282008 |Referral for proteinuria test (procedure)| </p>   \n                                   <p>183821000 |Refer for biochemical test (procedure)|</p>",
+                          "description": "The coded value for service",
+                          "valueSets": "\n                                     <div>SNOMED CT: - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127531000000102&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">^1127531000000102 |Services simple reference set (foundation metadata\n                                            concept)|</a></div> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implementationGuidance": "Free text field to be used if no code is available",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "implementationGuidance": "The organisation of where the referral is to be sent.",
+                      "description": "The organisation of where the referral is to be sent.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "The coded value for organisation",
+                          "description": "The coded value for organisation",
+                          "valueSets": "\n                                     <div>NHS data dictionary :- <a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=The%20Organisation%20Data%20Service%20provides,Information%20Standards%20in%20this%20area\" target=\"_blank\" rel=\"noopener\">Organisation data service</a></div> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implementationGuidance": "Free text field to be used if no code is available",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "implementationGuidance": "The contact details of where the referral is to be sent.",
+                      "description": "The contact details of where the referral is to be sent.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Return response to",
+                  "implementationGuidance": "Name of professional to be communicated with, if not the referrer",
+                  "description": "Name of professional to be communicated with, if not the referrer",
+                  "valueSets": "Free text.",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Signpost details",
+          "implementationGuidance": "<p>These are the details of any services that the person has been signposted too. Signposting is in the form of providing the person with the name of an organisation and their contact details e.g. telephone number, website (it is not a referral).</p>",
+          "description": "Details of signpost",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Signpost details record entry",
+              "implementationGuidance": "This is the signpost details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "This is the signpost details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date",
+                  "implementationGuidance": "Date of signpost.",
+                  "description": "Date of signpost.",
+                  "valueSets": "\n                             <p>Date and time</p> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMD" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Signpost to",
+                  "implementationGuidance": "Details of where the signpost is to.\n                             \nIf not an individual, this could be a service.",
+                  "description": "Details of where the signpost is to. <br clear=\"none\"/> \n                             <br clear=\"none\"/> If not an individual, this could be a service.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "Name of person signposted to.",
+                      "description": "Name of person signposted to.",
+                      "valueSets": "Free Text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "Role of person signposted to.",
+                      "description": "Role of person signposted to.",
+                      "valueSets": "Free Text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implementationGuidance": "The grade of the person signposted to.",
+                      "description": "The grade of the person signposted to.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Team",
+                      "implementationGuidance": "The team or department signposted to.",
+                      "description": "The team or department signposted to.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "implementationGuidance": "The specialty signposted to e.g. physiotherapy, oncology, mental health etc",
+                      "description": "The specialty signposted to e.g. physiotherapy, oncology, mental health etc",
+                      "valueSets": "\n                                 <p>NHS data dictionary :- <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" rel=\"noopener noreferrer nofollow\">Activity treatment function code</a></p> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Service",
+                      "implementationGuidance": "The service signposted to.",
+                      "description": "The service signposted to.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implementationGuidance": "The coded value for service.",
+                          "description": "The coded value for service.",
+                          "valueSets": "\n                                     <div>SNOMED CT : - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127531000000102&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">^1127531000000102 |Services simple reference set (foundation\n                                            metadata concept)|</a></div> \n                                "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implementationGuidance": "Free text field to be used if no code is available.",
+                          "description": "Free text field to be used if no code is available.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation name",
+                      "implementationGuidance": "The name of the organisation signposted to.",
+                      "description": "The name of the organisation signposted to.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Contact details",
+                      "implementationGuidance": "The contact details of where the person has been signposted to.",
+                      "description": "The contact details of where the person has been signposted to.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Reason for signpost",
+                  "implementationGuidance": "The reason for signposting.",
+                  "description": "The reason for signposting.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for reason for signpost.",
+                      "description": "The coded value for reason for signpost.",
+                      "valueSets": "\n                                 <div>SNOMED CT :- <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">^1127581000000103 |Health issues simple reference set|</a></div> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to be used if no code is available.",
+                      "description": "Free text field to be used if no code is available.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Appointments",
+          "implementationGuidance": "<p>This section includes the details of any future appointments the person may have. This can include both health and care appointments.</p>",
+          "description": "<p>Details of appointments, including future appointments</p>",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Appointments record entry",
+              "implementationGuidance": "This is the appointments record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "<p>This is the appointments record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.</p>",
+              "informationType": "Record",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Date of appointment",
+                  "implementationGuidance": "Date and time of appointment.",
+                  "description": "<p>Date and time of appointment.</p>",
+                  "valueSets": "Date and time",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMD" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Appointment status",
+                  "implementationGuidance": "The status of the appointment e.g. proposed, booked, confirmed, rejected.",
+                  "description": "The status of the appointment e.g. proposed, booked, confirmed, rejected.",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Reason for appointment",
+                  "implementationGuidance": "Reason this appointment is scheduled e.g. diagnosis, investigation, treatment or assessment",
+                  "description": "Reason this appointment is scheduled e.g. diagnosis, investigation, treatment or assessment",
+                  "valueSets": "Free text",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Clinical urgency of appointment",
+                  "implementationGuidance": "The urgency of the appointment.",
+                  "description": "<p>The urgency of the appointment.</p>",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/priority_type_code.html\" target=\"\" title=\"\">Priority</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "1" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location of appointment",
+                  "implementationGuidance": "The location of the appointment.",
+                  "description": "The location of the appointment.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for location",
+                      "description": "The coded value for location",
+                      "valueSets": "\n                                 <div>NHS data dictionary : - <a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=The%20Organisation%20Data%20Service%20provides,Information%20Standards%20in%20this%20area\" target=\"_blank\" rel=\"noopener\">Organisation data service</a></div> \n                            ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [
+                            {
+                              "minLength": "3",
+                              "maxLength": "5"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to be used if no code is available",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Specialty",
+                  "implementationGuidance": "The specialty e.g. physiotherapy, oncology, mental health etc.",
+                  "description": "The specialty e.g. physiotherapy, oncology, mental health etc.",
+                  "valueSets": "\n                             <div>NHS data dictionary :- <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html\" target=\"\" title=\"\">Activity treatment function code</a>\n                            </div> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Service",
+                  "implementationGuidance": "The service that was provided",
+                  "description": "\n                             <p>The service that was provided</p> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Service",
+                      "implementationGuidance": "The service that was provided.",
+                      "description": "The service that was provided.",
+                      "valueSets": "\n                             <div>SNOMED CT :- <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127531000000102&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" target=\"_blank\" rel=\"noopener\">^1127531000000102 |Services simple reference set (foundation metadata\n                                    concept)|</a><br clear=\"none\"/>\n                            </div> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded Value",
+                      "implementationGuidance": "The code for service provided",
+                      "description": "\n                                 <p>The code for service provided</p> \n                            ",
+                      "valueSets": "\n                                 <p>SNOMED CT :- ^1127531000000102 |Services simple reference set (foundation metadata concept)|</p> \n                            ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text to be used if no code is available",
+                      "description": "\n                                 <p>Free text to be used if no code is available</p> \n                            ",
+                      "valueSets": "\n                                 <p>Free text</p> \n                            "
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional to see the person",
+                  "implementationGuidance": "The name and role of the professional e.g. consultant, care worker, nurse consultant.",
+                  "description": "The name and role of the professional e.g. consultant, care worker, nurse consultant.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "The name of the professional seeing the person.",
+                      "description": "The name of the professional seeing the person.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "The role of the professional seeing the person.",
+                      "description": "The role of the professional seeing the person.",
+                      "valueSets": "<p>FHIR values set : -\u00a0<a href=\"https://simplifier.net/packages/fhir.r4.ukcore.stu1/0.5.1/files/597399\" rel=\"noopener noreferrer nofollow\">ukcorepractitionerrolecode</a></p> <p>https://simplifier.net/packages/fhir.r4.ukcore.stu1/0.5.1/files/597399</p>"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "mro": "R",
+          "name": "Plan and requested actions",
+          "implementationGuidance": "<p>This is the treatment plan for the treating team or clinician and any actions requested. This plan should make clear who is expected to take responsibility for actions following an encounter, for example the person receiving care or their carer; the GP or another heath care professional. Shared decision-making principles should apply to the development of the plan and where the person\u2019s opinions differ, this should be included under \u2018Agreed with the person or their legitimate person representative\u2019 which will include both the aspects of the plan the person (or their representative) agree with and the aspects they disagree with. The section allows for the recording of planned investigations, procedures and treatment for the person\u2019s identified conditions and priorities. This is not a care plan it is a plan for specific actions to be carried out as a result of an encounter.</p>",
+          "description": "The details of planned investigations, procedures and treatment, and whether this plan has been agreed with the person or their legitimate representative.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "mro": "R",
+              "name": "Plan and requested actions record entry",
+              "implementationGuidance": "This is a plan and requested actions record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "This is a plan and requested actions record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Actions for professionals",
+                  "implementationGuidance": "For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations.",
+                  "description": "<p>For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations. </p>",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Action entry details",
+                      "implementationGuidance": "Action entry details",
+                      "description": "Action entry details",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Actions",
+                          "implementationGuidance": "The actions that the professional are required to take.",
+                          "description": "<p>The actions that the professional are required to take.</p>",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>Two specific actions codes that should be included in the valueset for the NHS Health Check Standard are:</p> <p><a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=2242651000000106&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" rel=\"noopener noreferrer nofollow\">2242651000000106 |Digital National Health Service Health Check requires follow-up (finding)|</a></p> <p><a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=2242661000000109&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" rel=\"noopener noreferrer nofollow\">2242661000000109 |Digital National Health Service Health Check requires urgent follow-up (finding)|</a></p>",
+                              "description": "<p>The coded value for the action that the professional needs to take.</p>"
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text if coded value is not available.",
+                              "description": "<p>Free text if coded value is not available.</p>",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Role",
+                          "implementationGuidance": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.",
+                          "description": "\n                          <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p>  \n                    ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for role.",
+                              "description": "\n                              <p>The coded value for role.</p>  \n                        ",
+                              "valueSets": "\n                              <p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>  \n                        "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to be used if no code is available.",
+                              "description": "\n                              <p>Free text field to be used if no code is available.</p>  \n                        ",
+                              "valueSets": "\n                              <p>Free text</p>  \n                        ",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Role",
+                          "implementationGuidance": "The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.",
+                          "description": "\n                                     <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p> \n                                ",
+                          "valueSets": "\n                                     <p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. </p> \n                                     <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. </p> \n                                     <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p> \n                                ",
+                          "valueDomain": [ { "type": "string" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Action due date",
+                          "implementationGuidance": "The date that the action should be completed by.",
+                          "description": "<p>The date that the action should be completed by.</p>",
+                          "valueDomain": [ { "type": "datetime" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Status",
+                          "implementationGuidance": "Status of the action",
+                          "description": "\n                                     <p>Status of the action</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Priority",
+                          "implementationGuidance": "This is the priority of the action to be completed.",
+                          "description": "<p>This is the priority of the action to be completed.</p>",
+                          "valueSets": "<p>SNOMED CT:<a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=272125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" rel=\"noopener noreferrer nofollow\"> 272125009 | Priorities (qualifier value) |</a></p>"
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Location",
+                          "implementationGuidance": "The location where the action should happen.",
+                          "description": "\n                                     <p>The location where the action should happen.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for location.",
+                              "description": "The coded value for location.",
+                              "valueSets": "NHS Data dictionary : -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_dictionary/nhs_business_definitions/o/organisation_data_service_de.asp?shownav=1\" target=\"\" title=\"\" style=\"\">Organisation data service code</a> \n                                    ",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [
+                                    {
+                                      "minLength": "3",
+                                      "maxLength": "5"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to be used if no code is available",
+                              "description": "Free text field to be used if no code is available",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Strategies",
+                          "implementationGuidance": "Details of any strategies to be used to complete the actions.",
+                          "description": "<p>Details of any strategies to be used to complete the actions.</p>",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Actions for person or their carer",
+                  "implementationGuidance": "For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations.",
+                  "description": "<p>For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations. </p>",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Action entry details",
+                      "implementationGuidance": "Action entry details",
+                      "description": "Action entry details",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Actions",
+                          "implementationGuidance": "The actions that the person or their carer are required to take.",
+                          "description": "<p>The actions that the person or their carer are required to take.</p>",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for the action that the person or their carer needs to take.",
+                              "description": "<p>The coded value for the action that the person or their carer needs to take.</p>"
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text if coded value is not available.",
+                              "description": "<p>Free text if coded value is not available.</p>",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Actions",
+                          "implementationGuidance": "Including planned investigations, procedures, Interventions and treatment for a patient\u2019s identified conditions and priorities. For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out                                     the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations.",
+                          "description": "Including planned investigations, procedures, Interventions and treatment for a patient\u2019s identified conditions and priorities. For each action the following should be identified: a) person responsible - name and designation / department / hospital / patient etc or role (eg GP) responsible for carrying out\n                                    the proposed action, and where action should take place.b) status - requested, planned or completed. c) When action requested for - requested date, time, or period - as relevant. d) suggested strategies - suggested strategies for potential problems. e) outcome expectations, including patient\u2019s expectations.",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Role",
+                          "implementationGuidance": "The relation to the person e.g. father, cousin etc",
+                          "description": "<p>The relation to the person e.g. father, cousin etc</p>",
+                          "valueDomain": [ { "type": "string" } ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Relationship",
+                          "implementationGuidance": "The relationship the carer has to the person, e.g. father, grandmother, family friend etc. This should be completed if the action is for the person's carer, rather than for the person themselves.",
+                          "description": "<p>The relationship the carer has to the person, e.g. father, grandmother, family friend etc. This should be completed if the action is for the person's carer, rather than for the person themselves.</p>",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for relationship.",
+                              "description": "\n                              <p>The coded value for relationship.</p>  \n                        ",
+                              "valueSets": "\n                              <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p>  \n                        "
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to be used if no code is available.",
+                              "description": "\n                              <p>Free text field to be used if no code is available. </p>  \n                        ",
+                              "valueSets": "\n                              <div>Free text</div>  \n                        ",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Action due date",
+                          "implementationGuidance": "The date that the action should be completed by.",
+                          "description": "<p>The date that the action should be completed by.</p>",
+                          "valueDomain": [ { "type": "datetime" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Status",
+                          "implementationGuidance": "Status of the action",
+                          "description": "\n                                     <p>Status of the action</p> \n                                ",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Priority",
+                          "implementationGuidance": "This is the priority of the action to be completed.",
+                          "description": "<p>This is the priority of the action to be completed.</p>",
+                          "valueSets": "<p>SNOMED CT:<a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=272125009&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104\" rel=\"noopener noreferrer nofollow\"> 272125009 | Priorities (qualifier value) |</a></p>"
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Location",
+                          "implementationGuidance": "The location where the action should happen.",
+                          "description": "\n                                     <p>The location where the action should happen.</p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The coded value for location.",
+                              "description": "The coded value for location.",
+                              "valueSets": "NHS Data dictionary : -  <a class=\"\" href=\"https://www.datadictionary.nhs.uk/data_dictionary/nhs_business_definitions/o/organisation_data_service_de.asp?shownav=1\" target=\"\" title=\"\" style=\"\">Organisation data service code</a> \n                                    ",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [
+                                    {
+                                      "minLength": "3",
+                                      "maxLength": "5"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to be used if no code is available",
+                              "description": "Free text field to be used if no code is available",
+                              "valueSets": "Free text",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Strategies",
+                          "implementationGuidance": "Details of any strategies to be used to complete the actions.",
+                          "description": "<p>Details of any strategies to be used to complete the actions.</p>",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Outcome of plan and requested actions",
+                  "implementationGuidance": "The details of the outcome of the plan and requested actions.",
+                  "description": "The details of the outcome of the plan and requested actions.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Investigations requested",
+                  "implementationGuidance": "This includes a name or description of the investigation requested and the date requested.",
+                  "description": "This includes a name or description of the investigation requested and the date requested.",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "*",
+                  "mro": "R",
+                  "name": "Procedures requested",
+                  "implementationGuidance": "These are the diagnostic or therapeutic procedures that have actually been requested (and the date requested).",
+                  "description": "These are the diagnostic or therapeutic procedures that have actually been requested (and the date requested).",
+                  "valueSets": "Free text",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

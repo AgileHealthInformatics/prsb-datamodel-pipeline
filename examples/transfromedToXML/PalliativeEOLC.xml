@@ -1,0 +1,2678 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Palliative and end of life care" version="1.1" lastUpdated="2025-08-11">
+  <Model name="Person demographics">
+    <TaggedValue name="description" value="The person's details and contact information." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Person name">
+      <TaggedValue name="description" value="Details of the person's name" />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Person_first_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The first name(s) of the person. This includes middle names." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Person given name" />
+      </Element>
+      <Element name="Person_family_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The family name or surname of the person" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Person family name" />
+      </Element>
+      <Element name="Person_preferred_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name by which a person wishes to be addressed. The preferred name volunteered by the person or a preferred name given by PDS that the person has asked to be called by." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person full name" />
+      </Element>
+      <Element name="Title" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's title" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person Title" />
+      </Element>
+      <Element name="Person_name_suffix" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A textual suffix that may be added to the end of a PERSON's name, for example, OBE, MBE, BSc, JP, GM" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary: - Person suffix" />
+      </Element>
+      <Element name="Person_full_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The full name of the person in text representation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Person full name" />
+      </Element>
+    </Model>
+    <Element name="Date_of_birth" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The date of birth of the person." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="date" />
+      <TaggedValue name="valueSets" value="NHS data dictionary:- Person birth date" />
+    </Element>
+    <Element name="Gender" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The person's stated gender." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Person stated gender code" />
+    </Element>
+    <Element name="Ethnicity" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The ethnicity of the person as specified by the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Ethnic category" />
+    </Element>
+    <Element name="Religion" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The religious affiliation as specified by the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="valueSets" value="SNOMED_CT:- Religion" />
+    </Element>
+    <Element name="Sex" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The person’s phenotypic sex. Determines how the person will be treated clinically." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary: - person phenotypic sex" />
+    </Element>
+    <Element name="NHS_number" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The unique identifier for a person within the NHS in England and Wales." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary:- NHS number" />
+    </Element>
+    <Element name="NHS_number_status_indicator" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Provides an indication of the reliability of an NHS Number." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- NHS Number Code Status Indicator" />
+    </Element>
+    <Element name="Other_identifier" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Country specific or local identifier, e.g. Community Health Index (CHI) in Scotland." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary: - Local patient identifier(extended) , Health and care number (NI only) , Community health index number (Scotland only)" />
+    </Element>
+    <Model name="Person's address">
+      <TaggedValue name="description" value="Person’s usual place of residence, and where relevant temporary and correspondence addresses." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Address_line_1" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's first line of address." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Address line 1" />
+      </Element>
+      <Element name="Address_line_2" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's second line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Address line 2" />
+      </Element>
+      <Element name="Address_line_3" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's third line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 3" />
+      </Element>
+      <Element name="Address_line_4" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's fourth line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 4" />
+      </Element>
+      <Element name="Address_line_5" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Person's fifth line of address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Address line 5" />
+      </Element>
+      <Element name="Postcode" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person's postcode." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Postcode of usual address" />
+      </Element>
+      <Element name="Address_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of address e.g. Main address, Temp address" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Address Association Type" />
+      </Element>
+    </Model>
+    <Model name="Person's contact details">
+      <TaggedValue name="description" value="Details of the person's contact information." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Preferred_contact_method" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Preferred contact method, e.g. email, letter, phone, text message etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary:- Preferred Contact Method" />
+      </Element>
+      <Model name="Person's telephone number details">
+        <TaggedValue name="description" value="The person's telephone number details" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Persons_telephone_number" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The person's telephone number" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+        </Element>
+        <Element name="Persons_telephone_number_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact type e.g. home, mobile" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="FHIR value set: - Contact point use" />
+        </Element>
+        <Element name="Preference_of_telephone_number" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The preferred order of use for the telephone number" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Preference of use 1-5, 1 being the highest." />
+        </Element>
+      </Model>
+      <Model name="Person's email address details">
+        <TaggedValue name="description" value="Details of the person's email address" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Persons_email_address" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Email address of the person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary:- Contact Email Address" />
+        </Element>
+        <Element name="Persons_email_address_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of email address, home, work." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="FHIR value set: - Contact point use" />
+        </Element>
+        <Element name="Preference_of_email_address" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The preferred order of use of email address" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Preference of use 1-5, 1 being the highest." />
+        </Element>
+      </Model>
+      <Element name="Other_contact_information" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details via fax, sms, url." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary:- Communication contact string" />
+      </Element>
+    </Model>
+    <Element name="Marital_status" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="An indicator to identify the legal marital status of the person." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+      <TaggedValue name="valueSets" value="NHS data dictionary :- Person marital status" />
+    </Element>
+    <Element name="Organ_and_tissue_donation" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Whether the person has opted out of automatic organ and/or tissue donation where applicable. This is information provided by the national register." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="boolean" />
+      <TaggedValue name="valueSets" value="Flag: - Yes or No" />
+    </Element>
+  </Model>
+  <Model name="GP practice">
+    <TaggedValue name="description" value="Details of the person's GP practice." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="GP practice record entry">
+      <TaggedValue name="description" value="This is an GP practice record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="GP_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the person's GP. If the person is registered with a GP practice, their usual GP name will be something volunteered by the person or their representative." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="GP_practice_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Name and address of the person's registered GP Practice. Registered GP practice details are available from the Person Dempographics Service (PDS), or volunteered from the person or their representative. Include details of the practice name and address." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="GP_practice_identifier" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The identifier of the registered GP practice." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - General medical practice code (patient registration)" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="About me">
+    <TaggedValue name="description" value="About me" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="What is most important to me">
+      <TaggedValue name="description" value="A description of what is most important to you." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="What_is_most_important_to_me" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of what is most important to you. Emergency Information : - Include any essential information that any professional in health and social care should know about the you in any situation, including emergencies. Other Information : -This could include : - Values, Spirituality/religion, Ethnicity, Culture, Pets, Goals and aspirations, Meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="People who are important to me">
+      <TaggedValue name="description" value="Details of who is important to you and why." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="People_who_are_important_to_me" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="How I communicate and how to communicate with me">
+      <TaggedValue name="description" value="A description of how you communicate normally." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="How_I_communicate_and_how_to_communicate_with_me" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information Describe how you would like others to engage and communicate with you, including how you would like to be addressed." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="My wellness">
+      <TaggedValue name="description" value="A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="My_wellness" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered Include your wellbeing and lifestyle goals and aspirations" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Please do and please don't">
+      <TaggedValue name="description" value="A description of things you want someone supporting you to do (or not to do)." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Please_do_and_please_dont" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): - Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): - Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, undergoing a specific intervention or taking a medication the person does not want." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="How and when to support me">
+      <TaggedValue name="description" value="A description of how and when you want someone caring for you to support you." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="How_and_when_to_support_me" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood) This could include support you need to maintain important routines or to carry out particular activities, for example: - Personal care routines, Eating and drinking, Bedtime routines, Taking medications, Moving and transitioning This could also include support needed with:- wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Also worth knowing about me">
+      <TaggedValue name="description" value="A description of what is also worth knowing about you for people caring or supporting you." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Also_worth_knowing_about_me" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life:- your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike This could also include any care and support preferences that have not been included elsewhere." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Element name="Date" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is a record of the date that this information was last updated." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and Time" />
+    </Element>
+    <Element name="Supported_to_write_this_by" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Where relevant, this is a record of name, relationship/role and contact details of the individual who supported the person to write this section e.g. carer, family member, advocate, professional." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+    <Element name="Location_to_multimedia_file" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The link to the person's multimedia file" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Link to URL" />
+    </Element>
+  </Model>
+  <Model name="Individual requirements">
+    <TaggedValue name="description" value="The individual requirements of the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Reasonable adjustment">
+      <TaggedValue name="description" value="A record of reasonable adjustments that must be provided by the service to comply with the Equality Act 2010." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Reasonable adjustment record entry">
+        <TaggedValue name="description" value="This is a reasonable adjustment record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Reasonable adjustment">
+          <TaggedValue name="description" value="The reasonable adjustment required e.g. requires specific contact method, requires communication professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for reasonable adjustment" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : - Accessible information standard ^999002121000000109 |Accessible information - communication support simple reference set (foundation metadata concept)| ^999002151000000104 |Accessible information - requires communication professional simple reference set (foundation metadata concept)| ^999002131000000106 |Accessible information - requires specific contact method simple reference set (foundation metadata concept)| ^999002141000000102 |Accessible information - requires specific information format simple reference set (foundation metadata concept)| Refsets for other categories in development" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Reasonable_adjustment_additional_detail" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Further detail about the support required and the consequence of not providing it." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Impairment">
+      <TaggedValue name="description" value="A record of any impairments for the person relating to reasonable adjustments." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Impairment record entry">
+        <TaggedValue name="description" value="This is an impairment record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Impairment category">
+          <TaggedValue name="description" value="The category of the impairment e.g. Physical disability, Sensory disability - such as sight or hearing, Long-term condition." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for impairment." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Impairment_additional_detail" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Description of what the person can do with the impairment, what they want to be able to do and how they should be supported to do it and what the consequences are of not providing the support. Where there is a sensory disability include sensory processing difficulties (e.g. affects to balance and movement, oversensitive, under-sensitive)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Cognition">
+      <TaggedValue name="description" value="Details of the persons cognitive impairment." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Cognition" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The cognitive impairment to be considered when communicating with the person, child or their primary carer." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Mobility">
+      <TaggedValue name="description" value="Details of the person's mobility needs." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Mobility needs">
+        <TaggedValue name="description" value="The mobility needs of the person that allows movement between two spaces and achieves participation and a degree of independence." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for mobility needs" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - ^999002551000000108 |Mobility findings simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Other individual requirements">
+      <TaggedValue name="description" value="Details of any other individual requirements the person may have." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Other_individual_requirement" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Other individual requirements that a person may have." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Alerts">
+    <TaggedValue name="description" value="Details of alerts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Alerts record entry">
+      <TaggedValue name="description" value="This is an alerts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Alert" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any significant information meriting a specific and highly visible warning to any user (e.g. metallic implant, potential dangerous pet)." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Legal information">
+    <TaggedValue name="description" value="The legal information relating to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Consent relating to child">
+      <TaggedValue name="description" value="Details of the person's consent relating to child" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Consent_relating_to_child" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person with parental responsibility or appointed guardian where a child lacks competency. Consideration of age and competency, applying Gillick competency or Fraser guidelines." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Location_of_document" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the consent document" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+    </Model>
+    <Model name="Mental capacity assessment">
+      <TaggedValue name="description" value="Details of the persons mental capacity assessment" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Mental_capacity_assessment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Whether an assessment of the mental capacity of the (adult) person has been undertaken, if so, what capacity the decision relates to and the outcome of the assessment. Also record best interests decision if person lacks capacity." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Location_of_document" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the mental capacity assessment information." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+    </Model>
+    <Model name="Lasting power of attorney for health and welfare or court-appointed deputy (or equivalent)">
+      <TaggedValue name="description" value="Details of the person's LPA record or equivalent" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Lasting power of attorney for health and welfare or court appointed deputy (or equivalent)">
+        <TaggedValue name="description" value="Record of one or more people who have been given power (LPA) by the person when they had capacity to make decisions about their health and welfare should they lose capacity to make those decisions. To be valid, an LPA must have been registered with the Court of Protection. If life-sustaining treatment is being considered the LPA document must state specifically that the attorney has been given power to consent to or refuse life-sustaining treatment. Details of any person (deputy) appointed by the court to make decisions about the person’s health and welfare. A deputy does not have the power to refuse life-sustaining treatment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - ^999001951000000107 |Personal welfare lasting power of attorney findings simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Location_of_document" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The location of the LPA information" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text or URL" />
+        </Element>
+        <Element name="Name_of_LPA" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The names of any appointed people or deputies" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact details of the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary:- UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Lasting power of attorney for property and financial affairs or court-appointed deputy (or equivalent)">
+      <TaggedValue name="description" value="Details of the person's LPA record or equivalent" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Lasting power of attorney for property and financial affairs or court appointed deputy (or equivalent)">
+        <TaggedValue name="description" value="Record of one or more people who have been given power (LPA) by the person when they had capacity to make decisions about their property and financial affairs should they lose capacity to make those decisions. To be valid, an LPA must have been registered with the Court of Protection. If life-sustaining treatment is being considered the LPA document must state specifically that the attorney has been given power to consent to or refuse life-sustaining treatment. Details of any person (deputy) appointed by the court to make decisions about the person’s property and financial affairs. A deputy does not have the power to refuse life-sustaining treatment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - 341041000000103 | Lasting power of attorney property and affairs (observable entity) |" />
+        </Element>
+        <Element name="Location_of_document" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The location of the LPA information" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text or URL" />
+        </Element>
+        <Element name="Name_of_LPA" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The names of any appointed people or deputies" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The contact details of the LPA" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary:- UK telephone number" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Advance decision to refuse treatment (ADRT)">
+      <TaggedValue name="description" value="Details of the person's ADRT status." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Advance decision to refuse treatment">
+        <TaggedValue name="description" value="A record of an advance decision to refuse one or more specific types of future treatment, made by a person who had capacity at the time of recording the decision. The decision only applies when the person no longer has the capacity to consent to or refuse the specific treatment being considered. An ADRT must be in writing, signed and witnessed. If the ADRT is refusing life-sustaining treatment it must state specifically that the treatment is refused even if the person’s life is at risk." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for advance decision to refuse treatment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- ^ 999002181000000105 |Advance decision to refuse treatment preference findings simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Location_of_document" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Location of the advance decision to refuse treatment document" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text or URL" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Professional contacts">
+    <TaggedValue name="description" value="The details of the person’s professional contacts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Professional contacts record entry">
+      <TaggedValue name="description" value="This is a professional contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+      </Element>
+      <Element name="Key_worker" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A flag that identifies the professional contact is the key worker assigned to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Flag : - Yes or No" />
+      </Element>
+      <Element name="Speciality" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Activity treatment function code" />
+      </Element>
+      <Element name="Team" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the team." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Organisation">
+        <TaggedValue name="description" value="The name of the organisation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+      </Model>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The start date of the professional relationship with the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The end date of the professional relationship with the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Personal contacts">
+    <TaggedValue name="description" value="The details of the individual's personal contacts." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Personal contacts record entry">
+      <TaggedValue name="description" value="This is personal contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the personal contact." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Relationship" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - Related person" />
+      </Element>
+      <Element name="Relationship_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Additional roles the person performs on behalf of the other (e.g. Carer, Next of Kin, Emergency Contact, Dependent, etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the personal contact (e.g. telephone number, address, email address etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free Text" />
+      </Element>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Notes on the significance of the personal contact to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Problem list">
+    <TaggedValue name="description" value="A summary of the problems that require investigation or treatment." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Problem list record entry">
+      <TaggedValue name="description" value="This is a problem list record entry. There may be 0 to many record entries under problem list. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Problem">
+        <TaggedValue name="description" value="A condition which needs addressing and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the problem list." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Onset_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A date or estimated date that the problem began" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_Date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date or estimated date the problem was resolved." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time." />
+      </Element>
+      <Element name="Stage_of_disease" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The stage of the disease where relevant." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Comment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Supporting text may be given covering the problem." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Primary Palliative Care Diagnosis">
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Primary Palliative Care Diagnosis">
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The primary end of life problem for the person" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Description_of_palliative_care_diagnosis" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Further details may be included on the person's palliative or end of life diagnosis" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Social context">
+    <TaggedValue name="description" value="The social setting in which the person lives, such as their household, occupational history, and lifestyle factors." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Accommodation status">
+      <TaggedValue name="description" value="Details of the type of accommodation where the person lives." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Accommodation status">
+        <TaggedValue name="description" value="An indication of the type of accommodation where the person lives. This should be based on the main or permanent residence." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for accommodation status" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary :- Accommodation status" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Allergies and adverse reactions">
+    <TaggedValue name="description" value="Allergies and adverse reactions" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Allergies and adverse reactions record entry">
+      <TaggedValue name="description" value="This is a allergies and adverse reactions record entry. There may be 1 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Type_of_reaction" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of reaction experienced by the person (allergic, adverse, intolerance)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set :- Allergy, Intolerance" />
+      </Element>
+      <Model name="Causative agent">
+        <TaggedValue name="description" value="The agent such as food, drug or substances that has caused or may cause an allergy, intolerance or adverse reaction in this person Or “No known drug allergies or adverse reactions” Or “Information not available”" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for causative agent" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="dm+d:- any code from the VTM, VMP, AMP, VMPP, AMPP and ingredient concept classes SNOMED CT : - &lt;105590001 |Substance OR &lt;373873005 |Pharmaceutical / biologic product| OR &lt;&lt;716186003 |No known allergy| OR 196461000000101 |Transfer-degraded drug allergy| OR 196471000000108 |Transfer-degraded non-drug allergy)" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Reaction details cluster">
+        <TaggedValue name="description" value="Details of the reaction." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Substance">
+          <TaggedValue name="description" value="The substance, or a class of substances, that is considered to be responsible for the adverse reaction." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for substance" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : - &lt;105590001 | Substance (substance) | or &lt;373873005 | Pharmaceutical / biologic product (product) |" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Description of reaction">
+          <TaggedValue name="description" value="A description of the manifestation of the allergic or adverse reaction experienced by the person. For example, skin rash." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for description of reaction." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - ^1127581000000103 |Health issues simple reference set|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Onset_date" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Date and time when manifestations showed e.g could be at home a few days earlier than the contact" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time" />
+        </Element>
+        <Model name="Severity">
+          <TaggedValue name="description" value="A description of the severity of the reaction." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for severity" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : - Severity" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Certainty">
+          <TaggedValue name="description" value="A description of the certainty that the stated causative agent caused the allergic or adverse reaction." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for certainty." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : - Certainty" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Route of exposure">
+          <TaggedValue name="description" value="The route the person was exposed to the substance" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for route of exposure" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - ^999000051000001100 |ePrescribing route of administration simple reference set|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Comment" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Any additional comment or clarification about the adverse reaction." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Evidence" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Results of investigations that confirmed the certainty of the diagnosis. Examples might include results of skin prick allergy tests" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Date_first_experienced" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="When the reaction was first experienced i.e this may not be the first time this has happened. May be a date or partial date (e.g. year) or text ( e.g. during childhood )" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Allergy_end_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date the allergy was diagnosed as ended" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="Comment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments on the person's allergies or adverse reactions." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Medications and medical devices">
+    <TaggedValue name="description" value="Medications and medical devices" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Medication item entry">
+      <TaggedValue name="description" value="All medications and devices that can be prescribed to be entered via this Medication item entry. Handles details of continuation / addition / amendment of admission medications." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Medication item cluster">
+        <TaggedValue name="description" value="Medication item cluster" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Medication name">
+          <TaggedValue name="description" value="May be generic name or brand name." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for medication name" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="dm+d:- any code from the VTM, VMP, AMP, VMPP and AMPP concept classes" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Form">
+          <TaggedValue name="description" value="The form of the medication e.g. capsule, drops, tablet, lotion etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for form." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - ^999000781000001107 | National Health Service dictionary of medicines and devices dose form simple reference set (foundation metadata concept) |" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Route">
+          <TaggedValue name="description" value="The route by which the medication is administered e.g. oral, IM, IV" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for route" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - ^999000051000001100 |ePrescribing route of administration simple reference set (foundation metadata concept)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no code is available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Site">
+          <TaggedValue name="description" value="The anatomical site at which the medication is to be administered." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for site" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - &lt;442083009 | Anatomical or acquired body structure (body structure) |" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used when code is not available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Method">
+          <TaggedValue name="description" value="The technique or method by which the medication is to be administered." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Model>
+        <Element name="Over_the_counter_medication_flag" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Indicates if the medication or device is acquired without a prescription i.e. got by the person over the counter" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="boolean" />
+          <TaggedValue name="valueSets" value="Flag : - Yes or No" />
+        </Element>
+        <Model name="Structured dose direction cluster">
+          <TaggedValue name="description" value="A structural representation of the elements carried by the dose syntax in 'parsable dose strength / timing' i.e. dose strength, dose timing, dose duration and maximum dose." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Structured dose amount">
+            <TaggedValue name="description" value="A structural representation of dose amount, e.g. 20mg or 2 tablets. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital): https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+          </Model>
+          <Element name="Structured_dose_timing" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A slot containing a structural, computable representation of dose timing and maximum dose. This element will generally only be used when persisting data within systems with 'parsable dose directions' being used to exchange the same information between systems. As per FHIR Dose Syntax Implementation Guidance (NHS Digital): https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Dose_direction_duration" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Recommendation of the time period for which the medication should be continued, including direction not to discontinue. As per FHIR Dose Syntax Implementation Guidance (NHS Digital): https://simplifier.net/guide/DoseSyntaxImplementationGuidanceforFHIRR4/Home" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Dose_directions_description" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Describes the entire medication dosage and administration directions including dose quantity and medication frequency and optionally duration e.g. “1 tablet at night&quot; or “2mg at 10pm”." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Additional_instructions" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Allows for: requirements for adherence support, e.g. compliance aids, prompts and packaging requirements, additional information about specific medicines e.g. where specific brand required, person requirements, e.g. unable to swallow tablets." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set : - Additional instruction" />
+        </Element>
+        <Model name="Course details cluster">
+          <TaggedValue name="description" value="Details of the overall course of medication." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Course_status" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The status of this prescription." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : - Medication status" />
+          </Element>
+          <Element name="Indication" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Reason for medication being prescribed, where known." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Start_datetime" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date and/or time that the medication course should begin." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="End_datetime" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date and/or time that the medication course should finish." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Link_to_indication_record" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A link to the record which contains the indication for this medication order." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text with URL" />
+          </Element>
+          <Element name="Commentrecommendation" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Suggestions about duration and/or review, ongoing monitoring requirements, advice on starting, discontinuing or changing medication. Additional comment or recommendation about the medication course e.g. 'Patient named supply', 'unlicensed medication', 'Foreign brand' or monitoring recommendations" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Medication change summary cluster">
+          <TaggedValue name="description" value="Records the changes made to medication." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Status" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The nature of any change made to the medication." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : Medication status" />
+          </Element>
+          <Element name="Indication" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Reason for change in medication, e.g. sub-therapeutic dose, person intolerant." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT:- ^1127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |" />
+          </Element>
+          <Element name="Date_of_change" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date of the change - addition, or amendment" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Description_of_amendment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Where a change is made to the medication i.e. one drug stopped and another started or eg dose, frequency or route is changed." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Total_dose_daily_quantity" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The total daily dose of this medication. This is helpful for estimating optimal adherence to dosing guidance. It may be computed from product/dose strength and frequency or entered manually." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="quantity" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Medical devices entry">
+        <TaggedValue name="description" value="Medical devices" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Medical_device" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Any medical device that isn't prescribed." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Comments" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Any information regarding the medical device." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Medication discontinued entry">
+        <TaggedValue name="description" value="Medication discontinued entry" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Name of discontinued medication">
+          <TaggedValue name="description" value="The name of the medication or medical device being discontinued" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for medication name" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="dm+d:- any code from the VTM, VMP, AMP, VMPP and AMPP concept classes" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Amount of vaccine administered." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Status" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The status of any change made to the medication. MUST CONTAIN STOPPED." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set: - Medication status" />
+        </Element>
+        <Element name="Indication" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The clinical indication for any changes in medication status" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- ^1127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |" />
+        </Element>
+        <Element name="Date_of_change" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date of the discontinuation" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time" />
+        </Element>
+        <Element name="Comment" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Any additional comment about the discontinuation or amendment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Care and support plan">
+    <TaggedValue name="description" value="This records the decisions reached during conversation between the individual and health and care professional about future plans and also records progress." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Strengths">
+      <TaggedValue name="description" value="Any strengths and assets the person has relating to their goals and hopes about their health and well-being." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coded_value_" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value associated with the person's strengths. Could be derived from the assessment of the person e.g. 300738008 |Able to participate in leisure activities (finding)|" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT : - 1127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person’s strengths (in free text). If the strengths are coded then this is any supplementary or personalised information that relates to the coded strength." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Needs, concerns or problems">
+      <TaggedValue name="description" value="Details of the person needs, concerns or problems" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value associated with the person's needs, concerns or problems." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person’s needs, concerns or problems (in free text). If the needs, concerns or problems are coded then this is any supplementary or personalised information that relates to the coded need, concern or problem." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Goals and hopes">
+        <TaggedValue name="description" value="The overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value associated with the person's goals, aim's and hopes. e.g. 999002111000000103 |Occupational therapy goals simple reference set (foundation metadata concept)|" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - 413350009|Finding with explicit context| : 246090004|Associated finding| = 300798006 |Able to participate in sporting activities (finding)| , 408729009|Finding context| = 410518001|Goal|" />
+        </Element>
+        <Element name="Free_text_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The person’s goals and hopes (in free text). If the goals and hopes are coded then this is any supplementary or personalised information that relates to the coded goal or hope." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Goal_importance_score" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Assessment of the person's motivations to achieve this goal, how important the goal is to the person on a scale of 1-10." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="decimal" />
+          <TaggedValue name="valueSets" value="Numeric scale 1 - 10" />
+        </Element>
+        <Model name="Actions and activities">
+          <TaggedValue name="description" value="Actions or activities the person or others plan to take to achieve the person's goals and the resources required to do this." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="What">
+            <TaggedValue name="description" value="What the action is and how it is to be carried out?" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the action." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT : - &lt;&lt;71388002 |Procedure| OR &lt;&lt;129125009 |Procedure with explicit context|" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The person’s actions (in free text). If the actions are coded then this is any supplementary or personalised information that relates to the coded action." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Who">
+            <TaggedValue name="description" value="Name and role (e.g. person, carer, GP, OT, etc.) of the person, or a team, carrying out the proposed action, and, if relevant where action should take place." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Name" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The name of the professional or person carrying out the proposed action." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+            <Element name="Role" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The role of the person providing the service." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+            </Element>
+            <Element name="Team" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The name of the team." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+            <Element name="Contact_details" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="When" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Planned date, time, or interval, as relevant" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Suggested_strategies" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Suggested strategies for potential problems." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Model name="Status">
+            <TaggedValue name="description" value="The status of the action or activity e.g. in progress, done, refused" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the person's activity status" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT : - ^999000081000000105 | Care planning action context values simple reference set (foundation metadata concept) |" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Any supplementary or personalised information for the person's activity status" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Element name="Confidence" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="How confident the person feels to carry out the action associated to the goal." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="decimal" />
+            <TaggedValue name="valueSets" value="Numeric score 1 - 10" />
+          </Element>
+          <Element name="Date_last_updated" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Date when action/activity record was last updated" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Review_date" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="When the action evaluation needs to be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time." />
+          </Element>
+          <Model name="Stage goal">
+            <TaggedValue name="description" value="Details of the person's stage goals" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Model name="Stage goal">
+              <TaggedValue name="description" value="A specific sub-goal that is related to the overall goal as agreed by the person in collaboration with a professional." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="*" />
+              <Element name="Coded_value" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded expression associated with the person's stage goal." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT : - 413350009|Finding with explicit context| : 246090004|Associated finding| = 300798006 |Able to participate in sporting activities (finding)| , 408729009|Finding context| = 410518001|Goal|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The person’s stage goal (in free text). If the stage goal is coded then this is any supplementary or personalised information that relates to the coded stage goal." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Model name="Outcome">
+              <TaggedValue name="description" value="The outcome of the stage goal" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <Element name="Coded_value_" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="The coded value for the person's stage goal outcome." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="valueSets" value="SNOMED CT: - ^1127601000000107 |Healthcare matters simple reference set (foundation metadata concept)|" />
+              </Element>
+              <Element name="Free_text" type="Class" stereotype="DataElement">
+                <TaggedValue name="description" value="Any supplementary and personalised information relating to the person's outcome." />
+                <TaggedValue name="minCardinality" value="0" />
+                <TaggedValue name="maxCardinality" value="1" />
+                <TaggedValue name="dataType" value="Text" />
+                <TaggedValue name="valueSets" value="Free text" />
+              </Element>
+            </Model>
+            <Element name="Goal_status" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The status associated with the person's stage goal" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT: - ^999000091000000107 | Care planning goal context values simple reference set (foundation metadata concept) |" />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Outcomes">
+          <TaggedValue name="description" value="Outcomes of each of the person’s goals, aims and targets. Includes comments recorded by the person, date and status." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value associated with the person's overall goal outcome" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - ^1127601000000107 |Healthcare matters simple reference set (foundation metadata concept)|" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The person’s outcome (in free text) of a goal. If the outcome is coded then this is any supplementary or personalised information that relates to the coded outcome." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Goal_status" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The status associated with the person's overall goal." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - ^999000091000000107 | Care planning goal context values simple reference set (foundation metadata concept) |" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Agreed with person or legitimate representative">
+      <TaggedValue name="description" value="Indicates whether the plan was discussed and agreed with the person or legitimate representative." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Person_or_legitimate_representative" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Indicates whether the plan was discussed and agreed with the person or legitimate representative" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Person or legitimate representative" />
+      </Element>
+      <Element name="Person_full_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The full name of the person in text representation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Person full name" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - sdsjobrole" />
+      </Element>
+    </Model>
+    <Model name="Care funding source">
+      <TaggedValue name="description" value="A reference to the funding source and any conditions or limitations associated." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The organisation code of the care funding source" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - organisation data service" />
+      </Element>
+      <Element name="Free_text_" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further information for the person's care funding source e.g. self funded" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Element name="Date_this_plan_was_last_updated" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is a record of the date that this care and support plan was last updated." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+    <Element name="Other_care_planning_documents" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Reference other care planning documents, including the type, location and date. This may include condition-specific plans, advance care plans, end of life care plan, etc." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text." />
+    </Element>
+    <Element name="Planned_review_dateinterval" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is the date/interval when this information will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |" />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+    <Model name="Responsibility for review">
+      <TaggedValue name="description" value="This is a record of who has responsibility for arranging review of this information." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Contingency plans">
+    <TaggedValue name="description" value="These are the things to do and people to contact, should an individual’s health or other circumstances get worse." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="*" />
+    <Model name="Trigger factors">
+      <TaggedValue name="description" value="Signs to watch out for that may indicate a significant change in health or other circumstances e.g. feeling agitated" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The trigger that leads to instigation of a significant change in health or other circumstances." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT: - ^1127581000000103 | Health issues simple reference set (foundation metadata concept) |" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The person’s trigger factors (in free text). If the trigger factor is coded then this is any supplementary or personalised information that relates to the coded trigger factor." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Contingency plan name">
+      <TaggedValue name="description" value="When the action evaluation needs to be reviewed." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value for the type of care plan" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT: - ^999001471000000108 | Care plan type simple reference set (foundation metadata concept) |" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Free text if no coded value is available." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="What should happen">
+      <TaggedValue name="description" value="Guidance on specific actions or interventions that may be required or should be avoided in specific situations. This may include circumstances where action needs to be taken if a carer is unable to care for the person. A statement of suggested actions. Usually expressed as: in the event of X do Y." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coded_value_" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value for what should happen" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT : - &lt;&lt;71388002 |Procedure| OR &lt;&lt;129125009 |Procedure with explicit context|" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="What should happen (in free text). If 'what should happen' is coded then this is any supplementary or personalised information that relates to the coded value for 'what should happen'." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Who should be contacted">
+      <TaggedValue name="description" value="Who should be contacted in the event of significant problems or deterioration in health or wellbeing. e.g. name, role and contact details." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the personal contact (e.g. telephone number, address, email address etc.)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free Text" />
+      </Element>
+    </Model>
+    <Model name="Agreed with person or legitimate representative">
+      <TaggedValue name="description" value="Indicates whether the plan was discussed and agreed with the person or legitimate representative." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Person_or_legitimate_representative" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Indicates whether the plan was discussed and agreed with the person or legitimate representative" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Person or legitimate representative" />
+      </Element>
+      <Element name="Person_full_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The full name of the person in text representation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary :- Person full name" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - sdsjobrole" />
+      </Element>
+    </Model>
+    <Element name="Date_this_plan_was_last_updated" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The date that this contingency plan was last updated." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+    <Element name="Planned_review_dateinterval" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is the date/interval when this contingency plan will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+    <Model name="Responsibility for review">
+      <TaggedValue name="description" value="This is who has responsibility for arranging review of this information." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Coping strategies">
+      <TaggedValue name="description" value="Details of coping strategies used" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coping_strategy" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coping strategies are defined as thoughts and behaviours that people use to manage the internal and external demands of situations that are appraised as stressful. This should also include a record of any tools used to carry out the coping strategy." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Start_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date when the coping strategy started" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Element name="End_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date when the coping strategy ended" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+    </Model>
+    <Model name="Relapse indicators / early warning signs">
+      <TaggedValue name="description" value="Details of the relapse indicators for the person. These may also be called 'early warning signs'" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value for relapse indicators/early warning signs" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT : - ^1127601000000107 | Healthcare matters simple reference set (foundation metadata concept) |" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any supplementary or personalised information regarding the relapse indicators/early warning signs" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Advance statement">
+      <TaggedValue name="description" value="Written requests and preferences made by a person with capacity conveying their wishes, beliefs and values for their future care should they lose capacity." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Advance statement">
+        <TaggedValue name="description" value="Does the person have an advance statement." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for advance statement" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - 816281000000101 | Has advance statement (Mental Capacity Act 2005) (finding) |" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Location_of_document" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of where the advanced statement is held." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+    </Model>
+    <Element name="Anticipatory_medicinesequipment" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="Medicines or equipment available that may be required in specific situations and their location. A statement regarding the availability or location of the anticipatory medicines/equipment. SNOMED CT Tag : - 871021000000106 | Prescription of palliative care anticipatory medication (procedure) |" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+  </Model>
+  <Model name="Additional support plans">
+    <TaggedValue name="description" value="Additional support plans" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="*" />
+    <Model name="Additional support plan name">
+      <TaggedValue name="description" value="The name of the particular additional supporting plan, e.g. dieticians plan, wound management plan, discharge management plan and behaviour support plan." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value for the type of care plan" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT: - ^999001471000000108 | Care plan type simple reference set (foundation metadata concept) |" />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Free text if no coded value is available" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Element name="Additional_support_plan_content" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is the content of any additional care and support plan which the person and/or care professional consider should be shared with others providing care and support. May be structured in different ways, e.g. tables, diagrams, images. This is the content of any additional care and support plan which the individual and/or care professional consider should be shared with others providing care and support. It should be structured as recommended for the care and support plan and if contains additional detail, it may be referenced here." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text" />
+    </Element>
+    <Element name="Planned_review_dateinterval" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is the date/interval when this information will next be reviewed. SNOMED CT tag : - 425268008 | Review of care plan (procedure) |" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+    <Model name="Responsibility for review">
+      <TaggedValue name="description" value="This is a record of who has responsibility for arranging review of this information. Should include their name, role and contact details." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the professional with responsibility for the care of the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Role" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker, key worker, care home manager, care coordinator, LA hospital liaison person, care home contact, hospital clinician, Independent Mental Capacity Advocate (IMCA) etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+      </Element>
+      <Element name="Contact_details" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Contact details of the professional (e.g. telephone number, email address etc.)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Element name="Date_this_plan_was_last_updated" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="This is a record of the date that this information was last updated." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+  </Model>
+  <Model name="Palliative and end of life care">
+    <TaggedValue name="description" value="Information relating to palliative and end of life care. N.B. This is not an end of life care plan or a palliative care plan but contains information that would be found in an end of life care or palliative care plan." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Involvement in advance care planning">
+      <TaggedValue name="description" value="Details of the person's , family and carer's involvement in advance care planning" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Person and personal contacts involved in advance care planning">
+        <TaggedValue name="description" value="The person, their legitimate representative, family member or carer involved in advance care planning" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A code for representing when a person, their legitimate representative, family member or carer are involved in the end of Life Plan." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- 713662007 |Discussion about advance care planning (procedure)| 714747005 |Discussion about advance care planning declined (situation)| 714361002 |Discussion about advance care planning with caregiver (situation)| 713665009 |Discussion about advance care planning with family member (situation)| 922321000000108 |Discussion about advance care planning not appropriate at this time (finding)| 1403141000000101 |Discussion about cardiopulmonary resuscitation with caregiver (situation)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no coded data is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+        <Element name="Name_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the personal contact." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+        <Element name="Relationship_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set : - Related person" />
+        </Element>
+        <Element name="Relationship_type" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Additional roles the person performs on behalf of the other (e.g. Carer, Next of Kin, Emergency Contact, Dependent, etc.)" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role of the person involved in the end of life plan" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR values set : - sdsjobrole" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="End of life care plans">
+      <TaggedValue name="description" value="Details of a person's palliative and end of life care plans." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="End of life care plan name">
+        <TaggedValue name="description" value="Type of palliative care or end of life plan, e.g. Advance Care Plan, Treatment Escalation Plan, etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- 714748000 |Has advance care plan (finding)| 713600001 |Agreement on advance care plan (procedure)| 713580008 |Review of advance care plan (procedure)| 735324008 |Treatment escalation plan (record artifact)| 887701000000100 |Emergency health care plan (record artifact)| 1107891000000106 |Has Recommended Summary Plan for Emergency Care and Treatment (finding)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Enter the plan name in text where no code exists" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+      </Model>
+      <Element name="Plan_contents" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="To record the details of a person end of life plan. May include a person's wishes and preferences in their Advance Care Plan or a list of ceilings of treatment for Treatment Escalation Plan or priorities of care and anticipatory actions for an Emergency Care and Treatment Plan" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free Text" />
+      </Element>
+      <Element name="Plan_review_date" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The next plan review date" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="date" />
+        <TaggedValue name="valueSets" value="Date field" />
+      </Element>
+      <Model name="Responsibility for review ">
+        <TaggedValue name="description" value="The professional responsible for reviewing the plan in the future" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Speciality" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+        </Element>
+        <Element name="Organisation_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name, including the identifier, of the organisation providing the service" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation name" />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the personal contact (e.g. telephone number, address, email address etc.)" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Cardio-pulmonary resuscitation (CPR) decision">
+      <TaggedValue name="description" value="Whether a decision has been made; the decision; who made the decision; the date of decision; date for review and location of documentation." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Cardio-pulmonary resuscitation (CPR) decision">
+        <TaggedValue name="description" value="The cardio-pulmonary resuscitation (CPR) decision." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for CPR decision or DNACPR" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: - 450475007 | For cardiopulmonary resuscitation (finding) |, 450476008 | Not for cardiopulmonary resuscitation (finding) |" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Involvement in CPR Decision ">
+        <TaggedValue name="description" value="Details of the person , their family and carers involvement in the CPR decision" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Person and personal contacts involved in the decision">
+          <TaggedValue name="description" value="The person, their legitimate representative, family member or carer involved in the CPR decision." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A code for representing when a person, their legitimate representative, family member or carer are involved in the CPR decision." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT:- 713079002 |Discussion about cardiopulmonary resuscitation (procedure)| 713656002 |Discussion about cardiopulmonary resuscitation with family member (situation) 1403141000000101 |Discussion about cardiopulmonary resuscitation with caregiver (situation)" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free Text" />
+          </Element>
+          <Element name="Name" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The name of the person involved in the decision" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free Text" />
+          </Element>
+          <Element name="Relationship" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : - Related person" />
+          </Element>
+          <Element name="Relationship_type" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Additional roles the person performs on behalf of the other (e.g. Carer, Next of Kin, Emergency Contact, Dependent, etc.)" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free Text" />
+          </Element>
+          <Element name="Role" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The role of the person providing the service." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+          </Element>
+        </Model>
+      </Model>
+      <Element name="Date_for_review" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The date for review of CPR decision." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+      <Model name="Responsibility for review">
+        <TaggedValue name="description" value="The professional responsible for reviewing the decision" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional that saw the person" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Grade" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The grade of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role of the person providing the service." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="FHIR values set : - ukcorepractitionerrolecode" />
+        </Element>
+        <Element name="Specialty" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The specialty e.g. physiotherapy, oncology, mental health etc" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+        </Element>
+        <Element name="Organisation_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name, including the identifier, of the organisation providing the service" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation name" />
+        </Element>
+        <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Professional identifier of the person providing the service." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - professional identifier" />
+        </Element>
+        <Element name="Contact_details" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Contact details of the personal contact (e.g. telephone number, address, email address etc.)" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+      </Model>
+      <Element name="Location_of_document" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the CPR decision document" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+    </Model>
+    <Model name="Estimated prognosis">
+      <TaggedValue name="description" value="Details of the persons estimated prognosis" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Estimated prognosis">
+        <TaggedValue name="description" value="Where a person is terminally ill this is a clinical judgment indicating the anticipated period of time until death e.g. last days, weeks, months or year of life." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the estimated prognosis" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT: 1128811000000107 |Prognosis findings simple reference set (foundation metadata concept)| Recommended Value set to use 511401000000102 | Last days of life (finding) 955231000000109 | Last weeks of life (finding) 968211000000101 | Last months of life (finding) 767503006 | Limited life expectancy of approximately one year (finding) 1413121000000106 |Limited life expectancy of more than one year (finding) Where services use Gold Standard Framework, they may wish to use the following value set 845701000000104 | Gold standards framework prognostic indicator stage A (blue) - year plus prognosis (finding) 845721000000108 | Gold standards framework prognostic indicator stage B (green) - months prognosis (finding) 845751000000103 | Gold standards framework prognostic indicator stage C (yellow) – weeks prognosis (finding) 845771000000107 | Gold standards framework prognostic indicator stage D (red) - days prognosis (finding)" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free Text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Person is on the Palliative Care Register ">
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT:- 1403151000000103 |On palliative care register (finding)" />
+      </Element>
+      <Element name="Free_Text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+    </Model>
+    <Model name="Anticipatory medicines/equipment">
+      <TaggedValue name="description" value="Details of the persons availability or location regarding their anticipatory medicines/equipment." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Statement_on_anticipatory_medicinesequipment" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A statement regarding the availability or location of the anticipatory medicines/equipment." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Anticipatory medicines and equipment">
+        <TaggedValue name="description" value="Coded data on the issue of palliative care anticipatory medicines and equipment" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="SNOMED CT codes" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- 376201000000102 | Issue of palliative care anticipatory medication box (procedure) 871021000000106 | Prescription of palliative care anticipatory medication (procedure)" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+    <Model name="Preferred place of death">
+      <TaggedValue name="description" value="Details of the person's preferred place of death" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Preferred place of death">
+        <TaggedValue name="description" value="The preferences that a person has identified as their preferred place to die." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name_of_the_place" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the preferred place of death" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Model name="Type of Place ">
+          <TaggedValue name="description" value="The type of preferred place of death" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="SNOMED CT codes" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: 895911000000107 | Personal preferences simple reference set | is under review . At present we recommend the following value set for preferred place of death 517111000000103 | Preferred place of death: patient unable to express preference (finding)| 517131000000106 | Preferred place of death: discussion not appropriate (finding) | 766391000000108 | Preferred place of death: patient declined discussion (finding) | 517161000000101 | Preferred place of death: patient undecided (finding) | 89751000000108 | Preferred place of death: community hospital| 110481000000108 | Preferred place of death: home| 108401000000102 | Preferred place of death: hospice| 109401000000108 | Preferred place of death: hospital| 518741000000100 | Preferred place of death: learning disability unit | 518771000000106 | Preferred place of death: mental health unit| 89761000000106 | Preferred place of death: nursing home | 512071000000106 | Preferred place of death: residential home |" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text field to be used if no coded text is available fro preferred place of death" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+      </Model>
+    </Model>
+    <Model name="Palliative care financial support ">
+      <TaggedValue name="description" value="Details of the financial support forms/claims the clinician has informed the person about or/and helped the person complete" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Type of financial support">
+        <TaggedValue name="description" value="The type of form or claim" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value_" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value of type of form or claim" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT:- 871631000000101 |Discussion about DS1500 Disability living allowance report (procedure)| 768381000000107 |DS1500 Disability living allowance report declined (situation)| 514591000000108 |Completion of DS1500 terminal illness medical report (procedure)| 270841001 |DS1500 attendance allowance exam (procedure)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no coded text available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="After death">
+    <TaggedValue name="description" value="End of Life" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Actual place of death">
+      <TaggedValue name="description" value="The location where the person actually died as recorded on the death certificate. If the person died somewhere other than their preferred place, record the reasons why this happened." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Name_of_the_place" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the actual place of death" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Type_of_place" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of place where the person's death took place" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT : 999002761000000100 | Actual place of death findings simple reference set | is under review . At present we recommend the following value set for place of death 876879006 | Died at home (finding) | 714342001 | Died in ambulance (finding) | 876882001 | Died in hospice (finding) | |183676005 | Died in hospital (finding) | 713050009 | Died in learning disability unit (finding) | 713051008 | Died in mental health unit (finding) | 876884000 | Died in nursing home (finding) | 876885004 | Died in street (finding) | 876881008 | Died in general practice premises (findings)| 713049009 | Died in a community hospital (finding) | 1325731000000106 | Died in a residential home |" />
+      </Element>
+    </Model>
+    <Element name="Date_of_death" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The date on which a person died or is officially deemed to have died, as recorded on the death certificate." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="datetime" />
+      <TaggedValue name="valueSets" value="Date and time" />
+    </Element>
+  </Model>
+  <Model name="Documents (including correspondence, audio and images)">
+    <TaggedValue name="description" value="Details about documents related to the person." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Documents">
+      <TaggedValue name="description" value="This is the documents record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Documentation_location" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The location of the document" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text or URL" />
+      </Element>
+      <Element name="Confidentiality" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The code specifying the level of confidentiality of the document." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="FHIR value set : - Confidentiality" />
+      </Element>
+      <Element name="Class" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The document type e.g. report, summary, images, treatment plan, patient preferences, workflow" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Element name="Document_title" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The title of the document." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Document_name" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The name of the document. This should align to the PRSB document naming standard. Where the document is a KOS document this field (designated typeCode) is used to carry the DICOM Imaging procedure: This attribute shall be populated by the XDS-I Imaging Document Source from a code in the Procedure Code Sequence (0008,1032) of the performed procedure with which the document is associated. Values may be found in a suitable DICOM browser" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT: - As per the https://theprsb.org/wp-content/uploads/2018/11/Clinical-document-indexing-standards_NHS-Scotland.pdf" />
+      </Element>
+      <Element name="Document_MIME_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="MIME type of the document e.g. application, pdf, audio, jpeg" />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Service">
+        <TaggedValue name="description" value="The high level imaging speciality code e.g. (R-3027B, SRT, “Radiology”)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for service" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT :- ^1127531000000102 |Services simple reference set (foundation metadata concept)|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Comments associated with the document." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Model name="Additional information required for images.">
+        <TaggedValue name="description" value="Additional information required for images." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Image_procedure" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The procedure used to capture the image" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text Using DICOM code set https://dicom.innolitics.com/ciods" />
+        </Element>
+        <Element name="Image_procedure_date" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The date and time the image procedure was performed." />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time" />
+        </Element>
+        <Model name="Performing professional">
+          <TaggedValue name="description" value="The professional who performed the image procedure." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Name" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The name of the professional." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Role" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set :- SDSjobroletype" />
+          </Element>
+          <Element name="Grade" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The grade of the professional." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Speciality" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The specialty of the professional e.g. physiotherapy, oncology, mental health etc" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+          </Element>
+          <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Professional identifier for the professional e.g. GMC number, HCPC number etc or the personal identifier used by the local organisation." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary : - Professional registration identifier" />
+          </Element>
+          <Model name="Organisation">
+            <TaggedValue name="description" value="The name of the organisation the professional works for." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+          </Model>
+          <Element name="Contact_details" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Contact details of the professional" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary - UK phone number" />
+          </Element>
+        </Model>
+        <Model name="Images">
+          <TaggedValue name="description" value="Images details." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Image_capture_date" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date and time when the image was captured." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time" />
+          </Element>
+          <Element name="Image_ID" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A unique image identifier generated by the system." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="identifier" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Image_location" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The URL for the image" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Format_code" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The format code of the document which provides information on how to display the document." />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Event_code_list" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The type of image (acquisition modality) and the anatomical site imaged." />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="DICOM code" />
+        </Element>
+        <Model name="Person completing record">
+          <TaggedValue name="description" value="Details of the person completing the record." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Name" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The name of the person completing the record." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Role" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The organisational role of the person completing record." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set :- SDSjobrole" />
+          </Element>
+          <Element name="Grade" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The grade of the person completing the record." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Specialty" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The main specialty of the person completing the record." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary :- Activity treatment function code" />
+          </Element>
+          <Model name="Organisation">
+            <TaggedValue name="description" value="The organisation the person completing the record works for." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+          </Model>
+          <Element name="Professional_identifier" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Professional identifier for the person completing the record e.g. GMC number, HCPC number etc, or the personal identifier used by the local organisation." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary :- Professional registration identifier" />
+          </Element>
+          <Element name="Date_completed" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The date and time the record was completed." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="datetime" />
+            <TaggedValue name="valueSets" value="Date and time." />
+          </Element>
+          <Element name="Contact_details" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Contact details of the person completing the record." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="NHS data dictionary : - UK telephone number" />
+          </Element>
+        </Model>
+        <Element name="Comments" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Comments associated with the imaging" />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+</Standard>

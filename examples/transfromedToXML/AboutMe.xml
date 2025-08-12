@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="About Me" version="2.01" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="Version 1.3 including updates agreed through CTOP in 2022. Version 1.4 model suggested by architect; various changes to modelling and guidance agreed through CTOP meetings between Dec 2023 and April 2024. Additional discussions throughout 2024. Frozen at 1.4 for internal peer review Nov 2024 Version 2 Finalised version after S&amp;M board and assurance committee approval 2025. Version 2.01 Updated following peer review of viewer and agreement at CAG. Details of updates made can be found on the SharePoint under Projects - Documents\PROJECTS\_Support and Maintenance\Completed maintenance releases\About Me 2.01." />
+  <Model name="About Me">
+    <TaggedValue name="description" value="This is a record of the things that a person feels it is important to communicate about their needs, strengths, values, concerns and preferences to others providing support and care." />
+    <TaggedValue name="implementationGuidance" value="The expectation is that this information would be written or recorded by an individual, supported by a professional or carer (or by someone on behalf of the person if they do not have capacity). It includes options to use multimedia files which are particularly useful when a person has difficulties expressing themselves, or for showing how to do things or actions and reactions. It is recommended that About Me information is reviewed and updated at key transition points for example for children and young people with Education, Health and Care (EHC) plans when transitioning from primary to secondary school, moving onto college and whenever their home circumstances change (for example moving into supported living or residential care). The transition process from children’s social care to adult’s social care is also a recommended time for reviewing and updating About Me information. For adults, it should be reviewed and updated at planned reviews or when circumstances change. It should ..." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="About Me record entry">
+      <TaggedValue name="description" value="About Me record entry." />
+      <TaggedValue name="implementationGuidance" value="The cardinality is 0 to 1 as viewers of an About Me should only see the latest version/record entry (not all the record entries). However, systems should hold previous versions of About Me as an audit trail." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="What is most important to me">
+        <TaggedValue name="description" value="A description of what is most important to you. Key Information: Include any essential information that any professional in health and social care should know about you in any situation, including emergencies. Other Information: This could include: values, spirituality/religion, ethnicity, culture, pets, goals and aspirations, meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. What does someone caring for, or supporting you, need to know about you in an emergency? Consider including any important preferences, needs and wishes that indicate how you need to be cared for and supported in an emergency such as the need to avoid any disturbing stimuli e.g., noise, visual, smell, taste or touch etc. For example by being seen in a quiet or darkened room, the need for visual aids, the need for a translator or the need for vegan appropriate medications etc. Consider including any food allergies or risk of choking. Consider referencing other documents in which you have already recorded any needs, wishes and preferences such as an advance decision, a lasting power of attorney, a communication or hospital passport or an end-of-life plan. 2. What’s most important to you? This is just as important as emergency information. Think about your core values, spiritual beliefs, culture, ethnicity and religion as they relate to your care. Think about what m..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for what is most important to me." />
+          <TaggedValue name="implementationGuidance" value="The coded value for what is most important to me." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515861000000103 |What is most important to me|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="People who are important to me">
+        <TaggedValue name="description" value="Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. Who are the important people in your life and why? Think about family, friends, staff in the care home and people who support you at home or in the community or at a club. 2. Who should be contacted in an emergency and why? 3. Who do you want to be consulted on, and involved in, your care and support in an emergency and in normal situations? 4. Is there anyone that should not be contacted or consulted about your care and support and why (if you wish to say)?" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for people who are important to me." />
+          <TaggedValue name="implementationGuidance" value="The coded value for people who are important to me." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515871000000105 |People who are important to me|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="How I communicate and how to communicate with me">
+        <TaggedValue name="description" value="A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information. Describe how you would like others to engage and communicate with you, including how you would like to be addressed." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. What do people caring for you and supporting you need to know about how you communicate and how they should communicate with you? Consider: the language you prefer to communicate in. whether you communicate by, for example, signing, symbols, Picture Exchange Communication System (PECS), gestural or body language. how you like to be addressed and whether you use a communication aid (high or low tech) (If so, who provides maintenance and technical support?). whether people speaking to you need to speak slowly and clearly. 2. How do you let people know you are in pain, anxious or in distress? For example, do you communicate it verbally, facially or through body language? 3. How do you make choices? When offered a verbal choice do you always make an informed choice, or do you need those supporting you to explain choices in detail? 4. How do you indicate yes and no? 5. How do you give feedback or raise a concern? 6. What support would help you understand what is happ..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for how I communicate and how to communicate with me." />
+          <TaggedValue name="implementationGuidance" value="The coded value for how I communicate and how to communicate with me." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515881000000107 |How I communicate and how to communicate with me|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="My wellness">
+        <TaggedValue name="description" value="A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered. Include your wellbeing and lifestyle goals and aspirations." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. What shows the good things in your life and who you are as a person? Think about photos, videos, letters from people you value, Facebook pages, Twitter or Instagram accounts. 2. What are you able to do and how do you feel on a typical day? 3. How do any conditions or symptoms you live with affect you and how do you manage them? 4. Do you have any long-term pain, if so, how do you manage it? 5. Do you have past events or health issues that affect you, if so, how do you manage them? 6. What triggers or vulnerabilities can cause you to become unwell, how do you avoid or address them? 7. What might indicate that you are becoming unwell, how do you manage it? 8. What are you able to do and how do you feel on a bad day, how do you want to be supported? 9. What helps and hinders you to be well?" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for my wellness." />
+          <TaggedValue name="implementationGuidance" value="The coded value for my wellness." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515891000000109 |My wellness|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Please do and please do not">
+        <TaggedValue name="description" value="A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, or asking you to undergo a specific intervention or to take a medication that you do not want." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. What are the really important things that you want someone to do when caring for or supporting you? 2. What are the really important things that you don’t want someone to do when caring for or supporting you?" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for please do and please do not." />
+          <TaggedValue name="implementationGuidance" value="The coded value for please do and please do not." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515901000000105 |Please do and please do not|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="How and when to support me">
+        <TaggedValue name="description" value="A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood). This could include support you need to maintain important routines or to carry out particular activities, for example: personal care routines, eating and drinking, bedtime routines, taking medications, moving and transitioning. This could also include support needed with: wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. What do people caring for and supporting you in an emergency need to know about how and when to support you? 2. What are your important routines? What are you able to do for yourself, what do you need support with and how do you want to be supported? Think about: your morning, bedtime and personal care routines. dressing and undressing. using the toilet. having a shower or bath. brushing your teeth. Think about eating and drinking: Do you use any special bowls (e.g. lipped plate), cutlery (e.g. weighted spoon) or cups? How do you like your food presented (e.g. chopped up or liquified etc.)? How do you like to be supported to eat (e.g. verbal prompts or physical help)? What do you like to drink and eat? How do you like to be supported in making food and drink choices? How do you like to be supported in preparing food? Think about sleeping: Do you sleep well at night? What helps you to have a good night’s sleep (e.g. warm milk before bed, leaving lights on, music)..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for how and when to support me." />
+          <TaggedValue name="implementationGuidance" value="The coded value for how and when to support me." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515911000000107 |How and when to support me|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Also worth knowing about me">
+        <TaggedValue name="description" value="A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life: your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike. This could also include any care and support preferences that have not been included elsewhere." />
+        <TaggedValue name="implementationGuidance" value="Prompt questions: 1. Provide a short summary of your past life. Think about: where you worked, what jobs you have had. where you lived. important people in your life. important events in your life. 2. Provide a short profile of your current life. Think about: where you work, your job or college. your strengths and skills. your networks. exercise. 3. What do you like to do? Think about people you like to see, places you like to visit, activities you enjoy doing and your favourite tv programmes etc. 4. What are your food preferences or requirements? 5. What do you like to talk about? 6. What do you not like? Think about environments you do not like to be in, food, places, things you do not like to do and things you do not like to talk about." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for what is also worth knowing about me." />
+          <TaggedValue name="implementationGuidance" value="The coded value for what is also worth knowing about me." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED_CT:&quot;1515921000000101 |Also worth knowing about me|&quot;" />
+        </Element>
+        <Model name="About Me response">
+          <TaggedValue name="description" value="About Me response" />
+          <TaggedValue name="implementationGuidance" value="About Me response" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Free_text_" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text" />
+            <TaggedValue name="implementationGuidance" value="Free text" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Model name="Multi-media">
+            <TaggedValue name="description" value="Multi-media." />
+            <TaggedValue name="implementationGuidance" value="Multi-media." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Multi-media_filename" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="implementationGuidance" value="The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4)." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_MIME_type" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The MIME type of the multi-media file." />
+              <TaggedValue name="implementationGuidance" value="Examples of common multi-media MIME types are video/JPEG, video/MP4, audio/MP4, audio/MPEG audio/vnd.wav. A full list of MIME types is available here: https://mimetype.io/all-types" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_file" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The actual multi-media file if it is stored in the system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be stored in the system using this element, or using a URL." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+            <Element name="Multi-media_URL" type="Class" stereotype="MultimediaElement">
+              <TaggedValue name="description" value="The URL or link to the multi-media file where it is stored in a different system." />
+              <TaggedValue name="implementationGuidance" value="The multi-media file can either be referenced with a URL or link using this element, or by storing the actual file using the muti-media file element." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Element name="Supported_to_write_this_by" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Where relevant, this is a record of name, relationship/role and contact details of the individual(s) who supported the person to write this section e.g. carer, family member, advocate, professional." />
+        <TaggedValue name="implementationGuidance" value="This data item records the information about who supported the person to write the About Me. This could pick up an individual's details if they exist in a system being used to create an About Me. Where someone does not have the capacity or capability to do their About Me themselves or with support, this should be used to explain how it was completed (e.g. from their experience of caring for the person supported by notes from their record etc). Note that getting the views of the person as much as possible should remain the aim." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text" />
+      </Element>
+      <Element name="Date_last_updated" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="This is a record of the date that this About Me was created or last updated." />
+        <TaggedValue name="implementationGuidance" value="This is a record of the date that this About Me was created or last updated." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time" />
+      </Element>
+    </Model>
+  </Model>
+</Standard>

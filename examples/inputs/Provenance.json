@@ -1,0 +1,1218 @@
+{
+  "dataset": [
+    {
+      "version": "1.2",
+      "name": "Provenance",
+      "description": "<p>Version incremented from 0.8 (Provenance) to 1.1 (Provenance) in January 2023 following internal review and updates, and to match the versioning on the PRSB website.</p>",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Event record",
+          "description": "\n                     <div>This is a record of an event performed by someone or something. An event can happen at one time and be recorded at another time.</div> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Author",
+              "description": "\n                         <div>The person, professional or device recording the information in the record.</div> \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person",
+                  "description": "\n                             <div>The person recording the information in the record.</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the person completing the record.",
+                      "valueSets": "Free text. <br clear=\"none\"/> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Relationship",
+                      "description": "\n                         <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>PRSB strongly recommend using FHIR standards when implementing our standards as the agreed transport mechanism.</p> <p>FHIR valueset 'UKCorePersonRelationshipType' : -\u00a0 https://simplifier.net/hl7fhirukcorer4/ukcore-personrelationshiptype-110</p>",
+                          "description": "\n                             <p>The coded value for relationship.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>Relationships may be customised by users. Where no alignment is available to standardised lists, users may add to the list of relationships.</div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available. </p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional",
+                  "description": "\n                             <div>The professional recording the information in the record.\u00a0</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the professional. <br clear=\"none\"/> \n                    ",
+                      "valueSets": "\n                         <div>Free text.<br clear=\"none\"/>\n                        </div> \n                    ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "\n                         <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. Where no alignment is available to standardised lists, users may add to the roles:</p> <p>National Workforce Data Set (NWD) NHS Occupation codes : -\u00a0<a href=\"https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes\" rel=\"noopener noreferrer nofollow\">https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes</a>\u00a0</p> <p>Other nationally maintained lists include:</p> <p>FHIR valueset 'UKCorePractitionerRoleCode' : -\u00a0<a href=\"https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode\" rel=\"noopener noreferrer nofollow\">https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode</a></p> <p>SNOMED CT concepts from FHIR R4 : -\u00a0\u00a0&lt;&lt;\u00a0223366009 | Healthcare professional (occupation) |\u00a0\u00a0Descendant or self of concept. SNOMED codes are searchable through the browser tool <a href=\"https://termbrowser.nhs.uk/?\" rel=\"noopener noreferrer nofollow\">here</a>.</p>",
+                          "description": "\n                             <p>The coded value for role.</p> \n                        ",
+                          "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <p>Free text</p> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implamentationGuidance": "\n                                 <div>\n                                    <p>Please note that the \u2018grade\u2019 field may not be applicable in some settings and so does not need to be included in the implementation where it does not apply (e.g. social care settings).</p>\n                                </div> \n                            ",
+                      "description": "The grade of the professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "description": "\n                         <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded Value",
+                          "implamentationGuidance": "<p>The \u2018Main Specialty Codes\u2019 in Table 1 of the NHS Data Dictionary code list for specialties is advised.</p> <p>NHS data dictionary 'Main Specialty and Treatment Function Codes Table': <a href=\"https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html</a></p>",
+                          "description": "\n                             <p>The coded value for specialty.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>\n                                    <p>The PRSB suggests users use generic specialties to suit the customer base where applicable, which should align with nationally identified specialties that are coded (or will be in future). Specialties may be customised by users. Where no alignment is available to standardised lists, users may add to the list of specialties.</p>\n                                </div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier type",
+                      "implamentationGuidance": "<p>PRSB suggest users use generic professional identifier types to suit the customer base where applicable, which should align with nationally identified professional identifier types that are coded (or will be in future).</p> <p>Professional identifier types may be customised by users. Where no alignment is available to standardised lists, users may add to the list of professional identifier types.\u00a0</p> <p>NHS Data Dictionary 'Professional Registration Body Code'\u00a0: <a href=\"https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html</a></p>",
+                      "description": "\n                         <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council\u00a0(NMC) numbers.</p> \n                    ",
+                      "valueSets": "\n                         <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                    "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "implamentationGuidance": "\n                                 <div>This field is to record the actual professional identifier (NHS; NMC, HCPC etc).</div> \n                            ",
+                      "description": "\n                         <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p> \n                    ",
+                      "valueSets": "\n                         <p>Free text</p> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The name of the organisation the professional works for.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Use of NHS data dictionary Organisation Data Service (ODS) codes is advised:</p> <p><a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data</a></p> <p>Guidance around how to locate ODS codes can be found at: <a href=\"https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.\" rel=\"noopener noreferrer nofollow\">https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.</a></p> <p>Users should use the NHS Digital ODS portal to locate specific ODS codes. See: <a href=\"https://odsportal.digital.nhs.uk/Organisation/Search\" rel=\"noopener noreferrer nofollow\">https://odsportal.digital.nhs.uk/Organisation/Search</a></p>",
+                          "description": "\n                             <div>The coded value for organisation.\u00a0</div> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>The free text field should be used for any organisations not present in the coded list. For example, many social care organisations may not be coded.</div> \n                            ",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Device",
+                  "description": "\n                             <div>The device\u00a0<span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the information in the record.</span></div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device type",
+                      "description": "The device type.\u00a0",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>\n                                    <p>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</p>\n                                </div> \n                            ",
+                          "description": "The coded value for device type.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device manufacturer",
+                      "description": "Name of the device manufacturer.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for device manufacturer.",
+                          "valueSets": "\n                             <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Model",
+                      "description": "The model of the device.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for model.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Software version",
+                      "description": "The version of software running on the device.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Unique identifier",
+                      "description": "The unique identifier for the device.\u00a0",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Performer",
+              "description": "\n                         <div>The person, professional or device performing the activity in the record.\u00a0</div> \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person",
+                  "description": "\n                             <div>The person performing the activity in the record.</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the person completing the record.",
+                      "valueSets": "Free text. <br clear=\"none\"/> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Relationship",
+                      "description": "\n                         <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>\n                                    <div>PRSB strongly recommend using FHIR standards when implementing our standards as the agreed transport mechanism.</div>\n                                    <div>\u00a0</div>\n                                    <div>FHIR valueset 'UKCorePersonRelationshipType' : -\u00a0 https://simplifier.net/hl7fhirukcorer4/ukcore-personrelationshiptype-110</div>\n                                </div> \n                            ",
+                          "description": "\n                             <p>The coded value for relationship.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>Relationships may be customised by users. Where no alignment is available to standardised lists, users may add to the list of relationships.</div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available. </p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional",
+                  "description": "\n                             <div>The professional performing the activity in the record.\u00a0</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the professional. <br clear=\"none\"/> \n                    ",
+                      "valueSets": "\n                         <div>Free text.<br clear=\"none\"/>\n                        </div> \n                    ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "\n                         <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. Where no alignment is available to standardised lists, users may add to the roles:</p> <p>National Workforce Data Set (NWD) NHS Occupation codes : -\u00a0<a href=\"https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes\" rel=\"noopener noreferrer nofollow\">https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes</a>\u00a0</p> <p>Other nationally maintained lists include:</p> <p>FHIR valueset 'UKCorePractitionerRoleCode' : -\u00a0<a href=\"https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode\" rel=\"noopener noreferrer nofollow\">https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode</a></p> <p>SNOMED CT concepts from FHIR R4 : -\u00a0\u00a0&lt;&lt;\u00a0223366009 | Healthcare professional (occupation) |\u00a0\u00a0Descendant or self of concept. SNOMED codes are searchable through the browser tool <a href=\"https://termbrowser.nhs.uk/?\" rel=\"noopener noreferrer nofollow\">here</a>.</p>",
+                          "description": "\n                             <p>The coded value for role.</p> \n                        ",
+                          "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <p>Free text</p> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implamentationGuidance": "\n                                 <div>Please note that the \u2018grade\u2019 field may not be applicable in some settings and so does not need to be included in the implementation where it does not apply (e.g. social care settings).</div> \n                            ",
+                      "description": "The grade of the professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "description": "\n                         <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded Value",
+                          "implamentationGuidance": "<p>The \u2018Main Specialty Codes\u2019 in Table 1 of the NHS Data Dictionary code list for specialties is advised.</p> <p>NHS data dictionary 'Main Specialty and Treatment Function Codes Table': <a href=\"https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html</a></p>",
+                          "description": "\n                             <p>The coded value for specialty.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>The PRSB suggests users use generic specialties to suit the customer base where applicable, which should align with nationally identified specialties that are coded (or will be in future). Specialties may be customised by users. Where no alignment is available to standardised lists, users may add to the list of specialties.</div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier type",
+                      "implamentationGuidance": "<p>PRSB suggest users use generic professional identifier types to suit the customer base where applicable, which should align with nationally identified professional identifier types that are coded (or will be in future).</p> <p>Professional identifier types may be customised by users. Where no alignment is available to standardised lists, users may add to the list of professional identifier types.</p> <p>NHS Data Dictionary 'Professional Registration Body Code':</p> <p><a href=\"https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html</a></p>",
+                      "description": "\n                         <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council\u00a0(NMC) numbers.</p> \n                    ",
+                      "valueSets": "\n                         <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                    "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "implamentationGuidance": "\n                                 <div>This field is to record the actual professional identifier (NHS; NMC, HCPC etc).</div> \n                            ",
+                      "description": "\n                         <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p> \n                    ",
+                      "valueSets": "\n                         <p>Free text</p> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The name of the organisation the professional works for.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Use of NHS data dictionary Organisation Data Service (ODS) codes is advised:</p> <p><a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data</a></p> <p>Guidance around how to locate ODS codes can be found at: <a href=\"https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.\" rel=\"noopener noreferrer nofollow\">https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.</a></p> <p>Users should use the NHS Digital ODS portal to locate specific ODS codes. See: <a href=\"https://odsportal.digital.nhs.uk/Organisation/Search\" rel=\"noopener noreferrer nofollow\">https://odsportal.digital.nhs.uk/Organisation/Search</a></p>",
+                          "description": "\n                             <div>The coded value for organisation.\u00a0</div> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>The free text field should be used for any organisations not present in the coded list. For example, many social care organisations may not be coded.</div> \n                            ",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Device",
+                  "description": "\n                             <div>The device\u00a0<span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the activity in the record.</span></div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device type",
+                      "description": "The device type.\u00a0",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for device type.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device manufacturer",
+                      "description": "Name of the device manufacturer.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for device manufacturer.",
+                          "valueSets": "\n                             <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Model",
+                      "description": "The model of the device.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for model.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Software version",
+                      "description": "The version of software running on the device.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Unique identifier",
+                      "description": "The unique identifier for the device.\u00a0",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Activity Location",
+              "description": "\n                         <div>The location where the activity was performed.</div> \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Activity location type",
+                  "implamentationGuidance": "\n                                 <div>\n                                    <p>As of November 2022, the NHS Data Dictionary Activity Location Type code (see\u00a0https://www.datadictionary.nhs.uk/attributes/activity_location_type_code.html) should be used where possible (or its equivalent in other countries). For example Scotland may have alternative codes (see https://www.ndc.scot.nhs.uk/Data-Dictionary/<u>)</u>.</p>\n                                    <p>Use X01 for \u2018other locations not elsewhere classified\u2019</p> Where an \u2018activity location\u2019 is not available in the list, it should be recorded under the free text field under \u2018activity location\u2019.</div> \n                            ",
+                  "description": "\n                         <p>The type of location where the activity took place.</p> \n                    ",
+                  "valueSets": "\n                         <div>Nationally or internationally maintained code system(s) (see implementation guidance).\u00a0</div> \n                    "
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Activity location",
+                  "description": "\n                         <p>The location where the activity took place.</p> \n                    ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implamentationGuidance": "\n                                 <div>As of November 2022 use of NHS data dictionary Organisation Data Service (ODS) codes is advised.\u00a0</div> \n                                 <div>\u00a0</div> \n                                 <div>NHS data dictionary 'Organisation Data Service' : -\u00a0https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data</div> \n                                 <div>\u00a0</div> \n                                 <div>Information on ODS codes can be found on the NHS Digital website (see\u00a0https://digital.nhs.uk/services/organisation-data-service). The \u2018Access our data\u2019 section includes file downloads including code lists, a portal to search for ODS codes and an Application Programming Interface (API) suite.</div> \n                                 <div>\u00a0</div> \n                                 <div>Additional guidance for social care suppliers and providers around how to use ODS codes is available (see\u00a0https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit).\u00a0</div> \n                                 <div>\u00a0</div> \n                                 <div>Activity locations should be recorded as precisely as possible, and at the most granular level available (eg \u2018ward\u2019).</div> \n                                 <div>\n                                    <p>Some examples can be found below for different ways \u2018Activity location\u2019 and \u2018activity location type\u2019 may be recorded:</p>\n                                    <p>\n                                        <strong>\n                                            <u>Example 1: Point of Care Testing (POCT) result on inpatient ward</u>\n                                        </strong>\n                                    </p>\n                                    <p>Activity location type:</p>\n                                    <ul>\n                                        <li><strong>Coded Value:</strong> E02 = ward (or blank)</li>\n                                    </ul>\n                                    <p>Activity Location:</p>\n                                    <ul>\n                                        <li><strong>Coded value:</strong>\u00a0RAP04 = Ward T8 at North Middlesex Hospital</li>\n                                        <li>Free text: &lt;blank&gt;</li>\n                                    </ul>\n                                    <p>\n                                        <strong>\n                                            <u>Example 2: as above (but no ward code under \u2018activity location\u2019)</u>\n                                        </strong>\n                                    </p>\n                                    <p>Activity location type:</p>\n                                    <ul>\n                                        <li><strong>Coded Value</strong>: E02 = ward</li>\n                                    </ul>\n                                    <p>Activity location</p>\n                                    <ul>\n                                        <li><strong>Coded value:</strong>\u00a0RAPNM = North Middlesex Hospital</li>\n                                        <li>Free text: Ward T4, side room</li>\n                                    </ul>\n                                    <p>\n                                        <strong>\n                                            <u>Example 3: Insulin being administered at home</u>\n                                        </strong>\n                                    </p>\n                                    <p>Activity location type:</p>\n                                    <ul>\n                                        <li><strong>Coded Value</strong>: A01 = Patient\u2019s home</li>\n                                    </ul>\n                                    <p>Activity location</p>\n                                    <ul>\n                                        <li><strong>Coded value:</strong>\u00a0&lt;blank&gt;</li>\n                                        <li>Free text: &lt;blank&gt;</li>\n                                    </ul>\n                                    <p>\n                                        <strong>\n                                            <u>Example 4: Insulin being administered at care home with nursing</u>\n                                        </strong>\n                                    </p>\n                                    <p>Activity location type:</p>\n                                    <ul>\n                                        <li><strong>Coded Value:</strong> G02 = Care home with nursing</li>\n                                    </ul>\n                                    <p>Activity location:</p>\n                                    <ul>\n                                        <li><strong>Coded value:</strong>\u00a0&lt;blank&gt; (no code)</li>\n                                        <li>Free text: Daisy care home, Ealing Broadway, X11; Y12</li>\n                                    </ul>\n                                </div> \n                            ",
+                      "description": "\n                             <p>The coded value for activity location.\u00a0</p> \n                        ",
+                      "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "description": "\n                             <div>Free text field to be used if no code is available<br clear=\"none\"/>\n                            </div> \n                        ",
+                      "valueSets": "Free text",
+                      "valueDomain": [ { "type": "text" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Event Date",
+              "description": "\n                         <div>Date of the event.</div> \n                    ",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMD" } ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Date Recorded",
+              "description": "\n                         <div>Date the event was recorded.</div> \n                    ",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMD" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Record",
+          "description": "\n                     <div>A set of data items that are recorded together that have the same date, author and context.</div> \n                ",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Author",
+              "description": "\n                         <div>The person, professional or device recording the information in the record.</div> \n                    ",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person",
+                  "description": "\n                             <div>The person recording the information in the record.</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the person completing the record.",
+                      "valueSets": "Free text. <br clear=\"none\"/> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Relationship",
+                      "description": "\n                         <p>The relationship the personal contact has to the person, e.g. father, grandmother, family friend etc. Includes additional roles the person performs on behalf of the other (e.g. carer, next of kin, emergency contact, dependent, etc.).</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>\n                                    <p>PRSB strongly recommend using FHIR standards when implementing our standards as the agreed transport mechanism.</p>\n                                </div> \n                                 <div>\u00a0</div> \n                                 <div>FHIR valueset 'UKCorePersonRelationshipType' : -\u00a0 https://simplifier.net/hl7fhirukcorer4/ukcore-personrelationshiptype-110</div> \n                            ",
+                          "description": "\n                             <p>The coded value for relationship.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>Relationships may be customised by users. Where no alignment is available to standardised lists, users may add to the list of relationships.</div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available. </p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professional",
+                  "description": "\n                             <div>The professional recording the information in the record.\u00a0</div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "description": "The name of the professional. <br clear=\"none\"/> \n                    ",
+                      "valueSets": "\n                         <div>Free text.<br clear=\"none\"/>\n                        </div> \n                    ",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "description": "\n                         <p>The role the professional has in relation to the person e.g. GP, physiotherapist, community nurse, social worker etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. Where no alignment is available to standardised lists, users may add to the roles:</p> <p>National Workforce Data Set (NWD) NHS Occupation codes : -\u00a0<a href=\"https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes\" rel=\"noopener noreferrer nofollow\">https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes</a>\u00a0</p> <p>Other nationally maintained lists include:</p> <p>FHIR valueset 'UKCorePractitionerRoleCode' : -\u00a0<a href=\"https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode\" rel=\"noopener noreferrer nofollow\">https://simplifier.net/HL7FHIRUKCoreR4/UKCore-PractitionerRoleCode</a></p> <p>SNOMED CT concepts from FHIR R4 : -\u00a0\u00a0&lt;&lt;\u00a0223366009 | Healthcare professional (occupation) |\u00a0\u00a0Descendant or self of concept. SNOMED codes are searchable through the browser tool <a href=\"https://termbrowser.nhs.uk/?\" rel=\"noopener noreferrer nofollow\">here</a>.</p>",
+                          "description": "\n                             <p>The coded value for role.</p> \n                        ",
+                          "valueSets": "<p>Nationally or internationally maintained code system(s). E.g. HL7 FHIR Practitioner/Role; SNOMED; National workforce dataset; NHS Occupation codes. See implementation guidance.</p>"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <p>Free text</p> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Grade",
+                      "implamentationGuidance": "\n                                 <div>Please note that the \u2018grade\u2019 field may not be applicable in some settings and so does not need to be included in the implementation where it does not apply (e.g. social care settings).</div> \n                            ",
+                      "description": "The grade of the professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Specialty",
+                      "description": "\n                         <p>The specialty of the professional e.g. physiotherapy, oncology, mental health, etc.</p> \n                    ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded Value",
+                          "implamentationGuidance": "<p>The \u2018Main Specialty Codes\u2019 in Table 1 of the NHS Data Dictionary code list for specialties is advised.</p> <p>NHS data dictionary 'Main Specialty and Treatment Function Codes Table': <a href=\"https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/main_specialty_and_treatment_function_codes_table.html</a></p>",
+                          "description": "\n                             <p>The coded value for specialty.</p> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally mandated code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>The PRSB suggests users use generic specialties to suit the customer base where applicable, which should align with nationally identified specialties that are coded (or will be in future). Specialties may be customised by users. Where no alignment is available to standardised lists, users may add to the list of specialties.</div> \n                            ",
+                          "description": "\n                             <p>Free text field to be used if no code is available.</p> \n                        ",
+                          "valueSets": "\n                             <div>Free text</div> \n                        ",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier type",
+                      "implamentationGuidance": "<p>PRSB suggest users use generic professional identifier types to suit the customer base where applicable, which should align with nationally identified professional identifier types that are coded (or will be in future).</p> <p> Professional identifier types may be customised by users. Where no alignment is available to standardised lists, users may add to the list of professional identifier types.</p> <p>\u00a0</p> <p>NHS Data Dictionary 'Professional Registration Body Code':</p> <p><a href=\"https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/attributes/professional_registration_body_code.html</a></p>",
+                      "description": "\n                         <p>The type of professional identifier. For example, General Medical Council (GMC); Nursing and Midwifery Council\u00a0(NMC) numbers.</p> \n                    ",
+                      "valueSets": "\n                         <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                    "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Professional identifier",
+                      "implamentationGuidance": "\n                                 <div>This field is to record the actual professional identifier (NHS; NMC, HCPC etc).</div> \n                            ",
+                      "description": "\n                         <p>Professional identifier for the professional completing the record e.g. General Medical Council (GMC), Nursing Medical Council (NMC) number etc, or the personal identifier used by the local organisation.</p> \n                    ",
+                      "valueSets": "\n                         <p>Free text</p> \n                    ",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Organisation",
+                      "description": "The name of the organisation the professional works for.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "<p>Use of NHS data dictionary Organisation Data Service (ODS) codes is advised:</p> <p><a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data\" rel=\"noopener noreferrer nofollow\">https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html#:~:text=Description-,The%20Organisation%20Data%20Service%20(ODS)%20is%20provided%20by%20NHS%20Digital,Social%20Care%20Organisation%20Reference%20Data</a></p> <p>Guidance around how to locate ODS codes can be found at: <a href=\"https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.\" rel=\"noopener noreferrer nofollow\">https://www.digitalsocialcare.co.uk/latest-guidance/how-to-find-your-ods-code/#:~:text=An%20ODS%20code%20(also%20called,Data%20Security%20and%20Protection%20Toolkit.</a></p> <p>Users should use the NHS Digital ODS portal to locate specific ODS codes. See: <a href=\"https://odsportal.digital.nhs.uk/Organisation/Search\" rel=\"noopener noreferrer nofollow\">https://odsportal.digital.nhs.uk/Organisation/Search</a></p>",
+                          "description": "\n                             <div>The coded value for organisation.\u00a0</div> \n                        ",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code list(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "implamentationGuidance": "\n                                 <div>The free text field should be used for any organisations not present in the coded list. For example, many social care organisations may not be coded.</div> \n                            ",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Device",
+                  "description": "\n                             <div>The device\u00a0<span style=\"color: #333333; font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\">recording the information in the record.</span></div> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device type",
+                      "description": "The device type.\u00a0",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for device type.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance).</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Device manufacturer",
+                      "description": "Name of the device manufacturer.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for device manufacturer.",
+                          "valueSets": "\n                             <div>Nationally or internationally maintained code system(s) (see implementation guidance).</div> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Model",
+                      "description": "The model of the device.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Coded value",
+                          "implamentationGuidance": "\n                                 <div>As of December 2022, PRSB recommend aligning to SNOMED CT or dm+d codes.</div> \n                            ",
+                          "description": "The coded value for model.",
+                          "valueSets": "\n                             <p>Nationally or internationally maintained code system(s) (see implementation guidance)</p> \n                        "
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Free text",
+                          "description": "Free text field to be used if no code is available",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Software version",
+                      "description": "The version of software running on the device.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Unique identifier",
+                      "description": "The unique identifier for the device.\u00a0",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "string" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Date Recorded",
+              "description": "\n                         <div>Date recorded.</div> \n                    ",
+              "valueDomain": [
+                {
+                  "type": "datetime",
+                  "property": [ { "timeStampPrecision": "YMD" } ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

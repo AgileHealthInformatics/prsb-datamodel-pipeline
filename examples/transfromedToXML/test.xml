@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Test Standard" version="1.0" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="A test standard for conversion" />
+  <Model name="Personal Information">
+    <TaggedValue name="description" value="Personal information about the individual" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Element name="Name" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="The person's full name" />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="String" />
+    </Element>
+  </Model>
+</Standard>

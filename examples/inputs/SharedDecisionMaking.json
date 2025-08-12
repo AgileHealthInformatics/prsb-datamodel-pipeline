@@ -1,0 +1,1133 @@
+{
+  "dataset": [
+    {
+      "version": "1.0",
+      "name": "Shared Decision Making",
+      "description": "<p>Version incremented from 0.2 to 0.3 before start of new phase <br/>Version incremented from 0.3 to 0.4 before start of new phase <br/>Version incremented from 0.4 to 0.5 following review by assurance committee <br/>Version incremented from 0.5 to 0.6 with amends prior to endorsement <br/></p>",
+      "concept": [
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Contacts with professionals",
+          "implementationGuidance": "<p>It is recognised that the SDM process may occur before, during and after multiple patient contacts with professionals. These touchpoints should be recorded and linked in systems to the shared decision discussed.\u00a0<br/><br/>The NICE guideline on shared decision (see\u00a0https://www.nice.org.uk/guidance/ng197) making states in section 1.2.1:\u00a0<br/><br/>\"Support shared decision making by offering interventions at different stages, including before, during and after discussions, so that people are fully involved throughout their care.\"</p>",
+          "description": "The details of the person\u2019s contact with a professional.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Contacts with professionals record entry",
+              "implementationGuidance": "This is a contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "description": "This is a contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Date and time of contact",
+                  "implementationGuidance": "Date and time of the contact.",
+                  "description": "Date and time of the contact.",
+                  "valueSets": "Date and time.",
+                  "valueDomain": [
+                    {
+                      "type": "datetime",
+                      "property": [ { "timeStampPrecision": "YMDHM" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location of contact",
+                  "implementationGuidance": "The location where the contact took place.",
+                  "description": "The location where the contact took place.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for location",
+                      "description": "The coded value for location",
+                      "valueSets": "NHS data dictionary : -  <a href=\"https://www.datadictionary.nhs.uk/supporting_information/organisation_data_service.html\" target=\"_blank\" title=\"\">Organisation data service code</a> \n                                 <div>\n                                    <br clear=\"none\"/>\n                                </div> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to be used if no code is available",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Seen by",
+                  "implementationGuidance": "The professional that saw the person.",
+                  "description": "The professional that saw the person.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "The name of the professional that saw the person",
+                      "description": "The name of the professional that saw the person",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "The role of the person providing the service.",
+                      "description": "The role of the person providing the service.",
+                      "valueSets": "\n                                 <p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. </p> \n                                 <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. </p> \n                                 <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p> \n                            "
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Responsible professional",
+                  "implementationGuidance": "The name and role of the professional that had overall responsibility for the person e.g. consultant, nurse consultant, midwife, allied health professional (may not have actually seen the person).",
+                  "description": "The name and role of the professional that had overall responsibility for the person e.g. consultant, nurse consultant, midwife, allied health professional (may not have actually seen the person).",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "The name of the responsible professional.",
+                      "description": "The name of the responsible professional.",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "The role of the responsible professional",
+                      "description": "The role of the responsible professional",
+                      "valueSets": "\n                                 <p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. </p> \n                                 <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. </p> \n                                 <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p> \n                            "
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Person accompanying patient",
+                  "implementationGuidance": "Identify, where clinically relevant, others accompanying the patient, e.g. parent, relative, friend. Includes: Name, Relationship, role (e.g. informal carer).",
+                  "description": "Identify, where clinically relevant, others accompanying the patient, e.g. parent, relative, friend. Includes: Name, Relationship, role (e.g. informal carer).",
+                  "valueSets": "NHS data dictionary : -  <a href=\"https://datadictionary.nhs.uk/data_elements/person_full_name.html?hl=person%2Cfull%2Cname\" target=\"\" title=\"\">Person full name</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "70" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Use of an interpreter",
+                  "implementationGuidance": "<p>The General Medical Council (GMC) guidance on Decision making and consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0says in section 27e:<br/><br/>\"To help patients understand and retain relevant information you should: use an interpreter or translation service if they have difficulty understanding spoken English.\"</p>",
+                  "description": "An indicator to record whether an interpreter was used at a care contact. If yes, records whether a professional interpreter, family member / friend, or other person was used for the purposes of communication. If no, records whether an interpreter was not required or did not attend.",
+                  "valueSets": "NHS data dictionary : -  <a class=\"\" href=\"https://datadictionary.nhs.uk/attributes/interpreter_present_at_care_contact_indication_code.html?hl=interpreter\" target=\"_blank\" title=\"\">Interpreter present at care contact indication code</a> \n                        "
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Location type",
+                  "implementationGuidance": "The type of location where the contact took place e.g. person's home",
+                  "description": "The type of location where the contact took place e.g. person's home",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_location_type_code.html?hl=activity%2Clocation%2Ctype%2Ccode\" target=\"\" title=\"\">Activity location type code</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Contact type",
+                  "implementationGuidance": "Type of contact e.g. GP consultation, outpatient attendance",
+                  "description": "<p>Type of contact e.g. GP consultation, outpatient attendance</p>",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "<p>There is no existing code set, and until one is identified or created, use the free text item.</p>",
+                      "description": "\n                                 <p>Coded value for contact type</p> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text if the coded value for type of contact is not available e.g. GP consultation, outpatient attendance",
+                      "description": "\n                                 <p>Free text if the coded value for type of contact is not available e.g. GP consultation, outpatient attendance</p> \n                            ",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Audio or video recording of the conversation",
+                  "implementationGuidance": "<p>This section is relevant only in cases where the clinician wishes to record, store and share the conversation (with the person). It does not apply where the person makes a recording of the conversation on their own personal device for their own private records.  </p>     <p>The General Medical Council (GMC) guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 27c:  </p>     <p>\"To help patients understand and retain relevant information you should: accommodate a patient\u2019s wishes if they would like to to record the discussion.\"</p>",
+                  "description": "Audio or video recording of the conversation cluster.",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Audio or visual recording made",
+                      "implementationGuidance": "An indicator to record if an audio or video recording was made of the conversation.",
+                      "description": "An indicator to record if an audio or video recording was made of the conversation.",
+                      "valueSets": "SNOMED CT : - 431315003 |Audio recording of patient interview (procedure)| or 282733006 |Video recording of patient interview (procedure)|."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Consent for audio or video recording of the conversation",
+                      "implementationGuidance": "<p>The General Medical Council (GMC) Making and using video recordings of patients guidance (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/making-and-using-visual-and-audio-recordings-of-patients)\u00a0states in section 8 the following:</p>     <p/>     <ul><li><p>\"make recordings only where you have appropriate consent or other valid authority for doing so.\"</p></li><li><p>\"ensure that patients are under no pressure to give their consent for the recording to be made.\"</p></li><li><p>\"And you must not: disclose or use recordings for purposes outside the scope of the original consent without obtaining further consent (except in the circumstances set out [elsewhere in that document].\"</p></li></ul>     <p>The GMC guidance on Decision making and consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0states in section 6 that:</p>     <p><br/>'While some interventions require a patient\u2019s signature on a form, for most healthcare decisions you can rely on a patient\u2019s verbal consent, as long as you are satisfied they\u2019ve had the opportunity to consider any relevant information... and decided to go ahead. Although a patient can give consent verbally (or non-verbally) you should make sure this is recorded in their</p>",
+                      "description": "This is a record of consent for audio or visual recording of the conversation.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "text" } ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Copy of video or audio recording",
+                      "implementationGuidance": "<p>The free text field could be used to enter a hyperlink to the recording.  </p>     <p>The General Medical Council (GMC) guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states the following in section 23:  </p>     <ul><li><p>\"If you make a recording as part of a patient\u2019s care you must follow our guidance on Making and using visual and audio recordings of patients. Such recordings form part of the medical record and should be treated in the same way as other records.\" </p></li><li><p>\"Recordings made by patients are owned by them and do not have to be stored with their medical records.\"</p></li></ul>",
+                      "description": "The conversation recording should be stored as a video/audio multimedia file or as a transcript (free text).",
+                      "valueSets": "Free text or multimedia file.",
+                      "valueDomain": [ { "type": "complex" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Consultation method",
+                  "implementationGuidance": "Consultation method used e.g. face to face, telephone",
+                  "description": "Consultation method used e.g. face to face, telephone",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://www.datadictionary.nhs.uk/attributes/consultation_mechanism.html\" target=\"_blank\" title=\"\">Consultation mechanism</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "2" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Specialty",
+                  "implementationGuidance": "The specialty e.g. physiotherapy, oncology, mental health etc",
+                  "description": "The specialty e.g. physiotherapy, oncology, mental health etc",
+                  "valueSets": "NHS data dictionary -  <a href=\"https://datadictionary.nhs.uk/data_elements/activity_treatment_function_code.html?hl=activity%2Ctreatment%2Cfunction%2Ccode\" target=\"\" title=\"\">Activity treatment function code</a> \n                        ",
+                  "valueDomain": [
+                    {
+                      "type": "string",
+                      "property": [ { "maxLength": "3" } ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Professionals present",
+                  "implementationGuidance": "The name, role of the additional individuals or team members including consultant(s), nurse consultant(s), allied health professional(s), social worker(s)",
+                  "description": "The name, role of the additional individuals or team members including consultant(s), nurse consultant(s), allied health professional(s), social worker(s)",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Name",
+                      "implementationGuidance": "The name of the professional present",
+                      "description": "The name of the professional present",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "string",
+                          "property": [ { "maxLength": "70" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Role",
+                      "implementationGuidance": "The role of the professional present.",
+                      "description": "The role of the professional present.",
+                      "valueSets": "<p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used.</p> <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page.</p> <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p>"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "1",
+          "mro": "M",
+          "name": "Problem list",
+          "implementationGuidance": "<p>A new shared decision record must be linked to an active problem or issue within systems. The SDM process begins with a problem for the person that needs resolution (see\u00a0https://doi.org/10.1016/j.pec.2019.07.020) by investigation, treatment or other method including the option to do nothing.\u00a0The problem or issue for which a shared decision\n                                    was made. The problem will typically require an investigation, treatment, procedure or lifestyle intervention or a change to these e.g. starting, stopping, or switching a prescribed medication. Medical problems or issues might include signs, symptoms, a diagnosis, risk factors, examination findings or investigation results, or other issues.</p>",
+          "description": "A summary of the problems that require investigation or treatment.",
+          "informationType": "&lt;p&gt;Event.Record&lt;/p&gt;",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "*",
+              "mro": "M",
+              "name": "Problem list record entry",
+              "implementationGuidance": "This is a problem list record entry. \n                         \n There may be 0 to many record entries under problem list. \n                         \n Each record entry is made up of a number of elements or data items.",
+              "description": "This is a problem list record entry.  <br clear=\"none\"/> \n                         <br clear=\"none\"/>  There may be 0 to many record entries under problem list.  <br clear=\"none\"/> \n                         <br clear=\"none\"/>  Each record entry is made up of a number of elements or data items.",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "1",
+                  "maximumMultiplicity": "1",
+                  "mro": "M",
+                  "name": "Problem",
+                  "implementationGuidance": "<p>This is the problem that is the subject of the SDM conversation.</p>",
+                  "description": "A condition which needs addressing and so is important for every professional to know about when seeing the person.  <br clear=\"none\"/> \n                             <br clear=\"none\"/>  Problems may include diagnoses, symptoms, and social or behavioural issues",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Coded value",
+                      "implementationGuidance": "The coded value for the problem list.",
+                      "description": "The coded value for the problem list.",
+                      "valueSets": "\n                                 <div>SNOMED CT : - <a href=\"https://termbrowser.nhs.uk/?perspective=full&conceptId1=1127581000000103&edition=uk-edition&release=&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999000681000001101,999001251000000103\" target=\"_blank\" rel=\"noopener\">^1127581000000103 |Health issues simple reference set|</a></div> \n                            "
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to be used if no code is available",
+                      "description": "Free text field to be used if no code is available",
+                      "valueSets": "Free text",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "1",
+          "maximumMultiplicity": "*",
+          "mro": "M",
+          "name": "Shared decision point",
+          "implementationGuidance": "It is anticipated that where the standard is implemented in systems it will support the SDM process by acting as prompts for discussion. Healthcare professionals may choose to conduct the discussion by using established models such as BRAN (Benefits, Risks, Alternatives, do Nothing), Three-talk model, Ask 3 Questions or other process and use\n                                the standard to record details of the conversation.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         Wherever possible the burden of recording on healthcare professionals should be reduced. This may require that certain fields are automatically generated by the system, the use of drop down lists, and the integration of electronic clinical decision support to generate guidance in the workflow to aid recording.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for accuracy and request amendments as appropriate.\u00a0         <br clear=\"none\"/>        \n                            ",
+          "description": "This is a shared decision point record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items.",
+          "informationType": "Event.Record",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "1",
+              "maximumMultiplicity": "1",
+              "mro": "M",
+              "name": "Shared decision status",
+              "implementationGuidance": "The PRSB consultation suggested that the following three options for the status of a shared decision should be recorded in systems:         <br clear=\"none\"/>        \n                                        <ol>\n                                    <li>In progress: A shared decision is currently in progress (this is the default status for a decision).*\u00a0</li>\n                                    <li>Valid: A decision is valid., i.e., a decision has been agreed between the person and their clinician and is a valid decision. **</li>\n                                    <li>Cancelled: A decision has been cancelled e.g., a patient changes their mind or the decision is no longer relevant.\u00a0</li>\n                                </ol>        \n                                        <div>The status of a decision is not permanent and can be revisited at a later stage as appropriate. It is important that healthcare professionals accessing the record are aware of the shared decision status as the decision may be provisional.\u00a0<br clear=\"none\"/>\n                                    <br clear=\"none\"/>Where a decision has been recorded that is 'provisional' the shared decision making status field should be set as 'in progress.' The fact that a decision is provisional should be clearly displayed in systems. A decision may be provisional where for example, the person needs time for further reflection or discussion with others before making a\n                                    final 'valid' decision. Where the decision recorded is 'completed' the shared decision making status field should be set as 'valid.' It is essential that this information is clearly displayed and made readily available to mitigate the risk of the end user confusing a provisional decision with a completed one.\u00a0<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\n                                </div>        \n                                        <div class=\"yui-wk-div\">* Each time a shared decision making record is created the shared decision status should be automatically set to option 1 by default.\u00a0<br clear=\"none\"/>** According to NHS England \"[s]hared decision making enables patients to align their preferences to treatment options that are clinically valid. It does not mean that people can choose\n                                    clinical treatments that have no evidence base (see\u00a0https://www.england.nhs.uk/shared-decision-making/about/).\"</div>        \n                            ",
+              "description": "The current status of the decision (in progress, valid, cancelled).",
+              "valueSets": "\n                         <p class=\"MsoNormal\"> SNOMED CT. </p> \n                    ",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Coded value",
+                  "implementationGuidance": "<p>The SNOMED CT codes for this element are to be confirmed with NHS England.<br/></p>",
+                  "description": "The coded value for shared decision status.\u00a0",
+                  "valueSets": "SNOMED CT.\u00a0"
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Free text",
+                  "implementationGuidance": "Where a coded value is provided this field must not be used.\u00a0         <br clear=\"none\"/>        \n                            ",
+                  "description": "Free text field to be used if no code is available.\u00a0",
+                  "valueSets": "Free text.\u00a0",
+                  "valueDomain": [
+                    {
+                      "type": "text",
+                      "property": [ { "maxLength": "150" } ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "name": "Pre-discussion information shared",
+              "implementationGuidance": "<p>To minimise the recording burden on clinicians it is optional to record this field.</p>        \n                                        <p>The GMC guidance on decision making and consent (https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) advises clinicians in section 51 that:</p>        \n                                        <p>\"You should take a proportionate approach to the information you record...\"</p>        \n                                        <p>The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:</p>        \n                                        <p>In section 1.2.1: </p>        \n                                        <p>\u201cSupport shared decision making by offering interventions at different stages, including before, during and after discussions, so that people are fully involved throughout their care.\u201d</p>        \n                                        <p>In section 1.2.5:</p>        \n                                        <p>\"Before a discussion, offer the person, adult or child, access to resources in their preferred format (for example, a booklet, flyer or app) to prepare for discussing options and making shared decisions. It should encourage them to think about: what matters to them what they hope will happen as a result of the discussion what questions they would like to ask.\" </p>        \n                                        <p>In section 1.2.5: </p>        \n                                        <p>\"Offer to arrange additional support for people who might find it difficult to share in decision making, especially if they do not have, or do not want, support from a family member, friend or carer. Support could come from a nurse, social worker, interpreter or volunteer (for example, an advocate) who can: </p>        \n                                        <ul><li><p>help them to understand the resources provided </p></li><li><p>encourage the person to take an active part in decision making </p></li><li><p>reassure them that shared decision making will be supported by the healthcare professional they see.\" </p></li></ul>",
+              "description": "<p> A record of the actions taken to prepare the patient to make a shared decision before the discussion where a shared decision was made. This should include a summary of any resources the person was offered to prepare them for the decision making process.</p>",
+              "valueSets": "Free text.",
+              "valueDomain": [ { "type": "text" } ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "mro": "R",
+              "name": "Discussion actions",
+              "implementationGuidance": "A record of the actions taken to support shared decision making during the discussion.",
+              "description": "A record of the actions taken to support shared decision making during the discussion.",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "mro": "R",
+                  "name": "Decision dialogue (deliberation)",
+                  "implementationGuidance": "\n                                        <div>The General Medical Council guidance on Decision making\u00a0and consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 10 that:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"You must give patients the information they want or need to make a decision. This will usually include: diagnosis and prognosis, uncertainties about the diagnosis or prognosis, including options for further investigation, options for treating or managing the condition, including the option to take no action, the nature of each option, what\n                                    would be involved, and the desired outcome, the potential benefits, risks of harm, uncertainties about and likelihood of success for each option, including the option to take no action.\"<br clear=\"none\"/>\n                                    <br clear=\"none\"/>The NICE Shared decision making guideline (see https://www.nice.org.uk/guidance/ng197) states in section 1.2.10:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"When discussing tests, treatments or other healthcare services:<br clear=\"none\"/>\n                                </div>        \n                                        <div>\n                                    <ul>\n                                        <li>openly discuss the risks, benefits and consequences of each option, making sure the person knows this includes choosing no treatment, or no change to what they are currently doing.\"</li>\n                                    </ul>\n                                </div>        \n                            ",
+                  "description": "A record of the dialogue preceding the decision including the information shared that a person wanted or needed to know in order to make a decision, such as: <br clear=\"none\"/> \n                             <ul>\n                                <li>Diagnosis &amp; prognosis</li>\n                                <li>Options for further investigation, treatment or management (including the option to take no action).</li>\n                                <li>The potential benefits and risks of each option</li>\n                            </ul> \n                        ",
+                  "concept": [
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "People involved in making the decision",
+                      "implementationGuidance": "<p>The clinician may want to record all those individuals explicitly involved in making the decision, providing them with a record of the\u00a0SDM discussion and a list of follow up actions if relevant. Ascertaining and recording who were those involved in a shared decision is dependent on a professional's judgement, but will occur usually where a\n                                    person lacks capacity and with the agreement of all those involved in the decision.\u00a0</p>        \n                                        <p>In the case of children, Gillick or Fraser competence should be used to determine if the discussion is with the child or parent/guardian or both. The NICE guideline [NG204] Babies, children and young people's experience of healthcare (https://www.nice.org.uk/guidance/ng204) emphasises in section 1.2 involving children and young people in their healthcare and\n                                    understanding what matters to them, and states in 1.5.1 \"Involve parents or carers in discussions and decisions about the care of babies and young children, and recognise that parents or carers will be their principal caregivers and advocates.\" And in 1.5.2 \"Give all children and young people opportunities to express their opinions about their health needs\n                                    independently, including: \u2022 asking them about the extent to which they want their parent or carer to be involved in their healthcare \u2022 offering to see them separately from their parents or carers for part of the consultation.\" It also states in 1.5.18 \"Children and young people must have access to an independent advocate in line with statutory requirements. This\n                                    includes the Mental Health Act 2007, the Care Act 2014 and the Mental Capacity Act 2005.\"</p>        \n                                        <p>Mental capacity assessment is not within scope of the SDM standard, but where this has been conducted at or prior to an SDM encounter this should be recorded in the electronic patient record. The PRSB consultation raised the importance of checking for records of legal power of attorney and considering whether an independent mental capacity advocate (IMCA) might\n                                    be needed.\u00a0</p>",
+                      "description": "<p>This section records all those who were involved in the shared decision, either with the person or on behalf of the person.</p> <p>This may be where the person is a child, does not have mental capacity or the decision is made in the person's best interest as a shared decision. </p> <p>People involved in the\n                                    decision may include family members, parents, legal guardians, carers, Legal Power of Attorney, Independent Mental Capacity Advocate. </p>",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Name",
+                          "implementationGuidance": "The name of the person involved.",
+                          "description": "The name of the person involved.",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "string",
+                              "property": [ { "maxLength": "70" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Relationship",
+                          "implementationGuidance": "The relationship the person involved has to the person (subject of record), e.g. parent, foster parent, grandmother, family friend etc.",
+                          "description": "<p>The relationship the person involved has to the person (subject of record), e.g. parent, foster parent, grandmother, family friend etc.</p>",
+                          "valueSets": "<p>FHIR value set : - <a href=\"https://simplifier.net/hl7fhirukcorer4/valueset-ukcore-personrelationshiptype\" rel=\"noopener noreferrer nofollow\">Person Relationship type</a></p>"
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Relationship type",
+                          "implementationGuidance": "Additional roles the person performs on behalf of the other (e.g. Carer, Legal Guardian, Next of Kin, Emergency Contact, Dependent, etc.)",
+                          "description": "<p>Additional roles the person performs on behalf of the other (e.g. Carer, Legal Guardian, Next of Kin, Emergency Contact, Dependent, etc.)</p>",
+                          "valueSets": "Free text",
+                          "valueDomain": [
+                            {
+                              "type": "text",
+                              "property": [ { "maxLength": "150" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Role",
+                          "implementationGuidance": "The role of the person involved (if professional).",
+                          "description": "The role of the person involved (if professional).",
+                          "valueSets": "<p>Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used.</p> <p>National Workforce Data Set (NWD) NHS Occupation codes are found here: -\u00a0https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page.</p> <p>The Staff Groups and Job Roles are listed in the \u2018NWD Class & Codes Appendix\u2019 tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing & Midwifery Registered and Job Role = Staff Nurse.</p>"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Shared agenda setting",
+                      "implementationGuidance": "To minimise the recording burden on clinicians it is optional to record this field.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively\n                                seek out and record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In 1.2.7:         <br clear=\"none\" style=\"\"/>        \n                                        <br clear=\"none\" style=\"\"/>         \"Agree an \u2018         <span style=\"font-weight: bold;\">agenda</span>         \u2019 at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The NICE committee emphasised that:\u00a0         <p class=\"MsoNormal\">\u201c<span style=\"font-weight: bold;\">Agenda setting</span>, explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatments offered), and agreeing when to review a decision [are] <span style=\"font-weight: bold;\">key aspects of shared decision\n                                        making</span>.\u201d<br clear=\"none\"/>\n                                    <br clear=\"none\"/>According to NHS England (see\u00a0https://www.england.nhs.uk/shared-decision-making/how-to-make-shared-decision-making-happen/supporting-and-empowering-individuals/):<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"Agenda setting can help to ensure that the conversation focuses on the priorities - of both the professional and patient - so that the things that matter most are discussed and no one leaves feeling dissatisfied...This simple process can be triggered by a question at the start of the meeting or it can be started before the appointment itself -\n                                    with patients asked to consider while they wait what they would like to discuss and to prepare their priority list.\"</p>        \n                            ",
+                      "description": "A record of the shared agenda setting process undertaken to support the shared decision. This may include: <br clear=\"none\"/> \n                                 <ul>\n                                    <li>Patient talk topic: Identifying what the patient wants to talk about in the encounter.</li>\n                                    <li>Clinician talk topic: Identifying what the clinician wants to talk about in the encounter.</li>\n                                    <li>Agreeing shared priorities and focus for conversation i.e. the topics that are going to be covered.</li>\n                                    <li>Establishing collaboration and engagement: Introducing the nature/purpose of the SDM process.</li>\n                                    <li>Declaring the alternative options: Listing of the possible options for treatment, investigation, procedure, or other action; including reasonable alternatives.</li>\n                                </ul> \n                            ",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "name": "Patient agenda",
+                          "implementationGuidance": "<p>To minimise the recording burden on clinicians it is optional to record this field.</p>        \n                                        <p>The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively seek out and\n                                    record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry.</p>        \n                                        <p>The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:</p>        \n                                        <p>In 1.2.7:</p>        \n                                        <p>\"Agree an \u2018agenda\u2019 at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.\"</p>        \n                                        <p>The NICE committee emphasised that:\u00a0\u201cAgenda setting, explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatments offered), and agreeing when to review a decision [are]\u00a0key aspects of shared decision making.\u201d In an SDM discussion with children, for example, the length of discussion is particularly important to maintain\n                                    optimum focus throughout and so may require further appointments. </p>",
+                          "description": "A record of what the patient said was their agenda (talk topic(s)) for the appointment.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "name": "Clinician agenda",
+                          "implementationGuidance": "<p>To minimise the recording burden on clinicians it is optional to record this field.</p>        \n                                        <p>The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively seek out and\n                                    record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry.</p>        \n                                        <p>The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:</p>        \n                                        <p>In 1.2.7:</p>        \n                                        <p>\"Agree an \u2018agenda\u2019 at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.\"</p>        \n                                        <p>The NICE committee emphasised that:\u00a0</p>        \n                                        <p>\u201cAgenda setting, explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatments offered), and agreeing when to review a decision [are]\u00a0key aspects of shared decision making.\u201d In an SDM discussion with children, for example, the length of discussion is particularly important to maintain optimum focus throughout and so may\n                                    require further appointments. </p>",
+                          "description": "A record of the clinician's stated agenda (talk topic(s)) for the appointment.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "1",
+                      "maximumMultiplicity": "1",
+                      "mro": "M",
+                      "name": "What matters to the person",
+                      "implementationGuidance": "<p>Ideally this section will be used to record the key aspects of what the patient has told the clinician in the person's own words. For example, as part of recording the person's ideas the clinician may wish to elicit the patient's understanding of their condition or diagnosis.</p>        \n                                        <p>The General Medical Council (GMC) guidance on Decision Making and Consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 17: </p>        \n                                        <p>\"You should try to find out what matters to patients about their health - their wishes and fears, what activities are important to their quality of life, both personally and professionally - so you can support them to assess the likely impact of the potential outcomes for each option.\"</p>        \n                                        <p>In section 18: \u201c</p>        \n                                        <p>You must seek to explore your patient\u2019s needs, values and priorities that influence their decision making, their concerns and preferences about the options and their expectations about what treatment or care could achieve.\"</p>        \n                                        <p>Ideally, a completed About me record would be available to the clinician in advance to support this area of discussion.</p>        \n                                        <p>About me supports sharing of information that the person thinks is important to share with professionals. This could include information about their needs, preferences, concerns and wishes.</p>        \n                                        <p>The About me standard is not part of the SDM record (it is a separate standard in its own right), but is considered important contextual information for the SDM conversation.\u00a0 For more detailed implementation guidance please look at the supporting documents at the following link: https://theprsb.org/standards/aboutme/\u00a0</p>        \n                                        <p>For children the NICE Guideline Babies, children and young people's experience of healthcare (https://www.nice.org.uk/guidance/ng204) states in 1.5.15 \"Assume that all children and young people have views and opinions about their own healthcare, and actively encourage them to express what matters to them...\" </p>        \n                                        <p/>",
+                      "description": "A record to establish what matters to the person in the context of the decision to be made, which may include as appropriate: <br clear=\"none\"/> \n                                 <ul>\n                                    <li>Person goals or hopes: These are the overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person.</li>\n                                    <li>Values and preferences: The values and/or preferences that the person holds relating to the decision or otherwise.\u00a0</li>\n                                    <li>Ideas: Opinions, thoughts, or prior knowledge the person has about their diagnosis, prognosis, or options for\u00a0treatment, investigations, procedures or other areas they feel are relevant.</li>\n                                    <li>Concerns: Any worries or fears the person has about their diagnosis (or possible diagnosis) or other areas such as treatment, investigations or procedures that may influence their decision-making or they feel are relevant.</li>\n                                    <li>Expectations: Any expectations or wants of the person relating to\u00a0treatment, investigations, procedures or other courses of action or other areas they feel are relevant.\u00a0</li>\n                                </ul> \n                            ",
+                      "valueSets": "Free text.",
+                      "valueDomain": [ { "type": "text" } ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "1",
+                      "maximumMultiplicity": "*",
+                      "mro": "M",
+                      "name": "Options discussed",
+                      "implementationGuidance": "As a core component of the SDM process, this field is mandatory.\u00a0\u00a0All pertinent and relevant options discussed should be recorded, especially those with risks, benefits or intended outcomes that are material to the patient, this is left to professional\u00a0judgement.\u00a0Each option entry recorded must also have completed risk communication and\n                                benefits entries.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The PRSB consultation raised the importance of the options discussed aligning with the person's goals and hopes and what matters to them.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 50 that:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"Keeping patients\u2019 medical records up to date with key information is important for continuity of care. Keeping an accurate record of the exchange of information leading to a decision in a patient\u2019s record will inform their future care and help you to explain and justify your decisions and actions.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 17:\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"You should try to find out what matters to patients about their health - their wishes and fears, what activities are important to their quality of life, both personally and professionally - so you can support them to assess the likely impact of the potential outcomes for each option.\"",
+                      "description": "Record of the options discussed. Includes: <br clear=\"none\"/> \n                                 <ul>\n                                    <li>Option entry<br clear=\"none\"/>\n                                    </li>\n                                    <li>Risks communicated about the option<br clear=\"none\"/>\n                                    </li>\n                                    <li>Benefits communicated about the option<br clear=\"none\"/>\n                                    </li>\n                                </ul> \n                                 <div>Where relevant the option to 'take no further action' at this time or to 'do nothing' should be included in the options discussed.</div> \n                                 <br clear=\"none\"/> \n                            ",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "1",
+                          "maximumMultiplicity": "1",
+                          "mro": "M",
+                          "name": "Option entry",
+                          "implementationGuidance": "As a core component of the SDM process, this field is mandatory. All pertinent and relevant options discussed should be recorded, especially those with risks, benefits or intended outcomes that are material to the patient, this is left to professional\u00a0judgement. The\u00a0minimum entry for this field is the 'do nothing/ take no action' option.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states that when discussing options for treating or managing a condition the clinician involved must include the option to take no action:         <br clear=\"none\" style=\"\"/>        \n                                        <br clear=\"none\" style=\"\"/>         \"Doctors must try to find out what matters to patients so they can share relevant information about the benefits and harms of proposed options and reasonable alternatives, including the option to take no action (Principle 4).\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'\u00a0         <br clear=\"none\"/>        \n                            ",
+                          "description": "Record of the option discussed including the option to 'do nothing' if relevant.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The option discussed should be coded with SNOMED CT where possible.\u00a0Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further\n                                information.\u00a0",
+                              "description": "Coded value of the option discussed.",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'\u00a0         <br clear=\"none\"/>        \n                            ",
+                              "description": "Free text field to provide further detail or be used if no code is available.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "1",
+                          "maximumMultiplicity": "*",
+                          "mro": "M",
+                          "name": "Risks communication entry",
+                          "implementationGuidance": "As a core component of the SDM process, this field is mandatory where the option entry field is used and there may be multiple risks recorded per option. Risk(s) recorded in an entry must relate to the option recorded under the option entry field.\u00a0 All pertinent and relevant risks discussed should be recorded, especially those that are\n                                significant to the patient, this is left to professional\u00a0judgement.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0states in section 21 that when discussing benefits and harms a clinician should include the following:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"Recognised risks of harm that [the clinician] believe[s] anyone in the patient\u2019s position would want to know... the effect of the patient\u2019s individual clinical circumstances on the probability of a benefit or harm occurring...risks of harm and potential benefits that the patient would consider significant for any reason...any risk of serious\n                                harm, however unlikely it is to occur...expected harms, including common side effects and what to do if they occur.\"         <br clear=\"none\" style=\"\"/>        \n                                        <br clear=\"none\"/>         In section 22:         <br clear=\"none\"/>        \n                                        <br clear=\"none\" style=\"\"/>         \"It wouldn\u2019t be reasonable to share every possible risk of harm, potential complication or side effect. Instead, you should tailor the discussion to each individual patient, guided by what matters to them, and share information in a way they can understand.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         Where intended/ expected outcome(s) have been discussed as part of the decision making process the risks can be recorded here.         <br clear=\"none\"/>        \n                            ",
+                          "description": "Record of the risks discussed for each option.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The risks communicated should be coded with SNOMED CT where possible.\u00a0Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further\n                                information.\u00a0         <br clear=\"none\"/>        \n                            ",
+                              "description": "Coded value of the risk discussed.",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to provide further detail or be used if no code is available.",
+                              "description": "Free text field to provide further detail or be used if no code is available.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "1",
+                          "maximumMultiplicity": "*",
+                          "mro": "M",
+                          "name": "Benefits entry",
+                          "implementationGuidance": "As a core component of the SDM process, this field is mandatory where the option entry field is used and there may be multiple benefits recorded per option.\u00a0Benefit(s) recorded in an entry must relate to the option recorded under the option entry field.\u00a0 All pertinent and relevant benefits discussed should be recorded, especially those that are\n                                significant to the patient, this is left to professional\u00a0judgement.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The General Medical Council (GMC) Decision Making and Consent guidance (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0states in section 21:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"You must give patients clear, accurate and up-to-date information, based on the best available evidence, about the potential benefits and risks of harm of each option, including the option to take no action.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         Where intended/ expected outcome(s) have been discussed as part of the decision making process the benefits can be recorded here.         <br clear=\"none\"/>        \n                            ",
+                          "description": "Record of the benefits discussed for each option.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The benefits discussed should be coded with SNOMED CT where possible.\u00a0Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further\n                                information.\u00a0",
+                              "description": "Coded value of the benefit discussed.",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to provide further detail or be used if no code is available.",
+                              "description": "Free text field to provide further detail or be used if no code is available.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "*",
+                      "mro": "R",
+                      "name": "Decision support tool item entry",
+                      "implementationGuidance": "Examples of patient decision support tools include condition specific decision aids, issue cards, decision boxes, fact boxes, question prompt lists (e.g. BRAN) and generic communication frameworks. Where high-quality situation specific decision support tools do not exist the clinician may need to interpret evidence sources developed for health\n                                professionals. This may include decision support tools or materials brought by the patient.         <br clear=\"none\" style=\"\"/>        \n                                        <br clear=\"none\" style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 12px;\"/>         The General Medical Council (GMC) Decision making and consent guidance (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0states in section 24:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"You should consider using visual or other explanatory aids to support patients to understand their personalised risk, taking account of their individual clinical and personal circumstances, compared with population level risk.\"         <br clear=\"none\"/>        \n                            ",
+                      "description": "Record of any decision support tools used.",
+                      "concept": [
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision support tool identifier",
+                          "implementationGuidance": "Any alphanumeric identifier associated with the decision support tool (if applicable).\u00a0",
+                          "description": "Any alphanumeric identifier associated with the decision support tool (if applicable).\u00a0",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "string" } ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision support tool name",
+                          "implementationGuidance": "The name of the decision support tool.",
+                          "description": "The name of the decision support tool.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The decision support tool name should be coded with SNOMED CT where possible.\u00a0Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for\n                                further information.\u00a0         <br clear=\"none\"/>        \n                            ",
+                              "description": "The coded value for decision support tool name.",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to be used if no code is available.\u00a0",
+                              "description": "Free text field to be used if no code is available.\u00a0",
+                              "valueSets": "Free text.\u00a0",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision support tool type",
+                          "implementationGuidance": "Examples of patient decision support tools include condition specific decision aids, issue cards, decision boxes, fact boxes, question prompt lists and generic communication frameworks.         <br clear=\"none\"/>        \n                            ",
+                          "description": "The type of the decision support tool.",
+                          "valueSets": "Free text",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision support tool location",
+                          "implementationGuidance": "This data should be system generated to reduce the recording burden on the healthcare professional.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         This URL may contain a scanned copy of a paper decision support tool (e.g. as a pdf) or where available a link to a digitised decision support tool.         <br clear=\"none\"/>        \n                            ",
+                          "description": "The URL for the decision support tool.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision support tool MIME type",
+                          "implementationGuidance": "This data should be system generated to reduce the recording burden on the healthcare professional.\u00a0         <br clear=\"none\"/>        \n                            ",
+                          "description": "MIME type of the document e.g. application, pdf, website.",
+                          "valueSets": "Free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Recording the decision",
+                      "implementationGuidance": "This field should be used where a decision has been made and agreed. Where the decision is 'provisional' the shared decision making status field should be set as 'in progress.' The fact that a decision is provisional should be clearly displayed in systems. A decision may be provisional where for example, the person needs time for further\n                                reflection or discussion with others before making a final 'valid' decision. Where the decision is 'completed' the shared decision making status field should be set as 'valid.' It is essential that this information is clearly displayed and made readily available to mitigate the risk of the end user confusing a provisional decision with a completed one.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 1.2.14:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"Make a joint decision or plan about treatment or care and agree when this will be reviewed.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 1.2.15:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"At the end of a discussion, state clearly what decisions have been made to make sure there is a shared understanding between the person and their healthcare professional about what has been agreed, what happens next, what the timescales are, and when it will be reviewed.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 1.2.17:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"When making a record of the discussion (for example, in a person's clinical notes or care plan). record any decisions made along with details of what the person said was important to them in making those decisions. Offer to share this with the person, for example, in a post-clinic letter.\"",
+                      "description": "Details of the decision made with person. This includes details of the decisions made and agreed timescales for review.\u00a0 <i>NB</i> : What the person said was important to them in coming to the decision is recorded in a separate element 'What matters to the person'.",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "1",
+                          "maximumMultiplicity": "1",
+                          "mro": "M",
+                          "name": "Decision entry",
+                          "implementationGuidance": "\n                                        <div style=\"\">The GMC guidance on Decision making and consent ( see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent\u00a0 ) states in section 50:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"You should take a proportionate approach to the level of detail you record. Good medical practice states that you must include the decisions made and actions agreed - and who is making the decisions and agreeing the actions - in the patient's clinical records. This includes the decision to take no action.\"<br clear=\"none\"/>\n                                </div>        \n                            ",
+                          "description": "Record of the decision.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "The decision entry should be coded with SNOMED CT where possible.\u00a0Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further\n                                information.\u00a0",
+                              "description": "The coded value for decision entry.\u00a0",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free text",
+                              "implementationGuidance": "Free text field to provide further detail or be used if no code is available.",
+                              "description": "Free text field to provide further detail or be used if no code is available.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [
+                                {
+                                  "type": "text",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Planned review date/interval",
+                          "implementationGuidance": "\n                                        <div style=\"\">The GMC guidance on Decision Making and Consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 56:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"Unless treatment or care begins immediately after a patient has given consent, there will be opportunity for a decision to be reviewed.\"</div>        \n                                        <div style=\"\">\n                                    <br clear=\"none\"/>\n                                </div>        \n                                        <div style=\"\">In section 57:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"You should review a patient\u2019s decision immediately before providing treatment or care and, if treatment is ongoing, make sure there are clear arrangements</div>        \n                                        <div style=\"\">in place to review decisions regularly, allowing patients opportunity to ask questions and discuss any concerns. You should also consider regularly reviewing a decision to take no action.\"</div>        \n                                        <div style=\"\">\n                                    <br clear=\"none\"/>\n                                </div>        \n                                        <div style=\"\">In section 58:<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"Reviewing a decision is particularly important: if you haven\u2019t personally had a discussion with the patient because they were initially seen by a colleague, if significant time has passed since the decision was made, if the patient\u2019s condition has changed, if you have reason to believe the patient might have changed their mind, if any aspect\n                                    of the chosen treatment or care has changed, if new information has become available about the potential benefits or risks of harm of any of the options that might make the patient choose differently.\"</div>        \n                            ",
+                          "description": "This is the date/interval when this information will next be reviewed.",
+                          "valueSets": "Date and time or free text.",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Decision issues cluster",
+                      "implementationGuidance": "\n                                        <div>This section supports the recording of patient held issues, reservations or comments about the decision. It also supports the recording of professional comments about the decision agreed. It is not intended that professionals will use this field to record their own decision related preferences. The General Medical Council (GMC) Decision Making and Consent\n                                    guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 48:\u00a0</div>        \n                                        <div>\n                                    <br clear=\"none\"/>\n                                </div>        \n                                        <div>\"You must respect your patient\u2019s right to decide. If their choice of option (or decision to take no action) seems out of character or inconsistent with their beliefs and values, it may be reasonable to check their understanding of the relevant information (see paragraph 10) and their expectations about the likely outcome of this option and reasonable\n                                    alternatives. If it\u2019s not clear whether a patient understands the consequences of their decision, you should offer more support to help them understand the relevant information. But you must not assume a patient lacks capacity simply because they make a decision that you consider unwise.\"</div>        \n                                        <div>\n                                    <br clear=\"none\"/>\n                                </div>        \n                                        <div>Evaluation of SDM outcomes such as decision satisfaction or regret, although important indicators of decision quality, are not generally considered part of the core SDM process and therefore the recording of these is outside the scope of the SDM standard. Evaluation of the SDM process including outcomes measurement is a developing area that has been covered in\n                                    detail elsewhere (see https://www.england.nhs.uk/wp-content/uploads/2013/08/7sdm-report.pdf).\u00a0</div>        \n                            ",
+                      "description": "Details of any patient held issues, reservations or comments with the decision agreed, or professional comments about the decision agreed.",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision issue flag",
+                          "implementationGuidance": "A flag to indicate whether the patient held issues, reservations or comments with the decision agreed, or professional comments about the decision.",
+                          "description": "A flag to indicate whether the patient held issues, reservations or comments with the decision agreed, or professional comments about the decision.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Coded value",
+                              "implementationGuidance": "<p>The SNOMED CT codes for this element are to be confirmed with NHS England.<br/></p>",
+                              "description": "The coded value for decision issue flag.",
+                              "valueSets": "SNOMED CT."
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Free Text",
+                              "implementationGuidance": "Where a coded value is provided this field must not be used.\u00a0         <br clear=\"none\"/>        \n                            ",
+                              "description": "Free text field to be used if no code is available.\u00a0",
+                              "valueDomain": [
+                                {
+                                  "type": "string",
+                                  "property": [ { "maxLength": "150" } ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Decision issue details",
+                          "implementationGuidance": "Details of any patient held issues, reservations or comments with the decision agreed, or any professional comments about the decision agreed.",
+                          "description": "Details of any patient held issues, reservations or comments with the decision agreed, or any professional comments about the decision agreed.",
+                          "valueDomain": [ { "type": "text" } ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "mro": "R",
+                      "name": "Information withheld or sharing delayed",
+                      "implementationGuidance": "This conformance of this section is required. It is recognised that this section applies only in exceptional circumstances, but where these occur accurate recording will demonstrate compliance with the below guidance.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The General Medical Council (GMC) Decision Making and Consent guidance\u00a0(see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0notes that there may be\u00a0exceptional\u00a0circumstances where sharing of certain relevant information with the patient withheld or delayed.\u00a0Where it is delayed the guidance\n                                instructs practitioners to record \u2018the information [they] still need to share, [their] reasons for not sharing it now, and when it can be shared.\u2019 The guidance also clarifies that \u2018in [the] very exceptional circumstances\u2019 where information is withheld because it would cause the patient \u2018very serious harm\u2019 legal advice should be sought.\u00a0         <br clear=\"none\"/>        \n                            ",
+                      "description": "A structured record of the information that will be withheld or the sharing of delayed.",
+                      "concept": [
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Information withheld from person",
+                          "implementationGuidance": "The General Medical Council (GMC) Decision Making and Consent guidance\u00a0(see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0tells of 'very exceptional circumstances\u2019 where information is withheld because it would cause the patient \u2018very serious harm\u2019 and advises that in such cases legal advice\n                                should be sought.\u00a0 \u00a0         <br clear=\"none\"/>        \n                            ",
+                          "description": "A record of the information withheld from the person.",
+                          "valueSets": "\n                                     <p class=\"MsoNormal\" style=\"margin: 0cm; font-size: medium; font-family: Calibri, sans-serif;\">\n                                        <br clear=\"none\"/>\n                                    </p> \n                                ",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Information withheld indicator",
+                              "implementationGuidance": "An indicator of whether information was withheld from the person. Yes or No.",
+                              "description": "An indicator of whether information was withheld from the person. Yes or No.",
+                              "valueSets": "Code: Yes or No.",
+                              "valueDomain": [ { "type": "blob" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Reason information withheld",
+                              "implementationGuidance": "A description of the reason the information has been withheld from the person.",
+                              "description": "A description of the reason the information has been withheld from the person.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [ { "type": "text" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Legal advice sought",
+                              "implementationGuidance": "Relevant details of any legal advice sought where information has been withheld from the person.\u00a0",
+                              "description": "Relevant details of any legal advice sought where information has been withheld from the person.\u00a0",
+                              "valueSets": "Free text",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "group",
+                          "minimumMultiplicity": "0",
+                          "maximumMultiplicity": "1",
+                          "mro": "R",
+                          "name": "Information sharing delayed",
+                          "implementationGuidance": "<p>The General Medical Council (GMC) Decision Making and Consent guidance\u00a0(see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent)\u00a0tells of 'very exceptional circumstances\u2019 where information is withheld or sharing delayed because it would cause the patient \u2018very serious harm\u2019 legal advice should be\n                                    sought. <br/><br/>Where information sharing is delayed the guidance instructs practitioners to record \u2018the information [they] still need to share, [their] reasons for not sharing it now, and when it can be shared.\u2019\u00a0 </p>        \n                                        <p>For children the NICE Guideline Babies, children and young people's experience of healthcare (https://www.nice.org.uk/guidance/ng204) states in 1.5.2 </p>        \n                                        <p>\"Give all children and young people opportunities to express their opinions about their health needs independently, including:</p>        \n                                        <ul><li><p>asking them about the extent to which they want their parent or carer to be involved in their healthcare </p></li><li><p>offering to see them separately from their parents or carers for part of the consultation.\" </p></li></ul>        \n                                        <p>It maybe appropriate to record where information sharing was delayed until a private conversation could be held if requested by a child/ young person.\"</p>",
+                          "description": "Details of where information sharing with the person has been delayed.",
+                          "concept": [
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Information still to share",
+                              "implementationGuidance": "Details of the information that still needs to be shared.",
+                              "description": "Details of the information that still needs to be shared.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [ { "type": "text" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "Reasons for not sharing the information now",
+                              "implementationGuidance": "An account of the professional's reason(s) for not sharing the information with the person during the encounter",
+                              "description": "An account of the professional's reason(s) for not sharing the information with the person during the encounter",
+                              "valueSets": "Free text.",
+                              "valueDomain": [ { "type": "text" } ]
+                            },
+                            {
+                              "type": "item",
+                              "minimumMultiplicity": "0",
+                              "maximumMultiplicity": "1",
+                              "mro": "R",
+                              "name": "When the information can be shared",
+                              "implementationGuidance": "A explanation of what needs to happens so that the information can be shared.",
+                              "description": "A explanation of what needs to happens so that the information can be shared.",
+                              "valueSets": "Free text.",
+                              "valueDomain": [ { "type": "text" } ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "1",
+              "name": "Post-discussion actions",
+              "implementationGuidance": "\n                                        <div style=\"\">To minimise the recording burden on clinicians the elements in this section are optional to record.<br clear=\"none\"/>\n                                    <br clear=\"none\"/>This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action.\u00a0<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\n                                    <div style=\"\">The Kings Fund (see\u00a0https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states:\u00a0<br clear=\"none\"/>\n                                        <br clear=\"none\"/>\"There should be a formal system for documenting:<br clear=\"none\"/>\n                                        <br clear=\"none\"/>\n                                    </div>\n                                    <div style=\"\">1. the decision\u00a0<br clear=\"none\"/>2. the agreed course of action\u00a0<br clear=\"none\"/>3. the ongoing roles and responsibilities of each party\u00a0<br clear=\"none\"/>\n                                    </div> 4. the risk-sharing agreement..\" <br clear=\"none\"/>\n                                    <br clear=\"none\"/>\n                                </div>         The NICE guideline on Shared Decision Making (see\u00a0https://www.nice.org.uk/guidance/ng197) states:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 1.2.18:\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"Offer people resources in their preferred format to help them understand what was discussed and agreed. This could be a printout summarising their diagnosis, the options and decisions or plans made, and links to high-quality online resources. Ideally, give people this material to take away, or provide it very soon after the discussion.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 1.2.21:         <br clear=\"none\"/>        \n                                        <p class=\"MsoNormal\">\u201cOffer additional support to people who are likely to need extra help to engage in shared decision making. This could include encouraging them to record the discussion, explaining in writing the decisions that have been made, or arranging follow up by a clinical member of staff or a suitable alternative.\"</p>        \n                            ",
+              "description": "A record of the actions agreed to support the shared decision after the discussion. This should include: <br clear=\"none\"/> \n                         <br clear=\"none\"/> Agreed actions for the professional such as those related to further information to be shared, planned investigations, procedures and treatment for a person's identified conditions and priorities.  <br clear=\"none\"/> \n                         <br clear=\"none\"/> Actions for the person or their carer.\u00a0For example, following clinician shared printouts summarising the options or decisions made and there may be action for patient to review . Following clinician signposting to relevant online or physical information resources there may be an agreed action for the person to access and review the materials.",
+              "valueSets": "Free text.",
+              "concept": [
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Actions for professionals",
+                  "implementationGuidance": "\n                                        <div style=\"\">To minimise the recording burden on clinicians the elements in this section are optional to record.<br clear=\"none\"/>\n                                    <br clear=\"none\"/>This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action.\u00a0<br clear=\"none\"/>\n                                    <br clear=\"none\"/> A record of the agreed actions for the professional(s) . May be structured (table), with actions, names, dates, status, location, strategies, or free text.<br clear=\"none\"/>\n                                    <br clear=\"none\"/>The Kings Fund (see\u00a0https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states: <br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"There should be a formal system for documenting:<div style=\"\">\n                                        <ol>\n                                            <li>the decision\u00a0</li>\n                                            <li>the agreed course of action\u00a0</li>\n                                            <li>he ongoing roles and responsibilities of each party\u00a0</li>\n                                            <li>the risk-sharing agreement.\"</li>\n                                        </ol>The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for accuracy and request amendments as appropriate.\u00a0<br clear=\"none\"/>\n                                    </div>\n                                </div>        \n                            ",
+                  "description": "Agreed actions for the professional including planned investigations, procedures and treatment for a person's identified conditions and priorities.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Actions for person or their carer",
+                  "implementationGuidance": "To minimise the recording burden on clinicians the elements in this section are optional to record.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         A record of the agreed actions for the person or their carer. May be structured (table), with actions, names, dates, status, location, strategies, or free text.         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>        \n                                        <div>The Kings Fund (see\u00a0https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states:\u00a0<br clear=\"none\"/>\n                                    <br clear=\"none\"/>\"There should be a formal system for documenting:<br clear=\"none\"/>\n                                </div>        \n                                        <div>\n                                    <ol>\n                                        <li>the decision\u00a0</li>\n                                        <li>the agreed course of action\u00a0</li>\n                                        <li>the ongoing roles and responsibilities of each party\u00a0</li>\n                                        <li>the risk-sharing agreement.\"</li>\n                                    </ol>\n                                    <div>The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for accuracy and request amendments as appropriate.\u00a0<br clear=\"none\"/>\n                                    </div>\n                                </div>        \n                            ",
+                  "description": "Agreed actions for the person or their carer. For each action the following should be identified: outcome expectations, including person\u2019s expectations.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "minimumMultiplicity": "0",
+          "maximumMultiplicity": "1",
+          "name": "Consent form details",
+          "implementationGuidance": "The elements in this section are for recording the details of a consent form used and where it is located. This section is not a digitised consent form and does not record details of the process of obtaining consent.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         It is recognised that the vast majority of SDM discussions will not require use of a consent form and their use will depend on clinical setting and circumstances.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         The GMC guidance on Decision Making and Consent (see\u00a0https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 54:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"Consent forms can be a helpful prompt to share key information, as well as a standard way to record a decision that can make regular review easier. They can also be used to review decisions made at an earlier stage, and the relevant information they were based on.\"         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         In section 55:         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         \"But, filling in a consent form isn't a substitute for a meaningful dialogue tailored to the individual patient's needs.\"",
+          "description": "A record of documents used to record consent for an intervention.",
+          "concept": [
+            {
+              "type": "group",
+              "minimumMultiplicity": "0",
+              "maximumMultiplicity": "*",
+              "name": "Consent form details record entry",
+              "implementationGuidance": "This is a consent form details record entry.\u00a0\u00a0There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
+              "description": "This is a consent form details record entry.\u00a0\u00a0There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items",
+              "informationType": "Event.Record",
+              "concept": [
+                {
+                  "type": "group",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Consent form type",
+                  "implementationGuidance": "Where appropriate codes are available in the system this could be displayed as a dropdown picklist in the graphical user interface to reduce the recording burden on the healthcare professional.",
+                  "description": "Record of consent form used. <br clear=\"none\"/> \n                        ",
+                  "concept": [
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Coded value",
+                      "implementationGuidance": "The consent form type should be coded with SNOMED CT where possible.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         For example the following SNOMED CT concepts should be used to record the use of NHS consent forms 1-4:\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>        \n                                        <span style=\"line-height: 13.91px;\">\n                                    <span style=\"font-weight: bold;\">\n                                        <span style=\"text-decoration-line: underline;\">SNOMED CT ID</span>\u00a0\u2502\u00a0<span style=\"text-decoration-line: underline;\">Fully specified name (FSN)</span>\u00a0\u2502</span>\n                                    <br clear=\"none\"/>\n                                </span>        \n                                        <span style=\"font-size: 10pt; font-family: Arial, sans-serif;\">\n                                    <br clear=\"none\"/>\n                                </span>         849771000000105\u00a0\u2502\u00a0Obtaining consent using form 1 (patient agreement to investigation or treatment) (procedure)\u00a0\u2502\u00a0         <br clear=\"none\"/>         849781000000107\u00a0\u2502\u00a0Obtaining consent using form 2 (parental agreement to investigation or treatment for a child or young person) (procedure)\u00a0\u2502\u00a0         <br clear=\"none\"/>         849791000000109\u00a0\u2502\u00a0Obtaining consent using form 3 (patient or\n                                parental agreement to investigation or treatment) (procedure)\u00a0         <br clear=\"none\"/>         849801000000108\u00a0\u2502\u00a0Obtaining consent using form 4 (adults who are unable to consent to investigation or treatment) (procedure) \u2502\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information.\u00a0",
+                      "description": "The coded value for consent form type.\u00a0",
+                      "valueSets": "SNOMED CT."
+                    },
+                    {
+                      "type": "item",
+                      "minimumMultiplicity": "0",
+                      "maximumMultiplicity": "1",
+                      "name": "Free text",
+                      "implementationGuidance": "Free text field to provide further detail or be used if no code is available.",
+                      "description": "Free text field to provide further detail or be used if no code is available.",
+                      "valueSets": "Free text.",
+                      "valueDomain": [
+                        {
+                          "type": "text",
+                          "property": [ { "maxLength": "150" } ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Consent form location",
+                  "implementationGuidance": "This data should be system generated to reduce the recording burden on the healthcare professional.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>         This URL may contain a scanned copy of a paper consent form (e.g. as a pdf) or where available a digitised consent form.\u00a0         <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>        \n                                        <br clear=\"none\"/>        \n                            ",
+                  "description": "The URL for the consent form.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                },
+                {
+                  "type": "item",
+                  "minimumMultiplicity": "0",
+                  "maximumMultiplicity": "1",
+                  "name": "Consent form MIME type",
+                  "implementationGuidance": "This data should be system generated to reduce the recording burden on the healthcare professional.\u00a0",
+                  "description": "MIME type of the document e.g. application, pdf, website.",
+                  "valueSets": "Free text.",
+                  "valueDomain": [ { "type": "text" } ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

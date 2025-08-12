@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Shared Decision Making" version="1.0" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="Version incremented from 0.2 to 0.3 before start of new phase Version incremented from 0.3 to 0.4 before start of new phase Version incremented from 0.4 to 0.5 following review by assurance committee Version incremented from 0.5 to 0.6 with amends prior to endorsement" />
+  <Model name="Contacts with professionals">
+    <TaggedValue name="description" value="The details of the person’s contact with a professional." />
+    <TaggedValue name="implementationGuidance" value="It is recognised that the SDM process may occur before, during and after multiple patient contacts with professionals. These touchpoints should be recorded and linked in systems to the shared decision discussed. The NICE guideline on shared decision (see https://www.nice.org.uk/guidance/ng197) making states in section 1.2.1: &quot;Support shared decision making by offering interventions at different stages, including before, during and after discussions, so that people are fully involved throughout their care.&quot;" />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Contacts with professionals record entry">
+      <TaggedValue name="description" value="This is a contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="implementationGuidance" value="This is a contacts record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Date_and_time_of_contact" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Date and time of the contact." />
+        <TaggedValue name="implementationGuidance" value="Date and time of the contact." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="datetime" />
+        <TaggedValue name="valueSets" value="Date and time." />
+      </Element>
+      <Model name="Location of contact">
+        <TaggedValue name="description" value="The location where the contact took place." />
+        <TaggedValue name="implementationGuidance" value="The location where the contact took place." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for location" />
+          <TaggedValue name="implementationGuidance" value="The coded value for location" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="NHS data dictionary : - Organisation data service code" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="implementationGuidance" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Seen by">
+        <TaggedValue name="description" value="The professional that saw the person." />
+        <TaggedValue name="implementationGuidance" value="The professional that saw the person." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional that saw the person" />
+          <TaggedValue name="implementationGuidance" value="The name of the professional that saw the person" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role of the person providing the service." />
+          <TaggedValue name="implementationGuidance" value="The role of the person providing the service." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. National Workforce Data Set (NWD) NHS Occupation codes are found here: - https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. The Staff Groups and Job Roles are listed in the ‘NWD Class &amp; Codes Appendix’ tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing &amp; Midwifery Registered and Job Role = Staff Nurse." />
+        </Element>
+      </Model>
+      <Model name="Responsible professional">
+        <TaggedValue name="description" value="The name and role of the professional that had overall responsibility for the person e.g. consultant, nurse consultant, midwife, allied health professional (may not have actually seen the person)." />
+        <TaggedValue name="implementationGuidance" value="The name and role of the professional that had overall responsibility for the person e.g. consultant, nurse consultant, midwife, allied health professional (may not have actually seen the person)." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the responsible professional." />
+          <TaggedValue name="implementationGuidance" value="The name of the responsible professional." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role of the responsible professional" />
+          <TaggedValue name="implementationGuidance" value="The role of the responsible professional" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. National Workforce Data Set (NWD) NHS Occupation codes are found here: - https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. The Staff Groups and Job Roles are listed in the ‘NWD Class &amp; Codes Appendix’ tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing &amp; Midwifery Registered and Job Role = Staff Nurse." />
+        </Element>
+      </Model>
+      <Element name="Person_accompanying_patient" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Identify, where clinically relevant, others accompanying the patient, e.g. parent, relative, friend. Includes: Name, Relationship, role (e.g. informal carer)." />
+        <TaggedValue name="implementationGuidance" value="Identify, where clinically relevant, others accompanying the patient, e.g. parent, relative, friend. Includes: Name, Relationship, role (e.g. informal carer)." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Person full name" />
+      </Element>
+      <Element name="Use_of_an_interpreter" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="An indicator to record whether an interpreter was used at a care contact. If yes, records whether a professional interpreter, family member / friend, or other person was used for the purposes of communication. If no, records whether an interpreter was not required or did not attend." />
+        <TaggedValue name="implementationGuidance" value="The General Medical Council (GMC) guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) says in section 27e: &quot;To help patients understand and retain relevant information you should: use an interpreter or translation service if they have difficulty understanding spoken English.&quot;" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="NHS data dictionary : - Interpreter present at care contact indication code" />
+      </Element>
+      <Element name="Location_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The type of location where the contact took place e.g. person's home" />
+        <TaggedValue name="implementationGuidance" value="The type of location where the contact took place e.g. person's home" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary - Activity location type code" />
+      </Element>
+      <Model name="Contact type">
+        <TaggedValue name="description" value="Type of contact e.g. GP consultation, outpatient attendance" />
+        <TaggedValue name="implementationGuidance" value="Type of contact e.g. GP consultation, outpatient attendance" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for contact type" />
+          <TaggedValue name="implementationGuidance" value="There is no existing code set, and until one is identified or created, use the free text item." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if the coded value for type of contact is not available e.g. GP consultation, outpatient attendance" />
+          <TaggedValue name="implementationGuidance" value="Free text if the coded value for type of contact is not available e.g. GP consultation, outpatient attendance" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Audio or video recording of the conversation">
+        <TaggedValue name="description" value="Audio or video recording of the conversation cluster." />
+        <TaggedValue name="implementationGuidance" value="This section is relevant only in cases where the clinician wishes to record, store and share the conversation (with the person). It does not apply where the person makes a recording of the conversation on their own personal device for their own private records. The General Medical Council (GMC) guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 27c: &quot;To help patients understand and retain relevant information you should: accommodate a patient’s wishes if they would like to to record the discussion.&quot;" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Audio_or_visual_recording_made" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="An indicator to record if an audio or video recording was made of the conversation." />
+          <TaggedValue name="implementationGuidance" value="An indicator to record if an audio or video recording was made of the conversation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - 431315003 |Audio recording of patient interview (procedure)| or 282733006 |Video recording of patient interview (procedure)|." />
+        </Element>
+        <Element name="Consent_for_audio_or_video_recording_of_the_conversation" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="This is a record of consent for audio or visual recording of the conversation." />
+          <TaggedValue name="implementationGuidance" value="The General Medical Council (GMC) Making and using video recordings of patients guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/making-and-using-visual-and-audio-recordings-of-patients) states in section 8 the following: &quot;make recordings only where you have appropriate consent or other valid authority for doing so.&quot; &quot;ensure that patients are under no pressure to give their consent for the recording to be made.&quot; &quot;And you must not: disclose or use recordings for purposes outside the scope of the original consent without obtaining further consent (except in the circumstances set out [elsewhere in that document].&quot; The GMC guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 6 that: 'While some interventions require a patient’s signature on a form, for most healthcare decisions you can rely on a patient’s verbal consent, as long as you are satisfi..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Copy_of_video_or_audio_recording" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The conversation recording should be stored as a video/audio multimedia file or as a transcript (free text)." />
+          <TaggedValue name="implementationGuidance" value="The free text field could be used to enter a hyperlink to the recording. The General Medical Council (GMC) guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states the following in section 23: &quot;If you make a recording as part of a patient’s care you must follow our guidance on Making and using visual and audio recordings of patients. Such recordings form part of the medical record and should be treated in the same way as other records.&quot; &quot;Recordings made by patients are owned by them and do not have to be stored with their medical records.&quot;" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="complex" />
+          <TaggedValue name="valueSets" value="Free text or multimedia file." />
+        </Element>
+      </Model>
+      <Element name="Consultation_method" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Consultation method used e.g. face to face, telephone" />
+        <TaggedValue name="implementationGuidance" value="Consultation method used e.g. face to face, telephone" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary - Consultation mechanism" />
+      </Element>
+      <Element name="Specialty" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The specialty e.g. physiotherapy, oncology, mental health etc" />
+        <TaggedValue name="implementationGuidance" value="The specialty e.g. physiotherapy, oncology, mental health etc" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="NHS data dictionary - Activity treatment function code" />
+      </Element>
+      <Model name="Professionals present">
+        <TaggedValue name="description" value="The name, role of the additional individuals or team members including consultant(s), nurse consultant(s), allied health professional(s), social worker(s)" />
+        <TaggedValue name="implementationGuidance" value="The name, role of the additional individuals or team members including consultant(s), nurse consultant(s), allied health professional(s), social worker(s)" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the professional present" />
+          <TaggedValue name="implementationGuidance" value="The name of the professional present" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+        <Element name="Role" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The role of the professional present." />
+          <TaggedValue name="implementationGuidance" value="The role of the professional present." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. National Workforce Data Set (NWD) NHS Occupation codes are found here: - https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. The Staff Groups and Job Roles are listed in the ‘NWD Class &amp; Codes Appendix’ tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing &amp; Midwifery Registered and Job Role = Staff Nurse." />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Problem list">
+    <TaggedValue name="description" value="A summary of the problems that require investigation or treatment." />
+    <TaggedValue name="implementationGuidance" value="A new shared decision record must be linked to an active problem or issue within systems. The SDM process begins with a problem for the person that needs resolution (see https://doi.org/10.1016/j.pec.2019.07.020) by investigation, treatment or other method including the option to do nothing. The problem or issue for which a shared decision was made. The problem will typically require an investigation, treatment, procedure or lifestyle intervention or a change to these e.g. starting, stopping, or switching a prescribed medication. Medical problems or issues might include signs, symptoms, a diagnosis, risk factors, examination findings or investigation results, or other issues." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Problem list record entry">
+      <TaggedValue name="description" value="This is a problem list record entry. There may be 0 to many record entries under problem list. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="implementationGuidance" value="This is a problem list record entry. There may be 0 to many record entries under problem list. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Problem">
+        <TaggedValue name="description" value="A condition which needs addressing and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues" />
+        <TaggedValue name="implementationGuidance" value="This is the problem that is the subject of the SDM conversation." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for the problem list." />
+          <TaggedValue name="implementationGuidance" value="The coded value for the problem list." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT : - ^1127581000000103 |Health issues simple reference set|" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available" />
+          <TaggedValue name="implementationGuidance" value="Free text field to be used if no code is available" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+    </Model>
+  </Model>
+  <Model name="Shared decision point">
+    <TaggedValue name="description" value="This is a shared decision point record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+    <TaggedValue name="implementationGuidance" value="It is anticipated that where the standard is implemented in systems it will support the SDM process by acting as prompts for discussion. Healthcare professionals may choose to conduct the discussion by using established models such as BRAN (Benefits, Risks, Alternatives, do Nothing), Three-talk model, Ask 3 Questions or other process and use the standard to record details of the conversation. Wherever possible the burden of recording on healthcare professionals should be reduced. This may require that certain fields are automatically generated by the system, the use of drop down lists, and the integration of electronic clinical decision support to generate guidance in the workflow to aid recording. The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for acc..." />
+    <TaggedValue name="minCardinality" value="1" />
+    <TaggedValue name="maxCardinality" value="*" />
+    <Model name="Shared decision status">
+      <TaggedValue name="description" value="The current status of the decision (in progress, valid, cancelled)." />
+      <TaggedValue name="implementationGuidance" value="The PRSB consultation suggested that the following three options for the status of a shared decision should be recorded in systems: In progress: A shared decision is currently in progress (this is the default status for a decision).* Valid: A decision is valid., i.e., a decision has been agreed between the person and their clinician and is a valid decision. ** Cancelled: A decision has been cancelled e.g., a patient changes their mind or the decision is no longer relevant. The status of a decision is not permanent and can be revisited at a later stage as appropriate. It is important that healthcare professionals accessing the record are aware of the shared decision status as the decision may be provisional. Where a decision has been recorded that is 'provisional' the shared decision making status field should be set as 'in progress.' The fact that a decision is provisional should be clearly displayed in systems. A decision may be provisional where for example, the person needs time ..." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Coded_value" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The coded value for shared decision status." />
+        <TaggedValue name="implementationGuidance" value="The SNOMED CT codes for this element are to be confirmed with NHS England." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="SNOMED CT." />
+      </Element>
+      <Element name="Free_text" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Free text field to be used if no code is available." />
+        <TaggedValue name="implementationGuidance" value="Where a coded value is provided this field must not be used." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+    <Element name="Pre-discussion_information_shared" type="Class" stereotype="DataElement">
+      <TaggedValue name="description" value="A record of the actions taken to prepare the patient to make a shared decision before the discussion where a shared decision was made. This should include a summary of any resources the person was offered to prepare them for the decision making process." />
+      <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians it is optional to record this field. The GMC guidance on decision making and consent (https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) advises clinicians in section 51 that: &quot;You should take a proportionate approach to the information you record...&quot; The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In section 1.2.1: “Support shared decision making by offering interventions at different stages, including before, during and after discussions, so that people are fully involved throughout their care.” In section 1.2.5: &quot;Before a discussion, offer the person, adult or child, access to resources in their preferred format (for example, a booklet, flyer or app) to prepare for discussing options and making shared decisions. It should encourage them to think about: what matters to them what they hope will happen as a result of the discussion what ques..." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <TaggedValue name="dataType" value="Text" />
+      <TaggedValue name="valueSets" value="Free text." />
+    </Element>
+    <Model name="Discussion actions">
+      <TaggedValue name="description" value="A record of the actions taken to support shared decision making during the discussion." />
+      <TaggedValue name="implementationGuidance" value="A record of the actions taken to support shared decision making during the discussion." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Model name="Decision dialogue (deliberation)">
+        <TaggedValue name="description" value="A record of the dialogue preceding the decision including the information shared that a person wanted or needed to know in order to make a decision, such as: Diagnosis &amp; prognosis Options for further investigation, treatment or management (including the option to take no action). The potential benefits and risks of each option" />
+        <TaggedValue name="implementationGuidance" value="The General Medical Council guidance on Decision making and consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 10 that: &quot;You must give patients the information they want or need to make a decision. This will usually include: diagnosis and prognosis, uncertainties about the diagnosis or prognosis, including options for further investigation, options for treating or managing the condition, including the option to take no action, the nature of each option, what would be involved, and the desired outcome, the potential benefits, risks of harm, uncertainties about and likelihood of success for each option, including the option to take no action.&quot; The NICE Shared decision making guideline (see https://www.nice.org.uk/guidance/ng197) states in section 1.2.10: &quot;When discussing tests, treatments or other healthcare services: openly discuss the risks, benefits and consequences of each option, making sure the person ..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="People involved in making the decision">
+          <TaggedValue name="description" value="This section records all those who were involved in the shared decision, either with the person or on behalf of the person. This may be where the person is a child, does not have mental capacity or the decision is made in the person's best interest as a shared decision. People involved in the decision may include family members, parents, legal guardians, carers, Legal Power of Attorney, Independent Mental Capacity Advocate." />
+          <TaggedValue name="implementationGuidance" value="The clinician may want to record all those individuals explicitly involved in making the decision, providing them with a record of the SDM discussion and a list of follow up actions if relevant. Ascertaining and recording who were those involved in a shared decision is dependent on a professional's judgement, but will occur usually where a person lacks capacity and with the agreement of all those involved in the decision. In the case of children, Gillick or Fraser competence should be used to determine if the discussion is with the child or parent/guardian or both. The NICE guideline [NG204] Babies, children and young people's experience of healthcare (https://www.nice.org.uk/guidance/ng204) emphasises in section 1.2 involving children and young people in their healthcare and understanding what matters to them, and states in 1.5.1 &quot;Involve parents or carers in discussions and decisions about the care of babies and young children, and recognise that parents or carers will be their pr..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Name" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The name of the person involved." />
+            <TaggedValue name="implementationGuidance" value="The name of the person involved." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Relationship" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The relationship the person involved has to the person (subject of record), e.g. parent, foster parent, grandmother, family friend etc." />
+            <TaggedValue name="implementationGuidance" value="The relationship the person involved has to the person (subject of record), e.g. parent, foster parent, grandmother, family friend etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="FHIR value set : - Person Relationship type" />
+          </Element>
+          <Element name="Relationship_type" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Additional roles the person performs on behalf of the other (e.g. Carer, Legal Guardian, Next of Kin, Emergency Contact, Dependent, etc.)" />
+            <TaggedValue name="implementationGuidance" value="Additional roles the person performs on behalf of the other (e.g. Carer, Legal Guardian, Next of Kin, Emergency Contact, Dependent, etc.)" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Role" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The role of the person involved (if professional)." />
+            <TaggedValue name="implementationGuidance" value="The role of the person involved (if professional)." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Alignment to the workforce dataset NHS Occupation codes primarily is advised. Where no code is available, free text may be used. National Workforce Data Set (NWD) NHS Occupation codes are found here: - https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/national-workforce-data-set-nwd-and-nhs-occupation-codes. To access the list of roles, download the 'NWD dataset specification' using the link on the page. The Staff Groups and Job Roles are listed in the ‘NWD Class &amp; Codes Appendix’ tab of the attached NWD Dataset from row 640. The 'Staff Group' and 'Job Role' segments are contained in one field named 'Job' which work together e.g. Staff Group = Nursing &amp; Midwifery Registered and Job Role = Staff Nurse." />
+          </Element>
+        </Model>
+        <Model name="Shared agenda setting">
+          <TaggedValue name="description" value="A record of the shared agenda setting process undertaken to support the shared decision. This may include: Patient talk topic: Identifying what the patient wants to talk about in the encounter. Clinician talk topic: Identifying what the clinician wants to talk about in the encounter. Agreeing shared priorities and focus for conversation i.e. the topics that are going to be covered. Establishing collaboration and engagement: Introducing the nature/purpose of the SDM process. Declaring the alternative options: Listing of the possible options for treatment, investigation, procedure, or other action; including reasonable alternatives." />
+          <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians it is optional to record this field. The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively seek out and record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry. The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In 1.2.7: &quot;Agree an ‘ agenda ’ at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.&quot; The NICE committee emphasised that: “ Agenda setting , explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatme..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Patient_agenda" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A record of what the patient said was their agenda (talk topic(s)) for the appointment." />
+            <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians it is optional to record this field. The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively seek out and record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry. The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In 1.2.7: &quot;Agree an ‘agenda’ at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.&quot; The NICE committee emphasised that: “Agenda setting, explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatments ..." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Clinician_agenda" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="A record of the clinician's stated agenda (talk topic(s)) for the appointment." />
+            <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians it is optional to record this field. The aim of the collaborative shared agenda setting process is for the professional and patient to agree shared priorities and focus for the SDM conversation. The aspects brought to the discussion by both parties should be recorded i.e. the topics that they agreed to cover together. Good SDM practice requires that healthcare professionals actively seek out and record the patient's values, preferences and circumstances. Use of the 'patient agenda' and 'what matters to the person' fields should support this enquiry. The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In 1.2.7: &quot;Agree an ‘agenda’ at the start of each discussion to prioritise together what to discuss. Say how long the discussion will last.&quot; The NICE committee emphasised that: “Agenda setting, explicitly stating decisions, the option of no treatment (that is, not choosing any of the treatments ..." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Element name="What_matters_to_the_person" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A record to establish what matters to the person in the context of the decision to be made, which may include as appropriate: Person goals or hopes: These are the overall goals, hopes, aims or targets that the person has. Including anything that the person wants to achieve that relates to their future health and wellbeing. Each goal may include a description of why it is important to the person. Goals may also be ranked in order of importance or priority to the person. Values and preferences: The values and/or preferences that the person holds relating to the decision or otherwise. Ideas: Opinions, thoughts, or prior knowledge the person has about their diagnosis, prognosis, or options for treatment, investigations, procedures or other areas they feel are relevant. Concerns: Any worries or fears the person has about their diagnosis (or possible diagnosis) or other areas such as treatment, investigations or procedures that may influence their decision-making or they feel are relevant..." />
+          <TaggedValue name="implementationGuidance" value="Ideally this section will be used to record the key aspects of what the patient has told the clinician in the person's own words. For example, as part of recording the person's ideas the clinician may wish to elicit the patient's understanding of their condition or diagnosis. The General Medical Council (GMC) guidance on Decision Making and Consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 17: &quot;You should try to find out what matters to patients about their health - their wishes and fears, what activities are important to their quality of life, both personally and professionally - so you can support them to assess the likely impact of the potential outcomes for each option.&quot; In section 18: “ You must seek to explore your patient’s needs, values and priorities that influence their decision making, their concerns and preferences about the options and their expectations about what treatment or care could ach..." />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Options discussed">
+          <TaggedValue name="description" value="Record of the options discussed. Includes: Option entry Risks communicated about the option Benefits communicated about the option Where relevant the option to 'take no further action' at this time or to 'do nothing' should be included in the options discussed." />
+          <TaggedValue name="implementationGuidance" value="As a core component of the SDM process, this field is mandatory. All pertinent and relevant options discussed should be recorded, especially those with risks, benefits or intended outcomes that are material to the patient, this is left to professional judgement. Each option entry recorded must also have completed risk communication and benefits entries. As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.' The PRSB consultation raised the importance of the options discussed aligning with the person's goals and hopes and what matters to them. The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 50 that: &quot;Keeping patient..." />
+          <TaggedValue name="minCardinality" value="1" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Option entry">
+            <TaggedValue name="description" value="Record of the option discussed including the option to 'do nothing' if relevant." />
+            <TaggedValue name="implementationGuidance" value="As a core component of the SDM process, this field is mandatory. All pertinent and relevant options discussed should be recorded, especially those with risks, benefits or intended outcomes that are material to the patient, this is left to professional judgement. The minimum entry for this field is the 'do nothing/ take no action' option. The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states that when discussing options for treating or managing a condition the clinician involved must include the option to take no action: &quot;Doctors must try to find out what matters to patients so they can share relevant information about the benefits and harms of proposed options and reasonable alternatives, including the option to take no action (Principle 4).&quot; As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options a..." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value of the option discussed." />
+              <TaggedValue name="implementationGuidance" value="The option discussed should be coded with SNOMED CT where possible. Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.'" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Model name="Risks communication entry">
+            <TaggedValue name="description" value="Record of the risks discussed for each option." />
+            <TaggedValue name="implementationGuidance" value="As a core component of the SDM process, this field is mandatory where the option entry field is used and there may be multiple risks recorded per option. Risk(s) recorded in an entry must relate to the option recorded under the option entry field. All pertinent and relevant risks discussed should be recorded, especially those that are significant to the patient, this is left to professional judgement. As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.' The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 21 that when discussing benefits and harms a clinician should include the following: &quot;Recognised risks of harm tha..." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value of the risk discussed." />
+              <TaggedValue name="implementationGuidance" value="The risks communicated should be coded with SNOMED CT where possible. Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Model name="Benefits entry">
+            <TaggedValue name="description" value="Record of the benefits discussed for each option." />
+            <TaggedValue name="implementationGuidance" value="As a core component of the SDM process, this field is mandatory where the option entry field is used and there may be multiple benefits recorded per option. Benefit(s) recorded in an entry must relate to the option recorded under the option entry field. All pertinent and relevant benefits discussed should be recorded, especially those that are significant to the patient, this is left to professional judgement. As an alternative to recording risks and benefits against an entry for each option, it is allowable for the options and associated risks and benefits discussed to be recorded together in blocks of free text. If used this should be recorded under the free text field for 'option entry.' The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 21: &quot;You must give patients clear, accurate and up-to-date information, based on the best available evide..." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value of the benefit discussed." />
+              <TaggedValue name="implementationGuidance" value="The benefits discussed should be coded with SNOMED CT where possible. Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+        </Model>
+        <Model name="Decision support tool item entry">
+          <TaggedValue name="description" value="Record of any decision support tools used." />
+          <TaggedValue name="implementationGuidance" value="Examples of patient decision support tools include condition specific decision aids, issue cards, decision boxes, fact boxes, question prompt lists (e.g. BRAN) and generic communication frameworks. Where high-quality situation specific decision support tools do not exist the clinician may need to interpret evidence sources developed for health professionals. This may include decision support tools or materials brought by the patient. The General Medical Council (GMC) Decision making and consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 24: &quot;You should consider using visual or other explanatory aids to support patients to understand their personalised risk, taking account of their individual clinical and personal circumstances, compared with population level risk.&quot;" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Decision_support_tool_identifier" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Any alphanumeric identifier associated with the decision support tool (if applicable)." />
+            <TaggedValue name="implementationGuidance" value="Any alphanumeric identifier associated with the decision support tool (if applicable)." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Model name="Decision support tool name">
+            <TaggedValue name="description" value="The name of the decision support tool." />
+            <TaggedValue name="implementationGuidance" value="The name of the decision support tool." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for decision support tool name." />
+              <TaggedValue name="implementationGuidance" value="The decision support tool name should be coded with SNOMED CT where possible. Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="Free text field to be used if no code is available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Element name="Decision_support_tool_type" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The type of the decision support tool." />
+            <TaggedValue name="implementationGuidance" value="Examples of patient decision support tools include condition specific decision aids, issue cards, decision boxes, fact boxes, question prompt lists and generic communication frameworks." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+          <Element name="Decision_support_tool_location" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The URL for the decision support tool." />
+            <TaggedValue name="implementationGuidance" value="This data should be system generated to reduce the recording burden on the healthcare professional. This URL may contain a scanned copy of a paper decision support tool (e.g. as a pdf) or where available a link to a digitised decision support tool." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Decision_support_tool_MIME_type" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="MIME type of the document e.g. application, pdf, website." />
+            <TaggedValue name="implementationGuidance" value="This data should be system generated to reduce the recording burden on the healthcare professional." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Recording the decision">
+          <TaggedValue name="description" value="Details of the decision made with person. This includes details of the decisions made and agreed timescales for review. NB : What the person said was important to them in coming to the decision is recorded in a separate element 'What matters to the person'." />
+          <TaggedValue name="implementationGuidance" value="This field should be used where a decision has been made and agreed. Where the decision is 'provisional' the shared decision making status field should be set as 'in progress.' The fact that a decision is provisional should be clearly displayed in systems. A decision may be provisional where for example, the person needs time for further reflection or discussion with others before making a final 'valid' decision. Where the decision is 'completed' the shared decision making status field should be set as 'valid.' It is essential that this information is clearly displayed and made readily available to mitigate the risk of the end user confusing a provisional decision with a completed one. The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In section 1.2.14: &quot;Make a joint decision or plan about treatment or care and agree when this will be reviewed.&quot; In section 1.2.15: &quot;At the end of a discussion, state clearly what decisions have been made..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Decision entry">
+            <TaggedValue name="description" value="Record of the decision." />
+            <TaggedValue name="implementationGuidance" value="The GMC guidance on Decision making and consent ( see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent ) states in section 50: &quot;You should take a proportionate approach to the level of detail you record. Good medical practice states that you must include the decisions made and actions agreed - and who is making the decisions and agreeing the actions - in the patient's clinical records. This includes the decision to take no action.&quot;" />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for decision entry." />
+              <TaggedValue name="implementationGuidance" value="The decision entry should be coded with SNOMED CT where possible. Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further information." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="Free text field to provide further detail or be used if no code is available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Element name="Planned_review_dateinterval" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="This is the date/interval when this information will next be reviewed." />
+            <TaggedValue name="implementationGuidance" value="The GMC guidance on Decision Making and Consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 56: &quot;Unless treatment or care begins immediately after a patient has given consent, there will be opportunity for a decision to be reviewed.&quot; In section 57: &quot;You should review a patient’s decision immediately before providing treatment or care and, if treatment is ongoing, make sure there are clear arrangements in place to review decisions regularly, allowing patients opportunity to ask questions and discuss any concerns. You should also consider regularly reviewing a decision to take no action.&quot; In section 58: &quot;Reviewing a decision is particularly important: if you haven’t personally had a discussion with the patient because they were initially seen by a colleague, if significant time has passed since the decision was made, if the patient’s condition has changed, if you have reason to believe the patient might have ..." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Date and time or free text." />
+          </Element>
+        </Model>
+        <Model name="Decision issues cluster">
+          <TaggedValue name="description" value="Details of any patient held issues, reservations or comments with the decision agreed, or professional comments about the decision agreed." />
+          <TaggedValue name="implementationGuidance" value="This section supports the recording of patient held issues, reservations or comments about the decision. It also supports the recording of professional comments about the decision agreed. It is not intended that professionals will use this field to record their own decision related preferences. The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 48: &quot;You must respect your patient’s right to decide. If their choice of option (or decision to take no action) seems out of character or inconsistent with their beliefs and values, it may be reasonable to check their understanding of the relevant information (see paragraph 10) and their expectations about the likely outcome of this option and reasonable alternatives. If it’s not clear whether a patient understands the consequences of their decision, you should offer more support to help them understand ..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Decision issue flag">
+            <TaggedValue name="description" value="A flag to indicate whether the patient held issues, reservations or comments with the decision agreed, or professional comments about the decision." />
+            <TaggedValue name="implementationGuidance" value="A flag to indicate whether the patient held issues, reservations or comments with the decision agreed, or professional comments about the decision." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for decision issue flag." />
+              <TaggedValue name="implementationGuidance" value="The SNOMED CT codes for this element are to be confirmed with NHS England." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_Text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text field to be used if no code is available." />
+              <TaggedValue name="implementationGuidance" value="Where a coded value is provided this field must not be used." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+            </Element>
+          </Model>
+          <Element name="Decision_issue_details" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Details of any patient held issues, reservations or comments with the decision agreed, or any professional comments about the decision agreed." />
+            <TaggedValue name="implementationGuidance" value="Details of any patient held issues, reservations or comments with the decision agreed, or any professional comments about the decision agreed." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+          </Element>
+        </Model>
+        <Model name="Information withheld or sharing delayed">
+          <TaggedValue name="description" value="A structured record of the information that will be withheld or the sharing of delayed." />
+          <TaggedValue name="implementationGuidance" value="This conformance of this section is required. It is recognised that this section applies only in exceptional circumstances, but where these occur accurate recording will demonstrate compliance with the below guidance. The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) notes that there may be exceptional circumstances where sharing of certain relevant information with the patient withheld or delayed. Where it is delayed the guidance instructs practitioners to record ‘the information [they] still need to share, [their] reasons for not sharing it now, and when it can be shared.’ The guidance also clarifies that ‘in [the] very exceptional circumstances’ where information is withheld because it would cause the patient ‘very serious harm’ legal advice should be sought." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Information withheld from person">
+            <TaggedValue name="description" value="A record of the information withheld from the person." />
+            <TaggedValue name="implementationGuidance" value="The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) tells of 'very exceptional circumstances’ where information is withheld because it would cause the patient ‘very serious harm’ and advises that in such cases legal advice should be sought." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Information_withheld_indicator" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="An indicator of whether information was withheld from the person. Yes or No." />
+              <TaggedValue name="implementationGuidance" value="An indicator of whether information was withheld from the person. Yes or No." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Binary" />
+              <TaggedValue name="valueSets" value="Code: Yes or No." />
+            </Element>
+            <Element name="Reason_information_withheld" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="A description of the reason the information has been withheld from the person." />
+              <TaggedValue name="implementationGuidance" value="A description of the reason the information has been withheld from the person." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+            <Element name="Legal_advice_sought" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Relevant details of any legal advice sought where information has been withheld from the person." />
+              <TaggedValue name="implementationGuidance" value="Relevant details of any legal advice sought where information has been withheld from the person." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text" />
+            </Element>
+          </Model>
+          <Model name="Information sharing delayed">
+            <TaggedValue name="description" value="Details of where information sharing with the person has been delayed." />
+            <TaggedValue name="implementationGuidance" value="The General Medical Council (GMC) Decision Making and Consent guidance (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) tells of 'very exceptional circumstances’ where information is withheld or sharing delayed because it would cause the patient ‘very serious harm’ legal advice should be sought. Where information sharing is delayed the guidance instructs practitioners to record ‘the information [they] still need to share, [their] reasons for not sharing it now, and when it can be shared.’ For children the NICE Guideline Babies, children and young people's experience of healthcare (https://www.nice.org.uk/guidance/ng204) states in 1.5.2 &quot;Give all children and young people opportunities to express their opinions about their health needs independently, including: asking them about the extent to which they want their parent or carer to be involved in their healthcare offering to see them separately from their parents or carers for pa..." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Information_still_to_share" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Details of the information that still needs to be shared." />
+              <TaggedValue name="implementationGuidance" value="Details of the information that still needs to be shared." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+            <Element name="Reasons_for_not_sharing_the_information_now" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="An account of the professional's reason(s) for not sharing the information with the person during the encounter" />
+              <TaggedValue name="implementationGuidance" value="An account of the professional's reason(s) for not sharing the information with the person during the encounter" />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+            <Element name="When_the_information_can_be_shared" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="A explanation of what needs to happens so that the information can be shared." />
+              <TaggedValue name="implementationGuidance" value="A explanation of what needs to happens so that the information can be shared." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="Text" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+    </Model>
+    <Model name="Post-discussion actions">
+      <TaggedValue name="description" value="A record of the actions agreed to support the shared decision after the discussion. This should include: Agreed actions for the professional such as those related to further information to be shared, planned investigations, procedures and treatment for a person's identified conditions and priorities. Actions for the person or their carer. For example, following clinician shared printouts summarising the options or decisions made and there may be action for patient to review . Following clinician signposting to relevant online or physical information resources there may be an agreed action for the person to access and review the materials." />
+      <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians the elements in this section are optional to record. This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action. The Kings Fund (see https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states: &quot;There should be a formal system for documenting: 1. the decision 2. the agreed course of action 3. the ongoing roles and responsibilities of each party 4. the risk-sharing agreement..&quot; The NICE guideline on Shared Decision Making (see https://www.nice.org.uk/guidance/ng197) states: In section 1.2.18: &quot;Offer people resources in their preferred format to help them understand what was discussed and agreed. This could be a printout summarising their diagnosis, the options and decisions or plans made, and links to high-quality online resources. Ideally, give people this material to take away, or provide it very soon after the discus..." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Actions_for_professionals" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Agreed actions for the professional including planned investigations, procedures and treatment for a person's identified conditions and priorities." />
+        <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians the elements in this section are optional to record. This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action. A record of the agreed actions for the professional(s) . May be structured (table), with actions, names, dates, status, location, strategies, or free text. The Kings Fund (see https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states: &quot;There should be a formal system for documenting: the decision the agreed course of action he ongoing roles and responsibilities of each party the risk-sharing agreement.&quot; The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for accuracy and request a..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Element name="Actions_for_person_or_their_carer" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Agreed actions for the person or their carer. For each action the following should be identified: outcome expectations, including person’s expectations." />
+        <TaggedValue name="implementationGuidance" value="To minimise the recording burden on clinicians the elements in this section are optional to record. This field should include agreed/ anticipated timescales where these are under the control of the person responsible for the action. A record of the agreed actions for the person or their carer. May be structured (table), with actions, names, dates, status, location, strategies, or free text. The Kings Fund (see https://www.kingsfund.org.uk/publications/making-shared-decision-making-reality) published guidance states: &quot;There should be a formal system for documenting: the decision the agreed course of action the ongoing roles and responsibilities of each party the risk-sharing agreement.&quot; The PRSB consultation emphasised that it was good practice for the professional to make a printout (digital or physical) of the SDM record including an accessible summary available to the patient after the appointment, to support their reflection and allow them to check the record for accuracy and req..." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Consent form details">
+    <TaggedValue name="description" value="A record of documents used to record consent for an intervention." />
+    <TaggedValue name="implementationGuidance" value="The elements in this section are for recording the details of a consent form used and where it is located. This section is not a digitised consent form and does not record details of the process of obtaining consent. It is recognised that the vast majority of SDM discussions will not require use of a consent form and their use will depend on clinical setting and circumstances. The GMC guidance on Decision Making and Consent (see https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/decision-making-and-consent) states in section 54: &quot;Consent forms can be a helpful prompt to share key information, as well as a standard way to record a decision that can make regular review easier. They can also be used to review decisions made at an earlier stage, and the relevant information they were based on.&quot; In section 55: &quot;But, filling in a consent form isn't a substitute for a meaningful dialogue tailored to the individual patient's needs.&quot;" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Consent form details record entry">
+      <TaggedValue name="description" value="This is a consent form details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+      <TaggedValue name="implementationGuidance" value="This is a consent form details record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items" />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Consent form type">
+        <TaggedValue name="description" value="Record of consent form used." />
+        <TaggedValue name="implementationGuidance" value="Where appropriate codes are available in the system this could be displayed as a dropdown picklist in the graphical user interface to reduce the recording burden on the healthcare professional." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for consent form type." />
+          <TaggedValue name="implementationGuidance" value="The consent form type should be coded with SNOMED CT where possible. For example the following SNOMED CT concepts should be used to record the use of NHS consent forms 1-4: SNOMED CT ID │ Fully specified name (FSN) │ 849771000000105 │ Obtaining consent using form 1 (patient agreement to investigation or treatment) (procedure) │ 849781000000107 │ Obtaining consent using form 2 (parental agreement to investigation or treatment for a child or young person) (procedure) │ 849791000000109 │ Obtaining consent using form 3 (patient or parental agreement to investigation or treatment) (procedure) 849801000000108 │ Obtaining consent using form 4 (adults who are unable to consent to investigation or treatment) (procedure) │ Where required codes are unavailable the free text field should be used and consideration given to the submission of a new code request to UK SNOMED CT request submission portal (see https://isd.digital.nhs.uk/rsp/user/guest/home.jsf). Contact info@thePRSB.org for further i..." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to provide further detail or be used if no code is available." />
+          <TaggedValue name="implementationGuidance" value="Free text field to provide further detail or be used if no code is available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Element name="Consent_form_location" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The URL for the consent form." />
+        <TaggedValue name="implementationGuidance" value="This data should be system generated to reduce the recording burden on the healthcare professional. This URL may contain a scanned copy of a paper consent form (e.g. as a pdf) or where available a digitised consent form." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Element name="Consent_form_MIME_type" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="MIME type of the document e.g. application, pdf, website." />
+        <TaggedValue name="implementationGuidance" value="This data should be system generated to reduce the recording burden on the healthcare professional." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="Text" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+</Standard>

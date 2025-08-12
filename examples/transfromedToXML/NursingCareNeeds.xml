@@ -1,0 +1,1311 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Standard name="Nursing Care Needs Standard (0.6)" version="0.62" lastUpdated="2025-08-11">
+  <TaggedValue name="description" value="v0.61 Initial draft published October 2023 v0.62 January 2024 The Nursing care needs standard has undergone a clinical terminology review; group level data items have an observable entity code, when available, tagged and the coded value field only contains a Finding code, with a free text option. This structures the data items in the model as an inferred question and answer in the system, with free text as an option. Within the Elimination group, the Elimination item has been removed and replaced with four new data concepts to align with the existing SNOMED CT codes, including Toileting capability, baseline toileting capability, continence capability and baseline continence capability. v1.0 Final version February 2024 Implementation guidance and coded value fields updated" />
+  <Model name="Eating and drinking">
+    <TaggedValue name="description" value="Eating and Drinking" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Eating and drinking record entry">
+      <TaggedValue name="description" value="This is an eating and drinking record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Eating_and_drinking_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information regarding whether the person is capable of, and typically attends to their own, eating and drinking needs." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Baseline_eating_and_drinking_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A record of what a person's typical eating and drinking capability is, prior to meeting the nurse." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Model name="Physiological measurements">
+        <TaggedValue name="description" value="The record of essential physiological measurements, e.g., height, weight, and BMI." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Weight">
+          <TaggedValue name="description" value="The person's weight in kgs" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of weight" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT : - 27113001 |Body weight (observable entity)|" />
+          </Element>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The value of the person's weight" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for weight" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+          <Element name="Weight_measurement_position" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The position of the person when measuring their weight (e.g. standing, sitting, wheelchair)." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+        </Model>
+        <Model name="Height/length">
+          <TaggedValue name="description" value="The person's height and length measurement" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for height/length" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - 50373000 |Body height measure (observable entity)| OR 248334005 |Length of body (observable entity)|" />
+          </Element>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The value of the observation." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for height/length" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+        </Model>
+        <Model name="BMI">
+          <TaggedValue name="description" value="The person's BMI calculation" />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value of BMI" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT: - 60621009 |Body mass index (observable entity)|" />
+          </Element>
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The value of the person's BMI" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric" />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The units of measure for BMI" />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="UCUM code" />
+          </Element>
+        </Model>
+        <Element name="Unexplained_weight_change" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A report on unexplained significant weight loss or gain in the past six months. This may include the type of weight change (loss or gain), a quantifier of weight change (such as the amount/percentage changed, and when the change began." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Infant and young child feeding status">
+        <TaggedValue name="description" value="The feeding status of the person if they are an infant or young child. This will include whether they are breast or bottle fed." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for infant and young child feeding status." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Hydration">
+        <TaggedValue name="description" value="The details of an individual's hydration state." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the hydration state." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+        </Element>
+      </Model>
+      <Model name="Problem(s) with drinking fluids">
+        <TaggedValue name="description" value="A problem in relation to drinking fluids which needs addressing, and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues" />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the problem with drinking fluids." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Problem(s) with eating">
+        <TaggedValue name="description" value="A problem in relation to eating which needs addressing, and so is important for every professional to know about when seeing the person. Problems may include diagnoses, symptoms, and social or behavioural issues." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the problem with eating food." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Experience of nausea and vomiting">
+        <TaggedValue name="description" value="A record of the patient experiencing nausea and vomiting at admission." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for nausea/ vomiting." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Feeding equipment and support">
+        <TaggedValue name="description" value="A record of any equipment or assistance required to eat independently or not independently. This includes any aids used to support an individual to eat and drink independently. E.g. a plate guard, adapted cutlery, spill-proof cups etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the feeding equipment and support." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Tube feeding">
+        <TaggedValue name="description" value="The details of tube feeding. E.g. Gastrostomy, jejunostomy, naso gastric tube, enteral and parenteral eating and drinking." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the type of tube feeding." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Dental device">
+        <TaggedValue name="description" value="Information about a dental device used by the person, e.g. dentures." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Dental device record entry">
+          <TaggedValue name="description" value="This is a dental device record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Model name="Dental device">
+            <TaggedValue name="description" value="The dental device used by the patient." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the dental device used by the patient." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT" />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Element name="Dental_device_present" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="An indication for whether the individual has their dental device with them." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="boolean" />
+            <TaggedValue name="valueSets" value="Yes/No." />
+          </Element>
+        </Model>
+      </Model>
+      <Element name="Mouth_and_dental_health_complications_effect_on_eating_and_drinking" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="This is the information of the condition of the person's mouth health effect on their ability to eat and drink. E.g. condition of the teeth, oral infection, ulcers etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Model name="Dietary requirements">
+        <TaggedValue name="description" value="The details of an individual's dietary requirements; this includes religious requirements." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for dietary requirements." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Eating_and_drinking_preferences" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The eating and drinking information that the person think it is important to share with professionals, this could include information about their likes and dislikes, preferred eating times, and sensory preferences." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Model name="Appetite">
+        <TaggedValue name="description" value="A record of the person's desire or inclination to eat. This includes information about factors that can influence appetite, such as hunger, satiety, food preferences, and eating behaviours. This can be used to identify any changes or abnormalities that affect their nutritional intake and health." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for appetite." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="Text" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to eating and drinking." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Mobility">
+    <TaggedValue name="description" value="Mobility" />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Mobility record entry">
+      <TaggedValue name="description" value="This is a mobility record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Mobility_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information regarding whether the person is capable of, and typically independently attends to their own mobility and movement." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Baseline_mobility" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="The record of what a person's typical mobility capability is, prior to meeting the nurse." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities). Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Model name="Changes in mobility">
+        <TaggedValue name="description" value="A record completed by the person or guardian/ carer(s)/ professional contact of any self-reported changes to the person's mobility." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for changes observed in mobility." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Transfer and movement">
+        <TaggedValue name="description" value="The mobility status of the person that allows movement between two spaces and achieves participation with a degree of independence." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Sit to stand">
+          <TaggedValue name="description" value="The level of assistance that the person require to transfer from the sitting to standing position." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The coded value for the level of assistance that the person require to transfer from the sitting to standing position." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Element name="Ability_to_move_between_two_spaces" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="An indication for whether the individual is sufficiently mobile to move between spaces. E.g. bed, bedroom, toilet, chair and kitchen. This includes lateral transfers." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Type of transfer support needed">
+          <TaggedValue name="description" value="The type of transfer support the person requires, if they need transfer support." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the type of transfer support needed." />
+            <TaggedValue name="minCardinality" value="1" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Mobility aids">
+        <TaggedValue name="description" value="Mobility aids used by the person." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Mobility aid">
+          <TaggedValue name="description" value="The mobility aid used by the person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the mobility aid used by the person." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Mobility aid dependency">
+          <TaggedValue name="description" value="An indication of the total usage and dependence on the mobility aid of the person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the mobility aid dependency of the person." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Element name="Mobility_aid_with_person" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="An indication of whether the person has brought their mobility aid that belongs to them." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="dataType" value="boolean" />
+          <TaggedValue name="valueSets" value="Yes / No." />
+        </Element>
+        <Element name="Number_of_persons_required_to_assist_with_mobilisation" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="A record of the number of persons required to assist with mobilising the patient." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="count" />
+        </Element>
+      </Model>
+      <Model name="Falls and balance">
+        <TaggedValue name="description" value="A record of relevant falls and balance information." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Unexplained falls">
+          <TaggedValue name="description" value="Identification of unexplained falls of the person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for unexplained falls." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Recent changes in balance">
+          <TaggedValue name="description" value="A report on recent changes in the person's ability to safely balance that may increase the risk of falls." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for ability to balance." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT" />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="Text" />
+            <TaggedValue name="valueSets" value="Free text" />
+          </Element>
+        </Model>
+        <Model name="Falls in the past 12 months leading to significant injury">
+          <TaggedValue name="description" value="Any falls that the person has had in the past 12 months that has lead to significant injury." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Cause_of_the_fall" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The cause of the person's fall." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+          <Element name="Injury_caused" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The type of significant injury caused by the fall." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Problems affecting mobility">
+        <TaggedValue name="description" value="A record of any problems experienced that impacts the person's ability to fully mobilise. This can include physical and psychological conditions that impair full independent mobilisation." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the problem that affects mobility." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text field to be used if no code is available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text" />
+        </Element>
+      </Model>
+      <Model name="Use of bed rails">
+        <TaggedValue name="description" value="A record for the use of bed rails fitted to a bed to stop the patient from falling out of bed." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the use of bed rails." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Footwear and hosiery">
+        <TaggedValue name="description" value="A record if the person has the appropriate footwear or hosiery for mobilisation and moving." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the type of footwear and hosiery." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to mobility." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Elimination">
+    <TaggedValue name="description" value="Elimination (toileting and continence)." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Elimination record entry">
+      <TaggedValue name="description" value="This is an elimination record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Toileting_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information regarding whether the person is capable of, and typically independently attends to their own toileting needs." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Baseline_toileting_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A record of what a person's typical toileting capability is, prior to meeting the nurse." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Continence_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information regarding whether the person is capable of, and typically independently controls their bladder and/or their bowel on their own accord." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Baseline_continence_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A record of what a person's typical continence capability is, prior to meeting the nurse." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Model name="Bowels">
+        <TaggedValue name="description" value="Information relating to the person's bowels." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Problems or concerns with bowels">
+          <TaggedValue name="description" value="Any problems or concerns that the patient has in regard to their bowels. This includes if the problem is ongoing or new." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for problems with bowels." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Usual stool consistency">
+          <TaggedValue name="description" value="The usual consistency of the person's stool. Bristol's stool chart should be used to complete this item." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the stool consistency." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="Bristol stool chart." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Frequency of bowel opening">
+          <TaggedValue name="description" value="The frequency of how often the person opens their bowls. This can be across different periods of time." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="The value of the frequency of bowel opening." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="quantity" />
+            <TaggedValue name="valueSets" value="Numeric." />
+          </Element>
+          <Element name="Units_of_measure" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Units of measure of the frequency of bowel opening. E.g. Per day, per 2 days, per week." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="1. Per day 2. Per 2 days 3. Per week" />
+          </Element>
+        </Model>
+        <Element name="Last_bowel_opening" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The last time the person opened their bowels." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+          <TaggedValue name="valueSets" value="Date and time." />
+        </Element>
+      </Model>
+      <Model name="Urination">
+        <TaggedValue name="description" value="Information relating to the person's urine and urination." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Problems or concerns with urination">
+          <TaggedValue name="description" value="Any problems or concerns that the patient has in regard to urination or their urine. This includes if the problem is ongoing or new." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for problems with urination." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Incontinence">
+        <TaggedValue name="description" value="A record of whether the person experiences incontinence." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for incontinence." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Support">
+        <TaggedValue name="description" value="Details of any support needed for elimination." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Requirements_for_toileting_assistance" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Any requirements the person has for toileting assistance. E.g. wiping self, handwashing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Equipment">
+          <TaggedValue name="description" value="Equipment the person uses or needs to assist with elimination." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Continence equipment required">
+            <TaggedValue name="description" value="The continence equipment required to support the individual. E.g. Whether the person requires a commode or raised toilet seat or the use of pads, belts, or nappies." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value for the continent equipment required." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Element name="Community_delivery_of_continence_equipment" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Whether the person is receiving continence equipment from community delivery." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="boolean" />
+            <TaggedValue name="valueSets" value="Yes or No" />
+          </Element>
+          <Element name="Requires_ordering_commode_or_raised_toilet_seat" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Whether the person requires ordering a commode or raised toilet seat, if they require using one." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="boolean" />
+            <TaggedValue name="valueSets" value="Yes or No" />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Catheter, bowel, and stoma care">
+        <TaggedValue name="description" value="Information relating to catheter, bowel, and stoma care." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Catheter, bowel, and stoma medical devices">
+          <TaggedValue name="description" value="An indication of whether the person has any medical devices to support with catheter, bowel, or stoma care. (For example, colostomy, catheter etc.)." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the medical devices used for catheter, bowel, and stoma care." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Reason for stoma">
+          <TaggedValue name="description" value="The reason for the person's usage of a stoma." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the reason for stoma." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Catheter use and support">
+          <TaggedValue name="description" value="Information relating to the person's usage and need for a catheter." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Reason for catheter">
+            <TaggedValue name="description" value="The reason for the person's usage of a catheter." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value for reason for catheter." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Model name="Self-management of catheter">
+            <TaggedValue name="description" value="Describe the person's management of a catheter, whether they self-catheterise or require support." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value for self-management of catheter." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+          <Model name="Usage of catheter">
+            <TaggedValue name="description" value="This describes the person's usage of a catheter as intermittent, full-time or part-time." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Coded value for the catheter usage." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to elimination." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Personal Hygiene and Dressing">
+    <TaggedValue name="description" value="Personal Hygiene and Dressing." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Personal hygiene and dressing record entry">
+      <TaggedValue name="description" value="This is a personal hygiene and dressing record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="1" />
+      <TaggedValue name="maxCardinality" value="1" />
+      <Element name="Personal_hygiene_and_dressing_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information regarding whether the person is capable of, and typically attends to their own, personal hygiene needs. E.g. washing, showering, bathing, dressing, mouth care, foot and nail care, other." />
+        <TaggedValue name="minCardinality" value="1" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities.) Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Element name="Baseline_personal_hygiene_and_dressing_capability" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A record of what a person's typical personal hygiene and dressing capability is, prior to meeting the nurse." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="valueSets" value="Coded value: Independent (Able to carry out all usual activities). Slight disability (Able to look after own affairs without assistance, but unable to carry out all previous activities). Moderate disability (Requires some help, but is able to do physically carry out activities unassisted). Moderately severe disability (Unable to attend to needs without assistance). Severe disability (Requires constant nursing care and attention)." />
+      </Element>
+      <Model name="Problems affecting personal hygiene and dressing">
+        <TaggedValue name="description" value="Any problems that may affect a person's ability to wash or dress, e.g., stroke, weakness, arthritis." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the problem affecting personal hygiene and dressing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Personal hygiene and dressing support needs">
+        <TaggedValue name="description" value="Details of any support needed for personal hygiene." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for any support needed with personal hygiene." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Equipment to aid personal hygiene and dressing">
+        <TaggedValue name="description" value="Information about any equipment the person uses to support personal care." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Equipment">
+          <TaggedValue name="description" value="Equipment the person uses to support person hygiene and dressing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the equipment used to aid personal hygiene and dressing." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Element name="Equipment_with_person" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="An indication of whether the person has brought their equipment that they require for personal hygiene and / or dressing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="boolean" />
+          <TaggedValue name="valueSets" value="Yes / No." />
+        </Element>
+      </Model>
+      <Model name="Mouth and oral care">
+        <TaggedValue name="description" value="Information regarding the person's mouth and oral care." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Model name="Condition of mouth">
+          <TaggedValue name="description" value="Information on whether the person's mouth is feeling moist, clean, and comfortable. E.g. no pain, not dry, no soreness." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the condition of mouth." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Element name="Capability_to_maintain_mouth_hygiene" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="An indication on whether the person is able to clean their teeth, dentures, and mouth without assistance." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="boolean" />
+          <TaggedValue name="valueSets" value="Yes or no" />
+        </Element>
+      </Model>
+      <Model name="Nails">
+        <TaggedValue name="description" value="Indication of the condition of the person's nails, including fingers and toes." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the condition of the person's nails, including fingers and toes." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+        </Element>
+      </Model>
+      <Model name="Shaving">
+        <TaggedValue name="description" value="Any requirements a person has in relation to shaving. This could be for facial or body hair. This may include whether they prefer to shave or not, and where they wish to be shaved." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for any requirements related to shaving." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT" />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+        </Element>
+      </Model>
+      <Element name="Personal_hygiene_and_dressing_preferences" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any preferences the person has regarding personal hygiene and dressing. This may include product preferences, preference of bath/shower, carer gender preferences, clothing preferences etc. Also, any religious or cultural requirements that need to be considered when delivering care." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Model name="Impact of medication on personal hygiene and dressing">
+        <TaggedValue name="description" value="Any impacts of a person's medication on their personal hygiene and dressing. E.g., sweating." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Medication_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the medication affecting personal hygiene and dressing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="DM+D." />
+        </Element>
+        <Model name="Impact of medication">
+          <TaggedValue name="description" value="The impact that the medication has on the person's personal hygiene and dressing." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for impact of medication on personal hygiene and dressing." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to personal hygiene and dressing." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Skin">
+    <TaggedValue name="description" value="Skin." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Skin record entry">
+      <TaggedValue name="description" value="This is a skin record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Model name="Integrity of skin">
+        <TaggedValue name="description" value="Record of the person's skin integrity, and the risks that may compromise skin integrity." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Model name="Skin integrity">
+          <TaggedValue name="description" value="Initial assessment of the person's skin integrity. This may include factors such as cuts, bruises, burns etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the integrity of the skin." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+        <Model name="Risk to skin integrity">
+          <TaggedValue name="description" value="Information regarding any risks that may affect skin integrity. This may include the effect of devices, wheelchairs, moisture, footwear etc." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <Model name="Specific risk to skin integrity">
+            <TaggedValue name="description" value="The specific risk to the person's skin integrity. This may include the effect of devices, wheelchairs, moisture, footwear etc." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="*" />
+            <Element name="Coded_value" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="The coded value for the specific risk to skin integrity." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="valueSets" value="SNOMED CT." />
+            </Element>
+            <Element name="Free_text" type="Class" stereotype="DataElement">
+              <TaggedValue name="description" value="Free text if coded value isn't available." />
+              <TaggedValue name="minCardinality" value="0" />
+              <TaggedValue name="maxCardinality" value="1" />
+              <TaggedValue name="dataType" value="String" />
+              <TaggedValue name="valueSets" value="Free text." />
+            </Element>
+          </Model>
+        </Model>
+      </Model>
+      <Model name="Skin history">
+        <TaggedValue name="description" value="The history of the person's skin, including other existing skin conditions, previous pressure ulcers, major wounds or skin problems/conditions." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The coded value for skin history." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Element name="Skin_care_treatment_summary" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="A summary of whether the person uses skin care treatments, such as ointments/creams, analgesia products, or wound care products." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+      <Model name="Signifiers of poor circulation">
+        <TaggedValue name="description" value="Any information that may signify poor circulation in the person, such as: pale/blue skin, pins and needles sensations, cold fingers or toes etc." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for signifiers of poor circulation." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Ability to alter own position">
+        <TaggedValue name="description" value="The ability of the person to alter their own positioning." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the ability to alter own position." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to skin." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+  <Model name="Medication Self-Management">
+    <TaggedValue name="description" value="Medication Self-Management." />
+    <TaggedValue name="minCardinality" value="0" />
+    <TaggedValue name="maxCardinality" value="1" />
+    <Model name="Medication self-management record entry">
+      <TaggedValue name="description" value="This is a medication self-management record entry. There may be 0 to many record entries under a section. Each record entry is made up of a number of elements or data items." />
+      <TaggedValue name="minCardinality" value="0" />
+      <TaggedValue name="maxCardinality" value="*" />
+      <Element name="Medications_present_with_person" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Information about whether the person has got their medication with them." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="boolean" />
+        <TaggedValue name="valueSets" value="Yes or No" />
+      </Element>
+      <Model name="Medication administration">
+        <TaggedValue name="description" value="Information about medication administration." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Usual_administrator_of_medication" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The individual that usually administers the person's medication. This may be themselves, a carer, medical professional, or another person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Element name="Usual_administrator_of_medication_at_nurseryschoolcollege" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The individual that usually administers the young person's medication at nursery/school/college. This may be themselves, a carer, medical professional, or another person." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+        <Model name="Problems affecting medication management">
+          <TaggedValue name="description" value="A record of any problems that may impact the person's ability to take medication, such as the person's dexterity or visual limitations in relation to personal administration of medications." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <Element name="Coded_value" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Coded value for the problems affecting medication management." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="valueSets" value="SNOMED CT." />
+          </Element>
+          <Element name="Free_text" type="Class" stereotype="DataElement">
+            <TaggedValue name="description" value="Free text if coded value isn't available." />
+            <TaggedValue name="minCardinality" value="0" />
+            <TaggedValue name="maxCardinality" value="1" />
+            <TaggedValue name="dataType" value="String" />
+            <TaggedValue name="valueSets" value="Free text." />
+          </Element>
+        </Model>
+      </Model>
+      <Model name="Medication organisation equipment">
+        <TaggedValue name="description" value="Information about any medication organisation equipment that the person has. E.g. a pill / medication organiser / Dosette box / multi-compartment compliance aid." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <Element name="Coded_value" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Coded value for the medication organisation equipment." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="valueSets" value="SNOMED CT." />
+        </Element>
+        <Element name="Free_text" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="Free text if coded value isn't available." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="String" />
+          <TaggedValue name="valueSets" value="Free text." />
+        </Element>
+      </Model>
+      <Model name="Time of last medication administered">
+        <TaggedValue name="description" value="A record of when the person last took their medication independently or administered by staff/carer." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="*" />
+        <Element name="Medication_name" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The name of the medication." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="*" />
+          <TaggedValue name="valueSets" value="DM+D." />
+        </Element>
+        <Element name="Time_of_administration" type="Class" stereotype="DataElement">
+          <TaggedValue name="description" value="The time that the person last administered this medication." />
+          <TaggedValue name="minCardinality" value="0" />
+          <TaggedValue name="maxCardinality" value="1" />
+          <TaggedValue name="dataType" value="datetime" />
+        </Element>
+      </Model>
+      <Element name="Comments" type="Class" stereotype="DataElement">
+        <TaggedValue name="description" value="Any further comments relating to medication self-management." />
+        <TaggedValue name="minCardinality" value="0" />
+        <TaggedValue name="maxCardinality" value="1" />
+        <TaggedValue name="dataType" value="String" />
+        <TaggedValue name="valueSets" value="Free text." />
+      </Element>
+    </Model>
+  </Model>
+</Standard>
