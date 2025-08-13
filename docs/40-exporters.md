@@ -29,7 +29,7 @@ The exporter stage of the pipeline generates implementation-ready artefacts from
 
 ### 1. CDISC ODM
 
-**Purpose:** Produce [CDISC Operational Data Model](https://www.cdisc.org/standards/foundational/odm) XML files for clinical trial data collection.
+**Purpose:** Produce [CDISC Operational Data Model](https://www.cdisc.org/standards/data-exchange/odm) XML files for clinical trial data collection.
 
 * Maps PRSB items to ODM `<ItemDef>` and `<FormDef>` elements.
 * Preserves value domains and metadata.
