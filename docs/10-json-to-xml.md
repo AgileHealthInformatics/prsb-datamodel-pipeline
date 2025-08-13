@@ -12,27 +12,6 @@ This conversion ensures:
 
 ---
 
-## Input Formats Supported
-
-The converter can parse both:
-
-1. **Wrapped format**: JSON object with a `dataset` property containing the array of dataset items.
-
-   ```json
-   {
-     "dataset": [ { ... }, { ... } ]
-   }
-   ```
-2. **Raw array format**: Array of dataset items directly at the root.
-
-   ```json
-   [ { ... }, { ... } ]
-   ```
-
-Both formats are mapped to the `StandardSpec` and `DatasetItem` types defined in `Model.cs`.
-
----
-
 ## Conversion Logic
 
 The **.NET converter** located in `tools/json-xml-converter-dotnet/src` performs the following steps:
