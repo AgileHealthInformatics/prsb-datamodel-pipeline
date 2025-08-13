@@ -43,7 +43,7 @@ The exporter stage of the pipeline generates implementation-ready artefacts from
 
 ### 3. DDI-CDI
 
-**Purpose:** Produce [DDI Cross-Domain Integration](https://ddialliance.org/Specification/CDI) artefacts for semantic alignment and integration.
+**Purpose:** Produce [DDI Cross-Domain Integration](https://ddialliance.org/ddi-cdi) artefacts for semantic alignment and integration.
 
 * Exports PRSB structure as a CDI graph with entities and relationships.
 
