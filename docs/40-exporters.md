@@ -36,7 +36,7 @@ The exporter stage of the pipeline generates implementation-ready artefacts from
 
 ### 2. DDI Lifecycle
 
-**Purpose:** Generate [DDI Lifecycle](https://ddialliance.org/) XML for documenting longitudinal survey and research data.
+**Purpose:** Generate [DDI Lifecycle]([https://ddialliance.org/](https://ddialliance.org/ddi-lifecycle)) XML for documenting longitudinal survey and research data.
 
 * Outputs `<Variable>` and `<QuestionItem>` elements.
 * Aligns PRSB concepts with DDI lifecycle metadata.
