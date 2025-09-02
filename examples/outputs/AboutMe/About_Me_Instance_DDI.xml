@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DDIInstance xmlns="ddi:instance:3_3">
+  <DataCollection>
+    <Question id="{D8E4AAFC-3BB4-4ab6-866A-C0CECD3CA6FE}">
+      <Title>About Me_Instance</Title>
+      <Text>Version 1.3 including updates agreed through CTOP in 2022. Version 1.4 model suggested by architect; various changes to modelling and guidance agreed through CTOP meetings between Dec 2023 and April 2024. Additional discussions throughout 2024. Frozen at 1.4 for internal peer review Nov 2024 Version 2 Finalised version after S&amp;M board and assurance committee approval 2025. Version 2.01 Updated following peer review of viewer and agreement at CAG. Details of updates made can be found on the SharePoint under Projects - Documents\PROJECTS\_Support and Maintenance\Completed maintenance releases\About Me 2.01.</Text>
+      <Question id="{2DA35AB4-9A81-495d-89F2-4F925F177EA4}">
+        <Title>About Me_Instance</Title>
+        <Text>This is a record of the things that a person feels it is important to communicate about their needs, strengths, values, concerns and preferences to others providing support and care.</Text>
+        <Question id="{55C33E0A-9276-4841-8223-6E1409714DF9}">
+          <Title>About Me record entry_Instance</Title>
+          <Text>About Me record entry.</Text>
+          <Question id="{51A120C8-2752-4f3b-A4B8-7638AA2CD931}">
+            <Title>Also worth knowing about me_Instance</Title>
+            <Text>A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life: your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike. This could also include any care and support preferences that have not been included elsewhere.</Text>
+            <Question id="{64411BA5-7B87-4e15-A145-1A753A81E114}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{AA228E94-143C-4f65-93AB-857C54F959F9}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{617D60A8-C6D1-457f-B9E9-50A22345A7AD}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{7DB01856-D3F2-46c9-9EA7-E0A94804DD36}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{A0A748E6-F330-416a-8943-CBFD6E8BD44C}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{00F23C3A-EE0A-49d9-9C80-373DE7E22104}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{8704D2F8-8B70-47fa-9314-BE6091FFE42D}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{5CE6400D-0954-46a8-89F2-5CC11EBA47F2}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for what is also worth knowing about me.</Text>
+            </Question>
+          </Question>
+          <Question id="{E0EC9721-9D49-4e5c-BF7E-D7605945C252}">
+            <Title>Date_last_updated_Instance</Title>
+            <Text>This is a record of the date that this About Me was created or last updated.</Text>
+          </Question>
+          <Question id="{4427C54A-1C6E-448c-9CA7-D9B97DAD2C77}">
+            <Title>How and when to support me_Instance</Title>
+            <Text>A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood). This could include support you need to maintain important routines or to carry out particular activities, for example: personal care routines, eating and drinking, bedtime routines, taking medications, moving and transitioning. This could also include support needed with: wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.</Text>
+            <Question id="{A29BE812-17C7-4b06-83CC-6E40D21045EC}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{EC1AF594-AA45-4639-AD9B-2203E39EBF08}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{BE58640C-A5F2-47cf-AB15-2850AD2DBC56}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{6D3A730E-EA60-4857-A999-7FE89DD1CEB5}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{35AB0896-E7E9-4608-A16D-6167E9D71176}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{E3781331-217A-434b-8A98-106253DD401C}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{C0F0E2EE-7A0C-4cce-9585-D4AC98D5673B}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{C3D3DAF6-A913-4f05-88C6-FF2967B2AF65}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for how and when to support me.</Text>
+            </Question>
+          </Question>
+          <Question id="{A4939571-288A-4a86-B6A6-EA18380B831A}">
+            <Title>How I communicate and how to communicate with me_Instance</Title>
+            <Text>A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information. Describe how you would like others to engage and communicate with you, including how you would like to be addressed.</Text>
+            <Question id="{35D1798D-E598-446f-B501-134290A29017}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{CF1FC1C7-F4C2-4ca9-843E-9895A1F00132}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{370528EA-6C60-4f55-8214-0F0D1F8C7771}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{CD7080E4-AC70-4d5a-B168-4A79CB956A54}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{40A911F9-4D08-47d1-80CC-03FD6728A705}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{35F00C8D-6B39-4611-96A0-EAD2C8E1A009}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{881DFEB6-1C29-4256-9B26-DF37B643B413}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{821D7AA8-239F-4ad6-B760-E4FABA429CD1}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for how I communicate and how to communicate with me.</Text>
+            </Question>
+          </Question>
+          <Question id="{2323BA7B-67B1-49bb-B2C8-0B0A362A47DE}">
+            <Title>My wellness_Instance</Title>
+            <Text>A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered. Include your wellbeing and lifestyle goals and aspirations.</Text>
+            <Question id="{B149ECD2-C39E-43fb-98CE-E8E9F6CC0AB0}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{BB423611-B974-4a41-9747-6AC123816D40}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{2162CDE5-A767-4ed6-AB1C-CAD9A627AAE7}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{E6E4381E-0C89-430a-8038-9EFD795FF4E9}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{50A1BA76-3142-4d13-87CE-8F8C40C446B4}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{E501B1D8-45C6-401a-A91D-A49528C5D78B}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{C3B47C8B-9779-42a2-8507-9CE77AC9F7C2}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{1E8BBD7F-D608-4e46-B6CB-B419D6CA9EBD}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for my wellness.</Text>
+            </Question>
+          </Question>
+          <Question id="{F0277D7E-3783-4dcc-9C04-6456705BA123}">
+            <Title>People who are important to me_Instance</Title>
+            <Text>Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say.</Text>
+            <Question id="{6ED42228-4160-4943-BFE8-0F846873F0D6}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{F0221B8B-C0FD-4034-9018-B03EA30C8F67}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{29DAF615-B291-4f1f-8CE3-E7FDC77C2A5F}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{9ECC39B5-CF35-4b26-BED3-45BBF460DA5F}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{8A04CF83-B35E-49bb-A18C-BDC89EA951EF}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{868DFF54-4473-4f49-A403-4AB46902C39F}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{76E45F9B-EA52-4863-820C-BC8857A404CC}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{F2120829-F544-4bf7-89E6-4364FEBD8215}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for people who are important to me.</Text>
+            </Question>
+          </Question>
+          <Question id="{A0C2EC14-F4F9-4861-AC4A-1CEA535F833D}">
+            <Title>Please do and please do not_Instance</Title>
+            <Text>A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, or asking you to undergo a specific intervention or to take a medication that you do not want.</Text>
+            <Question id="{AB413C4E-FD07-40e8-B722-5A7444D46733}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{722D7E2E-A455-4ebf-8317-94C2ED925074}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{CF1B8538-331C-49f6-85E8-F5679145C1E8}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{B49B7E51-0C91-4e99-9913-BAD0513AA576}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{FEE1169B-F2D1-4ee5-BA7B-2CAB664A3441}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{336EE9D0-4104-4b5b-8A6A-4F3702AB6E27}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{8BD5C4B8-C053-42c8-93E7-C57E64C69F1A}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{134F4373-F7E9-41f7-B10E-0D88C64A0E01}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for please do and please do not.</Text>
+            </Question>
+          </Question>
+          <Question id="{C9EC4BEF-EAFB-4efe-9B5C-36D85A7EC5FB}">
+            <Title>Supported_to_write_this_by_Instance</Title>
+            <Text>Where relevant, this is a record of name, relationship/role and contact details of the individual(s) who supported the person to write this section e.g. carer, family member, advocate, professional.</Text>
+          </Question>
+          <Question id="{E26B92EA-1B02-476a-BB8F-42226861D5A9}">
+            <Title>What is most important to me_Instance</Title>
+            <Text>A description of what is most important to you. Key Information: Include any essential information that any professional in health and social care should know about you in any situation, including emergencies. Other Information: This could include: values, spirituality/religion, ethnicity, culture, pets, goals and aspirations, meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering.</Text>
+            <Question id="{1A7E6658-9500-4b2d-AFC2-D3754D73F3DA}">
+              <Title>About Me response_Instance</Title>
+              <Text>About Me response</Text>
+              <Question id="{0FC48B16-7050-4fa4-9282-1060F218A2AA}">
+                <Title>Free_text__Instance</Title>
+                <Text>Free text</Text>
+              </Question>
+              <Question id="{4FB32251-E7F8-4e03-AC8B-8D626B11B888}">
+                <Title>Multi-media_Instance</Title>
+                <Text>Multi-media.</Text>
+                <Question id="{825740BF-260D-4014-8CE3-389CD8FA971A}">
+                  <Title>Multi-media_file_Instance</Title>
+                  <Text>The actual multi-media file if it is stored in the system.</Text>
+                </Question>
+                <Question id="{252F4F2B-E6B7-4f3d-AABB-7568756D2123}">
+                  <Title>Multi-media_filename_Instance</Title>
+                  <Text>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</Text>
+                </Question>
+                <Question id="{7941C836-B82D-4386-B404-A7BE45562630}">
+                  <Title>Multi-media_MIME_type_Instance</Title>
+                  <Text>The MIME type of the multi-media file.</Text>
+                </Question>
+                <Question id="{F72C96CF-B6BD-4f79-8A26-5E43F6D15755}">
+                  <Title>Multi-media_URL_Instance</Title>
+                  <Text>The URL or link to the multi-media file where it is stored in a different system.</Text>
+                </Question>
+              </Question>
+            </Question>
+            <Question id="{2D127DD8-EA80-4a4e-9726-E39308384D2F}">
+              <Title>Coded_value_Instance</Title>
+              <Text>The coded value for what is most important to me.</Text>
+            </Question>
+          </Question>
+        </Question>
+      </Question>
+    </Question>
+  </DataCollection>
+</DDIInstance>

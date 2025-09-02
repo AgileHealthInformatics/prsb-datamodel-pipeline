@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ddi:PhysicalStructure xmlns:ddi="ddi:physicalstructure:3_3">
+  <ddi:Variable name="About Me_Instance">
+    <ddi:Label>This is a record of the things that a person feels it is important to communicate about their needs, strengths, values, concerns and preferences to others providing support and care.</ddi:Label>
+    <ddi:ChildVariables>
+      <ddi:Variable name="About Me record entry_Instance">
+        <ddi:Label>About Me record entry.</ddi:Label>
+        <ddi:ChildVariables>
+          <ddi:Variable name="Also worth knowing about me_Instance">
+            <ddi:Label>A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life: your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike. This could also include any care and support preferences that have not been included elsewhere.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for what is also worth knowing about me.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="Date_last_updated_Instance">
+            <ddi:Label>This is a record of the date that this About Me was created or last updated.</ddi:Label>
+          </ddi:Variable>
+          <ddi:Variable name="How and when to support me_Instance">
+            <ddi:Label>A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood). This could include support you need to maintain important routines or to carry out particular activities, for example: personal care routines, eating and drinking, bedtime routines, taking medications, moving and transitioning. This could also include support needed with: wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for how and when to support me.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="How I communicate and how to communicate with me_Instance">
+            <ddi:Label>A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information. Describe how you would like others to engage and communicate with you, including how you would like to be addressed.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for how I communicate and how to communicate with me.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="My wellness_Instance">
+            <ddi:Label>A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered. Include your wellbeing and lifestyle goals and aspirations.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for my wellness.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="People who are important to me_Instance">
+            <ddi:Label>Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for people who are important to me.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="Please do and please do not_Instance">
+            <ddi:Label>A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, or asking you to undergo a specific intervention or to take a medication that you do not want.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for please do and please do not.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+          <ddi:Variable name="Supported_to_write_this_by_Instance">
+            <ddi:Label>Where relevant, this is a record of name, relationship/role and contact details of the individual(s) who supported the person to write this section e.g. carer, family member, advocate, professional.</ddi:Label>
+          </ddi:Variable>
+          <ddi:Variable name="What is most important to me_Instance">
+            <ddi:Label>A description of what is most important to you. Key Information: Include any essential information that any professional in health and social care should know about you in any situation, including emergencies. Other Information: This could include: values, spirituality/religion, ethnicity, culture, pets, goals and aspirations, meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering.</ddi:Label>
+            <ddi:ChildVariables>
+              <ddi:Variable name="About Me response_Instance">
+                <ddi:Label>About Me response</ddi:Label>
+                <ddi:ChildVariables>
+                  <ddi:Variable name="Free_text__Instance">
+                    <ddi:Label>Free text</ddi:Label>
+                  </ddi:Variable>
+                  <ddi:Variable name="Multi-media_Instance">
+                    <ddi:Label>Multi-media.</ddi:Label>
+                    <ddi:ChildVariables>
+                      <ddi:Variable name="Multi-media_file_Instance">
+                        <ddi:Label>The actual multi-media file if it is stored in the system.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_filename_Instance">
+                        <ddi:Label>The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_MIME_type_Instance">
+                        <ddi:Label>The MIME type of the multi-media file.</ddi:Label>
+                      </ddi:Variable>
+                      <ddi:Variable name="Multi-media_URL_Instance">
+                        <ddi:Label>The URL or link to the multi-media file where it is stored in a different system.</ddi:Label>
+                      </ddi:Variable>
+                    </ddi:ChildVariables>
+                  </ddi:Variable>
+                </ddi:ChildVariables>
+              </ddi:Variable>
+              <ddi:Variable name="Coded_value_Instance">
+                <ddi:Label>The coded value for what is most important to me.</ddi:Label>
+              </ddi:Variable>
+            </ddi:ChildVariables>
+          </ddi:Variable>
+        </ddi:ChildVariables>
+      </ddi:Variable>
+    </ddi:ChildVariables>
+  </ddi:Variable>
+</ddi:PhysicalStructure>

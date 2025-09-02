@@ -1,0 +1,68 @@
+type/answer;question;code;answers;mandatory;other;language
+S;This is a record of the things that a person feels it is important to communicate about their needs, strengths, values, concerns and preferences to others providing support and care.;About_Me_Instance;Yes;No;Y;N;en
+S;About Me record entry.;About_Me_record_entry_Instance;Yes;No;Y;N;en
+S;A description of what is also worth knowing about you for people caring or supporting you. This could include a short history of your life (where you have worked, where you lived, important events in your life, important people in your past life). This could include a short profile of your current life: your work / study, your aspirations, your skills, your networks, things you like e.g. particular foods, places, a football team and things you like to talk about, things you dislike. This could also include any care and support preferences that have not been included elsewhere.;Also_worth_knowing_about_me_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for what is also worth knowing about me.;Coded_value_Instance;Yes;No;Y;N;en
+S;This is a record of the date that this About Me was created or last updated.;Date_last_updated_Instance;Yes;No;Y;N;en
+S;A description of how and when you want someone caring for you to support you. This could include support needs in an emergency situation (for example taking blood). This could include support you need to maintain important routines or to carry out particular activities, for example: personal care routines, eating and drinking, bedtime routines, taking medications, moving and transitioning. This could also include support needed with: wearing glasses/hearing aids/false teeth etc, making informed choices or understanding dangers and risks, managing your emotions, moods and behaviours, memory or confusion. Include how your support needs change in different environments. Include any triggers that might result in you needing further support and strategies for avoiding or addressing the triggers. Include how you want the support to be provided.;How_and_when_to_support_me_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for how and when to support me.;Coded_value_Instance;Yes;No;Y;N;en
+S;A description of how you communicate normally including any communication aids you use, for example a hearing aid. Include your preferred language of communication, if your first language is not English. Include how you would communicate when you are in pain or distress. Include how you communicate choices. Include how you give feedback or raise a concern. Include how you like to receive information. Describe how you would like others to engage and communicate with you, including how you would like to be addressed.;How_I_communicate_and_how_to_communicate_with_me_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for how I communicate and how to communicate with me.;Coded_value_Instance;Yes;No;Y;N;en
+S;A description covering what you are able to do, how you engage with others and how you feel on a typical day through to on a day when you are unwell or really unwell. Include any causes that might result in you becoming unwell and strategies for avoiding or addressing the causes. For example, not drinking enough water could cause constipation. Include any signs that indicate you might be becoming unwell. On a bad day describe what is different about what you are able to do, how you engage with others and how you feel. Include how your everyday life is affected by any medical conditions e.g. dementia and any symptoms e.g. itchiness, cough, pain and how you manage those conditions. Include past health issues or experiences that need to be considered. Include your wellbeing and lifestyle goals and aspirations.;My_wellness_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for my wellness.;Coded_value_Instance;Yes;No;Y;N;en
+S;Details of who is important to you and why. They could be family members, carers, friends, members of staff etc. Include how you want the people important to you to be engaged and involved in your care and support in both emergency and normal situations. Include how you stay connected to the people important to you. Who should not be contacted or consulted about your care and support and why, if you wish to say.;People_who_are_important_to_me_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for people who are important to me.;Coded_value_Instance;Yes;No;Y;N;en
+S;A description of things you want someone supporting you to do (or not to do). Things you want someone to do might include (for example): Talk to me not to my carer, remind me to take my medication, encourage me to wash my hands regularly, explain to me what is happening and why, respond to my communication. A description of things you do not want someone supporting you to do might include (for example): Discussing or asking questions about certain topics, making assumptions about something, providing support when it is not wanted, talking to you in a certain way, or asking you to undergo a specific intervention or to take a medication that you do not want.;Please_do_and_please_do_not_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for please do and please do not.;Coded_value_Instance;Yes;No;Y;N;en
+S;Where relevant, this is a record of name, relationship/role and contact details of the individual(s) who supported the person to write this section e.g. carer, family member, advocate, professional.;Supported_to_write_this_by_Instance;Yes;No;Y;N;en
+S;A description of what is most important to you. Key Information: Include any essential information that any professional in health and social care should know about you in any situation, including emergencies. Other Information: This could include: values, spirituality/religion, ethnicity, culture, pets, goals and aspirations, meaningful activities including leisure activities, visiting places, sport and exercise, listening to music, employment, education, volunteering.;What_is_most_important_to_me_Instance;Yes;No;Y;N;en
+S;About Me response;About_Me_response_Instance;Yes;No;Y;N;en
+S;Free text;Free_text__Instance;Yes;No;Y;N;en
+S;Multi-media.;Multi-media_Instance;Yes;No;Y;N;en
+S;The actual multi-media file if it is stored in the system.;Multi-media_file_Instance;Yes;No;Y;N;en
+S;The filename of the multi-media file. This should not include the suffix or extension showing the file type (e.g. .MP4).;Multi-media_filename_Instance;Yes;No;Y;N;en
+S;The MIME type of the multi-media file.;Multi-media_MIME_type_Instance;Yes;No;Y;N;en
+S;The URL or link to the multi-media file where it is stored in a different system.;Multi-media_URL_Instance;Yes;No;Y;N;en
+S;The coded value for what is most important to me.;Coded_value_Instance;Yes;No;Y;N;en
