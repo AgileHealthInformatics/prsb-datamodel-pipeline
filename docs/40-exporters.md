@@ -29,21 +29,21 @@ The exporter stage of the pipeline generates implementation-ready artefacts from
 
 ### 1. CDISC ODM
 
-**Purpose:** Produce [CDISC Operational Data Model](https://www.cdisc.org/standards/foundational/odm) XML files for clinical trial data collection.
+**Purpose:** Produce [CDISC Operational Data Model](https://www.cdisc.org/standards/data-exchange/odm) XML files for clinical trial data collection.
 
 * Maps PRSB items to ODM `<ItemDef>` and `<FormDef>` elements.
 * Preserves value domains and metadata.
 
 ### 2. DDI Lifecycle
 
-**Purpose:** Generate [DDI Lifecycle](https://ddialliance.org/) XML for documenting longitudinal survey and research data.
+**Purpose:** Generate [DDI Lifecycle](https://ddialliance.org/ddi-lifecycle) XML for documenting longitudinal survey and research data.
 
 * Outputs `<Variable>` and `<QuestionItem>` elements.
 * Aligns PRSB concepts with DDI lifecycle metadata.
 
 ### 3. DDI-CDI
 
-**Purpose:** Produce [DDI Cross-Domain Integration](https://ddialliance.org/Specification/CDI) artefacts for semantic alignment and integration.
+**Purpose:** Produce [DDI Cross-Domain Integration](https://ddialliance.org/ddi-cdi) artefacts for semantic alignment and integration.
 
 * Exports PRSB structure as a CDI graph with entities and relationships.
 
