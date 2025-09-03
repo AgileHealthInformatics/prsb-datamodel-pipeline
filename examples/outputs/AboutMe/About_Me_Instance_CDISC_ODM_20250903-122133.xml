@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 ODM.xsd"
+    FileOID="ODM.0AEB4411-59AB-4C81-B229-876C5711D348" CreationDateTime="2025-09-03T11:21:33Z"
+    ODMVersion="1.3.2" FileType="Snapshot" Granularity="All">
+    <Study OID="ST.About_Me_Instance">
+        <GlobalVariables>
+            <StudyName>About Me_Instance</StudyName>
+            <StudyDescription>Study export from EA instances in package 'About Me_Instance'.</StudyDescription>
+            <ProtocolName>About Me_Instance Protocol</ProtocolName>
+        </GlobalVariables>
+        <MetaDataVersion OID="MDV.About_Me_Instance" Name="About Me_Instance MDV 1.3.2">
+            <ItemDef OID="IT.lastUpdated" Name="lastUpdated" DataType="date" />
+            <ItemDef OID="IT.version" Name="version" DataType="float" />
+            <ItemGroupDef OID="IG.About_Me" Name="About Me" Repeating="No">
+                <ItemRef ItemOID="IT.lastUpdated" OrderNumber="1" Mandatory="No" />
+                <ItemRef ItemOID="IT.version" OrderNumber="2" Mandatory="No" />
+            </ItemGroupDef>
+            <FormDef OID="FM.About_Me_Instance" Name="About Me_Instance Form" Repeating="No">
+                <ItemGroupRef ItemGroupOID="IG.About_Me" OrderNumber="1" Mandatory="No" />
+            </FormDef>
+            <StudyEventDef OID="SE.About_Me_Instance" Name="About Me_Instance Event" Repeating="No">
+                <FormRef FormOID="FM.About_Me_Instance" OrderNumber="1" Mandatory="No" />
+            </StudyEventDef>
+        </MetaDataVersion>
+    </Study>
+    <ClinicalData StudyOID="ST.About_Me_Instance" MetaDataVersionOID="MDV.About_Me_Instance">
+        <SubjectData SubjectKey="About Me_Instance">
+            <StudyEventData StudyEventOID="SE.About_Me_Instance">
+                <FormData FormOID="FM.About_Me_Instance">
+                    <ItemGroupData ItemGroupOID="IG.About_Me">
+                        <ItemData ItemOID="IT.lastUpdated" Value="2025-08-11" />
+                        <ItemData ItemOID="IT.version" Value="2.01" />
+                    </ItemGroupData>
+                </FormData>
+            </StudyEventData>
+        </SubjectData>
+    </ClinicalData>
+</ODM>

@@ -1,0 +1,2714 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "10531",
+  "url": "urn:uuid:54211af8-6192-4534-9647-3fe8417e383a",
+  "name": "Diabetes_Self_Management_Information_Standard_Instance",
+  "title": "Diabetes Self-Management Information Standard_Instance",
+  "status": "active",
+  "date": "2025-09-02",
+  "description": "Version incremented from 0.1 to 0.2 following review by assurance committee. Version incremented from 0.2 to 0.3. Implementation Guidance added. Implementation Guidance added. Name changed from Diabetes Self-management Data Standard to Diabetes Self-Management Information Standard for ISN. Post-endorsement and phase 2 changes to model and implementation guidance detailed in changes log. Implementation guidance 1. Introduction 1.1 Purpose of this implementation guidance This implementation guidance provides guidance to support the implementation of the PRSB Diabetes Self-Management Information Standard. General guidance is provided here. Data item specific implementation guidance can be found under the 'context' field. PRSB has carried out a clinical safety review in accordance with DCB0129, which is detailed in the clinical safety case and accompanying Diabetes Information Standards hazard log. This guidance should be used in conjunction with the Risk Mitigation section. This guidan...",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Diabetes Self-Management Information Standard_Instance</h1><p>Version incremented from 0.1 to 0.2 following review by assurance committee. Version incremented from 0.2 to 0.3. Implementation Guidance added. Implementation Guidance added. Name changed from Diabetes Self-management Data Standard to Diabetes Self-Management Information Standard for ISN. Post-endorsement and phase 2 changes to model and implementation guidance detailed in changes log. Implementation guidance 1. Introduction 1.1 Purpose of this implementation guidance This implementation guidance provides guidance to support the implementation of the PRSB Diabetes Self-Management Information Standard. General guidance is provided here. Data item specific implementation guidance can be found under the &#39;context&#39; field. PRSB has carried out a clinical safety review in accordance with DCB0129, which is detailed in the clinical safety case and accompanying Diabetes Information Standards hazard log. This guidance should be used in conjunction with the Risk Mitigation section. This guidan...</p></div>"
+  },
+  "item": [
+    {
+      "linkId": "10532",
+      "text": "About me_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10533",
+          "text": "Also worth knowing about me_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10534",
+              "text": "Also_worth_knowing_about_me_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10535",
+          "text": "Date_Instance",
+          "type": "date"
+        },
+        {
+          "linkId": "10536",
+          "text": "How and when to support me_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10537",
+              "text": "How_and_when_to_support_me_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10538",
+          "text": "How I communicate and how to communicate with me_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10539",
+              "text": "How_I_communicate_and_how_to_communicate_with_me_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10540",
+          "text": "Location_to_multimedia_file_Instance",
+          "type": "attachment"
+        },
+        {
+          "linkId": "10541",
+          "text": "My wellness_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10542",
+              "text": "My_wellness_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10543",
+          "text": "People who are important to me_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10544",
+              "text": "People_who_are_important_to_me_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10545",
+          "text": "Please do and please don't_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10546",
+              "text": "Please_do_and_please_dont_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10547",
+          "text": "Supported_to_write_this_by_Instance",
+          "type": "string"
+        },
+        {
+          "linkId": "10548",
+          "text": "What is most important to me_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10549",
+              "text": "What_is_most_important_to_me_Instance",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10550",
+      "text": "Assessments_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10551",
+          "text": "Assessments record entry_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10552",
+              "text": "Assessment_summary_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10553",
+              "text": "Assessment_type_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10554",
+              "text": "Comment_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10555",
+              "text": "Structured assessment_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10556",
+                  "text": "Assessment result_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10557",
+                      "text": "Assessment score_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10558",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10559",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10560",
+                      "text": "Ordinal_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10561",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10562",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10563",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10564",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10565",
+                  "text": "Structured assessment name_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10566",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10567",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10568",
+                  "text": "Subscale result_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10569",
+                      "text": "Ordinal_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10570",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10571",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10572",
+                      "text": "Subscale score_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10573",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10574",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10575",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10576",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10577",
+      "text": "Documents (including correspondence, audio and images)_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10578",
+          "text": "Documents_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10579",
+              "text": "Additional information required for images._Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10580",
+                  "text": "Comments_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10581",
+                  "text": "Event_code_list_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10582",
+                  "text": "Format_code_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10584",
+                  "text": "Image_procedure_date_Instance",
+                  "type": "date"
+                },
+                {
+                  "linkId": "10583",
+                  "text": "Image_procedure_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10585",
+                  "text": "Images_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10586",
+                      "text": "Image_capture_date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10587",
+                      "text": "Image_ID_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10588",
+                      "text": "Image_location_Instance",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "10589",
+              "text": "Class_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10590",
+              "text": "Comments_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10591",
+              "text": "Confidentiality_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10592",
+              "text": "Document_MIME_type_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10593",
+              "text": "Document_name_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10594",
+              "text": "Document_title_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10595",
+              "text": "Documentation_location_Instance",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10596",
+      "text": "Examination findings_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10597",
+          "text": "Examination findings record entry_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10598",
+              "text": "Body site_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10599",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10600",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10601",
+              "text": "Examination findings_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10602",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10603",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10604",
+              "text": "Examination type_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10605",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10606",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10607",
+              "text": "Laterality_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10608",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10609",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10610",
+              "text": "Observations_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10611",
+                  "text": "Observations record entry_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10612",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10613",
+                      "text": "Comment_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10614",
+                      "text": "Device type_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10615",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10616",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10617",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10618",
+                      "text": "Interpretation_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10619",
+                      "text": "Manually_entered_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10620",
+                      "text": "Site_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10621",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10622",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10623",
+                  "text": "Sensor failures record entry_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10624",
+                      "text": "Date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10625",
+                      "text": "Sensor failure_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10626",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10627",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10628",
+                  "text": "Summary observations_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10629",
+                      "text": "Glucose metrics record entry_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10630",
+                          "text": "Monitoring data_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10631",
+                              "text": "Glucose management indicator (GMI)_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10632",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10633",
+                                  "text": "Units_of_measure_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10634",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10635",
+                              "text": "Mean duration of hypoglycaemic episodes_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10636",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10637",
+                                  "text": "Standard deviation_Instance",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "10638",
+                                      "text": "Coded_value_Instance",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "linkId": "10639",
+                                      "text": "Units_of_measure_Instance",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "linkId": "10640",
+                                      "text": "Value_Instance",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "linkId": "10641",
+                                  "text": "Units_of_measure_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10642",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10643",
+                              "text": "Mean glucose_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10644",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10645",
+                                  "text": "Glycaemic variability indexes_Instance",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "10646",
+                                      "text": "Coefficient of variation (%CV)_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10647",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10648",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10649",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "linkId": "10650",
+                                      "text": "Standard deviation_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10651",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10652",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10653",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "linkId": "10654",
+                                  "text": "Units_of_measure_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10655",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10656",
+                              "text": "Number of significant hypoglycaemic episodes_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10657",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10658",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10659",
+                              "text": "Time or values in range_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10660",
+                                  "text": "Time or values above range (T/VAR)_Instance",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "10661",
+                                      "text": "T/VAR level 1_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10662",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10663",
+                                          "text": "Reference range_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10664",
+                                              "text": "Reference range lower bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10665",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10666",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10667",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "linkId": "10668",
+                                              "text": "Reference range upper bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10669",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10670",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10671",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "linkId": "10672",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10673",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "linkId": "10674",
+                                      "text": "T/VAR level 2_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10675",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10676",
+                                          "text": "Reference range_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10677",
+                                              "text": "Reference range lower bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10678",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10679",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10680",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "linkId": "10681",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10682",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "linkId": "10683",
+                                  "text": "Times or values below range (T/VBR)_Instance",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "10684",
+                                      "text": "T/VBR level 1_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10685",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10686",
+                                          "text": "Reference range_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10687",
+                                              "text": "Reference range lower bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10688",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10689",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10690",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "linkId": "10691",
+                                              "text": "Reference range upper bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10692",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10693",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10694",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "linkId": "10695",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10696",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "linkId": "10697",
+                                      "text": "T/VBR level 2_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10698",
+                                          "text": "Coded_value_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10699",
+                                          "text": "Reference range_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10700",
+                                              "text": "Reference range upper bound_Instance",
+                                              "type": "group",
+                                              "item": [
+                                                {
+                                                  "linkId": "10701",
+                                                  "text": "Coded_value_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10702",
+                                                  "text": "Units_of_measure_Instance",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "linkId": "10703",
+                                                  "text": "Value_Instance",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "linkId": "10704",
+                                          "text": "Units_of_measure_Instance",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "linkId": "10705",
+                                          "text": "Value_Instance",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "linkId": "10706",
+                                  "text": "Times or values in range (T/VIR)_Instance",
+                                  "type": "group",
+                                  "item": [
+                                    {
+                                      "linkId": "10707",
+                                      "text": "Coded_value_Instance",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "linkId": "10708",
+                                      "text": "Reference range_Instance",
+                                      "type": "group",
+                                      "item": [
+                                        {
+                                          "linkId": "10709",
+                                          "text": "Reference range lower bound_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10710",
+                                              "text": "Coded_value_Instance",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "linkId": "10711",
+                                              "text": "Units_of_measure_Instance",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "linkId": "10712",
+                                              "text": "Value_Instance",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "linkId": "10713",
+                                          "text": "Reference range upper bound_Instance",
+                                          "type": "group",
+                                          "item": [
+                                            {
+                                              "linkId": "10714",
+                                              "text": "Coded_value_Instance",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "linkId": "10715",
+                                              "text": "Units_of_measure_Instance",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "linkId": "10716",
+                                              "text": "Value_Instance",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "linkId": "10717",
+                                      "text": "Units_of_measure_Instance",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "linkId": "10718",
+                                      "text": "Value_Instance",
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10719",
+                          "text": "Monitoring detail_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10720",
+                              "text": "Comment_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10721",
+                              "text": "Mean daily monitoring frequency_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10722",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10723",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10724",
+                              "text": "Percent number of sensor failures_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10725",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10726",
+                                  "text": "Units_of_measure_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10727",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "linkId": "10728",
+                              "text": "Percent sensor data available_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10729",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10730",
+                                  "text": "Units_of_measure_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10731",
+                                  "text": "Value_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10732",
+                          "text": "Monitoring type_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10733",
+                              "text": "Device type_Instance",
+                              "type": "group",
+                              "item": [
+                                {
+                                  "linkId": "10734",
+                                  "text": "Coded_value_Instance",
+                                  "type": "string"
+                                },
+                                {
+                                  "linkId": "10735",
+                                  "text": "Free_text_Instance",
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10736",
+                          "text": "Reporting period_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10737",
+                              "text": "End_date_Instance",
+                              "type": "date"
+                            },
+                            {
+                              "linkId": "10738",
+                              "text": "Start_date_Instance",
+                              "type": "date"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "10739",
+              "text": "Severity_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10740",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10741",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10742",
+      "text": "Medications and medical devices_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10743",
+          "text": "Medication administration record entry_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10744",
+              "text": "Comment_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10745",
+              "text": "Device type_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10746",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10747",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10748",
+              "text": "Dose administered_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10749",
+                  "text": "Administration_date_and_time_Instance",
+                  "type": "date"
+                },
+                {
+                  "linkId": "10750",
+                  "text": "End_datetime_Instance",
+                  "type": "date"
+                },
+                {
+                  "linkId": "10751",
+                  "text": "Start_datetime_Instance",
+                  "type": "date"
+                },
+                {
+                  "linkId": "10752",
+                  "text": "Units_of_measure_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10753",
+                  "text": "Value_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10754",
+              "text": "Dose context_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10755",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10756",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10757",
+              "text": "Insulin calculations cluster_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10758",
+                  "text": "Blood glucose_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10759",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10760",
+                      "text": "Date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10761",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10762",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10763",
+                  "text": "Carbohydrate intake_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10764",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10765",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10766",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10767",
+                  "text": "Correction target_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10768",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10769",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10770",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10771",
+                  "text": "Insulin advisory software_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10772",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10773",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10774",
+                  "text": "Insulin carbohydrate ratio_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10775",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10776",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10777",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10778",
+                  "text": "Insulin sensitivity factor_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10779",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10780",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10781",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "10782",
+              "text": "Medication name_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10783",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10784",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10785",
+              "text": "Method_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10786",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10787",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10788",
+              "text": "Priming dose indicator_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10789",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10790",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10791",
+              "text": "Route_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10792",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10793",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10794",
+              "text": "Site_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10795",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10796",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10797",
+              "text": "Time of day_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10798",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10799",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "10800",
+          "text": "Medication item entry_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10801",
+              "text": "Medical devices entry_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10802",
+                  "text": "Comments_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10803",
+                  "text": "Medical device_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10804",
+                      "text": "Device manufacturer_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10805",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10806",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10807",
+                      "text": "Device type_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10808",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10809",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10810",
+                      "text": "Model_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10811",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10812",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10813",
+                      "text": "Provision_date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10814",
+                      "text": "Replacement_date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10815",
+                      "text": "Software_version_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10816",
+                      "text": "Unique_identifier_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10817",
+                      "text": "Warranty_details_Instance",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "10818",
+          "text": "Summary medication metrics_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10819",
+              "text": "Insulin metrics record entry_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10820",
+                  "text": "Average total dose cluster_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10821",
+                      "text": "Number of boluses per day (mean)_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10822",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10823",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10824",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10825",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10826",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10827",
+                      "text": "Total daily basal dose (mean)_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10828",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10829",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10830",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10831",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10832",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10833",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10834",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10835",
+                      "text": "Total daily bolus dose (mean)_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10836",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10837",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10838",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10839",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10840",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10841",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10842",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10843",
+                      "text": "Total daily dose (mean)_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10844",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10845",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10846",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10847",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10848",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10849",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10850",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10851",
+                      "text": "Total dose by CSII (mean)_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10852",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10853",
+                          "text": "End_of_time_block_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10854",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10855",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10856",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10857",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10858",
+                          "text": "Start_of_time_block_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10859",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10860",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10861",
+                  "text": "Device data record entry_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10862",
+                      "text": "Device cannula change_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10863",
+                          "text": "Cannula_change_date_and_time_Instance",
+                          "type": "date"
+                        },
+                        {
+                          "linkId": "10864",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10865",
+                      "text": "Device closed loop_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10866",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10867",
+                          "text": "End_datetime_Instance",
+                          "type": "date"
+                        },
+                        {
+                          "linkId": "10868",
+                          "text": "Start_datetime_Instance",
+                          "type": "date"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10869",
+                      "text": "Device suspension_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10870",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10871",
+                          "text": "End_datetime_Instance",
+                          "type": "date"
+                        },
+                        {
+                          "linkId": "10872",
+                          "text": "Start_datetime_Instance",
+                          "type": "date"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10873",
+                      "text": "Device type_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10874",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10875",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10876",
+                      "text": "Device use period_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10877",
+                          "text": "Use_end_date_Instance",
+                          "type": "date"
+                        },
+                        {
+                          "linkId": "10878",
+                          "text": "Use_start_date_Instance",
+                          "type": "date"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10879",
+                  "text": "Device summary metrics_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10880",
+                      "text": "Mean time between cannula changes_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10881",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10882",
+                          "text": "Standard deviation_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10883",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10884",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10885",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10886",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10887",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10888",
+                      "text": "Number of episodes of suspend greater than 60 minutes_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10889",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10890",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10891",
+                      "text": "Percent device data available_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10892",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10893",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10894",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10895",
+                      "text": "Percent time in closed loop_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10896",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10897",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10898",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10899",
+                      "text": "Percent time in suspend_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10900",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10901",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10902",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10903",
+                  "text": "Modal insulin record entry_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10904",
+                      "text": "Device type_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10905",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10906",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10907",
+                      "text": "Dose context_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10908",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10909",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10910",
+                      "text": "Insulin name_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10911",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10912",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10913",
+                      "text": "Modal bolus calculations_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10914",
+                          "text": "Modal carbohydrate intake_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10915",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10916",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10917",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10918",
+                          "text": "Modal correction target_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10919",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10920",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10921",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10922",
+                          "text": "Modal insulin carbohydrate ratio_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10923",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10924",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10925",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10926",
+                          "text": "Modal insulin sensitivity factor_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10927",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10928",
+                              "text": "Units_of_measure_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10929",
+                              "text": "Value_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10930",
+                      "text": "Modal insulin dose_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10931",
+                          "text": "Time of day_Instance",
+                          "type": "group",
+                          "item": [
+                            {
+                              "linkId": "10932",
+                              "text": "Coded_value_Instance",
+                              "type": "string"
+                            },
+                            {
+                              "linkId": "10933",
+                              "text": "Free_text_Instance",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "10934",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10935",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10936",
+                  "text": "Reporting period_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10937",
+                      "text": "End_date_Instance",
+                      "type": "date"
+                    },
+                    {
+                      "linkId": "10938",
+                      "text": "Start_date_Instance",
+                      "type": "date"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "10939",
+          "text": "Usual insulin dosing cluster_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10940",
+              "text": "Insulin regimen_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10941",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "10942",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "10943",
+              "text": "Usual insulin record entry_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10944",
+                  "text": "Device type_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10945",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10946",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10947",
+                  "text": "Dose context_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10948",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10949",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10950",
+                  "text": "Insulin name_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10951",
+                      "text": "Coded_value_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10952",
+                      "text": "Free_text_Instance",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10953",
+                  "text": "Usual bolus calculations_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10954",
+                      "text": "Uses insulin advisory software_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10955",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10956",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10957",
+                      "text": "Usual carbohydrate intake_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10958",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10959",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10960",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10961",
+                      "text": "Usual correction target_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10962",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10963",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10964",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10965",
+                      "text": "Usual insulin carbohydrate ratio_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10966",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10967",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10968",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10969",
+                      "text": "Usual insulin sensitivity factor_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10970",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10971",
+                          "text": "Units_of_measure_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10972",
+                          "text": "Value_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "10973",
+                  "text": "Usual insulin dose_Instance",
+                  "type": "group",
+                  "item": [
+                    {
+                      "linkId": "10974",
+                      "text": "Time of day_Instance",
+                      "type": "group",
+                      "item": [
+                        {
+                          "linkId": "10975",
+                          "text": "Coded_value_Instance",
+                          "type": "string"
+                        },
+                        {
+                          "linkId": "10976",
+                          "text": "Free_text_Instance",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "10977",
+                      "text": "Units_of_measure_Instance",
+                      "type": "string"
+                    },
+                    {
+                      "linkId": "10978",
+                      "text": "Value_Instance",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10979",
+      "text": "Person demographics_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10980",
+          "text": "Date_of_birth_Instance",
+          "type": "date"
+        },
+        {
+          "linkId": "10981",
+          "text": "NHS_number_Instance",
+          "type": "string"
+        },
+        {
+          "linkId": "10982",
+          "text": "Other_identifier_Instance",
+          "type": "string"
+        },
+        {
+          "linkId": "10983",
+          "text": "Person name_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10984",
+              "text": "Person_family_name_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10985",
+              "text": "Person_first_name_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10986",
+              "text": "Person_full_name_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10987",
+          "text": "Person's address_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10988",
+              "text": "Address_line_1_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10989",
+              "text": "Address_line_2_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10990",
+              "text": "Address_line_3_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10991",
+              "text": "Address_line_4_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10992",
+              "text": "Address_line_5_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10993",
+              "text": "Address_type_Instance",
+              "type": "string"
+            },
+            {
+              "linkId": "10994",
+              "text": "Postcode_Instance",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "10995",
+          "text": "Person's contact details_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "10996",
+              "text": "Person's email address details_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "10997",
+                  "text": "Persons_email_address_Instance",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "10998",
+      "text": "Social context_Instance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "10999",
+          "text": "Alcohol intake_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "11000",
+              "text": "Alcohol intake_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "11001",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "11002",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "11003",
+          "text": "Smoking status_Instance",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "11004",
+              "text": "Smoking status_Instance",
+              "type": "group",
+              "item": [
+                {
+                  "linkId": "11005",
+                  "text": "Coded_value_Instance",
+                  "type": "string"
+                },
+                {
+                  "linkId": "11006",
+                  "text": "Free_text_Instance",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "linkId": "11007",
+              "text": "Smoking_status_-_details_Instance",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
