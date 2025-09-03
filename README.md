@@ -21,22 +21,26 @@ prsb-datamodel-pipeline/
 ├─ README.md                # This file
 ├─ LICENSE                  # Project license (MIT/Apache recommended)
 ├─ CONTRIBUTING.md          # Guidelines for contributors
-├─ CHANGELOG.md              # Version history and notable changes
+├─ CHANGELOG.md             # Version history and notable changes
 │
 ├─ docs/                    # Documentation
-│  ├─ 00-overview.md         # High-level architecture and pipeline flow
-│  ├─ 10-json-to-xml.md      # JSON to XML conversion process
-│  ├─ 20-ea-import.md        # EA import process and conventions
-│  ├─ 30-ea-transform.md     # EA transformation logic
-│  └─ 40-exporters.md        # Export formats and mappings
+│  ├─ 00-overview.md        # High-level architecture and pipeline flow
+│  ├─ 10-json-to-xml.md     # JSON to XML conversion process
+│  ├─ 20-ea-import.md       # EA import process and conventions
+│  ├─ 30-ea-transform.md    # EA transformation logic
+│  └─ 40-exporters.md       # Export formats and mappings
 │
 ├─ schemas/                 # Schema definitions
-│  ├─ prsb-json/             # Original JSON schema/specs & samples
-│  └─ prsb-xml/              # XML schemas used for EA import
+│  ├─ prsb-json/            # Original JSON schema/specs & samples
+│  └─ prsb-xml/             # XML schemas used for EA import
+│
+├─ Sparx EA Export/         # XMI file representations of selected contents of the repository
+│  ├─ Classes/              # Classes that have been imported from external XML files
+│  └─ Instances/            # Instance object representations of each standard
 │
 ├─ examples/                # Sample data for verification
-│  ├─ inputs/                # Small, versioned PRSB JSON files
-│  └─ outputs/               # Expected XML outputs
+│  ├─ inputs/               # Small, versioned PRSB JSON files
+│  └─ outputs/              # Expected XML outputs
 │
 ├─ tools/
 │  └─ json-xml-converter-dotnet/   # .NET utility
